@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include './connect.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pincode = $_POST['pincode'];
 
     echo "<script>alert('$name,$age,$gender,$status,$city,$state,$country,$pincode');</script>";
-    header("Location: ./seeker_preferences.php");
+    header("Location: ./education_details.php");
 }
 ?>
 
@@ -146,7 +146,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="col-12 mt-5 text-center">
-                    <button type="submit" name="personal" class="btn btn-info btn-lg">Save & Next</button>
+                    <a href="./seeker_preferences.php" class='btn btn-lg btn-outline-danger ml-4'>Previous</a>
+                    <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg">Save & Next</button>
                 </div>
             </form>
         </fieldset>

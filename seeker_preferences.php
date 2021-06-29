@@ -1,9 +1,59 @@
 <?php
-session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $prefernces = '';
     foreach ($_POST['preference'] as $selected) {
-        echo "<script>alert('$selected');</script>";
+        // echo "<script>alert('$selected');</script>";
+
+        $prefernces = $prefernces  . "," . $selected;
     }
+    $prefernces = substr($prefernces, 1);
+
+    if (isset($_POST['work_place'])) {
+        $job_work_place = $_POST['work_place'];
+    }
+    if (isset($_POST['field'])) {
+        $job_field = $_POST['field'];
+    }
+    if (isset($_POST['position'])) {
+        $job_position = $_POST['position'];
+    }
+
+    if (isset($_POST['learning_place'])) {
+        $course_place = $_POST['learning_place'];
+    }
+
+    if (isset($_POST['course_field'])) {
+        $course_field = $_POST['course_field'];
+    }
+
+    if (isset($_POST['course_name'])) {
+        $course_name = $_POST['course_name'];
+    }
+    if (isset($_POST['ngo-field'])) {
+        $ngo_field = $_POST['ngo-field'];
+    }
+    if (isset($_POST['part_time_start'])) {
+        $part_time_start = $_POST['part_time_start'];
+    }
+    if (isset($_POST['part_time_end'])) {
+        $part_time_end = $_POST['part_time_end'];
+    }
+    if (isset($_POST['course_time_start'])) {
+        $course_time_start = $_POST['course_time_start'];
+    }
+    if (isset($_POST['course_time_end'])) {
+        $course_time_end = $_POST['course_time_end'];
+    }
+    if (isset($_POST['ngo_time_start'])) {
+        $ngo_time_start = $_POST['ngo_time_start'];
+    }
+    if (isset($_POST['ngo_time_end'])) {
+        $ngo_time_end = $_POST['ngo_time_end'];
+    }
+    echo "<script>console.log('$job_work_place,$job_field,$job_position,$part_time_start,$part_time_end')</script>";
+    echo "<script>console.log('$course_place,$course_field,$course_name,$course_time_start,$course_time_end')</script>";
+    echo "<script>console.log('$ngo_field,$ngo_time_start,$ngo_time_end')</script>";
+    header("Location: ./seeker_details.php");
 }
 ?>
 
@@ -13,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Details</title>
+    <title>Preferences</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
 			CSS
@@ -48,13 +98,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     .preferences {
         padding: 15px 30px 15px 40px;
-        border: 1px solid #DDD;
+        border: 1px solid #C0C0C0;
         border-radius: 5px;
     }
 
     .additional {
         display: none;
-        border: 1px solid rgb(221, 221, 221);
+        border: 1px solid #C0C0C0;
         padding: 3%;
         border-radius: 10px;
     }
@@ -62,6 +112,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     @media only screen and (max-width:768px) {
         .heading {
             margin-top: 25%;
+        }
+
+        label {
+            margin-left: 10px;
+            font-size: 17px
         }
     }
 </style>
@@ -102,105 +157,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
 
-    <div class="container form-container mt-2">
-        <fieldset style="border: 1px solid #DDD;border-radius:8px;padding:4%">
+    <div class="container form-container mt-2 mb-5">
+        <fieldset style="border: 1px solid #C0C0C0;border-radius:8px;padding:4%">
             <form class="row g-3" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <div class="col-md-12">
                     <label for="name" class="form-label">What are you looking for?</label>
-                    <div class="col-md-12">
+                    <div class="col-md-12 mt-4">
                         <div class="form-check preferences">
-                            <input class="form-check-input" type="checkbox" name="preference[]" id="parttime" value="parttime" <?php if (isset($preference) && $preference == "parttime") echo "checked"; ?>>
+                            <input class="form-check-input" type="checkbox" name="preference[]" <?php if (strpos($prefernces, "parttime") !== false) echo 'checked';
+                                                                                                else echo ""; ?> id="parttime" value="parttime">
                             <label class="form-check-label" for="parttime">Part-Time Job</label>
                         </div>
                         <div class="form-check preferences mt-4">
-                            <input class="form-check-input" type="checkbox" name="preference[]" id="course" value="course" <?php if (isset($preference) && $preference == "course") echo "checked"; ?>>
-                            <label class="form-check-label" for="course">Course</label>
+                            <input class="form-check-input" type="checkbox" name="preference[]" id="course" value="course" <?php if (strpos($prefernces, "course") !== false) echo 'checked';
+                                                                                                                            else echo ""; ?>>
+                            <label class="form-check-label" for="course">Learn a Course</label>
                         </div>
                         <div class="form-check preferences mt-4">
-                            <input class="form-check-input" type="checkbox" name="preference[]" id="ngo" value="ngo" <?php if (isset($preference) && $preference == "ngo") echo "checked"; ?>>
-                            <label class="form-check-label" for="ngo">Work for an NGO</label>
+                            <input class="form-check-input" type="checkbox" name="preference[]" id="ngo" value="ngo" <?php if (strpos($prefernces, "ngo") !== false) echo 'checked';
+                                                                                                                        else echo ""; ?>>
+                            <label class="form-check-label" for="ngo">Work for a NGO</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="container mt-5 additional" id='partime-details'>
-                    <label for="name" class="form-label">Which of the following part-time job type are you looking for?</label>
-                    <div class="col-md-6 mt-3">
-                        <div class="form-check form-check-inline ml-4">
-                            <input class="form-check-input" type="radio" name="work_place" id="wfh" value="wfh" <?php if (isset($work_place) && $work_place == "wfh") echo "checked"; ?> required>
-                            <label class="form-check-label" for="wfh">Work From Home</label>
-                        </div>
-                        <div class="form-check form-check-inline ml-3">
-                            <input class="form-check-input" type="radio" name="work_place" id="in_o" value="in_office" <?php if (isset($work_place) && $work_place == "in_office") echo "checked"; ?>>
-                            <label class="form-check-label" for="in_o">In-Office</label>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-6 mt-4">
-                            <label for="field" class="form-label">Field:</label>
-                            <input type="text" class="form-control mt-2" id="field" name="field" placeholder="e.g Software Development" required>
-                        </div>
-                        <div class="col-6 mt-4">
-                            <label for=" position" class="form-label">Position:</label>
-                            <input type="text" class="form-control mt-2" id=" position" name=" position" placeholder="e.g Full Stack Developer" required>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <label for="part_time_start">Enter the time interval when you will be available for part-time:</label>
-                        <div class="col-6">
-                            <small for="part_time_start">Start Time:</small>
-                            <input type="time" class="form-control" id="part_time_start" name="part_time_start">
-                        </div>
-                        <div class="col-6">
-                            <small for="part_time_end">End Time:</small>
-                            <input type="time" class="form-control" id="part_time_end" name="part_time_end">
-                        </div>
-                    </div>
+
                 </div>
 
 
                 <div class="container additional mt-5" id='course-details' style="display:none;">
-                    <label for="name" class="form-label">Where do you want to learn the course?</label>
-                    <div class="col-md-6 mt-3">
-                        <div class="form-check form-check-inline ml-4">
-                            <input class="form-check-input" type="radio" name="learning_place" id="online" value="online" <?php if (isset($learning_place) && $learning_place == "online") echo "checked"; ?> required>
-                            <label class="form-check-label" for="online">Online</label>
-                        </div>
-                        <div class="form-check form-check-inline ml-3">
-                            <input class="form-check-input" type="radio" name="learning_place" id="in_o" value="coaching_center" <?php if (isset($learning_place) && $learning_place == "coaching_center") echo "checked"; ?>>
-                            <label class="form-check-label" for="in_o">At Coaching center</label>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-6 mt-4">
-                            <label for="field" class="form-label">Field:</label>
-                            <input type="text" class="form-control mt-2" id="field" name="field" placeholder="e.g Web Development" required>
-                        </div>
-                        <div class="col-6 mt-4">
-                            <label for=" position" class="form-label">Course Name:</label>
-                            <input type="text" class="form-control mt-2" id=" position" name=" position" placeholder="e.g REACT JS" required>
-                        </div>
-                    </div>
-
-
-                    <div class="row mt-5">
-                        <label for="part_time_start">Enter the time interval you want to use for the course:</label>
-                        <div class="col-6">
-                            <small for="part_time_start">Start Time:</small>
-                            <input type="time" class="form-control" id="part_time_start" name="part_time_start">
-                        </div>
-                        <div class="col-6">
-                            <small for="part_time_end">End Time:</small>
-                            <input type="time" class="form-control" id="part_time_end" name="part_time_end">
-                        </div>
-                    </div>
-
                 </div>
-                <div class="container" id='ngo-details' style="display:none"></div>
 
-                <div class="col-12 mt-5 text-center">
-                    <button type="submit" name="personal" class="btn btn-info btn-lg">Save & Next</button>
+
+                <div class="container additional mt-5" id='ngo-details' style="display:none">
                 </div>
+
+                <div class="col-12 mt-5 text-center" id='save' style="display: none;">
+                    <button type="submit" name="preferences" class="btn btn-info btn-lg">Save & Next</button>
+                </div>
+
             </form>
         </fieldset>
     </div>
@@ -213,15 +209,104 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         v3.addEventListener('click', ngo);
 
         function parttime() {
+            document.getElementById('partime-details').innerHTML = v1.checked ? `<label for="name" class="form-label">Which of the following part-time job type are you looking for?</label>
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="work_place" id="wfh" value="wfh" required>
+                            <label class="form-check-label" for="wfh">Work From Home</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="work_place" id="in_o" value="in_office">
+                            <label class="form-check-label" for="in_o">In-Office</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-6 mt-4">
+                            <label for="field" class="form-label">Field:</label>
+                            <input type="text" class="form-control mt-2" id="field" name="field" placeholder="e.g Software Development" required>
+                        </div>
+                        <div class="col-6 mt-4">
+                            <label for=" position" class="form-label">Position:</label>
+                            <input type="text" class="form-control mt-2" id="position" name="position" placeholder="e.g Full Stack Developer" required>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <label for="part_time_start">Enter the time interval when you will be available for part-time:</label>
+                        <div class="col-6">
+                            <small for="part_time_start">Start Time:</small>
+                            <input type="time" class="form-control" id="part_time_start" name="part_time_start" required>
+                        </div>
+                        <div class="col-6">
+                            <small for="part_time_end">End Time:</small>
+                            <input type="time" class="form-control" id="part_time_end" name="part_time_end" required>
+                        </div>
+                    </div>` : "";
             document.getElementById('partime-details').style.display = v1.checked ? "block" : "none";
+
+
         }
 
         function course() {
+            document.getElementById('course-details').innerHTML = v2.checked ? `<label for="name" class="form-label">Where do you want to learn the course?</label>
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="learning_place" id="online" value="online" required>
+                            <label class="form-check-label" for="online">Online</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="learning_place" id="coaching_center" value="coaching_center">
+                            <label class="form-check-label" for="coaching_center">At Coaching center</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-6 mt-4">
+                            <label for="course_field" class="form-label">Field:</label>
+                            <input type="text" class="form-control mt-2" id="course_field" name="course_field" placeholder="e.g Web Development" required>
+                        </div>
+                        <div class="col-6 mt-4">
+                            <label for=" position" class="form-label">Course Name:</label>
+                            <input type="text" class="form-control mt-2" id="course" name="course_name" placeholder="e.g REACT JS" required>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-5">
+                        <label for="course_time_start">Enter the time interval you want to use for the course:</label>
+                        <div class="col-6">
+                            <small for="course_time_start">Start Time:</small>
+                            <input type="time" class="form-control" id="course_time_start" name="course_time_start" required>
+                        </div>
+                        <div class="col-6">
+                            <small for="course_time_end">End Time:</small>
+                            <input type="time" class="form-control" id="course_time_end" name="course_time_end" required>
+                        </div>
+                    </div>
+` : "";
             document.getElementById('course-details').style.display = v2.checked ? "block" : "none";
         }
 
         function ngo() {
             document.getElementById('ngo-details').style.display = v3.checked ? "block" : "none";
+
+            document.getElementById('ngo-details').innerHTML = v3.checked ? ` <label for="ngo-field" class="form-label">Under which sector you want to work for?</label>
+                    <div class="col-12 mt-2">
+                        <small for="ngo-field" class="form-label">Sector:</small>
+                        <input type="text" class="form-control mt-2" id="ngo-field" name="ngo-field" placeholder="e.g Women's Development & Empowerment" required>
+                    </div>
+
+                    <div class="row mt-5">
+                        <label for="part_time_start">Enter the time interval you can constribute for the NGO:</label>
+                        <div class="col-6">
+                            <small for="part_time_start">Start Time:</small>
+                            <input type="time" class="form-control" id="ngo_time_start" name="ngo_time_start" required>
+                        </div>
+                        <div class="col-6">
+                            <small for="part_time_end">End Time:</small>
+                            <input type="time" class="form-control" id="ngo_time_end" name="ngo_time_end" required>
+                        </div>
+                    </div>` : "";
+
+
         }
     </script>
 
