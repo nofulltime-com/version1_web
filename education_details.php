@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Details</title>
+    <title>Education Details</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
 			CSS
@@ -162,12 +162,12 @@
                     <div class="row mt-2">
                         <div class="col-8 mt-4">
                             <label for="college" class="form-label">College</label>
-                            <input type="text" required placeholder="e.g Indian Institute of Technology Madras" name='pg_college' class=" form-control" id="college" required>
+                            <input type="text" required placeholder="e.g Hindu College" name='pg_college' class=" form-control" id="college" required>
 
                         </div>
                         <div class="col-4 mt-4">
                             <label for="year" class="form-label">Year of graduation</label>
-                            <select required class="form-control" name="year" id='year'>
+                            <select required class="form-control" name="pg_year" id='year'>
                                 <?php
                                 for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
                                     <option value="<?= $year; ?>"><?= $year; ?></option>
@@ -214,27 +214,27 @@
                 </div>
 
                 <div class="modal-body p-4">
-                    <label for="name" class="form-label">Post Graduation status</label>
+                    <label for="name" class="form-label">Graduation status</label>
                     <div class="col-md-6">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="pg_education_status" id="pursuing" value="pursuing" required>
+                            <input class="form-check-input" type="radio" name="grad_education_status" id="pursuing" value="pursuing" required>
                             <label class="form-check-label" for="pursuing">Pursuing
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="pg_education_status" id="completed" value="completed">
+                            <input class="form-check-input" type="radio" name="grad_education_status" id="completed" value="completed">
                             <label class="form-check-label" for="completed">Completed</label>
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col-8 mt-4">
                             <label for="college" class="form-label">College</label>
-                            <input type="text" required placeholder="e.g Indian Institute of Technology Madras" name='pg_college' class=" form-control" id="college" required>
+                            <input type="text" required placeholder="e.g Indian Institute of Technology Madras" name='grad_college' class=" form-control" id="college" required>
 
                         </div>
                         <div class="col-4 mt-4">
                             <label for="year" class="form-label">Year of graduation</label>
-                            <select required class="form-control" name="year" id='year'>
+                            <select required class="form-control" name="grad_year" id='year'>
                                 <?php
                                 for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
                                     <option value="<?= $year; ?>"><?= $year; ?></option>
@@ -244,18 +244,147 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-6 mt-4">
-                            <label for="pg_degree" class="form-label">Degree:</label>
-                            <input required type="text" class="form-control mt-2" id="pg_degree" name="pg_degree" placeholder="e.g MBA">
+                            <label for="grad_degree" class="form-label">Degree:</label>
+                            <input required type="text" class="form-control mt-2" id="grad_degree" name="grad_degree" placeholder="e.g B.Sc(Hons)">
                         </div>
                         <div class="col-6 mt-4">
                             <label for="stream" class="form-label">Stream:</label>
-                            <input required type="text" class="form-control mt-2" id="stream" name="pg_stream" placeholder="e.g Finance">
+                            <input required type="text" class="form-control mt-2" id="stream" name="grad_stream" placeholder="e.g Economics">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-12 mt-4">
                             <label for="percentage" class="form-label">Percentage</label>
-                            <input required type="text" class="form-control mt-2" id="percentage" name="pg_percentage" placeholder="Enter your percentage">
+                            <input required type="text" class="form-control mt-2" id="percentage" name="grad_percentage" placeholder="Enter your percentage">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class='btn btn-success btn-lg' type='submit'>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>`;
+        }
+
+        function ss() {
+            document.getElementById('myModal-3').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <form action="" method='POST'>
+                <div class="modal-header ss text-center">
+                    <h2 class="modal-title text-center" style='margin-left: 0%;'>Senior Secondary(XII) details</h2>
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <label for="name" class="form-label">Intermediate status</label>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ss_education_status" id="pursuing" value="pursuing" required>
+                            <label class="form-check-label" for="pursuing">Pursuing
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ss_education_status" id="completed" value="completed">
+                            <label class="form-check-label" for="completed">Completed</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-8 mt-4">
+                            <label for="college" class="form-label">College</label>
+                            <input type="text" required placeholder="e.g Delhi Public School" name='ss_college' class=" form-control" id="college" required>
+
+                        </div>
+                        <div class="col-4 mt-4">
+                            <label for="year" class="form-label">Year of graduation</label>
+                            <select required class="form-control" name="ss_year" id='year'>
+                                <?php
+                                for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
+                                    <option value="<?= $year; ?>"><?= $year; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-6 mt-4">
+                            <label for="ss_degree" class="form-label">Board:</label>
+                            <input required type="text" class="form-control mt-2" id="ss_degree" name="ss_degree" placeholder="e.g C.B.S.E">
+                        </div>
+                        <div class="col-6 mt-4">
+                            <label for="stream" class="form-label">Stream:</label>
+                            <input required type="text" class="form-control mt-2" id="stream" name="ss_stream" placeholder="e.g Science">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 mt-4">
+                            <label for="percentage" class="form-label">Percentage</label>
+                            <input required type="text" class="form-control mt-2" id="percentage" name="ss_percentage" placeholder="Enter your percentage">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class='btn btn-success btn-lg' type='submit'>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>`;
+        }
+
+
+        function diploma() {
+            document.getElementById('myModal-4').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <form action="" method='POST'>
+                <div class="modal-header ss text-center">
+                    <h2 class="modal-title text-center">Diploma details</h2>
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <label for="name" class="form-label">Diploma status</label>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ss_education_status" id="pursuing" value="pursuing" required>
+                            <label class="form-check-label" for="pursuing">Pursuing
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ss_education_status" id="completed" value="completed">
+                            <label class="form-check-label" for="completed">Completed</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-8 mt-4">
+                            <label for="college" class="form-label">College</label>
+                            <input type="text" required placeholder="e.g IGNOU" name='diploma_college' class=" form-control" id="college" required>
+
+                        </div>
+                        <div class="col-4 mt-4">
+                            <label for="year" class="form-label">Year of graduation</label>
+                            <select required class="form-control" name="diploma_year" id='year'>
+                                <?php
+                                for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
+                                    <option value="<?= $year; ?>"><?= $year; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12 mt-4">
+                            <label for="stream" class="form-label">Stream:</label>
+                            <input required type="text" class="form-control mt-2" id="stream" name="diploma_stream" placeholder="e.g Creative Writing">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 mt-4">
+                            <label for="percentage" class="form-label">Percentage</label>
+                            <input required type="text" class="form-control mt-2" id="percentage" name="diploma_percentage" placeholder="Enter your percentage">
                         </div>
                     </div>
 
