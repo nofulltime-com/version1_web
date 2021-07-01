@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="css/owl.carousel.css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" />
 	<link rel="stylesheet" href="css/style.css" />
-
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 	<link rel="stylesheet" href="../css/linearicons.css">
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/magnific-popup.css">
@@ -55,8 +55,13 @@
 								<li><a href="../single.html">single</a></li>
 							</ul>
 						</li>
-						<li><a class="ticker-btn" href="#">Signup</a></li>
-						<li><a class="ticker-btn" href="#">Login</a></li>
+						<li class="menu-has-children"><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white;'></i></a>
+							<ul>
+								<li><a href="../elements.html">Profile</a></li>
+								<li><a href="../search.html">Edit</a></li>
+								<li><a href="../single.html">Logout</a></li>
+							</ul>
+						</li>
 					</ul>
 				</nav><!-- #nav-menu-container -->
 			</div>
