@@ -4,14 +4,11 @@
 <head>
 	<title>Personal Info</title>
 	<meta charset="UTF-8">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
-
 	<!-- Stylesheets -->
 	<!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
-
 	<link rel="stylesheet" href="css/owl.carousel.css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" />
 	<link rel="stylesheet" href="css/style.css" />
@@ -24,8 +21,6 @@
 	<link rel="stylesheet" href="../css/owl.carousel.css">
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../seeker_details.css">
-
-
 </head>
 
 <body>
@@ -33,7 +28,6 @@
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-
 	<header id="header" id="home" style="background-color: black;">
 		<div class="container">
 			<div class="row align-items-center justify-content-between d-flex">
@@ -67,8 +61,6 @@
 			</div>
 		</div>
 	</header>
-
-
 	<!-- Hero section start -->
 	<section class="hero-section spad">
 		<div class="container-fluid">
@@ -110,7 +102,6 @@
 		</div>
 	</section>
 	<!-- Hero section end -->
-
 	<!-- Resume section start -->
 	<section class="resume-section with-bg spad">
 		<div class="container-fluid">
@@ -125,7 +116,6 @@
 							<h3>IIM Madras</h3>
 							<h4>Graduation Year:2023</h4>
 							<p>Graduation Status:Pursuing</p>
-
 						</li>
 						<li>
 							<h2>Bacherlor Of Technology</h2>
@@ -140,7 +130,6 @@
 		</div>
 	</section>
 	<!-- Resume section end -->
-
 	<section class="resume-section spad">
 		<div class="container-fluid">
 			<div class="row">
@@ -156,7 +145,6 @@
 							<p>Place Of Work - Work From Home</p>
 							<p>Time allocated : 13:00pm to 16:00pm</p>
 						</li>
-
 					</ul>
 				</div>
 			</div>
@@ -193,7 +181,6 @@
 	</section>
 	<!-- Contact section end -->
 	<!--====== Javascripts & Jquery ======-->
-
 	<script src="../js/vendor/jquery-2.2.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="../js/vendor/bootstrap.min.js"></script>
@@ -208,8 +195,6 @@
 	<script src="../js/parallax.min.js"></script>
 	<script src="../js/mail-script.js"></script>
 	<script src="../js/main.js"></script>
-
-
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
