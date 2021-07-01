@@ -7,7 +7,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $prefernces = $prefernces  . "," . $selected;
     }
     $prefernces = substr($prefernces, 1);
-
+    if (strpos($prefernces, 'parttime') !== false or strpos($prefernces, 'ngo') !== false) {
+        $cookie_name = 'flag';
+        setcookie($cookie_name, 1, time() + (86400 * 90), "/");
+        echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
+    } else {
+        $cookie_name = 'flag';
+        setcookie($cookie_name, 0, time() + (86400 * 90), "/");
+        echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
+    }
     if (isset($_POST['work_place'])) {
         $job_work_place = $_POST['work_place'];
     }
@@ -50,9 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['ngo_time_end'])) {
         $ngo_time_end = $_POST['ngo_time_end'];
     }
-    echo "<script>console.log('$job_work_place,$job_field,$job_position,$part_time_start,$part_time_end')</script>";
-    echo "<script>console.log('$course_place,$course_field,$course_name,$course_time_start,$course_time_end')</script>";
-    echo "<script>console.log('$ngo_field,$ngo_time_start,$ngo_time_end')</script>";
+    // echo "<script>console.log('$job_work_place,$job_field,$job_position,$part_time_start,$part_time_end')</script>";
+    // // echo "<script>console.log('$course_place,$course_field,$course_name,$course_time_start,$course_time_end')</script>";
+    // // echo "<script>console.log('$ngo_field,$ngo_time_start,$ngo_time_end')</script>";
     header("Location: ./seeker_details.php");
 }
 ?>
@@ -69,6 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			CSS
 			============================================= -->
     <link rel="stylesheet" href="css/linearicons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -76,50 +85,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./seeker_details.css">
+
 </head>
-<style>
-    * {
-        color: #2e2e2e;
-    }
-
-    .heading {
-        margin-top: 5%;
-    }
-
-    label {
-        font-size: 20px;
-        font-weight: 500;
-    }
-
-    small {
-        font-weight: 400;
-        font-size: medium;
-    }
-
-    .preferences {
-        padding: 15px 30px 15px 40px;
-        border: 1px solid #C0C0C0;
-        border-radius: 5px;
-    }
-
-    .additional {
-        display: none;
-        border: 1px solid #C0C0C0;
-        padding: 3%;
-        border-radius: 10px;
-    }
-
-    @media only screen and (max-width:768px) {
-        .heading {
-            margin-top: 25%;
-        }
-
-        label {
-            margin-left: 10px;
-            font-size: 17px
-        }
-    }
-</style>
 
 <body>
     <header id="header" id="home" style="background-color: black;">
@@ -160,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container form-container mt-2 mb-5">
         <fieldset style="border: 1px solid #C0C0C0;border-radius:8px;padding:4%">
             <form class="row g-3" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-                <div class="col-md-12">
+                <div class="col-md-12 options">
                     <label for="name" class="form-label">What are you looking for?</label>
                     <div class="col-md-12 mt-4">
                         <div class="form-check preferences">
@@ -192,14 +160,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="container additional mt-5" id='ngo-details' style="display:none">
                 </div>
+                <script>
+                    var inputs = document.querySelectorAll('[name="option[]"]')
+                    var radioForCheckboxes = document.getElementById('radio-for-checkboxes')
 
-                <div class="col-12 mt-5 text-center" id='save' style="display: none;">
+                    function checkCheckboxes() {
+                        var isAtLeastOneServiceSelected = false;
+                        for (var i = inputs.length - 1; i >= 0; --i) {
+                            if (inputs[i].checked) isAtLeastOneCheckboxSelected = true;
+                        }
+                        radioForCheckboxes.checked = isAtLeastOneCheckboxSelected
+                    }
+                    for (var i = inputs.length - 1; i >= 0; --i) {
+                        inputs[i].addEventListener('change', checkCheckboxes)
+                    }
+                </script>
+                <div class="col-12 mt-2 text-center" id='save'>
                     <button type="submit" name="preferences" class="btn btn-info btn-lg">Save & Next</button>
                 </div>
 
             </form>
         </fieldset>
     </div>
+
     <script>
         var v1 = document.getElementById('parttime');
         var v2 = document.getElementById('course');
@@ -221,22 +204,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-6 mt-4">
+                        <div class="col-md-6 mt-4">
                             <label for="field" class="form-label">Field:</label>
                             <input type="text" class="form-control mt-2" id="field" name="field" placeholder="e.g Software Development" required>
                         </div>
-                        <div class="col-6 mt-4">
+                        <div class="col-md-6 mt-4">
                             <label for=" position" class="form-label">Position:</label>
                             <input type="text" class="form-control mt-2" id="position" name="position" placeholder="e.g Full Stack Developer" required>
                         </div>
                     </div>
                     <div class="row mt-5">
                         <label for="part_time_start">Enter the time interval when you will be available for part-time:</label>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <small for="part_time_start">Start Time:</small>
                             <input type="time" class="form-control" id="part_time_start" name="part_time_start" required>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <small for="part_time_end">End Time:</small>
                             <input type="time" class="form-control" id="part_time_end" name="part_time_end" required>
                         </div>
@@ -259,11 +242,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-6 mt-4">
+                        <div class="col-md-6 mt-4">
                             <label for="course_field" class="form-label">Field:</label>
                             <input type="text" class="form-control mt-2" id="course_field" name="course_field" placeholder="e.g Web Development" required>
                         </div>
-                        <div class="col-6 mt-4">
+                        <div class="col-md-6 mt-4">
                             <label for=" position" class="form-label">Course Name:</label>
                             <input type="text" class="form-control mt-2" id="course" name="course_name" placeholder="e.g REACT JS" required>
                         </div>
@@ -272,11 +255,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="row mt-5">
                         <label for="course_time_start">Enter the time interval you want to use for the course:</label>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <small for="course_time_start">Start Time:</small>
                             <input type="time" class="form-control" id="course_time_start" name="course_time_start" required>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <small for="course_time_end">End Time:</small>
                             <input type="time" class="form-control" id="course_time_end" name="course_time_end" required>
                         </div>
@@ -296,11 +279,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="row mt-5">
                         <label for="part_time_start">Enter the time interval you can constribute for the NGO:</label>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <small for="part_time_start">Start Time:</small>
                             <input type="time" class="form-control" id="ngo_time_start" name="ngo_time_start" required>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <small for="part_time_end">End Time:</small>
                             <input type="time" class="form-control" id="ngo_time_end" name="ngo_time_end" required>
                         </div>
@@ -313,7 +296,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="js/vendor/jquery-2.2.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
     <script src="js/easing.min.js"></script>
     <script src="js/hoverIntent.js"></script>
     <script src="js/superfish.min.js"></script>

@@ -1,3 +1,60 @@
+<?php
+$cookie_name = 'flag';
+echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
+
+if (isset($_POST['pg_submit'])) {
+    $pg_education_status = $_POST['pg_education_status'];
+    $pg_college = $_POST['pg_college'];
+    $pg_year = $_POST['pg_year'];
+    $pg_degree = $_POST['pg_degree'];
+    $category = 'pg';
+    $pg_percentage = $_POST['pg_percentage'];
+    echo "<script>console.log('$pg_education_status,$pg_college,$pg_year,$pg_degree,$pg_percentage');</script>";
+}
+
+if (isset($_POST['grad_submit'])) {
+    $grad_education_status = $_POST['grad_education_status'];
+    $grad_college = $_POST['grad_college'];
+    $grad_year = $_POST['grad_year'];
+    $grad_degree = $_POST['grad_degree'];
+    $category = 'grad';
+    $grad_percentage = $_POST['grad_percentage'];
+    echo "<script>console.log('$grad_education_status,$grad_college,$grad_year,$grad_degree,$grad_percentage');</script>";
+}
+
+if (isset($_POST['ss_submit'])) {
+    $ss_education_status = $_POST['ss_education_status'];
+    $ss_college = $_POST['ss_college'];
+    $ss_year = $_POST['ss_year'];
+    $ss_degree = $_POST['ss_degree'];
+    $category = 'ss';
+    $ss_percentage = $_POST['ss_percentage'];
+    echo "<script>console.log('$ss_education_status,$ss_college,$ss_year,$ss_degree,$ss_percentage');</script>";
+}
+
+if (isset($_POST['diploma_submit'])) {
+    $diploma_education_status = $_POST['diploma_education_status'];
+    $diploma_college = $_POST['diploma_college'];
+    $diploma_year = $_POST['diploma_year'];
+    $diploma_stream = $_POST['diploma_stream'];
+    $category = 'diploma';
+    $diploma_percentage = $_POST['diploma_percentage'];
+    echo "<script>console.log('$diploma_education_status,$diploma_college,$diploma_year,$diploma_percentage');</script>";
+}
+
+if (isset($_POST['ssc_submit'])) {
+    $ssc_education_status = $_POST['ssc_education_status'];
+    $ssc_college = $_POST['ssc_college'];
+    $ssc_year = $_POST['ssc_year'];
+    $ssc_stream = $_POST['ssc_stream'];
+    $category = 'ssc';
+    $ssc_percentage = $_POST['ssc_percentage'];
+    echo "<script>console.log('$ssc_education_status,$ssc_college,$ssc_year,$ssc_stream,$ssc_percentage');</script>";
+}
+?>
+
+
+
 <html lang="en">
 
 <head>
@@ -17,50 +74,9 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./seeker_details.css">
 </head>
-<style>
-    * {
-        color: #2e2e2e;
-    }
 
-    .heading {
-        margin-top: 12%;
-    }
-
-    label {
-        font-size: 18px;
-        font-weight: 450;
-    }
-
-    small {
-        font-weight: 400;
-        font-size: medium;
-    }
-
-    .btn-link {
-        text-align: left;
-        font-size: 20px
-    }
-
-    .btn-link:hover {
-        text-decoration: none;
-        transform: scale(1.05);
-    }
-
-    .modal-title {
-        margin-left: 31%;
-    }
-
-    @media only screen and (max-width:768px) {
-        .heading {
-            margin-top: 25%;
-        }
-
-        .modal-title {
-            margin-left: 0%;
-        }
-    }
-</style>
 
 <body>
     <header id="header" id="home" style="background-color: black;">
@@ -122,7 +138,9 @@
                     <button type="button" class="btn btn-link mt-4" onclick='ssc()' data-toggle="modal" data-target="#myModal-5">
                         + Add secondary (X)
                     </button>
-
+                    <div class="col-12 mt-4 text-center" id='save'>
+                        <a href='./additional_details.php' class="btn btn-success btn-lg">Save & Next</a>
+                    </div>
                     <div class="modal fade" id="myModal-1"></div>
 
                     <div class="modal fade" id="myModal-2"></div>
@@ -160,12 +178,12 @@
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-8 mt-4">
+                        <div class="col-md-7 mt-4">
                             <label for="college" class="form-label">College</label>
                             <input type="text" required placeholder="e.g Hindu College" name='pg_college' class=" form-control" id="college" required>
 
                         </div>
-                        <div class="col-4 mt-4">
+                        <div class="col-md-5 mt-4">
                             <label for="year" class="form-label">Year of graduation</label>
                             <select required class="form-control" name="pg_year" id='year'>
                                 <?php
@@ -176,14 +194,11 @@
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-6 mt-4">
+                        <div class="col-md-12 mt-4">
                             <label for="pg_degree" class="form-label">Degree:</label>
                             <input required type="text" class="form-control mt-2" id="pg_degree" name="pg_degree" placeholder="e.g MBA">
                         </div>
-                        <div class="col-6 mt-4">
-                            <label for="stream" class="form-label">Stream:</label>
-                            <input required type="text" class="form-control mt-2" id="stream" name="pg_stream" placeholder="e.g Finance">
-                        </div>
+                       
                     </div>
                     <div class="row mt-3">
                         <div class="col-12 mt-4">
@@ -196,7 +211,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button class='btn btn-success btn-lg' type='submit'>Submit</button>
+                    <button class='btn btn-success btn-lg' type='submit' name='pg_submit'>Submit</button>
                 </div>
             </form>
         </div>
@@ -227,12 +242,12 @@
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-8 mt-4">
+                        <div class="col-md-7 mt-4">
                             <label for="college" class="form-label">College</label>
                             <input type="text" required placeholder="e.g Indian Institute of Technology Madras" name='grad_college' class=" form-control" id="college" required>
 
                         </div>
-                        <div class="col-4 mt-4">
+                        <div class="col-md-5 mt-4">
                             <label for="year" class="form-label">Year of graduation</label>
                             <select required class="form-control" name="grad_year" id='year'>
                                 <?php
@@ -243,14 +258,11 @@
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-6 mt-4">
+                        <div class="col-md-12 mt-4">
                             <label for="grad_degree" class="form-label">Degree:</label>
                             <input required type="text" class="form-control mt-2" id="grad_degree" name="grad_degree" placeholder="e.g B.Sc(Hons)">
                         </div>
-                        <div class="col-6 mt-4">
-                            <label for="stream" class="form-label">Stream:</label>
-                            <input required type="text" class="form-control mt-2" id="stream" name="grad_stream" placeholder="e.g Economics">
-                        </div>
+                        
                     </div>
                     <div class="row mt-3">
                         <div class="col-12 mt-4">
@@ -263,7 +275,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button class='btn btn-success btn-lg' type='submit'>Submit</button>
+                    <button class='btn btn-success btn-lg' type='submit' name='grad_submit'>Submit</button>
                 </div>
             </form>
         </div>
@@ -293,12 +305,12 @@
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-8 mt-4">
+                        <div class="col-md-7 mt-4">
                             <label for="college" class="form-label">College</label>
                             <input type="text" required placeholder="e.g Delhi Public School" name='ss_college' class=" form-control" id="college" required>
 
                         </div>
-                        <div class="col-4 mt-4">
+                        <div class="col-md-5 mt-4">
                             <label for="year" class="form-label">Year of graduation</label>
                             <select required class="form-control" name="ss_year" id='year'>
                                 <?php
@@ -309,13 +321,9 @@
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-6 mt-4">
-                            <label for="ss_degree" class="form-label">Board:</label>
-                            <input required type="text" class="form-control mt-2" id="ss_degree" name="ss_degree" placeholder="e.g C.B.S.E">
-                        </div>
-                        <div class="col-6 mt-4">
-                            <label for="stream" class="form-label">Stream:</label>
-                            <input required type="text" class="form-control mt-2" id="stream" name="ss_stream" placeholder="e.g Science">
+                        <div class="col-md-12 mt-4">
+                            <label for="ss_degree" class="form-label">Stream:</label>
+                            <input required type="text" class="form-control mt-2" id="ss_degree" name="ss_degree" placeholder="e.g Science">
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -329,7 +337,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button class='btn btn-success btn-lg' type='submit'>Submit</button>
+                    <button class='btn btn-success btn-lg' type='submit' name='ss_submit'>Submit</button>
                 </div>
             </form>
         </div>
@@ -350,22 +358,21 @@
                     <label for="name" class="form-label">Diploma status</label>
                     <div class="col-md-6">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ss_education_status" id="pursuing" value="pursuing" required>
+                            <input class="form-check-input" type="radio" name="diploma_education_status" id="pursuing" value="pursuing" required>
                             <label class="form-check-label" for="pursuing">Pursuing
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ss_education_status" id="completed" value="completed">
+                            <input class="form-check-input" type="radio" name="diploma_education_status" id="completed" value="completed">
                             <label class="form-check-label" for="completed">Completed</label>
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-8 mt-4">
+                        <div class="col-md-7 mt-4">
                             <label for="college" class="form-label">College</label>
                             <input type="text" required placeholder="e.g IGNOU" name='diploma_college' class=" form-control" id="college" required>
-
                         </div>
-                        <div class="col-4 mt-4">
+                        <div class="col-md-5 mt-4">
                             <label for="year" class="form-label">Year of graduation</label>
                             <select required class="form-control" name="diploma_year" id='year'>
                                 <?php
@@ -392,7 +399,71 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button class='btn btn-success btn-lg' type='submit'>Submit</button>
+                    <button class='btn btn-success btn-lg' type='submit' name='diploma_submit'>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>`;
+        }
+
+
+
+        function ssc() {
+            document.getElementById('myModal-5').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <form action="" method='POST'>
+                <div class="modal-header ss text-center">
+                    <h2 class="modal-title text-center">Secondary (X) details</h2>
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <label for="name" class="form-label">Matriculation status</label>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ssc_education_status" id="pursuing" value="pursuing" required>
+                            <label class="form-check-label" for="pursuing">Pursuing
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ssc_education_status" id="completed" value="completed">
+                            <label class="form-check-label" for="completed">Completed</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-7 mt-4">
+                            <label for="college" class="form-label">School</label>
+                            <input type="text" required placeholder="e.g St Ann's School" name='ssc_college' class=" form-control" id="college" required>
+
+                        </div>
+                        <div class="col-md-5 mt-4">
+                            <label for="year" class="form-label">Year of graduation</label>
+                            <select required class="form-control" name="ssc_year" id='year'>
+                                <?php
+                                for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
+                                    <option value="<?= $year; ?>"><?= $year; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12 mt-4">
+                            <label for="stream" class="form-label">Board:</label>
+                            <input required type="text" class="form-control mt-2" id="stream" name="ssc_stream" placeholder="e.g I.C.S.E">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 mt-4">
+                            <label for="percentage" class="form-label">Percentage</label>
+                            <input required type="text" class="form-control mt-2" id="percentage" name="ssc_percentage" placeholder="Enter your percentage">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class='btn btn-success btn-lg' type='submit' name='ssc_submit'>Submit</button>
                 </div>
             </form>
         </div>
