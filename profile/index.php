@@ -4,21 +4,15 @@
 <head>
 	<title>Personal Info</title>
 	<meta charset="UTF-8">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
-
 	<!-- Stylesheets -->
 	<!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/owl.carousel.css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" />
 	<link rel="stylesheet" href="css/style.css" />
-	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>s
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 	<link rel="stylesheet" href="../css/linearicons.css">
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/magnific-popup.css">
@@ -27,7 +21,6 @@
 	<link rel="stylesheet" href="../css/owl.carousel.css">
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../seeker_details.css">
-
 </head>
 
 <body>
@@ -35,7 +28,6 @@
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-
 	<header id="header" id="home" style="background-color: black;">
 		<div class="container">
 			<div class="row align-items-center justify-content-between d-flex">
@@ -57,22 +49,18 @@
 								<li><a href="../single.html">single</a></li>
 							</ul>
 						</li>
-						<li class="menu-has-children"><a href=""><i class='fas fa-user-circle' style='color:white;font-size:36px'></i></a>
+						<li class="menu-has-children"><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white;'></i></a>
 							<ul>
-								<li><a href="./index.php">Profile</a></li>
-								<li><a href="../seeker_preferences.php">Edit</a></li>
-								<li><a href="#">Logout</a></li>
-
+								<li><a href="../elements.html">Profile</a></li>
+								<li><a href="../search.html">Edit</a></li>
+								<li><a href="../single.html">Logout</a></li>
 							</ul>
 						</li>
-
 					</ul>
 				</nav><!-- #nav-menu-container -->
 			</div>
 		</div>
 	</header>
-
-
 	<!-- Hero section start -->
 	<section class="hero-section spad">
 		<div class="container-fluid">
@@ -96,9 +84,9 @@
 									<li><span>E-mail</span>mariawilliams@company.com</li>
 									<li><span>Phone </span>+43 5266 22 345</li>
 								</ul>
-								<div class="col-md-8 mt-5 text-md-right header-buttons text-center">
+								<div class="col-md-8 mt-5 text-md-right header-buttons">
 									<a href="#" class="site-btn">Download Resume</a>
-									<a href="#" class="site-btn">Contact Me</a>
+									<a href="#contact" class="site-btn">Contact Me</a>
 								</div>
 							</div>
 						</div>
@@ -106,7 +94,6 @@
 							<figure class="hero-image">
 								<img src="img/hero-f.jpg" alt="5">
 							</figure>
-
 							<button class='btn btn-dark mt-2'>Upload/Edit</button>
 						</div>
 					</div>
@@ -115,7 +102,6 @@
 		</div>
 	</section>
 	<!-- Hero section end -->
-
 	<!-- Resume section start -->
 	<section class="resume-section with-bg spad">
 		<div class="container-fluid">
@@ -130,7 +116,6 @@
 							<h3>IIM Madras</h3>
 							<h4>Graduation Year:2023</h4>
 							<p>Graduation Status:Pursuing</p>
-
 						</li>
 						<li>
 							<h2>Bacherlor Of Technology</h2>
@@ -145,7 +130,6 @@
 		</div>
 	</section>
 	<!-- Resume section end -->
-
 	<section class="resume-section spad">
 		<div class="container-fluid">
 			<div class="row">
@@ -161,14 +145,13 @@
 							<p>Place Of Work - Work From Home</p>
 							<p>Time allocated : 13:00pm to 16:00pm</p>
 						</li>
-
 					</ul>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Contact section start -->
-	<section class="contact-section spad">
+	<section class="contact-section spad" id='contact'>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xl-8 offset-xl-2">
@@ -212,7 +195,7 @@
 	<script src="../js/parallax.min.js"></script>
 	<script src="../js/mail-script.js"></script>
 	<script src="../js/main.js"></script>
-
+	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/magnific-popup.min.js"></script>
