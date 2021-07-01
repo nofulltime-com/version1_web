@@ -13,8 +13,8 @@
     }
 
     label {
-        font-size: 24px;
-        font-weight: 800;
+        font-size: 20px;
+        font-weight: 600;
     }
     .display-3
     {
@@ -37,7 +37,7 @@
     }
     .btn 
     {
-        font-weight: 800;
+        font-weight: 600;
     }
 
     .modal-title {
