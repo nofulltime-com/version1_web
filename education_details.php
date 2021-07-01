@@ -109,7 +109,7 @@ if (isset($_POST['ssc_submit'])) {
     </header>
 
     <div class="container heading">
-        <h1 class="text-center display-4">Education</h1>
+        <h1 class="text-center display-3">Education</h1>
         <h5 class='text-center'>Add your education details</h5>
     </div>
 
@@ -203,7 +203,7 @@ if (isset($_POST['ssc_submit'])) {
                     <div class="row mt-3">
                         <div class="col-12 mt-4">
                             <label for="percentage" class="form-label">Percentage</label>
-                            <input required type="text" class="form-control mt-2" id="percentage" name="pg_percentage" placeholder="Enter your percentage">
+                            <input type="text" class="form-control mt-2" id="percentage" name="pg_percentage" placeholder="Enter your percentage">
                         </div>
                     </div>
 
@@ -267,7 +267,7 @@ if (isset($_POST['ssc_submit'])) {
                     <div class="row mt-3">
                         <div class="col-12 mt-4">
                             <label for="percentage" class="form-label">Percentage</label>
-                            <input required type="text" class="form-control mt-2" id="percentage" name="grad_percentage" placeholder="Enter your percentage">
+                            <input type="text" class="form-control mt-2" id="percentage" name="grad_percentage" placeholder="Enter your percentage">
                         </div>
                     </div>
 
@@ -329,7 +329,7 @@ if (isset($_POST['ssc_submit'])) {
                     <div class="row mt-3">
                         <div class="col-12 mt-4">
                             <label for="percentage" class="form-label">Percentage</label>
-                            <input required type="text" class="form-control mt-2" id="percentage" name="ss_percentage" placeholder="Enter your percentage">
+                            <input type="text" class="form-control mt-2" id="percentage" name="ss_percentage" placeholder="Enter your percentage">
                         </div>
                     </div>
 
@@ -391,7 +391,7 @@ if (isset($_POST['ssc_submit'])) {
                     <div class="row mt-3">
                         <div class="col-12 mt-4">
                             <label for="percentage" class="form-label">Percentage</label>
-                            <input required type="text" class="form-control mt-2" id="percentage" name="diploma_percentage" placeholder="Enter your percentage">
+                            <input type="text" class="form-control mt-2" id="percentage" name="diploma_percentage" placeholder="Enter your percentage">
                         </div>
                     </div>
 
@@ -455,7 +455,7 @@ if (isset($_POST['ssc_submit'])) {
                     <div class="row mt-3">
                         <div class="col-12 mt-4">
                             <label for="percentage" class="form-label">Percentage</label>
-                            <input required type="text" class="form-control mt-2" id="percentage" name="ssc_percentage" placeholder="Enter your percentage">
+                            <input type="text" class="form-control mt-2" id="percentage" name="ssc_percentage" placeholder="Enter your percentage">
                         </div>
                     </div>
 

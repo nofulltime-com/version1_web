@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <div class="container heading">
-        <h1 class="text-center display-4">Preferences</h1>
+        <h1 class="text-center display-3">Preferences</h1>
     </div>
 
 

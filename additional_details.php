@@ -52,9 +52,12 @@
     </header>
 
     <div class="container heading">
-        <h1 class="text-center display-4">Your just one step away!!</h1>
+        <h1 class="text-center display-3">Your just one step away!!</h1>
         <h3 class='text-center'>Provide your resume and stand out from the crowd</h3>
     </div>
+
+    https://themewagon.com/themes/free-bootstrap-resume-template-multiple-versions/
+
 </body>
 
 </html>
