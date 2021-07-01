@@ -66,10 +66,9 @@
                 <div class="form-group ">
                     <label for="resume">Upload your resume</label>
                     <input type="file" name="fileToUpload" id="fileToUpload" accept="application/pdf">
-                    <input type="submit" value="Upload Image" name="submit">
                 </div>
                 <div class="col-12 mt-4 text-center">
-                    <!-- <button id="send" type="submit" name="submit" class="btn btn-success">Submit</button> -->
+                    <input type="submit" value="Submit" class="btn btn-lg mt-2 btn-success" name="submit">
                     <a href="./education_details.php" class='btn btn-lg btn-outline-danger ml-4 mt-2'>Previous</a>
                 </div>
             </form>
