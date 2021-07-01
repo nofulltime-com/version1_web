@@ -1,4 +1,6 @@
 <?php
+$cookie_name = 'flag';
+echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
 
 include './connect.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,7 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pincode = $_POST['pincode'];
 
     echo "<script>alert('$name,$age,$gender,$status,$city,$state,$country,$pincode');</script>";
-    header("Location: ./education_details.php");
+    if ($_COOKIE[$cookie_name] == 1)
+        header("Location: ./education_details.php");
+    else
+        header("Location: ./index.html");
 }
 ?>
 
@@ -35,32 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./seeker_details.css">
+
 </head>
-<style>
-    * {
-        color: #2e2e2e;
-    }
 
-    .heading {
-        margin-top: 7%;
-    }
-
-    label {
-        font-size: 18px;
-        font-weight: 500;
-    }
-
-    small {
-        font-weight: 400;
-        font-size: medium;
-    }
-
-    @media only screen and (max-width:768px) {
-        .heading {
-            margin-top: 25%;
-        }
-    }
-</style>
 
 <body>
     <header id="header" id="home" style="background-color: black;">
@@ -127,27 +110,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <option value="single_woman" <?php $status == 'single_woman' ? ' selected="selected"' : ''; ?>>Single Woman</option>
                     </select>
                 </div>
-                <div class="col-4 mt-4">
+                <div class="col-md-4 mt-4">
                     <label for="city" class="form-label">City/Town</label>
                     <input type="text" class="form-control mt-2" id="city" name="city" placeholder="e.g Chennai" required>
                 </div>
-                <div class="col-4 mt-4">
+                <div class="col-md-4 mt-4">
                     <label for="state" class="form-label">State</label>
                     <input type="text" class="form-control mt-2" id="State" name="state" placeholder="e.g Tamil Nadu" required>
                 </div>
-                <div class="col-4 mt-4">
+                <div class="col-md-4 mt-4">
                     <label for="country" class="form-label">Country</label>
                     <input type="text" class="form-control mt-2" name="country" id="country" placeholder="e.g India" required>
                 </div>
 
                 <div class="col-md-12 mt-4">
                     <label for="pincode" class="form-label">PIN code</label>
-                    <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Enter your PIN code" required>
+                    <input type="number" class="form-control" name="pincode" id="pincode" placeholder="Enter your PIN code" required>
                 </div>
 
                 <div class="col-12 mt-5 text-center">
-                    <a href="./seeker_preferences.php" class='btn btn-lg btn-outline-danger ml-4'>Previous</a>
-                    <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg">Save & Next</button>
+                    <?php
+                    $cookie_name = 'flag';
+                    if ($_COOKIE[$cookie_name] == 1) {
+                    ?>
+                        <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Save & Next</button>
+                    <?php
+                    } else {
+                    ?>
+                        <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Submit</button>
+                    <?php
+                    }
+                    ?>
+                    <a href="./seeker_preferences.php" class='btn btn-lg btn-outline-danger ml-4 mt-2'>Previous</a>
                 </div>
             </form>
         </fieldset>

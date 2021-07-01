@@ -1,0 +1,48 @@
+ * {
+        color: #2e2e2e;
+    }
+
+    .heading {
+        margin-top: 12%;
+    }
+
+    label {
+        font-size: 20px;
+        font-weight: 450;
+    }
+
+    small {
+        font-weight: 400;
+        font-size: medium;
+    }
+
+    .btn-link {
+        text-align: left;
+        font-size: 20px
+    }
+
+    .btn-link:hover {
+        text-decoration: none;
+        transform: scale(1.05);
+    }
+
+    .modal-title {
+        margin-left: 31%;
+    }
+
+    .additional
+    {
+        border:1px solid #DDD;
+        border-radius: 8px;
+        padding: 3%;
+        display:none;
+    }
+    @media only screen and (max-width:768px) {
+        .heading {
+            margin-top: 25%;
+        }
+
+        .modal-title {
+            margin-left: 0%;
+        }
+    }
