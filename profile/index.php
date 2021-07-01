@@ -94,7 +94,7 @@
 								</ul>
 								<div class="col-md-8 mt-5 text-md-right header-buttons">
 									<a href="#" class="site-btn">Download Resume</a>
-									<a href="#" class="site-btn">Contact Me</a>
+									<a href="#contact" class="site-btn">Contact Me</a>
 								</div>
 							</div>
 						</div>
@@ -163,7 +163,7 @@
 		</div>
 	</section>
 	<!-- Contact section start -->
-	<section class="contact-section spad">
+	<section class="contact-section spad" id='contact'>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xl-8 offset-xl-2">
