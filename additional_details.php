@@ -33,18 +33,21 @@
                         <li class="menu-active"><a href="index.html">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="category.html">Category</a></li>
-                        <li><a href="price.html">Price</a></li>
+                        <li><a href="recruiters.html">Recruiters</a></li>
                         <li><a href="blog-home.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li class="menu-has-children"><a href="">Pages</a>
+                        <li class="menu-has-children"><a href="">Signup</a>
                             <ul>
-                                <li><a href="elements.html">elements</a></li>
-                                <li><a href="search.html">search</a></li>
-                                <li><a href="single.html">single</a></li>
+                                <li><a href="./Register/studentRegister.html">As a Student</a></li>
+                                <li><a href="./Register/recruiterRegister.html">As a recruiter</a></li>
                             </ul>
                         </li>
-                        <li><a class="ticker-btn" href="#">Signup</a></li>
-                        <li><a class="ticker-btn" href="#">Login</a></li>
+                        <li class="menu-has-children"><a href="">Login</a>
+                            <ul>
+                                <li><a href="../search.html">As a Student</a></li>
+                                <li><a href="../single.html">As a recruiter</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>
@@ -68,7 +71,7 @@
                     <input type="file" name="fileToUpload" class='form-control' style='border:none' id="fileToUpload" accept="application/pdf">
                 </div>
                 <div class="col-12 mt-4 text-center">
-                    <input type="submit" value="Submit" class="btn btn-lg mt-2 btn-success" name="submit">
+                    <input type="submit" value="Submit" class="btn btn-lg mt-2 btn-success " name="submit">
                     <a href="./education_details.php" class='btn btn-lg btn-outline-danger ml-4 mt-2'>Previous</a>
                 </div>
             </form>

@@ -90,18 +90,22 @@ if (isset($_POST['ssc_submit'])) {
                         <li class="menu-active"><a href="index.html">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="category.html">Category</a></li>
-                        <li><a href="price.html">Price</a></li>
+                        <li><a href="recruiters.html">recruiters</a></li>
                         <li><a href="blog-home.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li class="menu-has-children"><a href="">Pages</a>
+
+                        <li class="menu-has-children"><a href="">Signup</a>
                             <ul>
-                                <li><a href="elements.html">elements</a></li>
-                                <li><a href="search.html">search</a></li>
-                                <li><a href="single.html">single</a></li>
+                                <li><a href="./Register/studentRegister.html">As a Student</a></li>
+                                <li><a href="./Register/recruiterRegister.html">As a recruiter</a></li>
                             </ul>
                         </li>
-                        <li><a class="ticker-btn" href="#">Signup</a></li>
-                        <li><a class="ticker-btn" href="#">Login</a></li>
+                        <li class="menu-has-children"><a href="">Login</a>
+                            <ul>
+                                <li><a href="../search.html">As a Student</a></li>
+                                <li><a href="../single.html">As a recruiter</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>
