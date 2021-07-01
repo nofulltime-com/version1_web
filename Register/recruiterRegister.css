@@ -1,0 +1,276 @@
+#internship_form, .registration_form {
+    padding: 0;
+    overflow: hidden;
+}
+
+#job_form, .registration_form {
+    padding: 0;
+    overflow: hidden;
+}
+body {
+    font-family: 'Inter var',sans-serif;
+}
+#internship_form #content-inner, .registration_form #content-inner {
+    border-bottom: 1px solid #EEE;
+    width: 100%;
+}
+.container-fluid {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.max-width-container {
+    max-width: 1224px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#internship_form #content-inner .max-width-container #registration-container, .registration_form #content-inner .max-width-container #registration-container {
+    margin-left: 0;
+    display: flex;
+}
+#internship_form #content-inner .max-width-container #registration-container #registration-container-left, .registration_form #content-inner .max-width-container #registration-container #registration-container-left {
+    display: inline-block;
+    flex-grow: 1;
+}
+
+#internship_form #content-inner .max-width-container #registration-container #registration-container-left {
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100%;
+    background-image: url(desktop.png);
+}
+#job_form #content-inner .max-width-container #registration-container #registration-container-left #job-registration-container-left, .registration_form #content-inner .max-width-container #registration-container #registration-container-left #job-registration-container-left {
+    display: flex;
+    vertical-align: top;
+    height: 100%;
+}
+#job_form #content-inner .max-width-container #registration-container #registration-container-left #job-registration-container-left .registration-content .registration-content-header, .registration_form #content-inner .max-width-container #registration-container #registration-container-left #job-registration-container-left .registration-content .registration-content-header {
+    margin-top: 48px;
+    color: #333;
+}
+
+.heading_0_3 {
+    font-size: 44px;
+    line-height: 1.18181818;
+    font-weight: 700;
+}
+#internship_form #content-inner .max-width-container #registration-container #registration-container-left #internship-registration-container-left .registration-content, .registration_form #content-inner .max-width-container #registration-container #registration-container-left #internship-registration-container-left .registration-content {
+    width: 100%;
+}
+#internship_form #content-inner .max-width-container #registration-container #registration-container-left #internship-registration-container-left .registration-content .registration-content-header, .registration_form #content-inner .max-width-container #registration-container #registration-container-left #internship-registration-container-left .registration-content .registration-content-header {
+    margin-bottom: 0;
+    margin-top: 48px;
+    color: #333;
+    font-family: Inter,sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.181818;
+}
+#internship_form #content-inner .max-width-container #registration-container #registration-container-left #internship-registration-container-left .registration-content .features_container_1, .registration_form #content-inner .max-width-container #registration-container #registration-container-left #internship-registration-container-left .registration-content .features_container_1 {
+    font-family: Inter,sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: 8px;
+    line-height: 1.333;
+    color: #333;
+}
+#internship_form #content-inner .max-width-container #registration-container #registration-container-left #internship-registration-container-left .registration-content .features_container_2, .registration_form #content-inner .max-width-container #registration-container #registration-container-left #internship-registration-container-left .registration-content .features_container_2 {
+    font-size: 18px;
+    margin-top: 12px;
+    line-height: 1.22222;
+    color: #333;
+}
+#internship_form #content-inner .max-width-container #registration-container #registration-container-right, .registration_form #content-inner .max-width-container #registration-container #registration-container-right {
+    display: inline-block;
+    width: 375px;
+}
+
+#job_form #content-inner .max-width-container #registration-container #registration-container-right, .registration_form #content-inner .max-width-container #registration-container #registration-container-right {
+    display: inline-block;
+    width: 375px;
+    margin-bottom: 55px;
+}
+#internship_form #content-inner .max-width-container #registration-container #registration-container-right #form-container, .registration_form #content-inner .max-width-container #registration-container #registration-container-right #form-container {
+    margin-left: 15px;
+    padding: 30px 0;
+    width: 360px;
+}
+#internship_form #content-inner .max-width-container #registration-container #registration-container-right #form-container form, .registration_form #content-inner .max-width-container #registration-container #registration-container-right #form-container form {
+    border: 0;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 24px;
+    margin-top: 10px;
+    box-shadow: 0 8px 16px rgb(0 0 0 / 8%);
+}
+.nofulltime-form {
+    position: relative;
+    z-index: 0;
+    margin: 32px auto;
+    border: 1px solid #DDD;
+    border-radius: 6px;
+    padding: 24px;
+    background: #fff;
+}
+.form-group {
+    clear: both;
+    margin-bottom: 16px;
+}
+label {
+    font-family: Inter,sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+input[type=text], input[type=password], input[type=email] {
+
+    appearance: none;
+}
+.form-control {
+    box-shadow: none;
+    padding: 11px;
+    background: #fff;
+    color: #484848;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 1.14285714;
+    font-family: Inter,sans-serif;
+}
+input {
+    border-radius: 3px!important;
+}
+
+button, input {
+    overflow: visible;
+}
+.row {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.nofulltime-form .row .col:first-of-type {
+    padding-left: 15px;
+    padding-right: 3px;
+}
+.nofulltime-form .row .col:last-of-type {
+    padding-left: 3px;
+    padding-right: 15px;
+}
+.nofulltime-form .label_toc {
+    font-size: 12px;
+}
+a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #008BDC;
+    cursor: pointer;
+    line-height: 1.14285714;
+}
+#job_form #content-inner .max-width-container #registration-container #registration-container-right #form-container form #job_employer_registration_button, .registration_form #content-inner .max-width-container #registration-container #registration-container-right #form-container form #job_employer_registration_button {
+    text-align: center;
+    margin: 12px 0 16px;
+}
+#job_form #content-inner .max-width-container #registration-container #registration-container-right #form-container form #job_employer_registration_button button, .registration_form #content-inner .max-width-container #registration-container #registration-container-right #form-container form #job_employer_registration_button button {
+    width: 100%;
+    padding: 12px 16px;
+}
+.btn.btn-primary {
+    background: #00A5EC;
+    border-radius: 3px;
+    border: 1px solid #00A5EC;
+}
+.btn {
+    padding: 7px 15px;
+    font-weight: 600;
+    min-width: 80px;
+    line-height: 1.14285714;
+    font-size: 14px;
+}
+#job_registration_form_extras .label_toc_2 {
+    text-align: center;
+}
+#job_registration_form_extras .label_toc_2 .register_link:hover{
+    text-decoration: none;
+}
+
+@media (max-width: 768px){
+#internship_form #content-inner .max-width-container #registration-container #registration-container-left, .registration_form #content-inner .max-width-container #registration-container #registration-container-left {
+    display: block;
+    width: 100%;
+    min-height: 456px;
+}
+}
+@media (max-width: 768px){
+#internship_form #content-inner .max-width-container #registration-container #registration-container-left {
+    background-position: center bottom;
+    background-image: url(tab_768.png);
+}
+}
+
+@media (max-width: 992px){
+#internship_form #content-inner .max-width-container #registration-container #registration-container-left {
+    background-image: url(tab_992.png);
+}
+}
+@media (max-width: 768px){
+#internship_form #content-inner .max-width-container #registration-container #registration-container-right, .registration_form #content-inner .max-width-container #registration-container #registration-container-right {
+    margin-top: -72px;
+    display: block;
+    width: 100%;
+}
+}
+
+#internship_form #content-inner .max-width-container #registration-container #registration-container-right, .registration_form #content-inner .max-width-container #registration-container #registration-container-right {
+    display: inline-block;
+    width: 375px;
+}
+@media (max-width: 1024px){
+.registration_form #content-inner .max-width-container #registration-container #registration-container-right {
+    width: 45vw;
+}
+}
+@media (max-width: 991px){
+#job_form #content-inner .max-width-container #registration-container #registration-container-right, .registration_form #content-inner .max-width-container #registration-container #registration-container-right {
+    margin-bottom: 48px;
+}
+}
+@media (max-width: 1255px){
+#job_form #content-inner .max-width-container #registration-container #registration-container-right, .registration_form #content-inner .max-width-container #registration-container #registration-container-right {
+    margin-bottom: 150px;
+}
+}
+@media (max-width: 768px){
+#internship_form #content-inner .max-width-container, .registration_form #content-inner .max-width-container {
+    padding: 0 0;
+}
+}
+
+@media (max-width: 991px){
+#job_form #content-inner .max-width-container, .registration_form #content-inner .max-width-container {
+    max-width: 900px;
+}
+}
+@media (max-width: 1255px){
+#job_form #content-inner .max-width-container, .registration_form #content-inner .max-width-container {
+    max-width: 960px;
+}
+}
+@media (max-width: 768px){
+#internship_form #content-inner .max-width-container #registration-container, .registration_form #content-inner .max-width-container #registration-container {
+    flex-direction: column;
+}
+}
+
