@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <div class="container heading">
-        <h1 class="text-center display-4">Personal Details</h1>
+        <h1 class="text-center display-3">Personal Details</h1>
     </div>
 
     <div class="container form-container mt-2">

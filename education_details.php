@@ -109,7 +109,7 @@ if (isset($_POST['ssc_submit'])) {
     </header>
 
     <div class="container heading">
-        <h1 class="text-center display-4">Education</h1>
+        <h1 class="text-center display-3">Education</h1>
         <h5 class='text-center'>Add your education details</h5>
     </div>
 
