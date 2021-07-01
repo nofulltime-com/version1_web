@@ -10,8 +10,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+
 	<link rel="stylesheet" href="css/owl.carousel.css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" />
 	<link rel="stylesheet" href="css/style.css" />
@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="../css/animate.min.css">
 	<link rel="stylesheet" href="../css/owl.carousel.css">
 	<link rel="stylesheet" href="../css/main.css">
-	<link rel="stylesheet" href="./seeker_details.css">
+	<link rel="stylesheet" href="../seeker_details.css">
 
 
 </head>
@@ -165,7 +165,7 @@
 					<div class="section-title">
 						<h2>Contact Me</h2>
 					</div>
-					<form class="contact-form">
+					<form class="contact-form" method='POST'>
 						<div class="row">
 							<div class="col-md-6">
 								<input type="text" placeholder="Name">
@@ -179,7 +179,7 @@
 							</div>
 						</div>
 						<div class="text-md-right">
-							<button class="site-btn">Send message</button>
+							<button class="site-btn" type='submit'>Send message</button>
 						</div>
 					</form>
 				</div>
@@ -190,12 +190,8 @@
 	<!--====== Javascripts & Jquery ======-->
 
 	<script src="../js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-	<script type="text/javascript"
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="../js/vendor/bootstrap.min.js"></script>
 	<script src="../js/easing.min.js"></script>
 	<script src="../js/hoverIntent.js"></script>
 	<script src="../js/superfish.min.js"></script>
