@@ -2031,7 +2031,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   display: inline-block;
   color: #fff;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
   outline: none;
@@ -2160,7 +2160,10 @@ h1, h2, h3, h4, h5, h6 {
 #mobile-nav ul .menu-has-children li a {
   text-transform: capitalize;
 }
-
+.menu-has-children
+{
+  background-color:white; 
+}
 #mobile-nav ul .menu-item-active {
   color: #49e4fa;
 }
@@ -2716,7 +2719,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .post-list .loadmore-btn {
   text-align: center;
-  background-color: #49e4fa;
+  background-color: #8c78f1;
   color: #fff;
   padding: 8px 15px;
   margin-top: 60px;
@@ -2857,8 +2860,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 10px;
   text-transform: capitalize;
   border-radius: 0;
-  background-color: #49e4fa;
-  color: #fff;
+  background-color: #fff;
+  color: #795fff;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
