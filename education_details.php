@@ -1,7 +1,8 @@
 <?php
 $cookie_name = 'flag';
 echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
-
+include './connect.php';
+$id = 7;
 if (isset($_POST['pg_submit'])) {
     $pg_education_status = $_POST['pg_education_status'];
     $pg_college = $_POST['pg_college'];
@@ -9,7 +10,10 @@ if (isset($_POST['pg_submit'])) {
     $pg_degree = $_POST['pg_degree'];
     $category = 'pg';
     $pg_percentage = $_POST['pg_percentage'];
-    echo "<script>console.log('$pg_education_status,$pg_college,$pg_year,$pg_degree,$pg_percentage');</script>";
+    $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$pg_degree', '$pg_education_status', '$pg_college', '$pg_year', '$pg_percentage');";
+    // if ($conn->query($query1) == TRUE) {
+    //     echo '<script>alert("PG")</script>';
+    // }
 }
 
 if (isset($_POST['grad_submit'])) {
@@ -19,7 +23,10 @@ if (isset($_POST['grad_submit'])) {
     $grad_degree = $_POST['grad_degree'];
     $category = 'grad';
     $grad_percentage = $_POST['grad_percentage'];
-    echo "<script>console.log('$grad_education_status,$grad_college,$grad_year,$grad_degree,$grad_percentage');</script>";
+    $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$grad_degree', '$grad_education_status', '$grad_college', '$grad_year', '$grad_percentage');";
+    // if ($conn->query($query1) == TRUE) {
+    //     echo '<script>alert("PG")</script>';
+    // }
 }
 
 if (isset($_POST['ss_submit'])) {
@@ -29,7 +36,10 @@ if (isset($_POST['ss_submit'])) {
     $ss_degree = $_POST['ss_degree'];
     $category = 'ss';
     $ss_percentage = $_POST['ss_percentage'];
-    echo "<script>console.log('$ss_education_status,$ss_college,$ss_year,$ss_degree,$ss_percentage');</script>";
+    $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$ss_degree', '$ss_education_status', '$ss_college', '$ss_year', '$ss_percentage');";
+    // if ($conn->query($query1) == TRUE) {
+    //     echo '<script>alert("SS")</script>';
+    // }
 }
 
 if (isset($_POST['diploma_submit'])) {
@@ -39,7 +49,10 @@ if (isset($_POST['diploma_submit'])) {
     $diploma_stream = $_POST['diploma_stream'];
     $category = 'diploma';
     $diploma_percentage = $_POST['diploma_percentage'];
-    echo "<script>console.log('$diploma_education_status,$diploma_college,$diploma_year,$diploma_percentage');</script>";
+    $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$diploma_stream', '$diploma_education_status', '$diploma_college', '$diploma_year', '$diploma_percentage');";
+    // if ($conn->query($query1) == TRUE) {
+    //     echo '<script>alert("Dip")</script>';
+    // }
 }
 
 if (isset($_POST['ssc_submit'])) {
@@ -49,7 +62,10 @@ if (isset($_POST['ssc_submit'])) {
     $ssc_stream = $_POST['ssc_stream'];
     $category = 'ssc';
     $ssc_percentage = $_POST['ssc_percentage'];
-    echo "<script>console.log('$ssc_education_status,$ssc_college,$ssc_year,$ssc_stream,$ssc_percentage');</script>";
+    $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$ssc_stream', '$ssc_education_status', '$ssc_college', '$ssc_year', '$ssc_percentage');";
+    if ($conn->query($query1) == TRUE) {
+        echo '<script>alert("SSC")</script>';
+    }
 }
 ?>
 
@@ -77,6 +93,11 @@ if (isset($_POST['ssc_submit'])) {
     <link rel="stylesheet" href="./seeker_details.css">
 </head>
 
+<style>
+    h4 {
+        color: grey;
+    }
+</style>
 
 <body>
     <header id="header" id="home" style="background-color: black;">
@@ -126,22 +147,95 @@ if (isset($_POST['ssc_submit'])) {
                     <button type="button" class="btn btn-link" onclick='pg()' data-toggle="modal" data-target="#myModal-1">
                         + Add post graduation
                     </button>
-                    <br>
-                    <button type="button" class="btn btn-link mt-4" onclick='grad()' data-toggle="modal" data-target="#myModal-2">
+                    <div class='row'>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <?php
+                            $q = "SELECT * FROM `education_details` WHERE id='$id' AND category='pg' ORDER_BY year";
+                            $result = $conn->query($q);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<h4> College-" . strtoupper($row['college']) . "</h4>";
+                                    echo "<h4> Degree-" . strtoupper($row['stream']) . "</h4>";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-link mt-3" onclick='grad()' data-toggle="modal" data-target="#myModal-2">
                         + Add Graduation
                     </button>
-                    <br>
-                    <button type="button" class="btn btn-link mt-4" onclick='ss()' data-toggle="modal" data-target="#myModal-3">
+                    <div class='row'>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <?php
+                            $q = "SELECT * FROM `education_details` WHERE id='$id' AND category='grad'";
+                            $result = $conn->query($q);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<h4> College-" . strtoupper($row['college']) . "</h4>";
+                                    echo "<h4> Degree-" . strtoupper($row['stream']) . "</h4>";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
+
+
+                    <button type="button" class="btn btn-link mt-3" onclick='ss()' data-toggle="modal" data-target="#myModal-3">
                         + Add senior secondary (XII)
                     </button>
-                    <br>
+                    <div class='row'>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <?php
+                            $q = "SELECT * FROM `education_details` WHERE id='$id' AND category='ss'";
+                            $result = $conn->query($q);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<h4> College-" . strtoupper($row['college']) . "</h4>";
+                                    echo "<h4> Stream-" . strtoupper($row['stream']) . "</h4>";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
                     <button type="button" class="btn btn-link mt-4" onclick='diploma()' data-toggle="modal" data-target="#myModal-4">
                         + Add diploma
                     </button>
-                    <br>
+                    <div class='row'>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <?php
+                            $q = "SELECT * FROM `education_details` WHERE id='$id' AND category='diploma'";
+                            $result = $conn->query($q);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<h4> College-" . strtoupper($row['college']) . "</h4>";
+                                    echo "<h4> Stream-" . strtoupper($row['stream']) . "</h4>";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
                     <button type="button" class="btn btn-link mt-4" onclick='ssc()' data-toggle="modal" data-target="#myModal-5">
                         + Add secondary (X)
                     </button>
+                    <div class='row'>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <?php
+                            $q = "SELECT * FROM `education_details` WHERE id='$id' AND category='ssc'";
+                            $result = $conn->query($q);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<h4 class='mt-2'> School-" . strtoupper($row['college']) . "</h4>";
+                                    echo "<h4> Board-" . strtoupper($row['stream']) . "</h4>";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
                     <div class="col-12 mt-4 text-center" id='save'>
                         <a href='./additional_details.php' class="btn btn-success btn-lg">Save & Next</a>
                     </div>
@@ -215,7 +309,7 @@ if (isset($_POST['ssc_submit'])) {
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button class='btn btn-success btn-lg' type='submit' name='pg_submit'>Submit</button>
+                    <button class='btn btn-primary btn-lg' type='submit' name='pg_submit'>Save</button>
                 </div>
             </form>
         </div>
@@ -279,7 +373,7 @@ if (isset($_POST['ssc_submit'])) {
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button class='btn btn-success btn-lg' type='submit' name='grad_submit'>Submit</button>
+                    <button class='btn btn-primary btn-lg' type='submit' name='grad_submit'>Save</button>
                 </div>
             </form>
         </div>
@@ -341,7 +435,7 @@ if (isset($_POST['ssc_submit'])) {
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button class='btn btn-success btn-lg' type='submit' name='ss_submit'>Submit</button>
+                    <button class='btn btn-primary btn-lg' type='submit' name='ss_submit'>Save</button>
                 </div>
             </form>
         </div>
@@ -403,7 +497,7 @@ if (isset($_POST['ssc_submit'])) {
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button class='btn btn-success btn-lg' type='submit' name='diploma_submit'>Submit</button>
+                    <button class='btn btn-primary btn-lg' type='submit' name='diploma_submit'>Save</button>
                 </div>
             </form>
         </div>
@@ -467,7 +561,7 @@ if (isset($_POST['ssc_submit'])) {
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button class='btn btn-success btn-lg' type='submit' name='ssc_submit'>Submit</button>
+                    <button class='btn btn-primary btn-lg' type='submit' name='ssc_submit'>Save</button>
                 </div>
             </form>
         </div>

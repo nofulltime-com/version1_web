@@ -1,4 +1,16 @@
 <?php
+include './connect.php';
+$id = 7;
+
+$summary = $_POST['summary'];
+$query = "UPDATE `job_seeker_details` SET `summary` = '$summary' WHERE `job_seeker_details`.`id` = $id";
+if ($conn->query($query) == TRUE) {
+    echo "<script>console.log('$summary');</script>";
+}
+
+
+
+
 
 $target_dir = "upload/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

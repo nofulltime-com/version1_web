@@ -1,3 +1,9 @@
+<?php
+
+
+?>
+
+
 <html lang="en">
 
 <head>
@@ -64,7 +70,7 @@
             <form autocomplete="off" action="upload.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group ">
                     <label for="summary">Summary</label>
-                    <textarea class="form-control" id="summary" required name='summary' rows="5" placeholder='Briefly explain about yourself...'></textarea>
+                    <textarea class="form-control" id="summary" name='summary' rows="5" required placeholder='Briefly explain about yourself...'></textarea>
                 </div>
                 <div class="form-group ">
                     <label for="resume">Upload your resume</label>

@@ -1,9 +1,9 @@
 <?php
 $cookie_name = 'flag';
 echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
-
 include './connect.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = 7;
     $name = $_POST['name'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
@@ -13,7 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $country = $_POST['country'];
     $pincode = $_POST['pincode'];
 
-    echo "<script>alert('$name,$age,$gender,$status,$city,$state,$country,$pincode');</script>";
+    $query = "UPDATE `seeker_details` SET `fullname` = '$name', `town` = '$city', `state` = '$state', `country` = '$country', `pin_code` = '$pincode', `status` = '$status', `age` = '$age', `gender` = '$gender' WHERE `seeker_details`.`id` = $id;";
+    if ($conn->query($query) == TRUE) {
+        echo '<script>alert("Details Inserted")</script>';
+    }
     if ($_COOKIE[$cookie_name] == 1)
         header("Location: ./education_details.php");
     else

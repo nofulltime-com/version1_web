@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
     }
 
-    $id = 3;
+    $id = 7;
 
     $query1 = "INSERT INTO seeker_details(`id`, `fullname`, `town`, `state`, `country`, `pin_code`, `status`, `age`, `gender`, `category`, `part_time_start`, `part_time_end`, `course_time_start`, `course_time_end`, `ngo_time_start`, `ngo_time_end`, `profile_picture`, `date`) values ('$id', '', '', '', '', '', '', NULL, '', '$prefernces', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-03 05:09:15.000000')";
     if ($conn->query($query1) == FALSE) {
@@ -69,7 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (isset($_POST['learning_place'])) {
-
         $course_place = $_POST['learning_place'];
         $course_field = $_POST['course_field'];
         $course_name = $_POST['course_name'];
@@ -314,12 +313,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             document.getElementById('ngo-details').innerHTML = v3.checked ? `<label for="name" class="form-label">Your prefered place of operation?</label>
                     <div class="col-md-6 mt-3">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ngo_place" id="wfh" value="wfh" required>
-                            <label class="form-check-label" for="wfh">Work From Home</label>
+                            <input class="form-check-input" type="radio" name="ngo_place" id="ngo_wfh" value="wfh" required>
+                            <label class="form-check-label" for="ngo_wfh">Work From Home</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ngo_place" id="in_o" value="in_office">
-                            <label class="form-check-label" for="in_o">In-Office</label>
+                            <input class="form-check-input" type="radio" name="ngo_place" id="ngo_in_o" value="in_office">
+                            <label class="form-check-label" for="ngo_in_o">In-Office</label>
                         </div>
                     </div>
             <label for="ngo_field" class="form-label mt-5">Under which ngo sector you want to work for?</label>
