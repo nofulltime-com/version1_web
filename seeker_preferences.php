@@ -7,14 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $prefernces = $prefernces  . "," . $selected;
     }
     $prefernces = substr($prefernces, 1);
-    $id = 1;
-
-    // $query1 = "INSERT INTO seeker_details(`id`, `fullname`, `town`, `state`, `country`, `pin_code`, `status`, `age`, `gender`, `category`, `part_time_start`, `part_time_end`, `course_time_start`, `course_time_end`, `ngo_time_start`, `ngo_time_end`, `profile_picture`, `date`) values ('$id', '', '', '', '', '', '', NULL, '', '$prefernces', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-03 05:09:15.000000')";
-    // if ($conn->query($query1) == TRUE) {
-    //     echo '<script>alert("Success")</script>';
-    // } else {
-    //     echo '<script>alert(Error: " . $sql . "<br>" . $con->error)</script>';
-    // }
 
     if (strpos($prefernces, 'parttime') !== false or strpos($prefernces, 'ngo') !== false) {
         $cookie_name = 'flag';
@@ -26,70 +18,85 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
     }
 
+    $id = 3;
 
-    // if (strpos($prefernces, 'parttime') !== false) {
-    //     $part_time_start = $_POST['part_time_start'];
-    //     $part_time_end = $_POST['part_time_end'];
-    //     $query2 = "UPDATE `seeker_details` SET `part_time_start` = '$part_time_start', `part_time_end` = '$part_time_end' WHERE `seeker_details`.`id` = $id";
-    //     if ($conn->query($query2) == TRUE) {
-    //         echo '<script>alert("Time Inserted")</script>';
-    //     } else {
-    //         echo '<script>alert(Error: " . $sql . "<br>" . $con->error)</script>';
-    //     }
-    // }
-    // if (strpos($prefernces, 'course') !== false) {
-    //     $course_time_start = $_POST['course_time_start'];
-    //     $course_time_end = $_POST['course_time_end'];
-    //     $query2 = "UPDATE `seeker_details` SET `course_time_start` = '$course_time_start', `course_time_end` = '$course_time_end' WHERE `seeker_details`.`id` = $id";
-    //     if ($conn->query($query2) == TRUE) {
-    //         echo '<script>alert("Time Inserted")</script>';
-    //     } else {
-    //         echo '<script>alert(Error: " . $sql . "<br>" . $con->error)</script>';
-    //     }
-    // }
+    $query1 = "INSERT INTO seeker_details(`id`, `fullname`, `town`, `state`, `country`, `pin_code`, `status`, `age`, `gender`, `category`, `part_time_start`, `part_time_end`, `course_time_start`, `course_time_end`, `ngo_time_start`, `ngo_time_end`, `profile_picture`, `date`) values ('$id', '', '', '', '', '', '', NULL, '', '$prefernces', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-03 05:09:15.000000')";
+    if ($conn->query($query1) == FALSE) {
+        echo '<script>alert($conn->error)</script>';
+    }
 
-    // if (strpos($prefernces, 'ngo') !== false) {
-    //     $ngo_time_start = $_POST['ngo_time_start'];
-    //     $ngo_time_end = $_POST['ngo_time_end'];
-    //     $query2 = "UPDATE `seeker_details` SET `ngo_time_start` = '$ngo_time_start', `ngo_time_end` = '$ngo_time_end' WHERE `seeker_details`.`id` = $id";
-    //     if ($conn->query($query2) == TRUE) {
-    //         echo '<script>alert("Time Inserted")</script>';
-    //     } else {
-    //         echo '<script>alert(Error: " . $sql . "<br>" . $con->error)</script>';
-    //     }
-    // }
+
+
+    if (strpos($prefernces, 'parttime') !== false) {
+        $part_time_start = $_POST['part_time_start'];
+        $part_time_end = $_POST['part_time_end'];
+        $query2 = "UPDATE `seeker_details` SET `part_time_start` = '$part_time_start', `part_time_end` = '$part_time_end' WHERE `seeker_details`.`id` = $id";
+        if ($conn->query($query2) == FALSE) {
+            echo '<script>alert($conn->error)</script>';
+        }
+    }
+
+    if (strpos($prefernces, 'course') !== false) {
+        $course_time_start = $_POST['course_time_start'];
+        $course_time_end = $_POST['course_time_end'];
+        $query3 = "UPDATE `seeker_details` SET `course_time_start` = '$course_time_start', `course_time_end` = '$course_time_end' WHERE `seeker_details`.`id` = $id";
+        if ($conn->query($query3) == FALSE) {
+            echo '<script>alert($conn->error)</script>';
+        }
+    }
+
+
+    if (strpos($prefernces, 'ngo') !== false) {
+        $ngo_time_start = $_POST['ngo_time_start'];
+        $ngo_time_end = $_POST['ngo_time_end'];
+        $query4 = "UPDATE `seeker_details` SET `ngo_time_start` = '$ngo_time_start', `ngo_time_end` = '$ngo_time_end' WHERE `seeker_details`.`id` = $id";
+        if ($conn->query($query4) == FALSE) {
+            echo '<script>alert($conn->error)</script>';
+        }
+    }
 
 
     if (isset($_POST['work_place'])) {
         $job_work_place = $_POST['work_place'];
         $job_field = $_POST['field'];
         $job_position = $_POST['position'];
-        $query3 = "INSERT INTO `job_seeker_details` (`id`, `resume`, `summary`, `field`, `position`, `place_of_work`) VALUES ('$id', '', '', '$job_field', '$job_position', '$job_work_place');";
-        if ($conn->query($query3) == TRUE) {
+        $query5 = "INSERT INTO `job_seeker_details` (`id`, `resume`, `summary`, `field`, `position`, `place_of_work`) VALUES ('$id', '', '', '$job_field', '$job_position', '$job_work_place');";
+        if ($conn->query($query5) == TRUE) {
             echo '<script>alert("Job Inserted")</script>';
         } else {
-            echo '<script>alert(Error: " . $sql . "<br>" . $con->error)</script>';
+            echo '<script>alert($conn->error)</script>';
         }
     }
 
     if (isset($_POST['learning_place'])) {
+
         $course_place = $_POST['learning_place'];
         $course_field = $_POST['course_field'];
         $course_name = $_POST['course_name'];
+        $query6 = "INSERT INTO `course_details` (`id`, `field`, `course`, `mode_of_learning`) VALUES ('$id', '$course_field', '$course_name', '$course_place');";
+        if ($conn->query($query6) == TRUE) {
+            echo '<script>alert("Course Inserted")</script>';
+        } else {
+            echo '<script>alert($conn->error)</script>';
+        }
     }
 
 
-    if (isset($_POST['ngo-field'])) {
+    if (isset($_POST['ngo_place'])) {
         $ngo_work_place = $_POST['ngo_place'];
-        $ngo_position = $_POST['ngo_position'];
         $ngo_field = $_POST['ngo_field'];
+        $ngo_position = $_POST['ngo_position'];
+        $query7 = "INSERT INTO `ngo_details` (`id`,`field`, `position`, `place_of_work`) VALUES ('$id','$ngo_field', '$ngo_position', '$ngo_work_place');";
+        if ($conn->query($query7) == TRUE) {
+            echo '<script>alert("NGO Inserted")</script>';
+        } else {
+            echo '<script>alert($conn->error)</script>';
+        }
     }
 
 
-    // echo "<script>console.log('$job_work_place,$job_field,$job_position,$part_time_start,$part_time_end')</script>";
-    // // echo "<script>console.log('$course_place,$course_field,$course_name,$course_time_start,$course_time_end')</script>";
-    // // echo "<script>console.log('$ngo_field,$ngo_time_start,$ngo_time_end')</script>";
-    // header("Location: ./seeker_details.php");
+
+    header("Location: ./seeker_details.php");
 }
 ?>
 
@@ -100,6 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preferences</title>
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
 			CSS
@@ -279,7 +287,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="text" class="form-control mt-2" id="course_field" name="course_field" placeholder="e.g Web Development" required>
                         </div>
                         <div class="col-md-6 mt-4">
-                            <label for=" position" class="form-label">Course Name:</label>
+                            <label for="course" class="form-label">Course Name:</label>
                             <input type="text" class="form-control mt-2" id="course" name="course_name" placeholder="e.g REACT JS" required>
                         </div>
                     </div>
