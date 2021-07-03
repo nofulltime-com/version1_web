@@ -29,6 +29,14 @@
 
 	$id = 7;
 	include "../connect.php";
+	$user_table = "SELECT * FROM `users` WHERE id='$id'";
+	$results = $conn->query($user_table);
+	if ($results->num_rows > 0) {
+		while ($row = $results->fetch_assoc()) {
+			$email = $row['email'];
+			$phno = $row['phone'];
+		}
+	}
 	$query1 = "SELECT * FROM `seeker_details` WHERE id='$id	'";
 	$res1 = $conn->query($query1);
 	if ($res1->num_rows > 0) {
@@ -51,7 +59,6 @@
 			$ngo_time_end = substr($row['ngo_time_end'], 0, 5);
 		}
 	}
-
 
 	if (strpos($category, 'parttime') !== false) {
 		$query2 = "SELECT * FROM `job_seeker_details` WHERE id='$id'";
@@ -116,33 +123,34 @@
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-	<header id="header" id="home" style="background-color: black;">
+	<header id="header" id="home" style='background-color:black'>
 		<div class="container">
 			<div class="row align-items-center justify-content-between d-flex">
 				<div id="logo">
-					<a href="../index.html"><img src="../img/logo.png" alt="" title="" /></a>
+					<a href="index.html"><img src="../img/logo.png" alt="" title="" /></a>
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
 						<li class="menu-active"><a href="../index.html">Home</a></li>
 						<li><a href="../about-us.html">About Us</a></li>
 						<li><a href="../category.html">Category</a></li>
-
+						<li><a href="../recruiters.html">Recruiters</a></li>
 						<li><a href="../blog-home.html">Blog</a></li>
 						<li><a href="../contact.html">Contact</a></li>
 
-						<li class="menu-has-children" style='background-color:black'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white;'></i></a>
+						<li class="menu-has-children"><a href="" style='color:#7b63f1'>Signup</a>
 							<ul>
-								<li><a href="../elements.html">Profile</a></li>
-								<li><a href="../search.html">Edit profile</a></li>
-								<li><a href="../single.html">Logout</a></li>
+								<li><a href="./index.php">Profile</a></li>
+								<li><a href="#">Edit</a></li>
+								<li><a href="../index.html">Logout</a></li>
 							</ul>
 						</li>
+
 					</ul>
 				</nav><!-- #nav-menu-container -->
 			</div>
 		</div>
-	</header>
+	</header><!-- #header -->
 	<!-- Hero section start -->
 	<section class="hero-section spad">
 		<div class="container-fluid">
@@ -162,8 +170,8 @@
 									<li><span>Martial-Status</span><?php echo $status ?></li>
 									<li><span>Address</span><?php echo $address ?></li>
 									<li><span>PIN code</span><?php echo $pin_code ?></li>
-									<li><span>E-mail</span>mariawilliams@company.com</li>
-									<li><span>Phone </span>+43 5266 22 345</li>
+									<li><span>E-mail</span><?php echo $email ?></li>
+									<li><span>Phone </span><?php echo $phno ?></li>
 								</ul>
 								<div class="col-md-8 mt-5 text-md-right header-buttons">
 									<a href="../uploads/resume/Bhanu Krishna Prasad-Resume.pdf" class="site-btn" download>Download Resume</a>
@@ -310,7 +318,6 @@
 	<script src="../js/parallax.min.js"></script>
 	<script src="../js/mail-script.js"></script>
 	<script src="../js/main.js"></script>
-	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/magnific-popup.min.js"></script>
