@@ -69,6 +69,14 @@
 			}
 		}
 	}
+
+
+	if (strpos($category, 'parttime') !== false or strpos($category, 'ngo') !== false) {
+		$q = "SELECT * FROM `education_details` WHERE id='$id' ORDER BY year";
+		$res = $conn->query($q);
+	}
+
+
 	if (strpos($category, 'course') !== false) {
 		$query3 = "SELECT * FROM `course_details` WHERE id='$id'";
 		$res3 = $conn->query($query3);
@@ -101,6 +109,7 @@
 			}
 		}
 	}
+
 
 	?>
 	<!-- Page Preloder -->
@@ -157,7 +166,7 @@
 									<li><span>Phone </span>+43 5266 22 345</li>
 								</ul>
 								<div class="col-md-8 mt-5 text-md-right header-buttons">
-									<a href="../uploads/resume/Bhanu Krishna Prasad-Resume.pdf" class="site-btn" download="w3logo">Download Resume</a>
+									<a href="../uploads/resume/Bhanu Krishna Prasad-Resume.pdf" class="site-btn" download>Download Resume</a>
 									<a href="#contact" class="site-btn">Contact Me</a>
 								</div>
 							</div>
@@ -191,19 +200,19 @@
 						<h2>Education</h2>
 					</div>
 					<ul class="resume-list">
-						<li>
-							<h2>MBA</h2>
-							<h3>IIM Madras</h3>
-							<h4>Graduation Year:2023</h4>
-							<p>Graduation Status:Pursuing</p>
-						</li>
-						<li>
-							<h2>Bacherlor Of Technology</h2>
-							<h3>Indian Institute Of Information Technology Madras</h3>
-							<h4>Percentage:80%</h4>
-							<h4>Graduation Year:2020</h4>
-							<p>Graduation Status:Completed</p>
-						</li>
+						<?php
+						if ($res->num_rows > 0) {
+							while ($row = $res->fetch_assoc()) {
+								echo "<li>
+							<h2>" . $row["stream"] . "</h2>
+							<h3>" . $row["college"] . "</h3>
+							<h4>Percentage:" . $row["percentage"] . "%</h4>
+							<h4>Graduation Year:" . $row["year"] . "</h4>
+							<p>Graduation Status:" . $row["graduation_status"] . "</p>
+						</li>";
+							}
+						}
+						?>
 					</ul>
 				</div>
 			</div>
