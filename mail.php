@@ -4,9 +4,6 @@
     $email= $_POST["email"];
     $text= $_POST["message"];
     $phone= $_POST["phone"];
-    
-
-
     $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= "From: " . $email . "\r\n"; // Sender's E-mail
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -27,5 +24,3 @@
     }else{
         echo 'failed';
     }
-
-?>

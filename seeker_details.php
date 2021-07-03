@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $query = "UPDATE `seeker_details` SET `fullname` = '$name', `town` = '$city', `state` = '$state', `country` = '$country', `pin_code` = '$pincode', `status` = '$status', `age` = '$age', `gender` = '$gender' WHERE `seeker_details`.`id` = $id;";
     if ($conn->query($query) == TRUE) {
-        echo '<script>alert("Details Inserted")</script>';
+        echo '<script>console.log("Details Inserted")</script>';
     }
     if ($_COOKIE[$cookie_name] == 1)
         header("Location: ./education_details.php");

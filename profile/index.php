@@ -157,7 +157,7 @@
 									<li><span>Phone </span>+43 5266 22 345</li>
 								</ul>
 								<div class="col-md-8 mt-5 text-md-right header-buttons">
-									<a href="#" class="site-btn">Download Resume</a>
+									<a href="../uploads/resume/Bhanu Krishna Prasad-Resume.pdf" class="site-btn" download="w3logo">Download Resume</a>
 									<a href="#contact" class="site-btn">Contact Me</a>
 								</div>
 							</div>
