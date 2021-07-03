@@ -1,12 +1,21 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include './connect.php';
     $prefernces = '';
     foreach ($_POST['preference'] as $selected) {
-        // echo "<script>alert('$selected');</script>";
 
         $prefernces = $prefernces  . "," . $selected;
     }
     $prefernces = substr($prefernces, 1);
+    $id = 1;
+
+    // $query1 = "INSERT INTO seeker_details(`id`, `fullname`, `town`, `state`, `country`, `pin_code`, `status`, `age`, `gender`, `category`, `part_time_start`, `part_time_end`, `course_time_start`, `course_time_end`, `ngo_time_start`, `ngo_time_end`, `profile_picture`, `date`) values ('$id', '', '', '', '', '', '', NULL, '', '$prefernces', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-03 05:09:15.000000')";
+    // if ($conn->query($query1) == TRUE) {
+    //     echo '<script>alert("Success")</script>';
+    // } else {
+    //     echo '<script>alert(Error: " . $sql . "<br>" . $con->error)</script>';
+    // }
+
     if (strpos($prefernces, 'parttime') !== false or strpos($prefernces, 'ngo') !== false) {
         $cookie_name = 'flag';
         setcookie($cookie_name, 1, time() + (86400 * 90), "/");
@@ -16,52 +25,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         setcookie($cookie_name, 0, time() + (86400 * 90), "/");
         echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
     }
+
+
+    // if (strpos($prefernces, 'parttime') !== false) {
+    //     $part_time_start = $_POST['part_time_start'];
+    //     $part_time_end = $_POST['part_time_end'];
+    //     $query2 = "UPDATE `seeker_details` SET `part_time_start` = '$part_time_start', `part_time_end` = '$part_time_end' WHERE `seeker_details`.`id` = $id";
+    //     if ($conn->query($query2) == TRUE) {
+    //         echo '<script>alert("Time Inserted")</script>';
+    //     } else {
+    //         echo '<script>alert(Error: " . $sql . "<br>" . $con->error)</script>';
+    //     }
+    // }
+    // if (strpos($prefernces, 'course') !== false) {
+    //     $course_time_start = $_POST['course_time_start'];
+    //     $course_time_end = $_POST['course_time_end'];
+    //     $query2 = "UPDATE `seeker_details` SET `course_time_start` = '$course_time_start', `course_time_end` = '$course_time_end' WHERE `seeker_details`.`id` = $id";
+    //     if ($conn->query($query2) == TRUE) {
+    //         echo '<script>alert("Time Inserted")</script>';
+    //     } else {
+    //         echo '<script>alert(Error: " . $sql . "<br>" . $con->error)</script>';
+    //     }
+    // }
+
+    // if (strpos($prefernces, 'ngo') !== false) {
+    //     $ngo_time_start = $_POST['ngo_time_start'];
+    //     $ngo_time_end = $_POST['ngo_time_end'];
+    //     $query2 = "UPDATE `seeker_details` SET `ngo_time_start` = '$ngo_time_start', `ngo_time_end` = '$ngo_time_end' WHERE `seeker_details`.`id` = $id";
+    //     if ($conn->query($query2) == TRUE) {
+    //         echo '<script>alert("Time Inserted")</script>';
+    //     } else {
+    //         echo '<script>alert(Error: " . $sql . "<br>" . $con->error)</script>';
+    //     }
+    // }
+
+
     if (isset($_POST['work_place'])) {
         $job_work_place = $_POST['work_place'];
-    }
-    if (isset($_POST['field'])) {
         $job_field = $_POST['field'];
-    }
-    if (isset($_POST['position'])) {
         $job_position = $_POST['position'];
+        $query3 = "INSERT INTO `job_seeker_details` (`id`, `resume`, `summary`, `field`, `position`, `place_of_work`) VALUES ('$id', '', '', '$job_field', '$job_position', '$job_work_place');";
+        if ($conn->query($query3) == TRUE) {
+            echo '<script>alert("Job Inserted")</script>';
+        } else {
+            echo '<script>alert(Error: " . $sql . "<br>" . $con->error)</script>';
+        }
     }
 
     if (isset($_POST['learning_place'])) {
         $course_place = $_POST['learning_place'];
-    }
-
-    if (isset($_POST['course_field'])) {
         $course_field = $_POST['course_field'];
-    }
-
-    if (isset($_POST['course_name'])) {
         $course_name = $_POST['course_name'];
     }
+
+
     if (isset($_POST['ngo-field'])) {
-        $ngo_field = $_POST['ngo-field'];
+        $ngo_work_place = $_POST['ngo_place'];
+        $ngo_position = $_POST['ngo_position'];
+        $ngo_field = $_POST['ngo_field'];
     }
-    if (isset($_POST['part_time_start'])) {
-        $part_time_start = $_POST['part_time_start'];
-    }
-    if (isset($_POST['part_time_end'])) {
-        $part_time_end = $_POST['part_time_end'];
-    }
-    if (isset($_POST['course_time_start'])) {
-        $course_time_start = $_POST['course_time_start'];
-    }
-    if (isset($_POST['course_time_end'])) {
-        $course_time_end = $_POST['course_time_end'];
-    }
-    if (isset($_POST['ngo_time_start'])) {
-        $ngo_time_start = $_POST['ngo_time_start'];
-    }
-    if (isset($_POST['ngo_time_end'])) {
-        $ngo_time_end = $_POST['ngo_time_end'];
-    }
+
+
     // echo "<script>console.log('$job_work_place,$job_field,$job_position,$part_time_start,$part_time_end')</script>";
     // // echo "<script>console.log('$course_place,$course_field,$course_name,$course_time_start,$course_time_end')</script>";
     // // echo "<script>console.log('$ngo_field,$ngo_time_start,$ngo_time_end')</script>";
-    header("Location: ./seeker_details.php");
+    // header("Location: ./seeker_details.php");
 }
 ?>
 
@@ -275,20 +303,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         function ngo() {
             document.getElementById('ngo-details').style.display = v3.checked ? "block" : "none";
 
-            document.getElementById('ngo-details').innerHTML = v3.checked ? ` <label for="ngo-field" class="form-label">Under which sector you want to work for?</label>
+            document.getElementById('ngo-details').innerHTML = v3.checked ? `<label for="name" class="form-label">Your prefered place of operation?</label>
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ngo_place" id="wfh" value="wfh" required>
+                            <label class="form-check-label" for="wfh">Work From Home</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ngo_place" id="in_o" value="in_office">
+                            <label class="form-check-label" for="in_o">In-Office</label>
+                        </div>
+                    </div>
+            <label for="ngo_field" class="form-label mt-5">Under which ngo sector you want to work for?</label>
                     <div class="col-12 mt-2">
-                        <small for="ngo-field" class="form-label">Sector:</small>
-                        <input type="text" class="form-control mt-2" id="ngo-field" name="ngo-field" placeholder="e.g Women's Development & Empowerment" required>
+                        <input type="text" class="form-control mt-2" id="ngo_field" name="ngo_field" placeholder="e.g Women's Development & Empowerment" required>
                     </div>
 
+            <label for="ngo_position" class="form-label mt-4">Position of Work</label>
+                    <div class="col-12 mt-2">
+                        <input type="text" class="form-control mt-2" id="ngo_position" name="ngo_position" placeholder="e.g Data Entry operator" required>
+                    </div>
+
+
                     <div class="row mt-5">
-                        <label for="part_time_start">Enter the time interval you can constribute for the NGO:</label>
+                        <label for="ngo_time_start">Enter the time interval you can constribute for the NGO:</label>
                         <div class="col-md-6">
                             <small for="part_time_start">Start Time:</small>
                             <input type="time" class="form-control" id="ngo_time_start" name="ngo_time_start" required>
                         </div>
                         <div class="col-md-6">
-                            <small for="part_time_end">End Time:</small>
+                            <small for="ngo_time_end">End Time:</small>
                             <input type="time" class="form-control" id="ngo_time_end" name="ngo_time_end" required>
                         </div>
                     </div>` : "";
