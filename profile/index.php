@@ -138,7 +138,7 @@
 						<li><a href="../blog-home.html">Blog</a></li>
 						<li><a href="../contact.html">Contact</a></li>
 
-						<li class="menu-has-children"><a href="" style='color:#7b63f1'>Signup</a>
+						<li class="menu-has-children" style='background-color:black;'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
 							<ul>
 								<li><a href="./index.php">Profile</a></li>
 								<li><a href="#">Edit</a></li>

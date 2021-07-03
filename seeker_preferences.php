@@ -148,18 +148,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li><a href="blog-home.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
 
-                        <li class="menu-has-children"><a href="" style='color:#7b63f1'>Signup</a>
+                        <li class="menu-has-children" style='background-color:black;'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
                             <ul>
-                                <li><a href="./Register/studentRegister.html">As a Student</a></li>
-                                <li><a href="./Register/recruiterRegister.html">As a recruiter</a></li>
+                                <li><a href="./index.php">Profile</a></li>
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="../index.html">Logout</a></li>
                             </ul>
                         </li>
-                        <li class="menu-has-children"><a href="" style='color:#7b63f1'>Login</a>
-                            <ul>
-                                <li><a href="../search.html">As a Student</a></li>
-                                <li><a href="../single.html">As a recruiter</a></li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>
