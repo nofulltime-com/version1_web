@@ -74,7 +74,6 @@
 		$res3 = $conn->query($query3);
 		if ($res3->num_rows > 0) {
 			while ($row = $res3->fetch_assoc()) {
-
 				$course_field = ucfirst(strtolower($row['field']));
 				$course_name = ucfirst(strtolower($row['course']));
 				$temp = $row['mode_of_learning'];
@@ -82,6 +81,23 @@
 					$mode_of_learning = 'Online';
 				else
 					$mode_of_learning = 'Coaching Center';
+			}
+		}
+	}
+
+	if (strpos($category, 'ngo') !== false) {
+		$query4 = "SELECT * FROM `ngo_details` WHERE id='$id'";
+		$res4 = $conn->query($query4);
+		if ($res4->num_rows > 0) {
+			while ($row = $res4->fetch_assoc()) {
+
+				$ngo_field = ucfirst(strtolower($row['field']));
+				$ngo_position = ucfirst(strtolower($row['position']));
+				$temp = $row['place_of_work'];
+				if ($temp == "wfh")
+					$ngo_place_of_work = 'Work from home';
+				else
+					$ngo_place_of_work = 'In Ofiice';
 			}
 		}
 	}
@@ -109,7 +125,7 @@
 						<li class="menu-has-children" style='background-color:black'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white;'></i></a>
 							<ul>
 								<li><a href="../elements.html">Profile</a></li>
-								<li><a href="../search.html">Edit</a></li>
+								<li><a href="../search.html">Edit profile</a></li>
 								<li><a href="../single.html">Logout</a></li>
 							</ul>
 						</li>
