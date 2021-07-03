@@ -2147,7 +2147,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #mobile-nav ul .menu-has-children i {
   position: absolute;
-  right: 0;
   z-index: 99;
   padding: 15px;
   cursor: pointer;
@@ -2167,6 +2166,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #mobile-nav ul .menu-item-active {
   color: #49e4fa;
+  margin-top: 50px;
 }
 
 #mobile-body-overly {

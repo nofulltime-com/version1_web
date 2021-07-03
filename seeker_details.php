@@ -37,6 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			============================================= -->
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/nice-select.css">
@@ -46,7 +48,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="./seeker_details.css">
 
 </head>
+<style>
+    #mobile-nav ul .menu-has-children i {
+        color: white;
+    }
 
+    .menu-has-children {
+        background-color: black;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    @media only screen and (max-width:738px) {
+        #mobile-nav ul .menu-has-children i {
+            color: black;
+        }
+
+        .mobile {
+            display: block;
+        }
+    }
+</style>
 
 <body>
     <header id="header" id="home" style="background-color: black;">
@@ -64,11 +88,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li><a href="blog-home.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
 
-                        <li class="menu-has-children" style='background-color:black;'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+                        <li class="menu-has-children"><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+                            <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
                             <ul>
-                                <li><a href="./index.php">Profile</a></li>
+                                <li><a href="./profile/index.php">Profile</a></li>
                                 <li><a href="#">Edit</a></li>
-                                <li><a href="../index.html">Logout</a></li>
+                                <li><a href="./index.html">Logout</a></li>
                             </ul>
                         </li>
 
@@ -79,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <div class="container heading">
-        <h1 class="text-center display-3">Personal Details</h1>
+        <h1 class="text-center display-4">Personal Details</h1>
     </div>
 
     <div class="container form-container mt-2">

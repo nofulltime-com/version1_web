@@ -97,6 +97,28 @@ if (isset($_POST['ssc_submit'])) {
     h4 {
         color: grey;
     }
+
+    #mobile-nav ul .menu-has-children i {
+        color: white;
+    }
+
+    .menu-has-children {
+        background-color: black;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    @media only screen and (max-width:738px) {
+        #mobile-nav ul .menu-has-children i {
+            color: black;
+        }
+
+        .mobile {
+            display: block;
+        }
+    }
 </style>
 
 <body>
@@ -115,11 +137,12 @@ if (isset($_POST['ssc_submit'])) {
                         <li><a href="blog-home.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
 
-                        <li class="menu-has-children" style='background-color:black;'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+                        <li class="menu-has-children"><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+                            <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
                             <ul>
-                                <li><a href="./index.php">Profile</a></li>
+                                <li><a href="./profile/index.php">Profile</a></li>
                                 <li><a href="#">Edit</a></li>
-                                <li><a href="../index.html">Logout</a></li>
+                                <li><a href="./index.html">Logout</a></li>
                             </ul>
                         </li>
 
@@ -130,7 +153,7 @@ if (isset($_POST['ssc_submit'])) {
     </header>
 
     <div class="container heading">
-        <h1 class="text-center display-3">Education</h1>
+        <h1 class="text-center display-4">Education</h1>
         <h5 class='text-center'>Add your education details</h5>
     </div>
 

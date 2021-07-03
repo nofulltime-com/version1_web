@@ -23,6 +23,29 @@
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../seeker_details.css">
 </head>
+<style>
+	#mobile-nav ul .menu-has-children i {
+		color: white;
+	}
+
+	.menu-has-children {
+		background-color: black;
+	}
+
+	.mobile {
+		display: none;
+	}
+
+	@media only screen and (max-width:738px) {
+		#mobile-nav ul .menu-has-children i {
+			color: black;
+		}
+
+		.mobile {
+			display: block;
+		}
+	}
+</style>
 
 <body>
 	<?php
@@ -118,6 +141,21 @@
 	}
 
 
+	if (isset($_POST['mail'])) {
+		$to = $email;
+		$from = $_POST['email'];
+		$name = $_POST['name'];
+		$subject = $_POST['subject'];
+		$message = $name . "\nSubject : " . $subject . " \nMassege:" . "\n" . $_POST['message'];
+		$headers = "From:" . $from;
+		$headers2 = "From:" . $to;
+		mail($to, $subject, $message, $headers);
+		mail($from, $subject2, $message2, $headers2);
+		echo "<script>alert('Your query is succesfully sent');
+        window.location.href='contact.html';  
+        </script>";
+	}
+
 	?>
 	<!-- Page Preloder -->
 	<div id="preloder">
@@ -138,7 +176,8 @@
 						<li><a href="../blog-home.html">Blog</a></li>
 						<li><a href="../contact.html">Contact</a></li>
 
-						<li class="menu-has-children" style='background-color:black;'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+						<li class="menu-has-children"><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+							<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
 							<ul>
 								<li><a href="./index.php">Profile</a></li>
 								<li><a href="#">Edit</a></li>
@@ -295,7 +334,7 @@
 							</div>
 						</div>
 						<div class="text-md-right">
-							<button class="site-btn" type='submit'>Send message</button>
+							<button class="site-btn" name='mail' type='submit'>Send message</button>
 						</div>
 					</form>
 				</div>
