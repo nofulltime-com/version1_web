@@ -1,9 +1,15 @@
 <?php
-$cookie_name = 'flag';
-echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
 include './connect.php';
+$id = 8;
+$q = "SELECT * FROM `seeker_details` WHERE id='$id'";
+$result = $conn->query($q);
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $preferences = $row['category'];
+    }
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = 7;
+
     $name = $_POST['name'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
@@ -17,10 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($query) == TRUE) {
         echo '<script>console.log("Details Inserted")</script>';
     }
-    if ($_COOKIE[$cookie_name] == 1)
+
+
+    if (strpos($preferences, 'parttime') !== false)
         header("Location: ./education_details.php");
     else
-        header("Location: ./index.html");
+        header("Location: ./profile/index.php");
 }
 ?>
 
@@ -158,14 +166,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="col-12 mt-5 text-center">
                     <?php
-                    $cookie_name = 'flag';
-                    if ($_COOKIE[$cookie_name] == 1) {
+                    if (strpos($prefernces, 'parttime') !== false) {
                     ?>
-                        <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Save & Next</button>
+                        <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Submit</button>
                     <?php
                     } else {
                     ?>
-                        <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Submit</button>
+                        <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Save & Next</button>
                     <?php
                     }
                     ?>

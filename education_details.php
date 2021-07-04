@@ -1,8 +1,6 @@
 <?php
-$cookie_name = 'flag';
-echo "<script>console.log('$_COOKIE[$cookie_name]');</script>";
 include './connect.php';
-$id = 7;
+$id = 8;
 if (isset($_POST['pg_submit'])) {
     $pg_education_status = $_POST['pg_education_status'];
     $pg_college = $_POST['pg_college'];
@@ -11,9 +9,9 @@ if (isset($_POST['pg_submit'])) {
     $category = 'pg';
     $pg_percentage = $_POST['pg_percentage'];
     $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$pg_degree', '$pg_education_status', '$pg_college', '$pg_year', '$pg_percentage');";
-    // if ($conn->query($query1) == TRUE) {
-    //     echo '<script>alert("PG")</script>';
-    // }
+    if ($conn->query($query1) == TRUE) {
+        echo '<script>alert("PG")</script>';
+    }
 }
 
 if (isset($_POST['grad_submit'])) {
@@ -24,9 +22,9 @@ if (isset($_POST['grad_submit'])) {
     $category = 'grad';
     $grad_percentage = $_POST['grad_percentage'];
     $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$grad_degree', '$grad_education_status', '$grad_college', '$grad_year', '$grad_percentage');";
-    // if ($conn->query($query1) == TRUE) {
-    //     echo '<script>alert("PG")</script>';
-    // }
+    if ($conn->query($query1) == TRUE) {
+        echo '<script>alert("Grad")</script>';
+    }
 }
 
 if (isset($_POST['ss_submit'])) {
@@ -37,9 +35,9 @@ if (isset($_POST['ss_submit'])) {
     $category = 'ss';
     $ss_percentage = $_POST['ss_percentage'];
     $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$ss_degree', '$ss_education_status', '$ss_college', '$ss_year', '$ss_percentage');";
-    // if ($conn->query($query1) == TRUE) {
-    //     echo '<script>alert("SS")</script>';
-    // }
+    if ($conn->query($query1) == TRUE) {
+        echo '<script>alert("SS")</script>';
+    }
 }
 
 if (isset($_POST['diploma_submit'])) {
@@ -50,9 +48,9 @@ if (isset($_POST['diploma_submit'])) {
     $category = 'diploma';
     $diploma_percentage = $_POST['diploma_percentage'];
     $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$diploma_stream', '$diploma_education_status', '$diploma_college', '$diploma_year', '$diploma_percentage');";
-    // if ($conn->query($query1) == TRUE) {
-    //     echo '<script>alert("Dip")</script>';
-    // }
+    if ($conn->query($query1) == TRUE) {
+        echo '<script>alert("Dip")</script>';
+    }
 }
 
 if (isset($_POST['ssc_submit'])) {

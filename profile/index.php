@@ -50,7 +50,7 @@
 <body>
 	<?php
 
-	$id = 7;
+	$id = 8;
 	include "../connect.php";
 	$user_table = "SELECT * FROM `users` WHERE id='$id'";
 	$results = $conn->query($user_table);
@@ -274,39 +274,44 @@
 						<h2>Prefernces</h2>
 					</div>
 					<ul class="resume-list">
-						<li>
+						<?php if (strpos($category, 'parttime') !== false) { ?>
+							<li>
 							<?php
-							if (strpos($category, 'parttime') !== false) {
-								echo "<h2>Part Time Jobs</h2>";
-								echo "<h3>Field -" . $field . "</h3>";
-								echo "<h4>Position -" . $position . "</h4>";
-								echo "<p>Place Of Work -" . $place_of_work . "</p>";
-								echo "<p>Time allocated :" . $part_time_start . " - " . $part_time_end . "</p>";
-							}
+
+							echo "<h2>Part Time Jobs</h2>";
+							echo "<h3>Field -" . $field . "</h3>";
+							echo "<h4>Position -" . $position . "</h4>";
+							echo "<p>Place Of Work -" . $place_of_work . "</p>";
+							echo "<p>Time allocated :" . $part_time_start . " - " . $part_time_end . "</p>";
+						}
 							?>
-						</li>
-						<li>
+							</li>
 							<?php
-							if (strpos($category, 'course') !== false) {
+							if (strpos($category, 'course') !== false) { ?>
+								<li>
+								<?php
+
 								echo "<h2>Learn a course</h2>";
 								echo "<h3>Field -" . $course_field . "</h3>";
 								echo "<h4>Position -" . $course_name . "</h4>";
 								echo "<p>Place Of Work -" . $mode_of_learning . "</p>";
 								echo "<p>Time allocated :" . $course_time_start . " - " . $course_time_end . "</p>";
 							}
-							?>
-						</li>
-						<li>
-							<?php
-							if (strpos($category, 'course') !== false) {
-								echo "<h2>Work for a NGO</h2>";
-								echo "<h3>Sector -" . $ngo_field . "</h3>";
-								echo "<h4>Position -" . $ngo_position . "</h4>";
-								echo "<p>Place Of Work -" . $ngo_place_of_work . "</p>";
-								echo "<p>Time allocated :" . $ngo_time_start . " - " . $ngo_time_end . "</p>";
-							}
-							?>
-						</li>
+								?>
+								</li>
+								<?php
+								if (strpos($category, 'ngo') !== false) { ?>
+									<li>
+									<?php
+
+									echo "<h2>Work for a NGO</h2>";
+									echo "<h3>Sector -" . $ngo_field . "</h3>";
+									echo "<h4>Position -" . $ngo_position . "</h4>";
+									echo "<p>Place Of Work -" . $ngo_place_of_work . "</p>";
+									echo "<p>Time allocated :" . $ngo_time_start . " - " . $ngo_time_end . "</p>";
+								}
+									?>
+									</li>
 					</ul>
 				</div>
 			</div>
