@@ -10,14 +10,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $id = 8;
 
-    // $query1 = "INSERT INTO seeker_details(`id`, `fullname`, `town`, `state`, `country`, `pin_code`, `status`, `age`, `gender`, `category`, `part_time_start`, `part_time_end`, `course_time_start`, `course_time_end`, `ngo_time_start`, `ngo_time_end`, `profile_picture`, `date`) values ('$id', '', '', '', '', '', '', NULL, '', '$prefernces', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-03 05:09:15.000000')";
-    // if ($conn->query($query1) == TRUE) {
-    //     echo '<script>console.log("Success")</script>';
-    // } else {
-    //     echo '<script>console.log($conn->error)</script>';
-    // }
-
-
+    $query1 = "INSERT INTO seeker_details(`id`, `fullname`, `town`, `state`, `country`, `pin_code`, `status`, `age`, `gender`, `category`, `part_time_start`, `part_time_end`, `course_time_start`, `course_time_end`, `ngo_time_start`, `ngo_time_end`, `profile_picture`, `date`) values ('$id', '', '', '', '', '', '', NULL, '', '$prefernces', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-03 05:09:15.000000')";
+    if ($conn->query($query1) == TRUE) {
+        echo '<script>console.log("Success")</script>';
+    } else {
+        echo '<script>console.log($conn->error)</script>';
+    }
 
     if (strpos($prefernces, 'parttime') !== false) {
         $part_time_start = $_POST['part_time_start'];
@@ -67,18 +65,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (isset($_POST['course_field'])) {
-
-        $course_place = $_POST['learning_place'];
+        $learning_place = $_POST['learning_place'];
         $course_field = $_POST['course_field'];
         $course_name = $_POST['course_name'];
-        $query6 = "INSERT INTO `course_details` (`id`, `field`, `course`, `mode_of_learning`) VALUES ('$id', '$course_field', '$course_name', '$course_place');";
+        $query6 = "INSERT INTO `course_details` (`id`, `field`, `course`, `mode_of_learning`) VALUES ('$id', '$course_field', '$course_name', '$learning_place');";
         if ($conn->query($query6) == TRUE) {
             echo '<script>console.log("Course Inserted")</script>';
         } else {
             echo '<script>console.log($conn->error)</script>';
         }
     }
-
 
     if (isset($_POST['ngo_place'])) {
         $ngo_work_place = $_POST['ngo_place'];

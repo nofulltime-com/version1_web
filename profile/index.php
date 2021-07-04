@@ -239,134 +239,140 @@
 	</section>
 	<!-- Hero section end -->
 	<!-- Resume section start -->
-	<section class="resume-section with-bg spad">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-7 offset-xl-2">
-					<div class="section-title">
-						<h2>Education</h2>
-					</div>
-					<ul class="resume-list">
-						<?php
-						if ($res->num_rows > 0) {
-							while ($row = $res->fetch_assoc()) {
-								echo "<li>
+	<?php if (strpos($category, 'parttime') !== false) { ?>
+		<section class="resume-section with-bg spad">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-7 offset-xl-2">
+						<div class="section-title">
+							<h2>Education</h2>
+						</div>
+						<ul class="resume-list">
+							<?php
+							if ($res->num_rows > 0) {
+								while ($row = $res->fetch_assoc()) {
+									echo "<li>
 							<h2>" . $row["stream"] . "</h2>
 							<h3>" . $row["college"] . "</h3>
 							<h4>Percentage:" . $row["percentage"] . "%</h4>
 							<h4>Graduation Year:" . $row["year"] . "</h4>
 							<p>Graduation Status:" . $row["graduation_status"] . "</p>
 						</li>";
+								}
 							}
-						}
-						?>
-					</ul>
+							?>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	<?php } ?>
 	<!-- Resume section end -->
-	<section class="resume-section spad">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-7 offset-xl-2">
-					<div class="section-title">
-						<h2>Prefernces</h2>
-					</div>
-					<ul class="resume-list">
-						<?php if (strpos($category, 'parttime') !== false) { ?>
-							<li>
-							<?php
-
-							echo "<h2>Part Time Jobs</h2>";
-							echo "<h3>Field -" . $field . "</h3>";
-							echo "<h4>Position -" . $position . "</h4>";
-							echo "<p>Place Of Work -" . $place_of_work . "</p>";
-							echo "<p>Time allocated :" . $part_time_start . " - " . $part_time_end . "</p>";
-						}
-							?>
-							</li>
-							<?php
-							if (strpos($category, 'course') !== false) { ?>
+	<?php if (strpos($category, 'parttime') !== false) { ?>
+		<section class="resume-section spad">
+		<?php } else { ?>
+			<section class="resume-section with-bg spad">
+			<?php } ?>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-7 offset-xl-2">
+						<div class="section-title">
+							<h2>Prefernces</h2>
+						</div>
+						<ul class="resume-list">
+							<?php if (strpos($category, 'parttime') !== false) { ?>
 								<li>
 								<?php
 
-								echo "<h2>Learn a course</h2>";
-								echo "<h3>Field -" . $course_field . "</h3>";
-								echo "<h4>Position -" . $course_name . "</h4>";
-								echo "<p>Place Of Work -" . $mode_of_learning . "</p>";
-								echo "<p>Time allocated :" . $course_time_start . " - " . $course_time_end . "</p>";
+								echo "<h2>Part Time Jobs</h2>";
+								echo "<h3>Field -" . $field . "</h3>";
+								echo "<h4>Position -" . $position . "</h4>";
+								echo "<p>Place Of Work -" . $place_of_work . "</p>";
+								echo "<p>Time allocated :" . $part_time_start . " - " . $part_time_end . "</p>";
 							}
 								?>
 								</li>
 								<?php
-								if (strpos($category, 'ngo') !== false) { ?>
+								if (strpos($category, 'course') !== false) { ?>
 									<li>
 									<?php
 
-									echo "<h2>Work for a NGO</h2>";
-									echo "<h3>Sector -" . $ngo_field . "</h3>";
-									echo "<h4>Position -" . $ngo_position . "</h4>";
-									echo "<p>Place Of Work -" . $ngo_place_of_work . "</p>";
-									echo "<p>Time allocated :" . $ngo_time_start . " - " . $ngo_time_end . "</p>";
+									echo "<h2>Learn a course</h2>";
+									echo "<h3>Field -" . $course_field . "</h3>";
+									echo "<h4>Position -" . $course_name . "</h4>";
+									echo "<p>Place Of Work -" . $mode_of_learning . "</p>";
+									echo "<p>Time allocated :" . $course_time_start . " - " . $course_time_end . "</p>";
 								}
 									?>
 									</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Contact section start -->
-	<section class="contact-section spad" id='contact'>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-8 offset-xl-2">
-					<div class="section-title">
-						<h2>Contact Me</h2>
+									<?php
+									if (strpos($category, 'ngo') !== false) { ?>
+										<li>
+										<?php
+
+										echo "<h2>Work for a NGO</h2>";
+										echo "<h3>Sector -" . $ngo_field . "</h3>";
+										echo "<h4>Position -" . $ngo_position . "</h4>";
+										echo "<p>Place Of Work -" . $ngo_place_of_work . "</p>";
+										echo "<p>Time allocated :" . $ngo_time_start . " - " . $ngo_time_end . "</p>";
+									}
+										?>
+										</li>
+						</ul>
 					</div>
-					<form class="contact-form" method='POST'>
-						<div class="row">
-							<div class="col-md-6">
-								<input type="text" placeholder="Name">
-							</div>
-							<div class="col-md-6">
-								<input type="text" placeholder="E-mail">
-							</div>
-							<div class="col-md-12">
-								<input type="text" placeholder="Subject">
-								<textarea placeholder="Message"></textarea>
-							</div>
-						</div>
-						<div class="text-md-right">
-							<button class="site-btn" name='mail' type='submit'>Send message</button>
-						</div>
-					</form>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- Contact section end -->
-	<!--====== Javascripts & Jquery ======-->
-	<script src="../js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="../js/vendor/bootstrap.min.js"></script>
-	<script src="../js/easing.min.js"></script>
-	<script src="../js/hoverIntent.js"></script>
-	<script src="../js/superfish.min.js"></script>
-	<script src="../js/jquery.ajaxchimp.min.js"></script>
-	<script src="../js/jquery.magnific-popup.min.js"></script>
-	<script src="../js/owl.carousel.min.js"></script>
-	<script src="../js/jquery.sticky.js"></script>
-	<script src="../js/jquery.nice-select.min.js"></script>
-	<script src="../js/parallax.min.js"></script>
-	<script src="../js/mail-script.js"></script>
-	<script src="../js/main.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/magnific-popup.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/main.js"></script>
+			</section>
+			<!-- Contact section start -->
+			<section class="contact-section spad" id='contact'>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xl-8 offset-xl-2">
+							<div class="section-title">
+								<h2>Contact Me</h2>
+							</div>
+							<form class="contact-form" method='POST'>
+								<div class="row">
+									<div class="col-md-6">
+										<input type="text" placeholder="Name">
+									</div>
+									<div class="col-md-6">
+										<input type="text" placeholder="E-mail">
+									</div>
+									<div class="col-md-12">
+										<input type="text" placeholder="Subject">
+										<textarea placeholder="Message"></textarea>
+									</div>
+								</div>
+								<div class="text-md-right">
+									<button class="site-btn" name='mail' type='submit'>Send message</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Contact section end -->
+			<!--====== Javascripts & Jquery ======-->
+			<script src="../js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="../js/vendor/bootstrap.min.js"></script>
+			<script src="../js/easing.min.js"></script>
+			<script src="../js/hoverIntent.js"></script>
+			<script src="../js/superfish.min.js"></script>
+			<script src="../js/jquery.ajaxchimp.min.js"></script>
+			<script src="../js/jquery.magnific-popup.min.js"></script>
+			<script src="../js/owl.carousel.min.js"></script>
+			<script src="../js/jquery.sticky.js"></script>
+			<script src="../js/jquery.nice-select.min.js"></script>
+			<script src="../js/parallax.min.js"></script>
+			<script src="../js/mail-script.js"></script>
+			<script src="../js/main.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+			<script src="js/owl.carousel.min.js"></script>
+			<script src="js/magnific-popup.min.js"></script>
+			<script src="js/circle-progress.min.js"></script>
+			<script src="js/main.js"></script>
 </body>
 
 </html>
