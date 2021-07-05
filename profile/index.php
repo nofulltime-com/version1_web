@@ -239,7 +239,7 @@
 	</section>
 	<!-- Hero section end -->
 	<!-- Resume section start -->
-	<?php if (strpos($category, 'parttime') !== false) { ?>
+	<?php if (strpos($category, 'parttime') !== false and $res->num_rows > 0) { ?>
 		<section class="resume-section with-bg spad">
 			<div class="container-fluid">
 				<div class="row">

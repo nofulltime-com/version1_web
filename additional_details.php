@@ -1,3 +1,16 @@
+<?php
+include './connect.php';
+$id = 8;
+$q = "SELECT * FROM `job_seeker_details` WHERE id='$id'";
+$res = $conn->query($q);
+if ($res->num_rows > 0) {
+    while ($row = $res->fetch_assoc()) {
+        $summary = $row['summary'];
+    }
+}
+
+?>
+
 <html lang="en">
 
 <head>
@@ -82,7 +95,7 @@
             <form autocomplete="off" action="upload.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group ">
                     <label for="summary">Summary</label>
-                    <textarea class="form-control" id="summary" name='summary' rows="5" required placeholder='Briefly explain about yourself...'></textarea>
+                    <textarea class="form-control" id="summary" name='summary' rows="5" required placeholder='Briefly explain about yourself...'><?php echo $summary; ?></textarea>
                 </div>
                 <div class="form-group ">
                     <label for="resume">Upload your resume</label>

@@ -1,6 +1,19 @@
 <?php
 include './connect.php';
 $id = 8;
+
+$q1 = "SELECT * FROM `education_details` WHERE id='$id' AND category='pg' ORDER BY year LIMIT 1";
+$r1 = $conn->query($q1);
+if ($r1->num_rows > 0) {
+    while ($row = $r1->fetch_assoc()) {
+        $pg1_college = $row['college'];
+        $pg1_degree = $row['stream'];
+        $pg1_graduation_status  = $row['graduation_status'];
+        $pg1_percentage = $row['percentage'];
+        $pg1_year = $row['year'];
+    }
+}
+
 if (isset($_POST['pg_submit'])) {
     $pg_education_status = $_POST['pg_education_status'];
     $pg_college = $_POST['pg_college'];
@@ -66,6 +79,7 @@ if (isset($_POST['ssc_submit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education Details</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
 			CSS
@@ -158,16 +172,22 @@ if (isset($_POST['ssc_submit'])) {
                         <div class="col-md-1"></div>
                         <div class="col-md-4">
                             <?php
-                            $q = "SELECT * FROM `education_details` WHERE id='$id' AND category='pg' ORDER_BY year";
+                            $q = "SELECT * FROM `education_details` WHERE id='$id' AND category='pg' ORDER BY year";
                             $result = $conn->query($q);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    echo "<h4> College-" . strtoupper($row['college']) . "</h4>";
+                                    echo "<h4 class='mt-3'> College-" . strtoupper($row['college']) . "</h4>";
                                     echo "<h4> Degree-" . strtoupper($row['stream']) . "</h4>";
                                 }
                             }
                             ?>
                         </div>
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-link" onclick='pg_edit()' data-toggle="modal" data-target="#myModal-1">
+                                <i class='far fa-edit' style='font-size:25px;color:grey'></i>
+                            </button>
+                        </div>
+
                     </div>
                     <button type="button" class="btn btn-link mt-3" onclick='grad()' data-toggle="modal" data-target="#myModal-2">
                         + Add Graduation
@@ -180,7 +200,7 @@ if (isset($_POST['ssc_submit'])) {
                             $result = $conn->query($q);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    echo "<h4> College-" . strtoupper($row['college']) . "</h4>";
+                                    echo "<h4 class='mt-3'> College-" . strtoupper($row['college']) . "</h4>";
                                     echo "<h4> Degree-" . strtoupper($row['stream']) . "</h4>";
                                 }
                             }
@@ -190,7 +210,7 @@ if (isset($_POST['ssc_submit'])) {
 
 
                     <button type="button" class="btn btn-link mt-3" onclick='ss()' data-toggle="modal" data-target="#myModal-3">
-                        + Add senior secondary (XII)
+                        + Add senior secondary
                     </button>
                     <div class='row'>
                         <div class="col-md-1"></div>
@@ -200,7 +220,7 @@ if (isset($_POST['ssc_submit'])) {
                             $result = $conn->query($q);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    echo "<h4> College-" . strtoupper($row['college']) . "</h4>";
+                                    echo "<h4 class='mt-3'> College-" . strtoupper($row['college']) . "</h4>";
                                     echo "<h4> Stream-" . strtoupper($row['stream']) . "</h4>";
                                 }
                             }
@@ -218,7 +238,7 @@ if (isset($_POST['ssc_submit'])) {
                             $result = $conn->query($q);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    echo "<h4> College-" . strtoupper($row['college']) . "</h4>";
+                                    echo "<h4 class='mt-3'> College-" . strtoupper($row['college']) . "</h4>";
                                     echo "<h4> Stream-" . strtoupper($row['stream']) . "</h4>";
                                 }
                             }
@@ -236,7 +256,7 @@ if (isset($_POST['ssc_submit'])) {
                             $result = $conn->query($q);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    echo "<h4 class='mt-2'> School-" . strtoupper($row['college']) . "</h4>";
+                                    echo "<h4 class='mt-3'> School-" . strtoupper($row['college']) . "</h4>";
                                     echo "<h4> Board-" . strtoupper($row['stream']) . "</h4>";
                                 }
                             }
@@ -285,15 +305,15 @@ if (isset($_POST['ssc_submit'])) {
                     <div class="row mt-2">
                         <div class="col-md-7 mt-4">
                             <label for="college" class="form-label">College</label>
-                            <input type="text" required placeholder="e.g Hindu College" name='pg_college' class=" form-control" id="college" required>
+                            <input type="text" required placeholder="e.g Hindu College"  name='pg_college' class=" form-control" id="college" required>
 
                         </div>
                         <div class="col-md-5 mt-4">
                             <label for="year" class="form-label">Year of graduation</label>
-                            <select required class="form-control" name="pg_year" id='year'>
+                            <select required class="form-control"  name="pg_year" id='year'>
                                 <?php
                                 for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
-                                    <option value="<?= $year; ?>"><?= $year; ?></option>
+                                    <option value="<?= $year; ?>" ><?= $year; ?></option>
                                 <?php endfor; ?>
                             </select>
                         </div>
@@ -323,6 +343,68 @@ if (isset($_POST['ssc_submit'])) {
     </div>`;
         }
 
+        function pg_edit() {
+            document.getElementById('myModal-1').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <form action="" method='POST'>
+                <div class="modal-header text-center">
+                    <h2 class="modal-title text-center">Post Graduation details</h2>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <label for="name" class="form-label">Post Graduation status</label>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($pg1_graduation_status) && $pg1_graduation_status == "pursuing") { ?>' checked '<?php } ?>' name="pg_education_status" id="pursuing" value="pursuing" required>
+                            <label class="form-check-label" for="pursuing">Pursuing
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($pg1_graduation_status) && $pg1_graduation_status == "completed") { ?>' checked '<?php } ?>' name="pg_education_status" id="completed" value="completed">
+                            <label class="form-check-label" for="completed">Completed</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-7 mt-4">
+                            <label for="college" class="form-label">College</label>
+                            <input type="text" required placeholder="e.g Hindu College" value='<?php echo $pg1_college ?>' name='pg_college' class=" form-control" id="college" required>
+
+                        </div>
+                        <div class="col-md-5 mt-4">
+                            <label for="year" class="form-label">Year of graduation</label>
+                            <select required class="form-control" '<?php echo $pg1_year ?>' name="pg_year" id='year'>
+                                <?php
+                                for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
+                                    <option value="<?= $year; ?>"  <?php if ($year == $pg1_year) echo "selected"; ?>><?= $year; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12 mt-4">
+                            <label for="pg_degree" class="form-label">Degree:</label>
+                            <input required type="text" class="form-control mt-2" value='<?php echo $pg1_degree ?>' id="pg_degree" name="pg_degree" placeholder="e.g MBA">
+                        </div>
+                       
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 mt-4">
+                            <label for="percentage" class="form-label">Percentage</label>
+                            <input type="text" class="form-control mt-2" id="percentage" value='<?php echo $pg1_percentage ?>' name="pg_percentage" placeholder="Enter your percentage">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class='btn btn-primary btn-lg' type='submit' name='pg_edit'>Save</button>
+                </div>
+            </form>
+        </div>
+    </div>`;
+        }
 
         function grad() {
             document.getElementById('myModal-2').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
