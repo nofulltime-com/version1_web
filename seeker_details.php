@@ -5,11 +5,18 @@ $q = "SELECT * FROM `seeker_details` WHERE id='$id'";
 $result = $conn->query($q);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
+        $name = $row['fullname'];
+        $age = $row['age'];
+        $gender = $row['gender'];
+        $status = $row['status'];
+        $city = $row['town'];
+        $state = $row['state'];
+        $country = $row['country'];
+        $pincode = $row['pin_code'];
         $preferences = $row['category'];
     }
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     $name = $_POST['name'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
@@ -141,27 +148,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="name" class="form-label">Status</label>
                     <select required class="form-control" name="status">
                         <option value="">---Martial Status---</option>
-                        <option value="single" <?php $status == 'single' ? ' selected="selected"' : ''; ?>>Single</option>
-                        <option value="married" <?php $status == 'married' ? ' selected="selected"' : ''; ?>>Married</option>
-                        <option value="single_woman" <?php $status == 'single_woman' ? ' selected="selected"' : ''; ?>>Single Woman</option>
+                        <option value="single" <?php if ($status == 'single') echo 'selected="selected"';; ?>>Single</option>
+                        <option value="married" <?php if ($status == 'married') echo 'selected="selected"';; ?>>Married</option>
+                        <option value="single_woman" <?php if ($status == 'single_woman') echo 'selected="selected"';; ?>>Single Woman</option>
                     </select>
                 </div>
                 <div class="col-md-4 mt-4">
                     <label for="city" class="form-label">City/Town</label>
-                    <input type="text" class="form-control mt-2" id="city" name="city" placeholder="e.g Chennai" required>
+                    <input type="text" class="form-control mt-2" id="city" value="<?php echo $city; ?>" name="city" placeholder="e.g Chennai" required>
                 </div>
                 <div class="col-md-4 mt-4">
                     <label for="state" class="form-label">State</label>
-                    <input type="text" class="form-control mt-2" id="State" name="state" placeholder="e.g Tamil Nadu" required>
+                    <input type="text" class="form-control mt-2" id="State" value="<?php echo $state; ?>" name="state" placeholder="e.g Tamil Nadu" required>
                 </div>
                 <div class="col-md-4 mt-4">
                     <label for="country" class="form-label">Country</label>
-                    <input type="text" class="form-control mt-2" name="country" id="country" placeholder="e.g India" required>
+                    <input type="text" class="form-control mt-2" name="country" value="<?php echo $country; ?>" id="country" placeholder="e.g India" required>
                 </div>
 
                 <div class="col-md-12 mt-4">
                     <label for="pincode" class="form-label">PIN code</label>
-                    <input type="number" class="form-control" name="pincode" id="pincode" placeholder="Enter your PIN code" required>
+                    <input type="number" class="form-control" name="pincode" id="pincode" value="<?php echo $pincode; ?>" placeholder="Enter your PIN code" required>
                 </div>
 
                 <div class="col-12 mt-5 text-center">

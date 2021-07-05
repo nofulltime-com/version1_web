@@ -101,7 +101,7 @@
 	}
 
 
-	if (strpos($category, 'parttime') !== false or strpos($category, 'ngo') !== false) {
+	if (strpos($category, 'parttime') !== false) {
 		$q = "SELECT * FROM `education_details` WHERE id='$id' ORDER BY year";
 		$res = $conn->query($q);
 	}

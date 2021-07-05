@@ -1,14 +1,70 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include './connect.php';
-    $prefernces = '';
-    foreach ($_POST['preference'] as $selected) {
+include './connect.php';
+$id = 8;
+$prefernces = '';
+$q = "SELECT * FROM `seeker_details` WHERE id='$id'";
+$res = $conn->query($q);
+if ($res->num_rows > 0) {
+    while ($row = $res->fetch_assoc()) {
+        $prefernces = $row['category'];
+        $part_time_start = $row['part_time_start'];
+        $part_time_end = $row['part_time_end'];
+        $course_time_start = $row['course_time_start'];
+        $course_time_end = $row['course_time_end'];
+        $ngo_time_start = $row['ngo_time_start'];
+        $ngo_time_end = $row['ngo_time_end'];
+    }
+}
 
+if (strpos($prefernces, 'parttime') !== false) {
+    $q2 = "SELECT * FROM `job_seeker_details` WHERE id='$id'";
+    $r2 = $conn->query($q2);
+    if ($r2->num_rows > 0) {
+        while ($row = $r2->fetch_assoc()) {
+            $field = ucfirst(strtolower($row['field']));
+            $position = ucfirst(strtolower($row['position']));
+            $place_of_work = $row['place_of_work'];
+        }
+    }
+}
+
+if (strpos($prefernces, 'course') !== false) {
+
+    $q3 = "SELECT * FROM `course_details` WHERE id='$id'";
+    $r3 = $conn->query($q3);
+    if ($r3->num_rows > 0) {
+
+        while ($row = $r3->fetch_assoc()) {
+            $course_field = ucfirst(strtolower($row['field']));
+            $course_name = ucfirst(strtolower($row['course']));
+            $mode_of_learning  = $row['mode_of_learning'];
+            echo "<script>console.log('$mode_of_learning')</script>";
+        }
+    }
+}
+
+if (strpos($prefernces, 'ngo') !== false) {
+    $q4 = "SELECT * FROM `ngo_details` WHERE id='$id'";
+    $r4 = $conn->query($q4);
+    if ($r4->num_rows > 0) {
+        while ($row = $r4->fetch_assoc()) {
+            $ngo_field = ucfirst(strtolower($row['field']));
+            $ngo_position = ucfirst(strtolower($row['position']));
+            $ngo_place_of_work  = $row['place_of_work'];
+        }
+    }
+}
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    foreach ($_POST['preference'] as $selected) {
         $prefernces = $prefernces  . "," . $selected;
     }
     $prefernces = substr($prefernces, 1);
 
-    $id = 8;
+
 
     $query1 = "INSERT INTO seeker_details(`id`, `fullname`, `town`, `state`, `country`, `pin_code`, `status`, `age`, `gender`, `category`, `part_time_start`, `part_time_end`, `course_time_start`, `course_time_end`, `ngo_time_start`, `ngo_time_end`, `profile_picture`, `date`) values ('$id', '', '', '', '', '', '', NULL, '', '$prefernces', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-03 05:09:15.000000')";
     if ($conn->query($query1) == TRUE) {
@@ -188,18 +244,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="name" class="form-label">What are you looking for?</label>
                     <div class="col-md-12 mt-4">
                         <div class="form-check preferences">
-                            <input class="form-check-input" type="checkbox" name="preference[]" <?php if (strpos($prefernces, "parttime") !== false) echo 'checked';
+                            <input class="form-check-input" type="checkbox" name="preference[]" <?php if (strpos($prefernces, "parttime") !== false) echo 'checked="checked"';
                                                                                                 else echo ""; ?> id="parttime" value="parttime">
                             <label class="form-check-label" for="parttime">Part-Time Job</label>
                         </div>
                         <div class="form-check preferences mt-4">
                             <input class="form-check-input" type="checkbox" name="preference[]" id="course" value="course" <?php if (strpos($prefernces, "course") !== false) echo 'checked';
-                                                                                                                            else echo ""; ?>>
+                                                                                                                            ?>>
                             <label class="form-check-label" for="course">Learn a Course</label>
                         </div>
                         <div class="form-check preferences mt-4">
                             <input class="form-check-input" type="checkbox" name="preference[]" id="ngo" value="ngo" <?php if (strpos($prefernces, "ngo") !== false) echo 'checked';
-                                                                                                                        else echo ""; ?>>
+                                                                                                                        ?>>
                             <label class="form-check-label" for="ngo">Work for a NGO</label>
                         </div>
                     </div>
@@ -246,12 +302,124 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         v1.addEventListener('click', parttime);
         v2.addEventListener('click', course);
         v3.addEventListener('click', ngo);
+        if (v1.checked) {
+            document.getElementById('partime-details').innerHTML = v1.checked ? `<label for="name" class="form-label">Which of the following part-time job type are you looking for?</label>
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($place_of_work) && $place_of_work == "wfh") { ?>' checked '<?php } ?>' name="work_place" id="wfh" value="wfh" required>
+                            <label class="form-check-label" for="wfh">Work From Home</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="work_place" id="in_o" value="in_office" '<?php if (isset($place_of_work) && $place_of_work == "in_office") { ?>' checked '<?php } ?>'>
+                            <label class="form-check-label" for="in_o">In-Office</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6 mt-4">
+                            <label for="field" class="form-label">Field:</label>
+                            <input type="text" class="form-control mt-2" id="field" value='<?php echo "$field"; ?>' name="field" placeholder="e.g Software Development" required>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <label for=" position" class="form-label">Position:</label>
+                            <input type="text" class="form-control mt-2" id="position" value='<?php echo "$position"; ?>' name="position" placeholder="e.g Full Stack Developer" required>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <label for="part_time_start">Enter the time interval when you will be available for part-time:</label>
+                        <div class="col-md-6">
+                            <small for="part_time_start">Start Time:</small>
+                            <input type="time" class="form-control" id="part_time_start" value='<?php echo "$part_time_start"; ?>' name="part_time_start" required>
+                        </div>
+                        <div class="col-md-6">
+                            <small for="part_time_end">End Time:</small>
+                            <input type="time" class="form-control" id="part_time_end" value='<?php echo "$part_time_end"; ?>' name="part_time_end" required>
+                        </div>
+                    </div>` : "";
+            document.getElementById('partime-details').style.display = v1.checked ? "block" : "none";
+        }
+
+        if (v2.checked) {
+            document.getElementById('course-details').innerHTML = v2.checked ? `<label for="name" class="form-label">Where do you want to learn the course?</label>
+                    <div class="col-md-6 mt-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($mode_of_learning) && $mode_of_learning == "online") { ?>' checked '<?php } ?>' name="learning_place" id="online" value="online" required>
+                            <label class="form-check-label" for="online">Online</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="learning_place" id="coaching_center" '<?php if (isset($mode_of_learning) && $mode_of_learning == "coaching_center") { ?>' checked '<?php } ?>' value="coaching_center">
+                            <label class="form-check-label" for="coaching_center">At Coaching center</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6 mt-4">
+                            <label for="course_field" class="form-label">Field:</label>
+                            <input type="text" class="form-control mt-2" id="course_field" name="course_field" value='<?php echo "$course_field"; ?>' placeholder="e.g Web Development" required>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <label for="course" class="form-label">Course Name:</label>
+                            <input type="text" class="form-control mt-2" id="course" name="course_name" value='<?php echo "$course_name"; ?>' placeholder="e.g REACT JS" required>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-5">
+                        <label for="course_time_start">Enter the time interval you want to use for the course:</label>
+                        <div class="col-md-6">
+                            <small for="course_time_start">Start Time:</small>
+                            <input type="time" class="form-control" id="course_time_start" value='<?php echo "$course_time_start"; ?>' name="course_time_start" required>
+                        </div>
+                        <div class="col-md-6">
+                            <small for="course_time_end">End Time:</small>
+                            <input type="time" class="form-control" id="course_time_end" value='<?php echo "$course_time_end"; ?>' name="course_time_end" required>
+                        </div>
+                    </div>
+` : "";
+            document.getElementById('course-details').style.display = v2.checked ? "block" : "none";
+        }
+
+
+        if (v3.checked) {
+            document.getElementById('ngo-details').style.display = v3.checked ? "block" : "none";
+
+            document.getElementById('ngo-details').innerHTML = v3.checked ? `<label for="name" class="form-label">Your prefered place of operation?</label>
+    <div class="col-md-6 mt-3">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="ngo_place" '<?php if (isset($ngo_place_of_work) && $ngo_place_of_work == "wfh") { ?>' checked '<?php } ?>' id="ngo_wfh" value="wfh" required>
+                <label class="form-check-label" for="ngo_wfh">Work From Home</label>
+                        </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" '<?php if (isset($ngo_place_of_work) && $ngo_place_of_work == "in_office") { ?>' checked '<?php } ?>' name="ngo_place" id="ngo_in_o" value="in_office">
+                    <label class="form-check-label" for="ngo_in_o">In-Office</label>
+                        </div>
+            </div>
+            <label for="ngo_field" class="form-label mt-5">Under which ngo sector you want to work for?</label>
+            <div class="col-12 mt-2">
+                <input type="text" class="form-control mt-2" id="ngo_field" value='<?php echo "$ngo_field"; ?>' name="ngo_field" placeholder="e.g Women's Development & Empowerment" required>
+                    </div>
+                <label for="ngo_position" class="form-label mt-4">Position of Work</label>
+                <div class="col-12 mt-2">
+                    <input type="text" class="form-control mt-2" id="ngo_position" value='<?php echo "$ngo_position"; ?>' name="ngo_position" placeholder="e.g Data Entry operator" required>
+                    </div>
+
+
+                    <div class="row mt-5">
+                        <label for="ngo_time_start">Enter the time interval you can constribute for the NGO:</label>
+                        <div class="col-md-6">
+                            <small for="part_time_start">Start Time:</small>
+                            <input type="time" class="form-control" value='<?php echo "$ngo_time_start"; ?>' id="ngo_time_start" name="ngo_time_start" required>
+                        </div>
+                            <div class="col-md-6">
+                                <small for="ngo_time_end">End Time:</small>
+                                <input type="time" class="form-control" value='<?php echo "$ngo_time_end"; ?>' id="ngo_time_end" name="ngo_time_end" required>
+                        </div>
+                            </div>` : "";
+        }
 
         function parttime() {
             document.getElementById('partime-details').innerHTML = v1.checked ? `<label for="name" class="form-label">Which of the following part-time job type are you looking for?</label>
                     <div class="col-md-6 mt-3">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="work_place" id="wfh" value="wfh" required>
+                            <input class="form-check-input" type="radio" name="work_place" id="wfh" value="wfh" required >
                             <label class="form-check-label" for="wfh">Work From Home</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -328,38 +496,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             document.getElementById('ngo-details').style.display = v3.checked ? "block" : "none";
 
             document.getElementById('ngo-details').innerHTML = v3.checked ? `<label for="name" class="form-label">Your prefered place of operation?</label>
-                    <div class="col-md-6 mt-3">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ngo_place" id="ngo_wfh" value="wfh" required>
-                            <label class="form-check-label" for="ngo_wfh">Work From Home</label>
+                            <div class="col-md-6 mt-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="ngo_place" id="ngo_wfh" value="wfh" required>
+                                        <label class="form-check-label" for="ngo_wfh">Work From Home</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="ngo_place" id="ngo_in_o" value="in_office">
-                            <label class="form-check-label" for="ngo_in_o">In-Office</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="ngo_place" id="ngo_in_o" value="in_office">
+                                            <label class="form-check-label" for="ngo_in_o">In-Office</label>
                         </div>
-                    </div>
-            <label for="ngo_field" class="form-label mt-5">Under which ngo sector you want to work for?</label>
-                    <div class="col-12 mt-2">
-                        <input type="text" class="form-control mt-2" id="ngo_field" name="ngo_field" placeholder="e.g Women's Development & Empowerment" required>
-                    </div>
-
-            <label for="ngo_position" class="form-label mt-4">Position of Work</label>
-                    <div class="col-12 mt-2">
-                        <input type="text" class="form-control mt-2" id="ngo_position" name="ngo_position" placeholder="e.g Data Entry operator" required>
+                                    </div>
+                                    <label for="ngo_field" class="form-label mt-5">Under which ngo sector you want to work for?</label>
+                                    <div class="col-12 mt-2">
+                                        <input type="text" class="form-control mt-2" id="ngo_field"  name="ngo_field" placeholder="e.g Women's Development & Empowerment" required>
                     </div>
 
+                                        <label for="ngo_position" class="form-label mt-4">Position of Work</label>
+                                        <div class="col-12 mt-2">
+                                            <input type="text" class="form-control mt-2" id="ngo_position" name="ngo_position" placeholder="e.g Data Entry operator" required>
+                    </div>
 
-                    <div class="row mt-5">
-                        <label for="ngo_time_start">Enter the time interval you can constribute for the NGO:</label>
-                        <div class="col-md-6">
-                            <small for="part_time_start">Start Time:</small>
-                            <input type="time" class="form-control" id="ngo_time_start" name="ngo_time_start" required>
+
+                                            <div class="row mt-5">
+                                                <label for="ngo_time_start">Enter the time interval you can constribute for the NGO:</label>
+                                                <div class="col-md-6">
+                                                    <small for="part_time_start">Start Time:</small>
+                                                    <input type="time" class="form-control" id="ngo_time_start" name="ngo_time_start" required>
                         </div>
-                        <div class="col-md-6">
-                            <small for="ngo_time_end">End Time:</small>
-                            <input type="time" class="form-control" id="ngo_time_end" name="ngo_time_end" required>
+                                                    <div class="col-md-6">
+                                                        <small for="ngo_time_end">End Time:</small>
+                                                        <input type="time" class="form-control" id="ngo_time_end" name="ngo_time_end" required>
                         </div>
-                    </div>` : "";
+                                                    </div>` : "";
 
 
         }
