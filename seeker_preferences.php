@@ -1,10 +1,17 @@
 <?php
 include './connect.php';
+
 $id = 8;
 $prefernces = '';
+
 $q = "SELECT * FROM `seeker_details` WHERE id='$id'";
 $res = $conn->query($q);
+$flag = false;
+$edit_flag = false;
+$parttime_flag = false;
+$ngo_flag = false;
 if ($res->num_rows > 0) {
+    $flag = true;
     while ($row = $res->fetch_assoc()) {
         $prefernces = $row['category'];
         $part_time_start = $row['part_time_start'];
@@ -17,6 +24,7 @@ if ($res->num_rows > 0) {
 }
 
 if (strpos($prefernces, 'parttime') !== false) {
+    $parttime_flag = true;
     $q2 = "SELECT * FROM `job_seeker_details` WHERE id='$id'";
     $r2 = $conn->query($q2);
     if ($r2->num_rows > 0) {
@@ -29,7 +37,7 @@ if (strpos($prefernces, 'parttime') !== false) {
 }
 
 if (strpos($prefernces, 'course') !== false) {
-
+    $edit_flag = true;
     $q3 = "SELECT * FROM `course_details` WHERE id='$id'";
     $r3 = $conn->query($q3);
     if ($r3->num_rows > 0) {
@@ -38,12 +46,12 @@ if (strpos($prefernces, 'course') !== false) {
             $course_field = ucfirst(strtolower($row['field']));
             $course_name = ucfirst(strtolower($row['course']));
             $mode_of_learning  = $row['mode_of_learning'];
-            echo "<script>console.log('$mode_of_learning')</script>";
         }
     }
 }
 
 if (strpos($prefernces, 'ngo') !== false) {
+    $ngo_flag = true;
     $q4 = "SELECT * FROM `ngo_details` WHERE id='$id'";
     $r4 = $conn->query($q4);
     if ($r4->num_rows > 0) {
@@ -58,41 +66,34 @@ if (strpos($prefernces, 'ngo') !== false) {
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    $prefernces = '';
     foreach ($_POST['preference'] as $selected) {
         $prefernces = $prefernces  . "," . $selected;
     }
     $prefernces = substr($prefernces, 1);
 
 
-
-    $query1 = "INSERT INTO seeker_details(`id`, `fullname`, `town`, `state`, `country`, `pin_code`, `status`, `age`, `gender`, `category`, `part_time_start`, `part_time_end`, `course_time_start`, `course_time_end`, `ngo_time_start`, `ngo_time_end`, `profile_picture`, `date`) values ('$id', '', '', '', '', '', '', NULL, '', '$prefernces', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-07-03 05:09:15.000000')";
-    if ($conn->query($query1) == TRUE) {
-        echo '<script>console.log("Success")</script>';
+    $date = date("Y-m-d h:i:s");
+    if (!$flag) {
+        $query1 = "INSERT INTO seeker_details(`id`, `fullname`, `town`, `state`, `country`, `pin_code`, `status`, `age`, `gender`, `category`, `part_time_start`, `part_time_end`, `course_time_start`, `course_time_end`, `ngo_time_start`, `ngo_time_end`, `profile_picture`, `date`) values ('$id', '', '', '', '', '', '', NULL, '', '$prefernces', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$date')";
     } else {
-        echo '<script>console.log($conn->error)</script>';
+        $query1 = "UPDATE `seeker_details` SET `category` = '$prefernces' WHERE `seeker_details`.`id` = $id";
     }
+    $conn->query($query1);
+
 
     if (strpos($prefernces, 'parttime') !== false) {
         $part_time_start = $_POST['part_time_start'];
         $part_time_end = $_POST['part_time_end'];
         $query2 = "UPDATE `seeker_details` SET `part_time_start` = '$part_time_start', `part_time_end` = '$part_time_end' WHERE `seeker_details`.`id` = $id";
-        if ($conn->query($query2) == TRUE) {
-            echo '<script>console.log("Success")</script>';
-        } else {
-            echo '<script>console.log($conn->error)</script>';
-        }
+        $conn->query($query2);
     }
 
     if (strpos($prefernces, 'course') !== false) {
         $course_time_start = $_POST['course_time_start'];
         $course_time_end = $_POST['course_time_end'];
         $query3 = "UPDATE `seeker_details` SET `course_time_start` = '$course_time_start', `course_time_end` = '$course_time_end' WHERE `seeker_details`.`id` = $id";
-        if ($conn->query($query3) == TRUE) {
-            echo '<script>console.log("Success")</script>';
-        } else {
-            echo '<script>console.log($conn->error)</script>';
-        }
+        $conn->query($query3);
     }
 
 
@@ -100,11 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ngo_time_start = $_POST['ngo_time_start'];
         $ngo_time_end = $_POST['ngo_time_end'];
         $query4 = "UPDATE `seeker_details` SET `ngo_time_start` = '$ngo_time_start', `ngo_time_end` = '$ngo_time_end' WHERE `seeker_details`.`id` = $id";
-        if ($conn->query($query4) == TRUE) {
-            echo '<script>console.log("Success")</script>';
-        } else {
-            echo '<script>console.log($conn->error)</script>';
-        }
+        $conn->query($query4);
     }
 
 
@@ -112,36 +109,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $job_work_place = $_POST['work_place'];
         $job_field = $_POST['field'];
         $job_position = $_POST['position'];
-        $query5 = "INSERT INTO `job_seeker_details` (`id`, `resume`, `summary`, `field`, `position`, `place_of_work`) VALUES ('$id', '', '', '$job_field', '$job_position', '$job_work_place');";
-        if ($conn->query($query5) == TRUE) {
-            echo '<script>console.log("Job Inserted")</script>';
-        } else {
-            echo '<script>console.log($conn->error)</script>';
-        }
+
+        if (!$parttime_flag)
+            $query5 = "INSERT INTO `job_seeker_details` (`id`, `resume`, `summary`, `field`, `position`, `place_of_work`) VALUES ('$id', '', '', '$job_field', '$job_position', '$job_work_place');";
+        else
+            $query5 = "UPDATE `job_seeker_details` SET `field` = '$job_field', `position` = '$job_position',`place_of_work`='$job_work_place' WHERE `job_seeker_details`.`id` = $id;";
+        $conn->query($query5);
     }
 
     if (isset($_POST['course_field'])) {
         $learning_place = $_POST['learning_place'];
         $course_field = $_POST['course_field'];
         $course_name = $_POST['course_name'];
-        $query6 = "INSERT INTO `course_details` (`id`, `field`, `course`, `mode_of_learning`) VALUES ('$id', '$course_field', '$course_name', '$learning_place');";
-        if ($conn->query($query6) == TRUE) {
-            echo '<script>console.log("Course Inserted")</script>';
-        } else {
-            echo '<script>console.log($conn->error)</script>';
-        }
+        if (!$edit_flag)
+            $query6 = "INSERT INTO `course_details` (`id`, `field`, `course`, `mode_of_learning`) VALUES ('$id', '$course_field', '$course_name', '$learning_place');";
+        else
+            $query6 = "UPDATE `course_details` SET `field` = '$course_field', `course` = '$course_name',`mode_of_learning`='$learning_place' WHERE `course_details`.`id` = $id;";
+        $conn->query($query6);
     }
 
-    if (isset($_POST['ngo_place'])) {
+    if (isset($_POST['ngo_field'])) {
         $ngo_work_place = $_POST['ngo_place'];
         $ngo_field = $_POST['ngo_field'];
         $ngo_position = $_POST['ngo_position'];
-        $query7 = "INSERT INTO `ngo_details` (`id`,`field`, `position`, `place_of_work`) VALUES ('$id','$ngo_field', '$ngo_position', '$ngo_work_place');";
-        if ($conn->query($query7) == TRUE) {
-            echo '<script>console.log("NGO Inserted")</script>';
-        } else {
-            echo '<script>console.log($conn->error)</script>';
-        }
+
+        if (!$ngo_flag)
+            $query7 = "INSERT INTO `ngo_details` (`id`,`field`, `position`, `place_of_work`) VALUES ('$id','$ngo_field', '$ngo_position', '$ngo_work_place');";
+        else
+            $query7 = "UPDATE `ngo_details` SET `field` = '$ngo_field',`position` = '$ngo_position',`place_of_work`='$ngo_work_place' WHERE `ngo_details`.`id` = $id;";
+        $conn->query($query7);
     }
 
 
@@ -379,6 +375,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         if (v3.checked) {
+
             document.getElementById('ngo-details').style.display = v3.checked ? "block" : "none";
 
             document.getElementById('ngo-details').innerHTML = v3.checked ? `<label for="name" class="form-label">Your prefered place of operation?</label>
