@@ -5,14 +5,77 @@ $id = 8;
 $q1 = "SELECT * FROM `education_details` WHERE id='$id' AND category='pg' ORDER BY year LIMIT 1";
 $r1 = $conn->query($q1);
 if ($r1->num_rows > 0) {
+    $pg_flag = true;
     while ($row = $r1->fetch_assoc()) {
         $pg1_college = $row['college'];
         $pg1_degree = $row['stream'];
         $pg1_graduation_status  = $row['graduation_status'];
         $pg1_percentage = $row['percentage'];
         $pg1_year = $row['year'];
+        $pg_sno = $row['sno'];
     }
 }
+
+
+$q2 = "SELECT * FROM `education_details` WHERE id='$id' AND category='grad' ORDER BY year LIMIT 1";
+$r2 = $conn->query($q2);
+if ($r2->num_rows > 0) {
+    $grad_flag = true;
+    while ($row = $r2->fetch_assoc()) {
+        $grad1_college = $row['college'];
+        $grad1_degree = $row['stream'];
+        $grad1_graduation_status  = $row['graduation_status'];
+        $grad1_percentage = $row['percentage'];
+        $grad1_year = $row['year'];
+        $grad_sno = $row['sno'];
+    }
+}
+
+
+$q3 = "SELECT * FROM `education_details` WHERE id='$id' AND category='ss' ORDER BY year LIMIT 1";
+$r3 = $conn->query($q3);
+if ($r3->num_rows > 0) {
+    $ss_flag = true;
+    while ($row = $r3->fetch_assoc()) {
+        $ss1_college = $row['college'];
+        $ss1_degree = $row['stream'];
+        $ss1_education_status  = $row['graduation_status'];
+        $ss1_percentage = $row['percentage'];
+        $ss1_year = $row['year'];
+        $ss_sno = $row['sno'];
+    }
+}
+
+
+$q4 = "SELECT * FROM `education_details` WHERE id='$id' AND category='diploma' ORDER BY year LIMIT 1";
+$r4 = $conn->query($q4);
+if ($r4->num_rows > 0) {
+    $diploma_flag = true;
+    while ($row = $r4->fetch_assoc()) {
+        $diploma1_college = $row['college'];
+        $diploma1_degree = $row['stream'];
+        $diploma1_education_status  = $row['graduation_status'];
+        $diploma1_percentage = $row['percentage'];
+        $diploma1_year = $row['year'];
+        $diploma_sno = $row['sno'];
+    }
+}
+
+
+$q5 = "SELECT * FROM `education_details` WHERE id='$id' AND category='ssc' ORDER BY year LIMIT 1";
+$r5 = $conn->query($q5);
+if ($r5->num_rows > 0) {
+    $ssc_flag = true;
+    while ($row = $r5->fetch_assoc()) {
+        $ssc1_college = $row['college'];
+        $ssc1_degree = $row['stream'];
+        $ssc1_education_status  = $row['graduation_status'];
+        $ssc1_percentage = $row['percentage'];
+        $ssc1_year = $row['year'];
+        $ssc_sno = $row['sno'];
+    }
+}
+
 
 if (isset($_POST['pg_submit'])) {
     $pg_education_status = $_POST['pg_education_status'];
@@ -22,7 +85,29 @@ if (isset($_POST['pg_submit'])) {
     $category = 'pg';
     $pg_percentage = $_POST['pg_percentage'];
     $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$pg_degree', '$pg_education_status', '$pg_college', '$pg_year', '$pg_percentage');";
-    $conn->query($query1) == TRUE;
+    $conn->query($query1);
+}
+
+if (isset($_POST['pg_edit_btn'])) {
+    $pg_education_status = $_POST['pg_education_status'];
+    $pg_college = $_POST['pg_college'];
+    $pg_year = $_POST['pg_year'];
+    $pg_degree = $_POST['pg_degree'];
+    $category = 'pg';
+    $pg_percentage = $_POST['pg_percentage'];
+    $q_edit = "UPDATE `education_details` SET `stream` = '$pg_degree',`graduation_status`='$pg_education_status' ,`college` = '$pg_college', `year` = '$pg_year', `percentage` = '$pg_percentage' WHERE `education_details`.`sno` =$pg_sno;";
+    $conn->query($q_edit);
+}
+
+if (isset($_POST['grad_edit_btn'])) {
+    $grad_education_status = $_POST['grad_education_status'];
+    $grad_college = $_POST['grad_college'];
+    $grad_year = $_POST['grad_year'];
+    $grad_degree = $_POST['grad_degree'];
+    $category = 'grad';
+    $grad_percentage = $_POST['grad_percentage'];
+    $q_edit = "UPDATE `education_details` SET `stream` = '$grad_degree',`graduation_status`='$grad_education_status' ,`college` = '$grad_college', `year` = '$grad_year', `percentage` = '$grad_percentage' WHERE `education_details`.`sno` =$grad_sno;";
+    $conn->query($q_edit);
 }
 
 if (isset($_POST['grad_submit'])) {
@@ -33,7 +118,7 @@ if (isset($_POST['grad_submit'])) {
     $category = 'grad';
     $grad_percentage = $_POST['grad_percentage'];
     $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$grad_degree', '$grad_education_status', '$grad_college', '$grad_year', '$grad_percentage');";
-    $conn->query($query1) == TRUE;
+    $conn->query($query1);
 }
 
 if (isset($_POST['ss_submit'])) {
@@ -44,8 +129,45 @@ if (isset($_POST['ss_submit'])) {
     $category = 'ss';
     $ss_percentage = $_POST['ss_percentage'];
     $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$ss_degree', '$ss_education_status', '$ss_college', '$ss_year', '$ss_percentage');";
-    $conn->query($query1) == TRUE;
+    $conn->query($query1);
 }
+
+if (isset($_POST['ss_edit_btn'])) {
+    $ss_education_status = $_POST['ss_education_status'];
+    $ss_college = $_POST['ss_college'];
+    $ss_year = $_POST['ss_year'];
+    $ss_degree = $_POST['ss_degree'];
+    $category = 'ss';
+    $ss_percentage = $_POST['ss_percentage'];
+    $q_edit = "UPDATE `education_details` SET `stream` = '$ss_degree',`graduation_status`='$ss_education_status' ,`college` = '$ss_college', `year` = '$ss_year', `percentage` = '$ss_percentage' WHERE `education_details`.`sno` =$ss_sno;";
+    $conn->query($q_edit);
+}
+
+
+
+if (isset($_POST['diploma_edit_btn'])) {
+    $diploma_education_status = $_POST['diploma_education_status'];
+    $diploma_college = $_POST['diploma_college'];
+    $diploma_year = $_POST['diploma_year'];
+    $diploma_stream = $_POST['diploma_stream'];
+    $category = 'diploma';
+    $diploma_percentage = $_POST['diploma_percentage'];
+    $q_edit = "UPDATE `education_details` SET `stream` = '$diploma_stream',`graduation_status`='$diploma_education_status' ,`college` = '$diploma_college', `year` = '$diploma_year', `percentage` = '$diploma_percentage' WHERE `education_details`.`sno` =$diploma_sno;";
+    $conn->query($q_edit);
+}
+
+
+if (isset($_POST['ssc_edit_btn'])) {
+    $ssc_education_status = $_POST['ssc_education_status'];
+    $ssc_college = $_POST['ssc_college'];
+    $ssc_year = $_POST['ssc_year'];
+    $ssc_stream = $_POST['ssc_stream'];
+    $category = 'ssc';
+    $ssc_percentage = $_POST['ssc_percentage'];
+    $q_edit = "UPDATE `education_details` SET `stream` = '$ssc_stream',`graduation_status`='$ssc_education_status' ,`college` = '$ssc_college', `year` = '$ssc_year', `percentage` = '$ssc_percentage' WHERE `education_details`.`sno` =$ssc_sno;";
+    $conn->query($q_edit);
+}
+
 
 if (isset($_POST['diploma_submit'])) {
     $diploma_education_status = $_POST['diploma_education_status'];
@@ -55,7 +177,7 @@ if (isset($_POST['diploma_submit'])) {
     $category = 'diploma';
     $diploma_percentage = $_POST['diploma_percentage'];
     $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$diploma_stream', '$diploma_education_status', '$diploma_college', '$diploma_year', '$diploma_percentage');";
-    $conn->query($query1) == TRUE;
+    $conn->query($query1);
 }
 
 if (isset($_POST['ssc_submit'])) {
@@ -66,7 +188,7 @@ if (isset($_POST['ssc_submit'])) {
     $category = 'ssc';
     $ssc_percentage = $_POST['ssc_percentage'];
     $query1 = "INSERT INTO `education_details` (`sno`, `id`, `category`, `stream`, `graduation_status`, `college`, `year`, `percentage`) VALUES (NULL, '$id', '$category', '$ssc_stream', '$ssc_education_status', '$ssc_college', '$ssc_year', '$ssc_percentage');";
-    $conn->query($query1) == TRUE;
+    $conn->query($query1);
 }
 ?>
 
@@ -182,11 +304,13 @@ if (isset($_POST['ssc_submit'])) {
                             }
                             ?>
                         </div>
-                        <div class="col-md-3">
-                            <button type="button" class="btn btn-link" onclick='pg_edit()' data-toggle="modal" data-target="#myModal-1">
-                                <i class='far fa-edit' style='font-size:25px;color:grey'></i>
-                            </button>
-                        </div>
+                        <?php if ($pg_flag) { ?>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-link" onclick='pg_edit()' data-toggle="modal" data-target="#myModal-1">
+                                    <i class='far fa-edit' style='font-size:25px;color:grey'></i>
+                                </button>
+                            </div>
+                        <?php } ?>
 
                     </div>
                     <button type="button" class="btn btn-link mt-3" onclick='grad()' data-toggle="modal" data-target="#myModal-2">
@@ -206,7 +330,15 @@ if (isset($_POST['ssc_submit'])) {
                             }
                             ?>
                         </div>
+                        <?php if ($grad_flag) { ?>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-link" onclick='grad_edit()' data-toggle="modal" data-target="#myModal-2">
+                                    <i class='far fa-edit' style='font-size:25px;color:grey'></i>
+                                </button>
+                            </div>
+                        <?php } ?>
                     </div>
+
 
 
                     <button type="button" class="btn btn-link mt-3" onclick='ss()' data-toggle="modal" data-target="#myModal-3">
@@ -226,7 +358,17 @@ if (isset($_POST['ssc_submit'])) {
                             }
                             ?>
                         </div>
+                        <?php if ($ss_flag) { ?>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-link" onclick='ss_edit()' data-toggle="modal" data-target="#myModal-3">
+                                    <i class='far fa-edit' style='font-size:25px;color:grey'></i>
+                                </button>
+                            </div>
+                        <?php } ?>
                     </div>
+
+
+
                     <button type="button" class="btn btn-link mt-4" onclick='diploma()' data-toggle="modal" data-target="#myModal-4">
                         + Add diploma
                     </button>
@@ -244,7 +386,16 @@ if (isset($_POST['ssc_submit'])) {
                             }
                             ?>
                         </div>
+                        <?php if ($diploma_flag) { ?>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-link" onclick='diploma_edit()' data-toggle="modal" data-target="#myModal-4">
+                                    <i class='far fa-edit' style='font-size:25px;color:grey'></i>
+                                </button>
+                            </div>
+                        <?php } ?>
                     </div>
+
+
                     <button type="button" class="btn btn-link mt-4" onclick='ssc()' data-toggle="modal" data-target="#myModal-5">
                         + Add secondary (X)
                     </button>
@@ -262,9 +413,19 @@ if (isset($_POST['ssc_submit'])) {
                             }
                             ?>
                         </div>
+                        <?php if ($ssc_flag) { ?>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-link" onclick='ssc_edit()' data-toggle="modal" data-target="#myModal-5">
+                                    <i class='far fa-edit' style='font-size:25px;color:grey'></i>
+                                </button>
+                            </div>
+                        <?php } ?>
                     </div>
                     <div class="col-12 mt-4 text-center" id='save'>
                         <a href='./additional_details.php' class="btn btn-success btn-lg">Save & Next</a>
+                    </div>
+                    <div class="col-12 mt-4 text-center" id='save'>
+                        <a href='./seeker_details.php' class="btn btn-outline-danger btn-lg">Previous</a>
                     </div>
                     <div class="modal fade" id="myModal-1"></div>
 
@@ -399,7 +560,7 @@ if (isset($_POST['ssc_submit'])) {
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button class='btn btn-primary btn-lg' type='submit' name='pg_edit'>Save</button>
+                    <button class='btn btn-primary btn-lg' type='submit' name='pg_edit_btn'>Save</button>
                 </div>
             </form>
         </div>
@@ -469,6 +630,70 @@ if (isset($_POST['ssc_submit'])) {
     </div>`;
         }
 
+        function grad_edit() {
+            document.getElementById('myModal-2').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <form action="" method='POST'>
+                <div class="modal-header text-center">
+                    <h2 class="modal-title text-center">Graduation details</h2>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <label for="name" class="form-label">Graduation status</label>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($grad1_graduation_status) && $grad1_graduation_status == "pursuing") { ?>' checked '<?php } ?>' name="grad_education_status" id="pursuing" value="pursuing" required>
+                            <label class="form-check-label" for="pursuing">Pursuing
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($grad1_graduation_status) && $grad1_graduation_status == "completed") { ?>' checked '<?php } ?>' name="grad_education_status" id="completed" value="completed">
+                            <label class="form-check-label" for="completed">Completed</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-7 mt-4">
+                            <label for="college" class="form-label">College</label>
+                            <input type="text" value='<?php echo $grad1_college ?>' required placeholder="e.g Indian Institute of Technology Madras" name='grad_college' class=" form-control" id="college" required>
+
+                        </div>
+                        <div class="col-md-5 mt-4">
+                            <label for="year" class="form-label">Year of graduation</label>
+                            <select required class="form-control" name="grad_year" id='year'>
+                                <?php
+                                for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
+                                    <option value="<?= $year; ?>" <?php if ($year == $grad1_year) echo "selected"; ?>><?= $year; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12 mt-4">
+                            <label for="grad_degree" class="form-label">Degree:</label>
+                            <input required type="text" value='<?php echo $grad1_degree ?>' class="form-control mt-2" id="grad_degree" name="grad_degree" placeholder="e.g B.Sc(Hons)">
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 mt-4">
+                            <label for="percentage" class="form-label">Percentage</label>
+                            <input type="text" class="form-control mt-2" id="percentage" value='<?php echo $grad1_percentage ?>' name="grad_percentage" placeholder="Enter your percentage">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class='btn btn-primary btn-lg' type='submit' name='grad_edit_btn'>Save</button>
+                </div>
+            </form>
+        </div>
+    </div>`;
+        }
+
+
         function ss() {
             document.getElementById('myModal-3').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
@@ -531,6 +756,195 @@ if (isset($_POST['ssc_submit'])) {
     </div>`;
         }
 
+
+
+        function ss_edit() {
+            document.getElementById('myModal-3').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <form action="" method='POST'>
+                <div class="modal-header text-center">
+                    <h2 class="modal-title text-center" style='margin-left: 0%;'>Senior Secondary(XII) details</h2>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <label for="name" class="form-label">Graduation status</label>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($ss1_education_status) && $ss1_education_status == "pursuing") { ?>' checked '<?php } ?>' name="ss_education_status" id="pursuing" value="pursuing" required>
+                            <label class="form-check-label" for="pursuing">Pursuing
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($ss1_education_status) && $ss1_education_status == "completed") { ?>' checked '<?php } ?>' name="ss_education_status" id="completed" value="completed">
+                            <label class="form-check-label" for="completed">Completed</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-7 mt-4">
+                            <label for="college" class="form-label">College</label>
+                            <input type="text" value='<?php echo $ss1_college ?>' required placeholder="e.g Delhi Public School" name='ss_college' class=" form-control" id="college" required>
+
+                        </div>
+                        <div class="col-md-5 mt-4">
+                            <label for="year" class="form-label">Year of graduation</label>
+                            <select required class="form-control" name="ss_year" id='year'>
+                                <?php
+                                for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
+                                    <option value="<?= $year; ?>" <?php if ($year == $ss1_year) echo "selected"; ?>><?= $year; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12 mt-4">
+                            <label for="ss_degree" class="form-label">Stream:</label>
+                            <input required type="text" value='<?php echo $ss1_degree ?>' class="form-control mt-2" id="ss_degree" name="ss_degree" placeholder="e.g Science">
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 mt-4">
+                            <label for="percentage" class="form-label">Percentage</label>
+                            <input type="text" class="form-control mt-2" id="percentage" value='<?php echo $ss1_percentage ?>' name="ss_percentage" placeholder="Enter your percentage">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class='btn btn-primary btn-lg' type='submit' name='ss_edit_btn'>Save</button>
+                </div>
+            </form>
+        </div>
+    </div>`;
+        }
+
+
+
+        function diploma_edit() {
+            document.getElementById('myModal-4').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <form action="" method='POST'>
+                <div class="modal-header ss text-center">
+                    <h2 class="modal-title text-center">Diploma details</h2>
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <label for="name" class="form-label">Diploma status</label>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($diploma1_education_status) && $diploma1_education_status == "pursuing") { ?>' checked '<?php } ?>' name="diploma_education_status" id="pursuing" value="pursuing" required>
+                            <label class="form-check-label" for="pursuing">Pursuing
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($diploma1_education_status) && $diploma1_education_status == "completed") { ?>' checked '<?php } ?>' name="diploma_education_status" id="completed" value="completed">
+                            <label class="form-check-label" for="completed">Completed</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-7 mt-4">
+                            <label for="college" class="form-label">College</label>
+                            <input type="text" required placeholder="e.g IGNOU" value='<?php echo $diploma1_college ?>' name='diploma_college' class=" form-control" id="college" required>
+                        </div>
+                        <div class="col-md-5 mt-4">
+                            <label for="year" class="form-label">Year of graduation</label>
+                            <select required class="form-control" name="diploma_year" id='year'>
+                                <?php
+                                for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
+                                    <option value="<?= $year; ?>" <?php if ($year == $diploma1_year) echo "selected"; ?>><?= $year; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12 mt-4">
+                            <label for="stream" class="form-label">Stream:</label>
+                            <input required type="text" class="form-control mt-2" value='<?php echo $diploma1_degree ?>' id="stream" name="diploma_stream" placeholder="e.g Creative Writing">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 mt-4">
+                            <label for="percentage" class="form-label">Percentage</label>
+                            <input type="text" class="form-control mt-2" value='<?php echo $diploma1_percentage ?>' id="percentage" name="diploma_percentage" placeholder="Enter your percentage">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class='btn btn-primary btn-lg' type='submit' name='diploma_edit_btn'>Save</button>
+                </div>
+            </form>
+        </div>
+    </div>`;
+        }
+
+        function ssc_edit() {
+            document.getElementById('myModal-5').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <form action="" method='POST'>
+                <div class="modal-header ss text-center">
+                    <h2 class="modal-title text-center">Secondary (X) details</h2>
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+
+                <div class="modal-body p-4">
+                    <label for="name" class="form-label">Matriculation status</label>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" '<?php if (isset($ssc1_education_status) && $ssc1_education_status == "pursuing") { ?>' checked '<?php } ?>' name="ssc_education_status" id="pursuing" value="pursuing" required>
+                            <label class="form-check-label" for="pursuing">Pursuing
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"'<?php if (isset($ssc1_education_status) && $ssc1_education_status == "completed") { ?>' checked '<?php } ?>' name="ssc_education_status" id="completed" value="completed">
+                            <label class="form-check-label" for="completed">Completed</label>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-7 mt-4">
+                            <label for="college" class="form-label">School</label>
+                            <input type="text" value='<?php echo $ssc1_college ?>' required placeholder="e.g St Ann's School" name='ssc_college' class=" form-control" id="college" required>
+
+                        </div>
+                        <div class="col-md-5 mt-4">
+                            <label for="year" class="form-label">Year of graduation</label>
+                            <select required class="form-control" name="ssc_year" id='year'>
+                                <?php
+                                for ($year = (int)date('Y') + 6; 1980 <= $year; $year--) : ?>
+                                    <option value="<?= $year; ?>" <?php if ($year == $ssc1_year) echo "selected"; ?>><?= $year; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12 mt-4">
+                            <label for="stream" class="form-label">Board:</label>
+                            <input required type="text" value='<?php echo $ssc1_degree ?>' class="form-control mt-2" id="stream" name="ssc_stream" placeholder="e.g I.C.S.E">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 mt-4">
+                            <label for="percentage" class="form-label">Percentage</label>
+                            <input type="text" class="form-control mt-2" id="percentage" value='<?php echo $ssc1_percentage ?>' name="ssc_percentage" placeholder="Enter your percentage">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button class='btn btn-primary btn-lg' type='submit' name='ssc_edit_btn'>Save</button>
+                </div>
+            </form>
+        </div>
+    </div>`;
+        }
 
         function diploma() {
             document.getElementById('myModal-4').innerHTML = `<div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">

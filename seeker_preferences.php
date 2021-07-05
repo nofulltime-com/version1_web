@@ -320,7 +320,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="text" class="form-control mt-2" id="position" value='<?php echo "$position"; ?>' name="position" placeholder="e.g Full Stack Developer" required>
                         </div>
                     </div>
-                    <div class="row mt-5">
+                    <div class="row mt-5 p-3">
                         <label for="part_time_start">Enter the time interval when you will be available for part-time:</label>
                         <div class="col-md-6">
                             <small for="part_time_start">Start Time:</small>
@@ -358,7 +358,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
 
 
-                    <div class="row mt-5">
+                    <div class="row mt-5 p-3">
                         <label for="course_time_start">Enter the time interval you want to use for the course:</label>
                         <div class="col-md-6">
                             <small for="course_time_start">Start Time:</small>
@@ -399,7 +399,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
 
 
-                    <div class="row mt-5">
+                    <div class="row mt-5 p-3">
                         <label for="ngo_time_start">Enter the time interval you can constribute for the NGO:</label>
                         <div class="col-md-6">
                             <small for="part_time_start">Start Time:</small>
