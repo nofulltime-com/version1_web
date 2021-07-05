@@ -180,7 +180,7 @@
 							<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
 							<ul>
 								<li><a href="./index.php">Profile</a></li>
-								<li><a href="#">Edit</a></li>
+								<li><a href="../seeker_preferences.php">Edit</a></li>
 								<li><a href="../index.html">Logout</a></li>
 							</ul>
 						</li>
