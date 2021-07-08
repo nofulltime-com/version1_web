@@ -1,5 +1,38 @@
-<!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<?php
+	$username = "root";
+	$servername = "localhost";
+	$password = "";
+	$conn = new mysqli($servername, $username, $password, "nofulltime");
+	if ($conn->connect_error)
+	{
+    		die("Connection Error");
+	}
+
+if(isset($_POST['submit']))
+{
+	$Recruiter_Id = $POST['Recruiter_Id'];
+	$Amount = $POST['Amount'];
+	$CGST = $POST['CGST'];
+	$SGST = $POST['SGST'];
+	$Total_Amount = $POST['Total_Amount'];
+	
+	$CGST = $Amount * 9/100;
+	$SGST = $Amount * 9/100;
+	$Total_Amount = $Amount + $CGST + $SGST;
+	$sql_query = "INSERT INTO payment_details (Recruiter_Id, Amount, CGST, SGST, Total_Amount) VALUES ('$Recruiter_Id', '$Amount', '$CGST', '$SGST', '$Total_Amount')";
+	
+	if (mysqli_query($conn, $sql_query))
+	{
+		echo "Payment is done successfully!";
+	}
+	else
+	{
+		echo "Error! " .$sql. "" .mysqli_error($conn);
+	}
+	mysqli_close($conn);
+}
+?>
+<html lang="en">
 
 <head>
 	<!-- Mobile Specific Meta -->
