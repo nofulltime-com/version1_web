@@ -1601,7 +1601,14 @@ h1, h2, h3, h4, h5, h6 {
   background: url(../img/elements/success-check.png) no-repeat center center/cover;
   border: none;
 }
-
+.courses-tag{
+  position: absolute;
+  right:15%;
+  padding: 10px;
+  color: blue;
+  font-size: large;
+  font-weight: bold;
+}
 .disabled-checkbox {
   width: 16px;
   height: 16px;
