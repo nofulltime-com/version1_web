@@ -1,6 +1,6 @@
 <?php
 include './connect.php';
-$id = 9;
+$id = 10;
 $q = "SELECT * FROM `job_seeker_details` WHERE id='$id'";
 $res = $conn->query($q);
 if ($res->num_rows > 0) {

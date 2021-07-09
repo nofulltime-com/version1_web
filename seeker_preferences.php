@@ -1,7 +1,7 @@
 <?php
 include './connect.php';
 
-$id = 9;
+$id = 10;
 $prefernces = '';
 
 $q = "SELECT * FROM `seeker_details` WHERE id='$id'";

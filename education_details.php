@@ -1,6 +1,6 @@
 <?php
 include './connect.php';
-$id = 9;
+$id = 10;
 
 $q1 = "SELECT * FROM `education_details` WHERE id='$id' AND category='pg' ORDER BY year LIMIT 1";
 $r1 = $conn->query($q1);
