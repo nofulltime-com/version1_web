@@ -61,7 +61,7 @@ if ($res->num_rows > 0) {
         <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="index.html" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
+                    <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
