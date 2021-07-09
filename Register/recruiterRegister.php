@@ -204,6 +204,13 @@ session_start();
 
     </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 <footer class="footer-area section-gap">
 		<div class="container">

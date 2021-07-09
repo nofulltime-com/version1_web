@@ -13,11 +13,7 @@ html,body{
     background: url(img.jpg) center;
     background-size: cover;
   }
-  
-  .card-body{
-    padding: 15rem;
-  }
-  
+
   .title{
     margin-bottom: 2rem;
   }
