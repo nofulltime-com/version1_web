@@ -122,7 +122,7 @@ session_start();
 
 
 
-    <div id="content" style="padding-bottom:188px;">
+    <div id="content">
         <div class="registration_form" id="internship_form">
             <div id="content-inner" class="container-fluid">
                 <div class="max-width-container">
@@ -154,33 +154,34 @@ session_start();
                         </div>
                         <div id="registration-container-right">
                             <div id="form-container">
-                                <form autocomplete="off" role="form" id="registration-form" action="" method="POST" class="nofulltime-form">
+                                <form autocomplete="off" role="form" id="registration-form" onsubmit="return validation()" action="" method="POST" class="nofulltime-form">
                                 <?php if (isset($_GET['error'])) { ?>
      		                    <p class="error"><?php echo $_GET['error']; ?></p>
      	                        <?php } ?>
                                     <div class="form-group">
                                         <label for="username" class="control-label">Full Name</label>
-                                        <input type="text" class="form-control" id="full_name" name="username" value="<?php echo $username; ?>" placeholder="Alex Roy" required>
+                                        <input type="text" class="form-control" id="username" name="username" value="<?php echo $username; ?>" placeholder="Alex Roy" >
+                                        <span id="usererror" class="text-danger font-weight-bold" ></span>
                                     </div>
         <div class="form-group" >
             <label for="email" class="control-label">Official Email Id </label>
-            <div data-toggle="popover"
-                 data-content="<div class='email_popover_close'><i class='ic-24-cross'></i></div><div>An official id (example: <span style='color:#1295c9' class='email_example'>name@company_name.com</span>) is strongly recommended as it helps us verify that you represent the company and enables us to provide you a quick service. If you're a student, please register <a href='student.html' tabindex='20000'>here</a>.</div>"
-                 id="email_desktop">
-                <input type="email" class="form-control email-field-employer-registration" id="email" name="email" value="<?php echo $email; ?>" placeholder="name@company_name.com" required>
+            <div data-toggle="popover" id="email_desktop">
+                <input type="email" class="form-control email-field-employer-registration" id="email" name="email" value="<?php echo $email; ?>" placeholder="name@company_name.com">
+                <span id="emailerror" class="text-danger font-weight-bold" ></span>
             </div>
-            <p id="span_note" style="margin-left:2px;">
-            </p>
+            
         </div>
         <div class="form-group">
             <label for="phone" class="control-label">Phone Number(Enter with country code)</label>
-            <input type="phone" class="form-control" id="phone" name="phone" placeholder="91-9784560213" value="<?php echo $phone; ?>" required>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="91-9784560213" value="<?php echo $phone; ?>">
+            <span id="phoneerror" class="text-danger font-weight-bold" ></span>
         </div>
         <div class="form-group">
             <label for="password" class="control-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Minimum 6 characters" value="<?php echo $password; ?>" 
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
-            <input type="checkbox" onclick="myFunction()">Show Password
+            <input type="password" class="form-control" id="password" name="password" placeholder="Minimum 6 characters" value="<?php echo $password; ?>">
+            
+            <input type="checkbox" onclick="myFunction()">  Show Password
+            <span id="passerror" class="text-danger font-weight-bold" ></span>
             <script>
 			function myFunction() {
   				var x = document.getElementById("password");
@@ -213,16 +214,58 @@ session_start();
                 </a>
             </div>
         </div>
+    </form>
+    </div>   
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function validation(){
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var password = document.getElementById("password").value;
 
-    </div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+        var usercheck = /^[A-Za-z. ]{3,30}$/;
+        var passcheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        var emailcheck = /^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+        var phonecheck = /^[0-9]{2}[-][0-9]{10}$/;
+
+        if(usercheck.test(username)){
+            document.getElementById('usererror').innerHTML=" ";
+
+        }else{
+            document.getElementById('usererror').innerHTML="** Username is incorrect";
+            return false;
+        }
+        if(emailcheck.test(email)){
+            document.getElementById('emailerror').innerHTML=" ";
+
+        }else{
+            document.getElementById('emailerror').innerHTML="** Email is incorrect";
+            return false;
+        }
+        if(phonecheck.test(phone)){
+            document.getElementById('phoneerror').innerHTML=" ";
+
+        }else{
+            document.getElementById('phoneerror').innerHTML="** Phone Number is incorrect";
+            return false;
+        }
+        if(passcheck.test(password)){
+            document.getElementById('passerror').innerHTML=" ";
+
+        }else{
+            document.getElementById('passerror').innerHTML="** Password is incorrect";
+            return false;
+        }
+
+    }
+</script>
 
 <footer class="footer-area section-gap">
 		<div class="container">

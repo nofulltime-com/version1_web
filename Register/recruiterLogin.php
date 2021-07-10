@@ -81,11 +81,11 @@
 
   <?php
 
-  $email = $password="";
+  $email = $password1="";
   include 'dbcon.php';
   if(isset($_POST['submit'])){
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password1 = $_POST['password'];
 
     $email_search = "select * from recruiter where email='$email'";
     $query = mysqli_query($con,$email_search);
@@ -98,12 +98,12 @@
 
       $_SESSION['id'] = $email_pass['id'];
 
-      $pass_decode = password_verify($password,$db_pass);
+      $pass_decode = password_verify($password1,$db_pass);
 
       if($pass_decode){
         ?>
         <script>
-          location.replace("recruiterRegister.php");
+          location.replace("../recruiters.php");
         </script>
         <?php
 
@@ -141,7 +141,7 @@
                 </div>
                 <div class="form-input">
                   <span><i class="fa fa-key"></i></span>
-                  <input type="password" name="password" placeholder="Password" value="<?php echo $password; ?>" 
+                  <input type="password" name="password" placeholder="Password" value="<?php echo $password1; ?>" 
                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"  required>
                 </div>
     

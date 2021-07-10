@@ -28,6 +28,8 @@ session_start();
 </head>
 <body>
 
+	
+
     <header id="header" id="home" style="background-color: black;">
 		<div class="container">
 			<div class="row align-items-center justify-content-between d-flex">
@@ -94,7 +96,7 @@ session_start();
                 exit();
             }
             else{
-                $insertquery = "insert into users(username, email, phone, password) values ('$username','$email','$phone','$pass')";
+                $insertquery = "insert into users (username, email, phone, password) values ('$username','$email','$phone','$pass')";
                 $iquery=mysqli_query($con,$insertquery);
                 ?>
                     <script>
@@ -108,7 +110,7 @@ session_start();
     ?>
 
 
-  <div class="container-fluid" id="content" style="padding-bottom: 467px;">
+  <div class="container-fluid" id="content">
     <div id="content-inner"style="min-height:352px;">
         <div class="max-width-container">
             <div id="registration-container">
@@ -136,30 +138,33 @@ session_start();
                                         <div id="form-container">
                                        
                         
-                        <form role="form" autocomplete="off" id="registration-form" action="" method="POST">
+                        <form role="form" autocomplete="off" id="registration-form" onsubmit="return validation()" action="" method="POST">
                             <?php if (isset($_GET['error'])) { ?>
      		                <p class="error"><?php echo $_GET['error']; ?></p>
      	                    <?php } ?>
                             <div class="form-group ">
                               <label for="username" class="control-label">Username</label>
-                              <input type="text" class="form-control" id="username" name="username" value="<?php echo $username; ?>"  placeholder="John" required>
+                              <input type="text" class="form-control" id="username" name="username" value="<?php echo $username; ?>"  placeholder="John" >
+							  <span id="usererror" class="text-danger font-weight-bold" ></span>
                               
                           </div>
                             <div class="form-group">
                                 <label for="email" class="control-label">Email</label>
-                                <input type="email" class="form-control email-field-student-registration" id="email" name="email" value="<?php echo $email; ?>"  placeholder="john@example.com" required>
+                                <input type="email" class="form-control email-field-student-registration" id="email" name="email" value="<?php echo $email; ?>"  placeholder="john@example.com" >
+								<span id="emailerror" class="text-danger font-weight-bold" ></span>
                                 
                             </div>
                             <div class="form-group">
                                 <label for="phone" class="control-label">Phone Number(Enter with Country Code)</label>
-                                <input type="phone" class="form-control" id="phone" name="phone" value="<?php echo $phone; ?>"  placeholder="91-9547861234" required>
+                                <input type="phone" class="form-control" id="phone" name="phone" value="<?php echo $phone; ?>"  placeholder="91-9547861234" >
+								<span id="phoneerror" class="text-danger font-weight-bold" ></span>
                                 
                             </div>
                             <div class="form-group ">
                                 <label for="password" class="control-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" value="<?php echo $password; ?>"  placeholder="Must be atleast 6 characters" 
-								pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
-								<input type="checkbox" onclick="myFunction()">Show Password
+                                <input type="password" class="form-control" id="password" name="password" value="<?php echo $password; ?>"  placeholder="Must be atleast 6 characters" >
+								<input type="checkbox" onclick="myFunction()">  Show Password
+								<span id="passerror" class="text-danger font-weight-bold" ></span>
                                 
                             </div>
 							<script>
@@ -189,6 +194,51 @@ session_start();
         </div>
     </div>
 </div>
+
+<script>
+    function validation(){
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var password = document.getElementById("password").value;
+
+        var usercheck = /^[A-Za-z. ]{3,30}$/;
+        var passcheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        var emailcheck = /^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+        var phonecheck = /^[0-9]{2}[-][0-9]{10}$/;
+
+        if(usercheck.test(username)){
+            document.getElementById('usererror').innerHTML=" ";
+
+        }else{
+            document.getElementById('usererror').innerHTML="** Username is incorrect";
+            return false;
+        }
+        if(emailcheck.test(email)){
+            document.getElementById('emailerror').innerHTML=" ";
+
+        }else{
+            document.getElementById('emailerror').innerHTML="** Email is incorrect";
+            return false;
+        }
+        if(phonecheck.test(phone)){
+            document.getElementById('phoneerror').innerHTML=" ";
+
+        }else{
+            document.getElementById('phoneerror').innerHTML="** Phone Number is incorrect";
+            return false;
+        }
+        if(passcheck.test(password)){
+            document.getElementById('passerror').innerHTML=" ";
+
+        }else{
+            document.getElementById('passerror').innerHTML="** Password is incorrect";
+            return false;
+        }
+
+    }
+</script>
+
 
 <footer class="footer-area section-gap">
 		<div class="container">
