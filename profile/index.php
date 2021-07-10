@@ -49,7 +49,6 @@
 
 <body>
 	<?php
-
 	$id = 8;
 	include "../connect.php";
 	$user_table = "SELECT * FROM `users` WHERE id='$id'";
@@ -146,13 +145,13 @@
 		$from = $_POST['email'];
 		$name = $_POST['name'];
 		$subject = $_POST['subject'];
-		$message = $name . "\nSubject : " . $subject . " \nMassege:" . "\n" . $_POST['message'];
+		$message = $name . "\nSubject : " . $subject . " \nMessege:" . "\n" . $_POST['message'];
 		$headers = "From:" . $from;
 		$headers2 = "From:" . $to;
 		mail($to, $subject, $message, $headers);
 		mail($from, $subject2, $message2, $headers2);
 		echo "<script>alert('Your query is succesfully sent');
-        window.location.href='contact.html';  
+        window.location.href='./index.php';  
         </script>";
 	}
 
@@ -331,17 +330,17 @@
 							<div class="section-title">
 								<h2>Contact Me</h2>
 							</div>
-							<form class="contact-form" method='POST'>
+							<form class="contact-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" autocomplete="off">
 								<div class="row">
 									<div class="col-md-6">
-										<input type="text" placeholder="Name">
+										<input name="name" type="text" placeholder="Name">
 									</div>
 									<div class="col-md-6">
-										<input type="text" placeholder="E-mail">
+										<input type="text" name="email" placeholder="E-mail">
 									</div>
 									<div class="col-md-12">
-										<input type="text" placeholder="Subject">
-										<textarea placeholder="Message"></textarea>
+										<input type="text" name="subject" placeholder="Subject">
+										<textarea placeholder="Message" name="message"></textarea>
 									</div>
 								</div>
 								<div class="text-md-right">
