@@ -94,7 +94,7 @@ session_start();
                 exit();
             }
             else{
-                $insertquery = "insert into user(username, email, phone, password) values ('$username','$email','$phone','$pass')";
+                $insertquery = "insert into users(username, email, phone, password) values ('$username','$email','$phone','$pass')";
                 $iquery=mysqli_query($con,$insertquery);
                 ?>
                     <script>
@@ -157,9 +157,21 @@ session_start();
                             </div>
                             <div class="form-group ">
                                 <label for="password" class="control-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" value="<?php echo $password; ?>"  placeholder="Must be atleast 6 characters" required>
+                                <input type="password" class="form-control" id="password" name="password" value="<?php echo $password; ?>"  placeholder="Must be atleast 6 characters" 
+								pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
+								<input type="checkbox" onclick="myFunction()">Show Password
                                 
                             </div>
+							<script>
+								function myFunction() {
+  									var x = document.getElementById("password");
+  									if (x.type === "password") {
+    									x.type = "text";
+  									} else {
+    								x.type = "password";
+  									}
+								}
+							</script>
                             
                             <div id="label_toc">
                                 By signing up, you agree to our <a href="" target="_blank">Terms and Conditions</a>.
