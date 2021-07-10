@@ -30,6 +30,11 @@
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
+<style>
+	input {
+		border-radius: 20px;
+	}
+</style>
 
 <body>
 
@@ -47,13 +52,13 @@
 						<li><a href="recruiters.html">recruiters</a></li>
 						<li><a href="contact.html">Contact</a></li>
 
-						<li class="menu-has-children"><a href="">Signup</a>
+						<li class="menu-has-children"><a href="" style='color:#7b63f1'>Signup</a>
 							<ul>
 								<li><a href="./Register/studentRegister.html">As a User</a></li>
 								<li><a href="./Register/recruiterRegister.html">As a recruiter</a></li>
 							</ul>
 						</li>
-						<li class="menu-has-children"><a href="">Login</a>
+						<li class="menu-has-children"><a href="" style='color:#7b63f1'>Login</a>
 							<ul>
 								<li><a href="./search.html">As a User</a></li>
 								<li><a href="../single.html">As a recruiter</a></li>
@@ -87,9 +92,9 @@
 
 	<div class="contact-information">
 		<div class="container">
-			<div class="row">
+			<div class="row mt-5">
 				<div class="col-md-4">
-					<div class="contact-content">
+					<div class="contact-content p-4" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;">
 						<i class="fa fa-phone"></i>
 						<h4>Phone</h4>
 						<p>You can contact by calling us for the related solution from your problem.</p>
@@ -98,7 +103,7 @@
 				</div>
 
 				<div class="col-md-4">
-					<div class="contact-content">
+					<div class="contact-content p-4" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;">
 						<i class="fa fa-envelope"></i>
 						<h4>Email</h4>
 						<p>You can contact by mail us for the related solution from your problem.</p>
@@ -107,11 +112,11 @@
 				</div>
 
 				<div class="col-md-4">
-					<div class="contact-content">
+					<div class="contact-content p-4" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;">
 						<i class="fa fa-map-marker"></i>
 						<h4>Location</h4>
 						<p>No.32, Vinayagar Kovil Street, Karungalpalayam,Erode Tamil Nadu.</p>
-						<a href="#">View on Google Maps</a>
+						<a href="https://g.page/softwarecompanyerode?share" target="blank">View on Google Maps</a>
 					</div>
 				</div>
 			</div>
@@ -119,13 +124,13 @@
 	</div>
 
 	<section class="contact-page-area section-gap">
-		<div class="contact-main" style="background-color: aquamarine; padding: 20px;">
+		<div class="contact-main" style="background-color: #9b8bec; padding: 20px;">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="section-heading">
-							<h2>Send us a <em>message</em></h2>
-							<span>If you have any problem send message.</span>
+						<div class="section-heading text-center mt-4 mb-4">
+							<h1 style='color:white'>Send us a <em>message</em></h1>
+							<span style="color:white">If you have any problem send message.</span>
 						</div>
 					</div>
 					<div class="col-lg-12">
@@ -146,6 +151,7 @@
 									<input name="subject" placeholder="Enter your subject"
 										onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your subject'"
 										class="common-input mb-20 form-control" required="" type="text">
+
 									<textarea class="common-textarea mt-10 form-control" name="message"
 										placeholder="Messege" onfocus="this.placeholder = ''"
 										onblur="this.placeholder = 'Messege'" required=""></textarea>

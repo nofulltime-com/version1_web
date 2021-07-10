@@ -3782,7 +3782,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .form-area input, .form-area textarea {
-  border-radius: 0;
+  border-radius: 10px;
   font-size: 12px;
 }
 
