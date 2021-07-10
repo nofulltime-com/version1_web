@@ -139,7 +139,8 @@
                 </div>
                 <div class="form-input">
                   <span><i class="fa fa-key"></i></span>
-                  <input type="password" name="password" placeholder="Password" value="<?php echo $password; ?>" required>
+                  <input type="password" name="password" placeholder="Password" value="<?php echo $password; ?>" 
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"  required>
                 </div>
     
                  <!-- <div class="mb-3">

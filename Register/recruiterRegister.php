@@ -178,7 +178,19 @@ session_start();
         </div>
         <div class="form-group">
             <label for="password" class="control-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Minimum 6 characters" value="<?php echo $password; ?>" required>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Minimum 6 characters" value="<?php echo $password; ?>" 
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
+            <input type="checkbox" onclick="myFunction()">Show Password
+            <script>
+			function myFunction() {
+  				var x = document.getElementById("password");
+  				if (x.type === "password") {
+    				x.type = "text";
+  				} else {
+    				x.type = "password";
+  				}
+			}
+			</script>
         </div>
         <div class="restricted_keyword_error registration_form" style="display: none;"></div>
     <div id="job_registration_form_extras" style="margin-top: 16px">
@@ -188,7 +200,7 @@ session_start();
             </span>
         </div>
 
-        <div id="internship_registration_button_container" style="display: block">
+        
             <div id="job_employer_registration_button">
                  <button type="submit" name="submit" class="btn btn-primary">Register Now</button>
             </div>
