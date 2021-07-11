@@ -1794,14 +1794,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .default-select .nice-select .list .option {
-  font-weight: 300;
+  font-weight: 500;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   line-height: 28px;
   min-height: 28px;
-  font-size: 12px;
+  font-size: 17px;
   padding-left: 20px;
 }
 
