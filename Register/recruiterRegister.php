@@ -232,7 +232,7 @@ session_start();
 
         var usercheck = /^[A-Za-z. ]{3,30}$/;
         var passcheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-        var emailcheck = /^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+        var emailcheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         var phonecheck = /^[0-9]{2}[-][0-9]{10}$/;
 
         if(usercheck.test(username)){
@@ -260,7 +260,7 @@ session_start();
             document.getElementById('passerror').innerHTML=" ";
 
         }else{
-            document.getElementById('passerror').innerHTML="** Password is incorrect";
+            document.getElementById('passerror').innerHTML="** Password is incorrect. Please enter atleast one uppercase, one lowercase and minimum 6 characters";
             return false;
         }
 
