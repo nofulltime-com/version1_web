@@ -1,6 +1,8 @@
 <?php
+session_start();
 include './connect.php';
-$id = 10;
+
+$id = $_SESSION['id'];
 $q = "SELECT * FROM `job_seeker_details` WHERE id='$id'";
 $res = $conn->query($q);
 if ($res->num_rows > 0) {
@@ -19,6 +21,10 @@ if ($res->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Additional Details</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!--
 			CSS
 			============================================= -->
@@ -109,7 +115,7 @@ if ($res->num_rows > 0) {
         </fieldset>
     </div>
 
-    <footer class="footer-area section-gap">
+    <footer class="footer-area section-gap mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3  col-md-12">
@@ -177,9 +183,9 @@ if ($res->num_rows > 0) {
                     </script> NoFullTime |All rights reserved
                 </p>
                 <div class="col-lg-4 col-sm-12 footer-social">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-facebook pt-1"></i></a>
+                    <a href="#"><i class="fa fa-instagram pt-1"></i></a>
+                    <a href="#"><i class="fa fa-twitter pt-1"></i></a>
                 </div>
             </div>
         </div>

@@ -8,6 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
 	<!-- Stylesheets -->
 	<!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
 	<link rel="stylesheet" href="css/owl.carousel.css" />
@@ -49,8 +51,9 @@
 
 <body>
 	<?php
-	$id = 8;
-	include "../connect.php";
+	session_start();
+	include '../connect.php';
+	$id = $_SESSION['id'];
 	$user_table = "SELECT * FROM `users` WHERE id='$id'";
 	$results = $conn->query($user_table);
 	if ($results->num_rows > 0) {
@@ -351,6 +354,81 @@
 					</div>
 				</div>
 			</section>
+			<footer class="footer-area section-gap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3  col-md-12">
+							<div class="single-footer-widget">
+								<h6>Short Links</h6>
+								<ul class="footer-nav">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about-us.html">About Us</a></li>
+									<li><a href="category.html">Category</a></li>
+									<li><a href="recruiters.html">Recruiters</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-6  col-md-12">
+							<div class="single-footer-widget newsletter">
+								<h6>Other Links</h6>
+								<ul class="footer-nav">
+									<li><a href="terms.html">Terms and Conditions</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+								<br>
+								<h6>Newsletter</h6>
+								<p>You can trust us. we only send promo offers, not a single spam.</p>
+								<div id="mc_embed_signup">
+									<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
+
+										<div class="form-group row" style="width: 100%">
+											<div class="col-lg-8 col-md-12">
+												<input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+												<div style="position: absolute; left: -5000px;">
+													<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+												</div>
+											</div>
+
+											<div class="col-lg-4 col-md-12">
+												<button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
+											</div>
+										</div>
+										<div class="info"></div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3  col-md-12">
+							<div class="single-footer-widget mail-chimp">
+								<h6>Get In Touch</h6>
+								<a title="Address "><i class="fa fa-map-marker "></i> No.32, Vinayagar Kovil Street,
+									Karungalpalayam,
+									Erode - 638003, Tamil Nadu, India</a>
+								<br>
+								<a href="mailto:support@nofulltime.com " title="Email "><i class="fa fa-envelope "></i>
+									support@nofulltime.com</a>
+								<br>
+								<a href="tel:+919790030919 " title="Contact "><i class="fa fa-phone "></i> +91-97900-30919</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="row footer-bottom d-flex justify-content-between">
+						<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+
+							Copyright &copy;
+							<script>
+								document.write(new Date().getFullYear());
+							</script> NoFullTime |All rights reserved
+						</p>
+						<div class="col-lg-4 col-sm-12 footer-social">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-instagram pt-1"></i></a>
+							<a href="#"><i class="fa fa-twitter pt-1"></i></a>
+						</div>
+					</div>
+				</div>
+			</footer>
 			<!-- Contact section end -->
 			<!--====== Javascripts & Jquery ======-->
 			<script src="../js/vendor/jquery-2.2.4.min.js"></script>
