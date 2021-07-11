@@ -219,7 +219,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <ul>
                                 <li><a href="./profile/index.php">Profile</a></li>
                                 <li><a href="./seeker_preferences.php">Edit</a></li>
-                                <li><a href="./index.html">Logout</a></li>
+                                <li><a href="./logout.php">Logout</a></li>
                             </ul>
                         </li>
 

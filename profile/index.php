@@ -54,6 +54,7 @@
 	session_start();
 	include '../connect.php';
 	$id = $_SESSION['id'];
+	// echo "<script>console.log('$id')</script>";
 	$user_table = "SELECT * FROM `users` WHERE id='$id'";
 	$results = $conn->query($user_table);
 	if ($results->num_rows > 0) {
@@ -183,7 +184,7 @@
 							<ul>
 								<li><a href="./index.php">Profile</a></li>
 								<li><a href="../seeker_preferences.php">Edit</a></li>
-								<li><a href="../index.html">Logout</a></li>
+								<li><a href="../logout.php">Logout</a></li>
 							</ul>
 						</li>
 
