@@ -117,7 +117,7 @@
   }
 ?>    
 
-    <div class="container" style="padding-top:70px; padding-bottom:70px;">
+    <div class="container" style="padding-top:120px; padding-bottom:70px;">
         <div class="row px-3">
           <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
             <div class="img-left d-none d-md-flex"></div>
