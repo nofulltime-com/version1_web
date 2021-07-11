@@ -21,6 +21,8 @@ if ($res->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Additional Details</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--
@@ -113,7 +115,7 @@ if ($res->num_rows > 0) {
         </fieldset>
     </div>
 
-    <footer class="footer-area section-gap">
+    <footer class="footer-area section-gap mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3  col-md-12">
