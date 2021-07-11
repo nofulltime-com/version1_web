@@ -1,6 +1,8 @@
 <?php
+session_start();
 include './connect.php';
-$id = 10;
+
+$id = $_SESSION['id'];
 $q = "SELECT * FROM `seeker_details` WHERE id='$id'";
 $result = $conn->query($q);
 if ($result->num_rows > 0) {

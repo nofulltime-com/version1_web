@@ -1,6 +1,8 @@
 <?php
+session_start();
 include './connect.php';
-$id = 10;
+
+$id = $_SESSION['id'];
 $q = "SELECT * FROM `job_seeker_details` WHERE id='$id'";
 $res = $conn->query($q);
 if ($res->num_rows > 0) {

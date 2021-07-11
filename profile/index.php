@@ -51,8 +51,9 @@
 
 <body>
 	<?php
-	$id = 8;
-	include "../connect.php";
+	session_start();
+	include '../connect.php';
+	$id = $_SESSION['id'];
 	$user_table = "SELECT * FROM `users` WHERE id='$id'";
 	$results = $conn->query($user_table);
 	if ($results->num_rows > 0) {

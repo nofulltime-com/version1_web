@@ -1,7 +1,9 @@
 <?php
+session_start();
 include './connect.php';
 
-$id = 10;
+$id = $_SESSION['id'];
+
 $prefernces = '';
 
 $q = "SELECT * FROM `seeker_details` WHERE id='$id'";

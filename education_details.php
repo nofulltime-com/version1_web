@@ -1,6 +1,8 @@
 <?php
+session_start();
 include './connect.php';
-$id = 10;
+
+$id = $_SESSION['id'];
 
 $q1 = "SELECT * FROM `education_details` WHERE id='$id' AND category='pg' ORDER BY year LIMIT 1";
 $r1 = $conn->query($q1);
