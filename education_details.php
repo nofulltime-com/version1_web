@@ -203,6 +203,8 @@ if (isset($_POST['ssc_submit'])) {
     <title>Education Details</title>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!--
 			CSS
 			============================================= -->
@@ -508,9 +510,9 @@ if (isset($_POST['ssc_submit'])) {
                     </script> NoFullTime |All rights reserved
                 </p>
                 <div class="col-lg-4 col-sm-12 footer-social">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-facebook pt-1"></i></a>
+                    <a href="#"><i class="fa fa-instagram pt-1"></i></a>
+                    <a href="#"><i class="fa fa-twitter pt-1"></i></a>
                 </div>
             </div>
         </div>
