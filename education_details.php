@@ -3,7 +3,10 @@ session_start();
 include './connect.php';
 
 $id = $_SESSION['id'];
-
+$pg_flag = false;
+$grad_flag = false;
+$ss_flag = false;
+$ssc_flag = false;
 $q1 = "SELECT * FROM `education_details` WHERE id='$id' AND category='pg' ORDER BY year LIMIT 1";
 $r1 = $conn->query($q1);
 if ($r1->num_rows > 0) {

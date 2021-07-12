@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $age = $_POST['age'];
     $gender = $_POST['gender'];
     $status = $_POST['status'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $country = $_POST['country'];
+    $city = ucwords($_POST['city']);
+    $state = ucwords($_POST['state']);
+    $country = ucwords($_POST['country']);
     $pincode = $_POST['pincode'];
 
     $query = "UPDATE `seeker_details` SET `fullname` = '$name', `town` = '$city', `state` = '$state', `country` = '$country', `pin_code` = '$pincode', `status` = '$status', `age` = '$age', `gender` = '$gender' WHERE `seeker_details`.`id` = $id;";
