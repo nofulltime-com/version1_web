@@ -45,7 +45,7 @@ session_start();
         <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="../index.php"><img src="../img/logo.png" alt="" title="" /></a>
+                <a href="index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
