@@ -43,7 +43,6 @@ if (strpos($prefernces, 'course') !== false) {
     $q3 = "SELECT * FROM `course_details` WHERE id='$id'";
     $r3 = $conn->query($q3);
     if ($r3->num_rows > 0) {
-
         while ($row = $r3->fetch_assoc()) {
             $course_field = ucfirst(strtolower($row['field']));
             $course_name = ucfirst(strtolower($row['course']));
@@ -143,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    // header("Location: ./seeker_details.php");
+    header("Location: ./seeker_details.php");
 }
 ?>
 

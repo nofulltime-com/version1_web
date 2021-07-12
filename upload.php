@@ -6,9 +6,9 @@ $id = $_SESSION['id'];
 
 $summary = $_POST['summary'];
 $query = "UPDATE `job_seeker_details` SET `summary` = '$summary' WHERE `job_seeker_details`.`id` = $id";
-if ($conn->query($query) == TRUE) {
-    echo "<script>console.log('$summary');</script>";
-}
+$conn->query($query);
+
+
 
 $info = pathinfo($_FILES['resume']['name']);
 $ext = $info['extension'];
