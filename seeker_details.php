@@ -7,13 +7,13 @@ $q = "SELECT * FROM `seeker_details` WHERE id='$id'";
 $result = $conn->query($q);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $name = $row['fullname'];
+        $name = ucwords($row['fullname']);
         $age = $row['age'];
-        $gender = $row['gender'];
-        $status = $row['status'];
-        $city = $row['town'];
-        $state = $row['state'];
-        $country = $row['country'];
+        $gender = ucwords($row['gender']);
+        $status = ucwords($row['status']);
+        $city = ucwords($row['town']);
+        $state = ucwords($row['state']);
+        $country = ucwords($row['country']);
         $pincode = $row['pin_code'];
         $preferences = $row['category'];
     }
@@ -95,11 +95,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="index.html" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
+                    <a href="index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="index.html">Home</a></li>
+                        <li class="menu-active"><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="category.html">Category</a></li>
                         <li><a href="recruiters.html">recruiters</a></li>
@@ -198,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="single-footer-widget">
                         <h6>Short Links</h6>
                         <ul class="footer-nav">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.php">Home</a></li>
                             <li><a href="about-us.html">About Us</a></li>
                             <li><a href="category.html">Category</a></li>
                             <li><a href="recruiters.html">Recruiters</a></li>

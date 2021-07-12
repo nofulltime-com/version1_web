@@ -170,11 +170,11 @@
 		<div class="container">
 			<div class="row align-items-center justify-content-between d-flex">
 				<div id="logo">
-					<a href="../index.html" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
+					<a href="../index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
-						<li class="menu-active"><a href="../index.html">Home</a></li>
+						<li class="menu-active"><a href="../index.php">Home</a></li>
 						<li><a href="../about-us.html">About Us</a></li>
 						<li><a href="../category.html">Category</a></li>
 						<li><a href="../recruiters.html">Recruiters</a></li>
@@ -364,7 +364,7 @@
 							<div class="single-footer-widget">
 								<h6>Short Links</h6>
 								<ul class="footer-nav">
-									<li><a href="index.html">Home</a></li>
+									<li><a href="index.php">Home</a></li>
 									<li><a href="about-us.html">About Us</a></li>
 									<li><a href="category.html">Category</a></li>
 									<li><a href="recruiters.html">Recruiters</a></li>
