@@ -105,7 +105,7 @@ if ($res->num_rows > 0) {
                 </div>
                 <div class="form-group ">
                     <label for="resume">Upload your resume</label>
-                    <input type="file" name="fileToUpload" class='form-control' style='border:none' id="fileToUpload" accept="application/pdf">
+                    <input type="file" name="resume" class='form-control' style='border:none' id="resume" accept="application/pdf">
                 </div>
                 <div class="col-12 mt-4 text-center">
                     <input type="submit" value="Submit" class="btn btn-lg mt-2 btn-success " name="submit">

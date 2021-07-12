@@ -9,8 +9,8 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $name = ucwords($row['fullname']);
         $age = $row['age'];
-        $gender = ucwords($row['gender']);
-        $status = ucwords($row['status']);
+        $gender = $row['gender'];
+        $status = $row['status'];
         $city = ucwords($row['town']);
         $state = ucwords($row['state']);
         $country = ucwords($row['country']);

@@ -111,7 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $job_work_place = $_POST['work_place'];
         $job_field = $_POST['field'];
         $job_position = $_POST['position'];
-
         if (!$parttime_flag)
             $query5 = "INSERT INTO `job_seeker_details` (`id`, `resume`, `summary`, `field`, `position`, `place_of_work`) VALUES ('$id', '', '', '$job_field', '$job_position', '$job_work_place');";
         else
@@ -144,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    header("Location: ./seeker_details.php");
+    // header("Location: ./seeker_details.php");
 }
 ?>
 
