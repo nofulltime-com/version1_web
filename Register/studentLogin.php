@@ -49,7 +49,7 @@ if (isset($_SESSION['logincust'])) {
     <div class="container">
       <div class="row align-items-center justify-content-between d-flex">
         <div id="logo">
-          <a href="../index.php"><img src="../img/logo.png" alt="" title="" /></a>
+          <a href="index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
         </div>
         <nav id="nav-menu-container">
           <ul class="nav-menu">
@@ -76,12 +76,12 @@ if (isset($_SESSION['logincust'])) {
   </header>
 
   <?php
-  $email = $password1 = "";
+  $email = $password = "";
 
   include 'dbcon.php';
   if (isset($_POST['submit'])) {
     $email = $_POST['email'];
-    $password1 = $_POST['password'];
+    $password = $_POST['password'];
 
     $email_search = "select * from users where email='$email'";
     $query = mysqli_query($con, $email_search);
@@ -94,7 +94,7 @@ if (isset($_SESSION['logincust'])) {
 
       $_SESSION['id'] = $email_pass['id'];
 
-      $pass_decode = password_verify($password1, $db_pass);
+      $pass_decode = password_verify($password, $db_pass);
 
       if ($pass_decode) {
   ?>
@@ -136,7 +136,7 @@ if (isset($_SESSION['logincust'])) {
             </div>
             <div class="form-input">
               <span><i class="fa fa-key"></i></span>
-              <input type="password" name="password" placeholder="Password" value="<?php echo $password1; ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
+              <input type="password" name="password" placeholder="Password" value="<?php echo $password; ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
             </div>
 
             <!-- <div class="mb-3">
