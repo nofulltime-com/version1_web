@@ -395,21 +395,46 @@ include './connect.php';
 		<div class="container">
 			<div class="row justify-content-center d-flex">
 				<div class="col-lg-8 post-list">
+					<div class="title text-center">
+						<h1 class="mb-10">Registered candidates</h1>
+					</div>
 					<ul class="cat-list">
 						<li><a href="#">part Time</a></li>
 						<li><a href="#">Courses</a></li>
 						<li><a href="#">NGO</a></li>
 					</ul>
-					<div class="single-post d-flex flex-row">
+					<?php
+					$parttime = "SELECT * FROM `job_seeker_details` ORDER BY  id DESC";
+					$parttime_res = $conn->query($parttime);
+					if ($parttime_res->num_rows > 0) {
+						while ($row = $parttime_res->fetch_assoc()) {
+							$pow = "";
+							if ($row['place_of_work'] == "wfh") {
+								$pow = 'Work From Home';
+							} else {
+								$pow = "In Office";
+							}
+							$id = $row['id'];
+							$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+							$details_res = $conn->query($details_query);
+							while ($row2 = $details_res->fetch_assoc()) {
+								$town = $row2['town'];
+								$state = $row2['state'];
+								$country = $row2['country'];
+								$parttime_start = $row2['part_time_start'];
+								$parttime_end = $row2['part_time_end'];
+							}
+							echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
 									<a href="single.html">
-										<h4>Creative Art Designer</h4>
+										<h4>' . $row['field'] . '</h4>
 									</a>
-									<h6>Premium Labels Limited</h6>
+									<h6>' . $row['position'] . '</h6>
 								</div>
 							</div>
+							<h5>Prefered Place of Work:' . $pow . '</h5>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
 								ididunt ut dolore magna aliqua.
@@ -429,7 +454,12 @@ include './connect.php';
 								</ul>
 							</div>
 						</div>
-					</div>
+					</div>';
+						}
+					}
+					?>
+
+
 					<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
