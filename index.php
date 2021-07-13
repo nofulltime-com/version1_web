@@ -421,8 +421,8 @@ include './connect.php';
 								$town = $row2['town'];
 								$state = $row2['state'];
 								$country = $row2['country'];
-								$parttime_start = $row2['part_time_start'];
-								$parttime_end = $row2['part_time_end'];
+								$parttime_start = substr($row2['part_time_start'], 0, 5);
+								$parttime_end = substr($row2['part_time_end'], 0, 5);
 							}
 							echo '<div class="single-post d-flex flex-row">
 						<div class="details">
@@ -434,22 +434,24 @@ include './connect.php';
 									<h6>' . $row['position'] . '</h6>
 								</div>
 							</div>
-							<h5>Prefered Place of Work:' . $pow . '</h5>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
+								Working Hours : ' . $parttime_start . '  -  ' . $parttime_end . '
 							</p>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $state . '</p>
 							<div class="thumb">
 								<ul class="tags">
 									<li>
-										<a href="#">Art</a>
+										<a href="#">' . $row['field'] . '</a>
 									</li>
 									<li>
-										<a href="#">Media</a>
+										<a href="#">Part Time</a>
 									</li>
 									<li>
-										<a href="#">Design</a>
+										<a href="#">' . $row['position'] . '</a>
+									</li>
+									<li>
+										<a href="#">' . $pow . '</a>
 									</li>
 								</ul>
 							</div>
@@ -460,187 +462,7 @@ include './connect.php';
 					?>
 
 
-					<div class="single-post d-flex flex-row">
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.html">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<h5>Job Nature: Full time</h5>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<div class="thumb">
-								<ul class="tags">
-									<li>
-										<a href="#">Art</a>
-									</li>
-									<li>
-										<a href="#">Media</a>
-									</li>
-									<li>
-										<a href="#">Design</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.html">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<div class="thumb">
-								<ul class="tags">
-									<li>
-										<a href="#">Art</a>
-									</li>
-									<li>
-										<a href="#">Media</a>
-									</li>
-									<li>
-										<a href="#">Design</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.html">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<div class="thumb">
-								<ul class="tags">
-									<li>
-										<a href="#">Art</a>
-									</li>
-									<li>
-										<a href="#">Media</a>
-									</li>
-									<li>
-										<a href="#">Design</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.html">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<div class="thumb">
-								<ul class="tags">
-									<li>
-										<a href="#">Art</a>
-									</li>
-									<li>
-										<a href="#">Media</a>
-									</li>
-									<li>
-										<a href="#">Design</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.html">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<div class="thumb">
-								<ul class="tags">
-									<li>
-										<a href="#">Art</a>
-									</li>
-									<li>
-										<a href="#">Media</a>
-									</li>
-									<li>
-										<a href="#">Design</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.html">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<div class="thumb">
-								<ul class="tags">
-									<li>
-										<a href="#">Art</a>
-									</li>
-									<li>
-										<a href="#">Media</a>
-									</li>
-									<li>
-										<a href="#">Design</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+
 
 					<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More part-time seekers</a>
 
