@@ -399,32 +399,33 @@ include './connect.php';
 						<h1 class="mb-10">Registered candidates</h1>
 					</div>
 					<ul class="cat-list">
-						<li><a href="#">part Time</a></li>
-						<li><a href="#">Courses</a></li>
-						<li><a href="#">NGO</a></li>
+						<li class="tablinks" onclick="openCategory(event, 'parttime')"><a>part Time</a></li>
+						<li class="tablinks" onclick="openCategory(event, 'course')"><a>Courses</a></li>
+						<li class="tablinks" onclick="openCategory(event, 'ngo')"><a>NGO</a></li>
 					</ul>
-					<?php
-					$parttime = "SELECT * FROM `job_seeker_details` ORDER BY  id DESC";
-					$parttime_res = $conn->query($parttime);
-					if ($parttime_res->num_rows > 0) {
-						while ($row = $parttime_res->fetch_assoc()) {
-							$pow = "";
-							if ($row['place_of_work'] == "wfh") {
-								$pow = 'Work From Home';
-							} else {
-								$pow = "In Office";
-							}
-							$id = $row['id'];
-							$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
-							$details_res = $conn->query($details_query);
-							while ($row2 = $details_res->fetch_assoc()) {
-								$town = $row2['town'];
-								$state = $row2['state'];
-								$country = $row2['country'];
-								$parttime_start = substr($row2['part_time_start'], 0, 5);
-								$parttime_end = substr($row2['part_time_end'], 0, 5);
-							}
-							echo '<div class="single-post d-flex flex-row">
+					<div class="tabContent" style="display:block" id='parttime'>
+						<?php
+						$parttime = "SELECT * FROM `job_seeker_details` ORDER BY  id DESC";
+						$parttime_res = $conn->query($parttime);
+						if ($parttime_res->num_rows > 0) {
+							while ($row = $parttime_res->fetch_assoc()) {
+								$pow = "";
+								if ($row['place_of_work'] == "wfh") {
+									$pow = 'Work From Home';
+								} else {
+									$pow = "In Office";
+								}
+								$id = $row['id'];
+								$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+								$details_res = $conn->query($details_query);
+								while ($row2 = $details_res->fetch_assoc()) {
+									$town = $row2['town'];
+									$state = $row2['state'];
+									$country = $row2['country'];
+									$parttime_start = substr($row2['part_time_start'], 0, 5);
+									$parttime_end = substr($row2['part_time_end'], 0, 5);
+								}
+								echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
@@ -456,17 +457,156 @@ include './connect.php';
 								</ul>
 							</div>
 						</div>
-					</div>';
+						</div>';
+							}
 						}
-					}
-					?>
+						?>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More part-time seekers</a>
+					</div>
 
 
 
+					<div class="tabContent" style="display:none" id='course'>
+						<?php
+						$course = "SELECT * FROM `course_details` ORDER BY  id DESC";
+						$course_res = $conn->query($course);
+						if ($course_res->num_rows > 0) {
+							while ($row = $course_res->fetch_assoc()) {
+								$pow = "";
+								if ($row['mode_of_learning'] == "online") {
+									$pow = 'Online';
+								} else {
+									$pow = "At Coaching Center";
+								}
+								$id = $row['id'];
+								$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+								$details_res = $conn->query($details_query);
+								while ($row2 = $details_res->fetch_assoc()) {
+									$town = $row2['town'];
+									$state = $row2['state'];
+									$country = $row2['country'];
+									$course_start = substr($row2['course_time_start'], 0, 5);
+									$course_end = substr($row2['course_time_end'], 0, 5);
+								}
+								echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">
+									<a href="single.html">
+										<h4>' . $row['field'] . '</h4>
+									</a>
+									<h6>' . $row['course'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<p>
+								Working Hours : ' . $course_start . '  -  ' . $course_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $state . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a href="#">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a href="#">Course</a>
+									</li>
+									<li>
+										<a href="#">' . $row['course'] . '</a>
+									</li>
+									<li>
+										<a href="#">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+							}
+						}
+						?>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More course seekers</a>
+					</div>
 
-					<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More part-time seekers</a>
 
+					<div class="tabContent" style="display:none" id='ngo'>
+						<?php
+						$ngo = "SELECT * FROM `ngo_details` ORDER BY  id DESC";
+						$ngo_res = $conn->query($ngo);
+						if ($ngo_res->num_rows > 0) {
+							while ($row = $ngo_res->fetch_assoc()) {
+								$pow = "";
+								if ($row['place_of_work'] == "wfh") {
+									$pow = 'Work From Home';
+								} else {
+									$pow = "In Office";
+								}
+								$id = $row['id'];
+								$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+								$details_res = $conn->query($details_query);
+								while ($row2 = $details_res->fetch_assoc()) {
+									$town = $row2['town'];
+									$state = $row2['state'];
+									$country = $row2['country'];
+									$ngo_start = substr($row2['ngo_time_start'], 0, 5);
+									$ngo_end = substr($row2['ngo_time_end'], 0, 5);
+								}
+								echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">
+									<a href="single.html">
+										<h4>' . $row['field'] . '</h4>
+									</a>
+									<h6>' . $row['position'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<p>
+								Working Hours : ' . $ngo_start . '  -  ' . $ngo_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $state . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a href="#">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a href="#">Volunteer</a>
+									</li>
+									<li>
+										<a href="#">' . $row['position'] . '</a>
+									</li>
+									<li>
+										<a href="#">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+							}
+						}
+						?>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More NGO volunteers</a>
+					</div>
 				</div>
+
+				<script>
+					function openCategory(evt, categoryName) {
+						// alert('clicked');
+						var i, tabcontent, tablinks;
+						tabcontent = document.getElementsByClassName("tabContent");
+						for (i = 0; i < tabcontent.length; i++) {
+							tabcontent[i].style.display = "none";
+						}
+						tablinks = document.getElementsByClassName("tablinks");
+						for (i = 0; i < tablinks.length; i++) {
+							tablinks[i].className = tablinks[i].className.replace(" active", "");
+						}
+						document.getElementById(categoryName).style.display = "block";
+						evt.currentTarget.className += " active";
+					}
+				</script>
+
 				<div class="col-lg-4 sidebar">
 					<div class="single-slidebar">
 						<h4>Candidates by Location</h4>

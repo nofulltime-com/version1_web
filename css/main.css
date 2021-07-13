@@ -2582,6 +2582,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 .post-list .cat-list li a {
@@ -2589,9 +2590,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: 600;
   color: #222;
 }
-
+.active {
+  background-color:#95a7e0;
+}
 .post-list .cat-list li:hover {
-  background-color: #49e4fa;
+  background-color: #95a7e0;
 }
 
 .post-list .cat-list li:hover a {
@@ -2695,7 +2698,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .post-list .single-post .thumb .tags li:hover {
-  background-color: #49e4fa;
+  background-color: #95a7e0;
 }
 
 .post-list .single-post .thumb .tags li:hover a {
