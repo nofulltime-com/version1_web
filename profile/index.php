@@ -307,8 +307,8 @@
 
 									echo "<h2>Learn a course</h2>";
 									echo "<h3>Field -" . $course_field . "</h3>";
-									echo "<h4>Position -" . $course_name . "</h4>";
-									echo "<p>Place Of Work -" . $mode_of_learning . "</p>";
+									echo "<h4>Course -" . $course_name . "</h4>";
+									echo "<p>Mode of Learning -" . $mode_of_learning . "</p>";
 									echo "<p>Time allocated :" . $course_time_start . " - " . $course_time_end . "</p>";
 								}
 									?>

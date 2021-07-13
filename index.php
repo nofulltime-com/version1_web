@@ -494,14 +494,14 @@ include './connect.php';
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
 									<a href="./profile/index.php?id=' . $id . '">
-										<h4>' . $row['field'] . '</h4>
+										<h4>' . $row['course'] . '</h4>
 									</a>
-									<h6>' . $row['course'] . '</h6>
+									<h6>' . $row['field'] . '</h6>
 								</div>
 							</div>
 							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
 							<p>
-								Working Hours : ' . $course_start . '  -  ' . $course_end . '
+								Dedicated Hours : ' . $course_start . '  -  ' . $course_end . '
 							</p>
 							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $state . '</p>
 							<div class="thumb">

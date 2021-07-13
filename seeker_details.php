@@ -6,6 +6,7 @@ $id = $_SESSION['id'];
 $q = "SELECT * FROM `seeker_details` WHERE id='$id'";
 $result = $conn->query($q);
 if ($result->num_rows > 0) {
+
     while ($row = $result->fetch_assoc()) {
         $name = ucwords($row['fullname']);
         $age = $row['age'];
@@ -16,6 +17,7 @@ if ($result->num_rows > 0) {
         $country = ucwords($row['country']);
         $pincode = $row['pin_code'];
         $preferences = $row['category'];
+        echo "<script>console.log('$preferences')</script>";
     }
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -178,11 +180,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <?php
                     if (strpos($prefernces, 'parttime') !== false) {
                     ?>
-                        <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Submit</button>
+                        <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Save & Next</button>
                     <?php
                     } else {
                     ?>
-                        <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Save & Next</button>
+                        <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Submit</button>
+
                     <?php
                     }
                     ?>
