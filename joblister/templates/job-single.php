@@ -6,6 +6,7 @@
             <?php include "../templates/inc/css/narrow.css"?>
             <?php include "./inc/css/footer.css"?>
    </style>
+   <body>
         <div class="container">
             <div class="head clearfix">
                 <div class="head">
@@ -40,5 +41,5 @@
                     <p>&copy; 2021,No-full-time.com</p>
                 </footer>
                 </div> <!-- /container -->
-            </body>
-        </html>
+    </body>
+ </html>

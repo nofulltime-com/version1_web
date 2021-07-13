@@ -6,6 +6,7 @@
             <?php include "../templates/inc/css/narrow.css"?>
             <?php include "./inc/css/footer.css"?>
    </style>
+   <body>
     <div class="container">
             <div class="head clearfix">
                 <div class="head">

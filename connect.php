@@ -1,7 +1,7 @@
 <?php
 $username = "root";
 $servername = "localhost";
-$password = "3183";
+$password = "Tisha@28";
 $conn = new mysqli($servername, $username, $password, "nofulltime");
 if ($conn->connect_error)
     die("Connection Error");
