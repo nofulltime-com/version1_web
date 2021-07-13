@@ -429,7 +429,7 @@ include './connect.php';
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
-									<a href="single.html">
+									<a href="./profile/index.php?id=' . $id . '">
 										<h4>' . $row['field'] . '</h4>
 									</a>
 									<h6>' . $row['position'] . '</h6>
@@ -461,6 +461,7 @@ include './connect.php';
 							}
 						}
 						?>
+
 						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More part-time seekers</a>
 					</div>
 
@@ -492,7 +493,7 @@ include './connect.php';
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
-									<a href="single.html">
+									<a href="./profile/index.php?id=' . $id . '">
 										<h4>' . $row['field'] . '</h4>
 									</a>
 									<h6>' . $row['course'] . '</h6>
@@ -554,7 +555,7 @@ include './connect.php';
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
-									<a href="single.html">
+									<a href="./profile/index.php?id=' . $id . '">
 										<h4>' . $row['field'] . '</h4>
 									</a>
 									<h6>' . $row['position'] . '</h6>
