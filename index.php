@@ -405,7 +405,7 @@ include './connect.php';
 					</ul>
 					<div class="tabContent" style="display:block" id='parttime'>
 						<?php
-						$parttime = "SELECT * FROM `job_seeker_details` ORDER BY  id DESC";
+						$parttime = "SELECT * FROM `job_seeker_details` ORDER BY id DESC LIMIT 5";
 						$parttime_res = $conn->query($parttime);
 						if ($parttime_res->num_rows > 0) {
 							while ($row = $parttime_res->fetch_assoc()) {
@@ -468,7 +468,7 @@ include './connect.php';
 
 					<div class="tabContent" style="display:none" id='course'>
 						<?php
-						$course = "SELECT * FROM `course_details` ORDER BY  id DESC";
+						$course = "SELECT * FROM `course_details` ORDER BY  id DESC LIMIT 5";
 						$course_res = $conn->query($course);
 						if ($course_res->num_rows > 0) {
 							while ($row = $course_res->fetch_assoc()) {
@@ -530,7 +530,7 @@ include './connect.php';
 
 					<div class="tabContent" style="display:none" id='ngo'>
 						<?php
-						$ngo = "SELECT * FROM `ngo_details` ORDER BY  id DESC";
+						$ngo = "SELECT * FROM `ngo_details` ORDER BY id DESC LIMIT 5";
 						$ngo_res = $conn->query($ngo);
 						if ($ngo_res->num_rows > 0) {
 							while ($row = $ngo_res->fetch_assoc()) {
