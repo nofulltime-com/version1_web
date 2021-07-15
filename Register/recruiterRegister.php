@@ -81,6 +81,7 @@ session_start();
         $password = mysqli_real_escape_string($con, $_POST['password']);
 
         $pass = password_hash($password, PASSWORD_BCRYPT);
+        $token = bin2hex(random_bytes(15));
 
         $emailquery = "select * from recruiter where email='$email'";
         $query = mysqli_query($con, $emailquery);
@@ -104,8 +105,9 @@ session_start();
             header("Location: recruiterRegister.php?error=phone number already exists. Enter different phone number");
             exit();
         } else {
-            $insertquery = "insert into recruiter(username, email, phone, password) values ('$username','$email','$phone','$pass')";
+            $insertquery = "insert into recruiter(username, email, phone, password,token) values ('$username','$email','$phone','$pass','$token')";
             $iquery = mysqli_query($con, $insertquery);
+            $_SESSION['msg1'] = "You have been Successfully registered";
 
     ?>
             <script>

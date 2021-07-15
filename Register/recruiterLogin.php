@@ -1,10 +1,18 @@
 <?php
 session_start();
+<<<<<<< HEAD
+// if (isset($_SESSION['logincust'])) {
+//   header('Location: ../recruiters.html');
+// } else {
+//   session_unset();
+// }
+=======
 if (isset($_SESSION['logincust'])) {
   header('Location: ../recruiters.php');
 } else {
   session_unset();
 }
+>>>>>>> 22ca95aee2ade64c982404165060f0368e8c5543
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +102,7 @@ if (isset($_SESSION['logincust'])) {
       $email_pass = mysqli_fetch_assoc($query);
       $db_pass = $email_pass['password'];
 
-      $_SESSION['id'] = $email_pass['id'];
+      $_SESSION['recruiter_id'] = $email_pass['id'];
 
       $pass_decode = password_verify($password, $db_pass);
 
@@ -127,6 +135,19 @@ if (isset($_SESSION['logincust'])) {
           <h4 class="title text-center mt-4">
             Login into account
           </h4>
+
+          <div>
+            <p class="bg-success test-white px-4"><?php
+            
+            if(isset($_SESSION['msg1'])){
+              echo $_SESSION['msg1'];
+            }else{
+              echo $_SESSION['msg1'] = " ";
+            }
+
+            ?></p>
+          </div>
+
           <form autocomplete="off" class="form-box px-3" action="" method="POST">
             <?php if (isset($_GET['error'])) { ?>
               <p class="error"><?php echo $_GET['error']; ?></p>
@@ -140,24 +161,17 @@ if (isset($_SESSION['logincust'])) {
               <input type="password" name="password" placeholder="Password" value="<?php echo $password; ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
             </div>
 
-            <!-- <div class="mb-3">
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="cb1" name="">
-                    <label class="custom-control-label" for="cb1">Remember me</label>
-                  </div>
-                </div> -->
-
             <div class="mb-3">
               <button type="submit" name="submit" class="btn btn-block text-uppercase">
                 Login
               </button>
             </div>
 
-            <!-- <div class="text-right">
-                  <a href="#" class="forget-link">
+            <div class="text-right">
+                  <a href="recruiter_recover_mail.php" class="forget-link">
                     Forget Password?
                   </a>
-                </div> -->
+              </div>
 
             <div class="text-center mb-3">
               or login with
