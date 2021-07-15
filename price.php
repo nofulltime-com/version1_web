@@ -1,33 +1,3 @@
-<?php
-session_start();
-$username = "root";
-$servername = "localhost";
-$password = "3183";
-$conn = new mysqli($servername, $username, $password, "nofulltime");
-if ($conn->connect_error) {
-	die("Connection Error");
-}
-
-if (isset($_POST['submit'])) {
-	$Recruiter_Id = $POST['Recruiter_Id'];
-	$Amount = $POST['Amount'];
-	$CGST = $POST['CGST'];
-	$SGST = $POST['SGST'];
-	$Total_Amount = $POST['Total_Amount'];
-
-	$CGST = $Amount * 9 / 100;
-	$SGST = $Amount * 9 / 100;
-	$Total_Amount = $Amount + $CGST + $SGST;
-	$sql_query = "INSERT INTO payment_details (Recruiter_Id, Amount, CGST, SGST, Total_Amount) VALUES ('$Recruiter_Id', '$Amount', '$CGST', '$SGST', '$Total_Amount')";
-
-	if (mysqli_query($conn, $sql_query)) {
-		echo "Payment is done successfully!";
-	} else {
-		echo "Error! " . $sql . "" . mysqli_error($conn);
-	}
-	mysqli_close($conn);
-}
-?>
 <html lang="en">
 
 <head>
@@ -44,7 +14,7 @@ if (isset($_POST['submit'])) {
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>Job Listing</title>
+	<title>Pricing Plan</title>
 	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
@@ -79,7 +49,8 @@ if (isset($_POST['submit'])) {
 						<li><a href="contact.php">Contact</a></li>
 
 						<?php
-						if (isset($_SESSION['id'])) { ?>
+						if (isset($_SESSION['id'])) 
+							{ ?>
 							<li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
 								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
 								<ul>
@@ -88,7 +59,8 @@ if (isset($_POST['submit'])) {
 									<li><a href="./logout.php">Logout</a></li>
 								</ul>
 							</li>
-						<?php } else { ?>
+							<?php } 
+						else { ?>
 							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Signup</a>
 								<ul>
 									<li><a href="./Register/studentRegister.php">As a Student</a></li>
@@ -132,7 +104,7 @@ if (isset($_POST['submit'])) {
 				<div class="menu-content pb-60 col-lg-8">
 					<div class="title text-center">
 						<h1 class="mb-10">Choose the best pricing for you</h1>
-						<p>Who are in extremely love with eco friendly system.</p>
+						<p>Choose the best pricing plan for you.</p>
 					</div>
 				</div>
 			</div>
@@ -140,20 +112,19 @@ if (isset($_POST['submit'])) {
 				<div class="col-lg-4">
 					<div class="single-price no-padding">
 						<div class="price-top">
-							<h4>Real basic</h4>
+							<h4>Silver</h4>
 						</div>
 						<ul class="lists">
-							<li>2.5 GB Space</li>
+							<li>1 month plan</li>
 							<li>Secure Online Transfer</li>
-							<li>Unlimited Styles</li>
 							<li>Customer Service</li>
 						</ul>
 						<div class="price-bottom">
 							<div class="price-wrap d-flex flex-row justify-content-center">
-								<span class="price">$</span>
+								<span class="price">Rs.</span>
 								<h1> 39 </h1><span class="time">Per <br> Month</span>
 							</div>
-							<a href="#" class="primary-btn header-btn">Get Started</a>
+							<a href="Register/payment-form.php" class="primary-btn header-btn">Get Started</a>
 						</div>
 
 					</div>
@@ -161,40 +132,38 @@ if (isset($_POST['submit'])) {
 				<div class="col-lg-4">
 					<div class="single-price no-padding">
 						<div class="price-top">
-							<h4>Real Standred</h4>
+							<h4>Gold</h4>
 						</div>
 						<ul class="lists">
-							<li>10 GB Space</li>
+							<li>6 months plan</li>
 							<li>Secure Online Transfer</li>
-							<li>Unlimited Styles</li>
 							<li>Customer Service</li>
 						</ul>
 						<div class="price-bottom">
 							<div class="price-wrap d-flex flex-row justify-content-center">
-								<span class="price">$</span>
-								<h1> 69 </h1><span class="time">Per <br> Month</span>
+								<span class="price">Rs.</span>
+								<h1> 69 </h1><span class="time">Per <br> 6 Months</span>
 							</div>
-							<a href="#" class="primary-btn header-btn">Get Started</a>
+							<a href="Register/payment-form.php" class="primary-btn header-btn">Get Started</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-4">
 					<div class="single-price no-padding">
 						<div class="price-top">
-							<h4>Real Ultimate</h4>
+							<h4>Diamond</h4>
 						</div>
 						<ul class="lists">
-							<li>Unlimited Space</li>
+							<li>1 year plan</li>
 							<li>Secure Online Transfer</li>
-							<li>Unlimited Styles</li>
 							<li>Customer Service</li>
 						</ul>
 						<div class="price-bottom">
 							<div class="price-wrap d-flex flex-row justify-content-center">
-								<span class="price">$</span>
-								<h1> 99 </h1><span class="time">Per <br> Month</span>
+								<span class="price">Rs.</span>
+								<h1> 99 </h1><span class="time">Every <br> Year</span>
 							</div>
-							<a href="#" class="primary-btn header-btn">Get Started</a>
+							<a href="Register/payment-form.php" class="primary-btn header-btn">Get Started</a>
 						</div>
 					</div>
 				</div>
@@ -205,158 +174,128 @@ if (isset($_POST['submit'])) {
 
 	<!-- Start feature Area -->
 	<section class="feature-area">
-		<div class="container-fluid">
-			<div class="row justify-content-center align-items-center">
-				<div class="col-lg-3 feat-img no-padding">
-					<img class="img-fluid" src="img/pages/f1.jpg" alt="">
-				</div>
-				<div class="col-lg-3 no-padding feat-txt">
-					<h6 class="text-uppercase text-white">Basic & Common Repairs</h6>
-					<h1>Who we are</h1>
-					<p>
-						Computer users and programmers have become so accustomed to using Windows, even for the changing
-						capabilities and the appearances of the graphical.
-					</p>
-				</div>
-				<div class="col-lg-3 feat-img no-padding">
-					<img class="img-fluid" src="img/pages/f2.jpg" alt="">
-				</div>
-				<div class="col-lg-3 no-padding feat-txt">
-					<h6 class="text-uppercase text-white">Basic & Common Repairs</h6>
-					<h1>What we do</h1>
-					<p>
-						Computer users and programmers have become so accustomed to using Windows, even for the changing
-						capabilities and the appearances of the graphical.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+				<div class="container-fluid">
+					<div class="row justify-content-center align-items-center">
+						<div class="col-lg-3 feat-img no-padding">
+							<img class="img-fluid" src="img/pages/f1.jpg" alt="">
+						</div>
+						<div class="col-lg-3 no-padding feat-txt">
+							<h1>Who we are</h1>
+							<p>
+								NoFullTIme is India’s #1 part time work marketplace. 
+								We’re the country’s largest platform for part time work, with 100 million registered job seekers and job opportunities at 900,000 employer locations in different parts of India. 
+								We take the work out of finding the right job or the perfect worker.
+							</p>
+						</div>
+						<div class="col-lg-3 feat-img no-padding">
+							<img class="img-fluid" src="img/pages/f2.jpg" alt="">							
+						</div>
+						<div class="col-lg-3 no-padding feat-txt">
+							<h1>What we do</h1>
+							<p>
+								We’re on a mission to match the job seekers with the right-fit positions so they can maximize their potential and live more fulfilling lives.
+							</p>
+						</div>
+					</div>
+				</div>	
+			</section>
+			<br>
 	<!-- End feature Area -->
 
 	<!-- Start submit Area -->
-	<section class="submit-area section-gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="submit-left">
-						<h4>Submit Your Resume Today</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-							ut labore.
-						</p>
-						<a href="#" class="primary-btn header-btn">Submit Your CV</a>
-					</div>
-				</div>
-				<div class="col-lg-6 ">
-					<div class="submit-right">
-						<h4>Submit a New Job Now!</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-							ut labore.
-						</p>
-						<a href="#" class="primary-btn header-btn">Post a Job</a>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</section>
+	<section class="callto-action-area section-gap">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content col-lg-9">
+							<div class="title text-center">
+								<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
+								<p class="text-white">Register for Free. Take NoFullTime to apply to part time jobs.</p>
+								<a class="primary-btn" href="#">I am a Candidate</a>
+								<a class="primary-btn" href="#">We are an Employer</a>
+							</div>
+						</div>
+					</div>	
+				</div>	
+			</section>
+			<br>
 	<!-- End submit Area -->
 
 
 	<!-- start footer Area -->
 	<footer class="footer-area section-gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3  col-md-12">
-					<div class="single-footer-widget">
-						<h6>Short Links</h6>
-						<ul class="footer-nav">
-							<li><a href="index.php">Home</a></li>
-							<li><a href="about-us.php">About Us</a></li>
-							<li><a href="category.php">Category</a></li>
-							<li><a href="recruiters.php">Recruiters</a></li>
-						</ul>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3  col-md-12">
+							<div class="single-footer-widget">
+								<h6>Short Links</h6>
+								<ul class="footer-nav">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about-us.html">About Us</a></li>
+									<li><a href="category.html">Category</a></li>
+									<li><a href="recruiters.html">Recruiters</a></li>
+									<li><a href="blog-home.html">Blog</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-6  col-md-12">
+							<div class="single-footer-widget newsletter">
+								<h6>Other Links</h6>
+								<ul class="footer-nav">
+									<li><a href="terms.html">Terms and Conditions</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+								<br>
+								
+							</div>
+						</div>
+						<div class="col-lg-3  col-md-12">
+							<div class="single-footer-widget mail-chimp">
+								<h6>Get In Touch</h6>
+								<a title="Address "><i class="fa fa-map-marker "></i> No.32, Vinayagar Kovil Street, Karungalpalayam,
+                    							Erode - 638003, Tamil Nadu, India</a>
+								<br>
+                						<a href="mailto:support@nofulltime.com " title="Email "><i class="fa fa-envelope "></i>
+                    							support@nofulltime.com</a>
+								<br>
+                						<a href="tel:+919790030919 " title="Contact "><i class="fa fa-phone "></i> +91-97900-30919</a>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-6  col-md-12">
-					<div class="single-footer-widget newsletter">
-						<h6>Other Links</h6>
-						<ul class="footer-nav">
-							<li><a href="terms.php">Terms and Conditions</a></li>
-							<li><a href="contact.php">Contact</a></li>
-						</ul>
-						<br>
-						<h6>Newsletter</h6>
-						<p>You can trust us. we only send promo offers, not a single spam.</p>
-						<div id="mc_embed_signup">
-							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
 
-								<div class="form-group row" style="width: 100%">
-									<div class="col-lg-8 col-md-12">
-										<input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-										<div style="position: absolute; left: -5000px;">
-											<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-										</div>
-									</div>
+					<div class="row footer-bottom d-flex justify-content-between">
+						<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
 
-									<div class="col-lg-4 col-md-12">
-										<button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
-									</div>
-								</div>
-								<div class="info"></div>
-							</form>
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());
+							</script> NoFullTime |All rights reserved
+						</p>
+						<div class="col-lg-4 col-sm-12 footer-social">
+							<a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fa fa-facebook"></i></a>
+							<a href="https://www.instagram.com/abc_infomedia/"><i class="fa fa-instagram"></i></a>
+							<a href="https://twitter.com/abc_infomedia/"><i class="fa fa-twitter"></i></a>
+							<a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fa fa-linkedin"></i></a>
+							<a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fa fa-pinterest"></i></a>
+							<a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fa fa-youtube"></i></a>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3  col-md-12">
-					<div class="single-footer-widget mail-chimp">
-						<h6>Get In Touch</h6>
-						<a title="Address "><i class="fa fa-map-marker "></i> No.32, Vinayagar Kovil Street, Karungalpalayam,
-							Erode - 638003, Tamil Nadu, India</a>
-						<br>
-						<a href="mailto:support@nofulltime.com " title="Email "><i class="fa fa-envelope "></i>
-							support@nofulltime.com</a>
-						<br>
-						<a href="tel:+919790030919 " title="Contact "><i class="fa fa-phone "></i> +91-97900-30919</a>
-					</div>
-				</div>
-			</div>
+			</footer>
+			<!-- End footer Area -->		
 
-			<div class="row footer-bottom d-flex justify-content-between">
-				<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
-
-					Copyright &copy;
-					<script>
-						document.write(new Date().getFullYear());
-					</script> NoFullTime |All rights reserved
-				</p>
-				<div class="col-lg-4 col-sm-12 footer-social">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-instagram"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- End footer Area -->
-
-	<script src="js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-	<script src="js/easing.min.js"></script>
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.min.js"></script>
-	<script src="js/jquery.ajaxchimp.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-	<script src="js/jquery.nice-select.min.js"></script>
-	<script src="js/parallax.min.js"></script>
-	<script src="js/mail-script.js"></script>
-	<script src="js/main.js"></script>
-</body>
-
-</html>
+			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="js/vendor/bootstrap.min.js"></script>			
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+  			<script src="js/easing.min.js"></script>			
+			<script src="js/hoverIntent.js"></script>
+			<script src="js/superfish.min.js"></script>	
+			<script src="js/jquery.ajaxchimp.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>	
+			<script src="js/owl.carousel.min.js"></script>			
+			<script src="js/jquery.sticky.js"></script>
+			<script src="js/jquery.nice-select.min.js"></script>			
+			<script src="js/parallax.min.js"></script>		
+			<script src="js/mail-script.js"></script>	
+			<script src="js/main.js"></script>	
+		</body>
+	</html>
