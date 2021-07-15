@@ -160,7 +160,7 @@
 		mail($to, $subject, $message, $headers);
 		mail($from, $subject2, $message2, $headers2);
 		echo "<script>alert('Your query is succesfully sent');
-        window.location.href='./index.php';  
+        window.location.href='../index.php';  
         </script>";
 	}
 
@@ -178,11 +178,11 @@
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
 						<li class="menu-active"><a href="../index.php">Home</a></li>
-						<li><a href="../about-us.html">About Us</a></li>
-						<li><a href="../category.html">Category</a></li>
-						<li><a href="../recruiters.html">Recruiters</a></li>
-						<li><a href="../blog-home.html">Blog</a></li>
-						<li><a href="../contact.html">Contact</a></li>
+						<li><a href="../about-us.php">About Us</a></li>
+						<li><a href="../category.php">Category</a></li>
+						<li><a href="../recruiters.php">Recruiters</a></li>
+						<li><a href="../blog-home.php">Blog</a></li>
+						<li><a href="../contact.php">Contact</a></li>
 
 						<li class="menu-has-children"><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
 							<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
@@ -368,9 +368,9 @@
 								<h6>Short Links</h6>
 								<ul class="footer-nav">
 									<li><a href="index.php">Home</a></li>
-									<li><a href="about-us.html">About Us</a></li>
-									<li><a href="category.html">Category</a></li>
-									<li><a href="recruiters.html">Recruiters</a></li>
+									<li><a href="about-us.php">About Us</a></li>
+									<li><a href="category.php">Category</a></li>
+									<li><a href="recruiters.php">Recruiters</a></li>
 								</ul>
 							</div>
 						</div>
@@ -378,8 +378,8 @@
 							<div class="single-footer-widget newsletter">
 								<h6>Other Links</h6>
 								<ul class="footer-nav">
-									<li><a href="terms.html">Terms and Conditions</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="terms.php">Terms and Conditions</a></li>
+									<li><a href="contact.php">Contact</a></li>
 								</ul>
 								<br>
 								<h6>Newsletter</h6>

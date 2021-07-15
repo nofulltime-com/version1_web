@@ -10,6 +10,6 @@ if (isset($_POST['submit'])) {
     mail($to, $subject, $message, $headers);
     mail($from, $subject2, $message2, $headers2);
     echo "<script>alert('Your query is succesfully sent');
-        window.location.href='contact.html';  
+        window.location.href='contact.php';  
         </script>";
 }

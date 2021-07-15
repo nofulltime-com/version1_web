@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 <?php
+session_start();
 include './connect.php';
 ?>
 
@@ -27,6 +28,9 @@ include './connect.php';
 	<link rel="stylesheet" href="css/linearicons.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<link rel="stylesheet" href="css/nice-select.css">
 	<link rel="stylesheet" href="css/animate.min.css">
@@ -34,6 +38,9 @@ include './connect.php';
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
+<style>
+
+</style>
 
 <body>
 
@@ -46,23 +53,34 @@ include './connect.php';
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
 						<li class="menu-active"><a href="index.php">Home</a></li>
-						<li><a href="about-us.html">About Us</a></li>
-						<li><a href="category.html">Category</a></li>
-						<li><a href="recruiters.html">recruiters</a></li>
-						<li><a href="contact.html">Contact</a></li>
-
-						<li class="menu-has-children"><a href="" style='color:#7b63f1'>Signup</a>
-							<ul>
-								<li><a href="./Register/studentRegister.php">As a Student</a></li>
-								<li><a href="./Register/recruiterRegister.php">As a recruiter</a></li>
-							</ul>
-						</li>
-						<li class="menu-has-children"><a href="" style='color:#7b63f1'>Login</a>
-							<ul>
-								<li><a href="./Register/studentLogin.php">As a Student</a></li>
-								<li><a href="./Register/recruiterLogin.php">As a recruiter</a></li>
-							</ul>
-						</li>
+						<li><a href="about-us.php">About Us</a></li>
+						<li><a href="category.php">Category</a></li>
+						<li><a href="recruiters.php">recruiters</a></li>
+						<li><a href="contact.php">Contact</a></li>
+						<?php
+						if (isset($_SESSION['id'])) { ?>
+							<li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+								<ul>
+									<li><a href="./profile/index.php">Profile</a></li>
+									<li><a href="./seeker_preferences.php">Edit</a></li>
+									<li><a href="./logout.php">Logout</a></li>
+								</ul>
+							</li>
+						<?php } else { ?>
+							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Signup</a>
+								<ul>
+									<li><a href="./Register/studentRegister.php">As a Student</a></li>
+									<li><a href="./Register/recruiterRegister.php">As a recruiter</a></li>
+								</ul>
+							</li>
+							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Login</a>
+								<ul>
+									<li><a href="./Register/studentLogin.php">As a Student</a></li>
+									<li><a href="./Register/recruiterLogin.php">As a recruiter</a></li>
+								</ul>
+							</li>
+						<?php } ?>
 					</ul>
 				</nav><!-- #nav-menu-container -->
 			</div>
@@ -79,7 +97,7 @@ include './connect.php';
 					<h1 class="text-white">
 						<span>1500+</span> Candidates registered last week
 					</h1>
-					<form action="search.html" class="serach-form-area">
+					<form action="search.php" class="serach-form-area">
 						<div class="row justify-content-center form-wrap">
 							<div class="col-lg-4 form-cols">
 								<input type="text" class="form-control" name="search" placeholder="what are you looging for?">
@@ -274,7 +292,7 @@ include './connect.php';
 			<div class="row">
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/o1.png" alt="">
 						</a>
 						<p>Accounting</p>
@@ -282,7 +300,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/o2.png" alt="">
 						</a>
 						<p>Development</p>
@@ -290,7 +308,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/o3.png" alt="">
 						</a>
 						<p>Technology</p>
@@ -298,7 +316,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/o4.png" alt="">
 						</a>
 						<p>Media & News</p>
@@ -306,7 +324,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/o5.png" alt="">
 						</a>
 						<p>Medical</p>
@@ -314,7 +332,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/o6.png" alt="">
 						</a>
 						<p>Goverment</p>
@@ -338,7 +356,7 @@ include './connect.php';
 			<div class="row">
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/home_course/website.png" alt="">
 						</a>
 						<p>Web Development</p>
@@ -346,7 +364,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/home_course/android.png" alt="">
 						</a>
 						<p>Android Development</p>
@@ -354,7 +372,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/home_course/creative.png" alt="">
 						</a>
 						<p>Creative Writing</p>
@@ -362,7 +380,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/home_course/video-editing.png" alt="">
 						</a>
 						<p>Video Editing</p>
@@ -370,7 +388,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/home_course/machine-learning.png" alt="">
 						</a>
 						<p>Machine Learning</p>
@@ -378,7 +396,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.html">
+						<a href="category.php">
 							<img src="img/home_course/php.png" alt="">
 						</a>
 						<p>php</p>
@@ -462,7 +480,7 @@ include './connect.php';
 						}
 						?>
 
-						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More part-time seekers</a>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.php">Load More part-time seekers</a>
 					</div>
 
 
@@ -525,7 +543,7 @@ include './connect.php';
 							}
 						}
 						?>
-						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More course seekers</a>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.php">Load More course seekers</a>
 					</div>
 
 
@@ -587,7 +605,7 @@ include './connect.php';
 							}
 						}
 						?>
-						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More NGO volunteers</a>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.php">Load More NGO volunteers</a>
 					</div>
 				</div>
 
@@ -620,7 +638,7 @@ include './connect.php';
 							if ($res->num_rows > 0) {
 								while ($row = $res->fetch_assoc()) {
 									echo "
-									<li><a class='justify-content-between d-flex' href='category.html'>
+									<li><a class='justify-content-between d-flex' href='category.php'>
 									<p>" . $row['town'] . "</p><span>" . $row['COUNT(id)'] . "</span>
 								</a></li>";
 								}
@@ -641,7 +659,7 @@ include './connect.php';
 							if ($res->num_rows > 0) {
 								while ($row = $res->fetch_assoc()) {
 									echo "
-									<li><a class='justify-content-between d-flex' href='category.html'>
+									<li><a class='justify-content-between d-flex' href='category.php'>
 									<p>" . $row['field'] . "</p><span>" . $row['COUNT(id)'] . "</span>
 								</a></li>";
 								}
@@ -662,7 +680,7 @@ include './connect.php';
 							if ($res->num_rows > 0) {
 								while ($row = $res->fetch_assoc()) {
 									echo "
-									<li><a class='justify-content-between d-flex' href='category.html'>
+									<li><a class='justify-content-between d-flex' href='category.php'>
 									<p>" . $row['field'] . "</p><span>" . $row['COUNT(id)'] . "</span>
 								</a></li>";
 								}
@@ -683,7 +701,7 @@ include './connect.php';
 							if ($res->num_rows > 0) {
 								while ($row = $res->fetch_assoc()) {
 									echo "
-									<li><a class='justify-content-between d-flex' href='category.html'>
+									<li><a class='justify-content-between d-flex' href='category.php'>
 									<p>" . $row['field'] . "</p><span>" . $row['COUNT(id)'] . "</span>
 								</a></li>";
 								}
@@ -698,7 +716,7 @@ include './connect.php';
 						<h4>Carrer Advice Blog</h4>
 						<div class="blog-list">
 							<div class="single-blog " style="background:#000 url(img/blog1.jpg);">
-								<a href="single.html">
+								<a href="single.php">
 									<h4>Home Audio Recording <br>
 										For Everyone</h4>
 								</a>
@@ -715,7 +733,7 @@ include './connect.php';
 								</div>
 							</div>
 							<div class="single-blog " style="background:#000 url(img/blog2.jpg);">
-								<a href="single.html">
+								<a href="single.php">
 									<h4>Home Audio Recording <br>
 										For Everyone</h4>
 								</a>
@@ -732,7 +750,7 @@ include './connect.php';
 								</div>
 							</div>
 							<div class="single-blog " style="background:#000 url(img/blog1.jpg);">
-								<a href="single.html">
+								<a href="single.php">
 									<h4>Home Audio Recording <br>
 										For Everyone</h4>
 								</a>
@@ -830,9 +848,9 @@ include './connect.php';
 						<h6>Short Links</h6>
 						<ul class="footer-nav">
 							<li><a href="index.php">Home</a></li>
-							<li><a href="about-us.html">About Us</a></li>
-							<li><a href="category.html">Category</a></li>
-							<li><a href="recruiters.html">Recruiters</a></li>
+							<li><a href="about-us.php">About Us</a></li>
+							<li><a href="category.php">Category</a></li>
+							<li><a href="recruiters.php">Recruiters</a></li>
 						</ul>
 					</div>
 				</div>
@@ -840,8 +858,8 @@ include './connect.php';
 					<div class="single-footer-widget newsletter">
 						<h6>Other Links</h6>
 						<ul class="footer-nav">
-							<li><a href="terms.html">Terms and Conditions</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="terms.php">Terms and Conditions</a></li>
+							<li><a href="contact.php">Contact</a></li>
 						</ul>
 						<br>
 

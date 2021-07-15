@@ -45,21 +45,21 @@ session_start();
         <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                <a href="index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
+                    <a href="index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li class="menu-active"><a href="../index.php">Home</a></li>
-                        <li><a href="../about-us.html">About Us</a></li>
-                        <li><a href="../category.html">Category</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
-                        <li class="menu-has-children"><a href="" style='color:#7b63f1'>Signup</a>
+                        <li><a href="../about-us.php">About Us</a></li>
+                        <li><a href="../category.php">Category</a></li>
+                        <li><a href="../contact.php">Contact</a></li>
+                        <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Signup</a>
                             <ul>
 
                                 <li><a href="recruiterRegister.php">As a recruiter</a></li>
                             </ul>
                         </li>
-                        <li class="menu-has-children"><a href="" style='color:#7b63f1'>Login</a>
+                        <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Login</a>
                             <ul>
 
                                 <li><a href="recruiterLogin.php">As a recruiter</a></li>
@@ -271,10 +271,10 @@ session_start();
                         <h6>Short Links</h6>
                         <ul class="footer-nav">
                             <li><a href="index.php">Home</a></li>
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="category.html">Category</a></li>
-                            <li><a href="recruiters.html">Recruiters</a></li>
-                            <li><a href="blog-home.html">Blog</a></li>
+                            <li><a href="about-us.php">About Us</a></li>
+                            <li><a href="category.php">Category</a></li>
+                            <li><a href="recruiters.php">Recruiters</a></li>
+                            <li><a href="blog-home.php">Blog</a></li>
                         </ul>
                     </div>
                 </div>
@@ -282,8 +282,8 @@ session_start();
                     <div class="single-footer-widget newsletter">
                         <h6>Other Links</h6>
                         <ul class="footer-nav">
-                            <li><a href="terms.html">Terms and Conditions</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="terms.php">Terms and Conditions</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                         <br>
                         <h6>Newsletter</h6>

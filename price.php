@@ -1,4 +1,5 @@
 <?php
+session_start();
 $username = "root";
 $servername = "localhost";
 $password = "";
@@ -44,7 +45,8 @@ if (isset($_POST['submit'])) {
 	<meta charset="UTF-8">
 	<!-- Site Title -->
 	<title>Job Listing</title>
-
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 	<!--
 			CSS
@@ -70,24 +72,36 @@ if (isset($_POST['submit'])) {
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
 						<li class="menu-active"><a href="index.php">Home</a></li>
-						<li><a href="about-us.html">About Us</a></li>
-						<li><a href="category.html">Category</a></li>
+						<li><a href="about-us.php">About Us</a></li>
+						<li><a href="category.php">Category</a></li>
 
-						<li><a href="recruiters.html">Recruiters</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="recruiters.php">Recruiters</a></li>
+						<li><a href="contact.php">Contact</a></li>
 
-						<li class="menu-has-children"><a href="" style='color:#7b63f1'>Signup</a>
-							<ul>
-								<li><a href="./Register/studentRegister.html">As a Student</a></li>
-								<li><a href="./Register/recruiterRegister.html">As a recruiter</a></li>
-							</ul>
-						</li>
-						<li class="menu-has-children"><a href="" style='color:#7b63f1'>Login</a>
-							<ul>
-								<li><a href="../search.html">As a Student</a></li>
-								<li><a href="../single.html">As a recruiter</a></li>
-							</ul>
-						</li>
+						<?php
+						if (isset($_SESSION['id'])) { ?>
+							<li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+								<ul>
+									<li><a href="./profile/index.php">Profile</a></li>
+									<li><a href="./seeker_preferences.php">Edit</a></li>
+									<li><a href="./logout.php">Logout</a></li>
+								</ul>
+							</li>
+						<?php } else { ?>
+							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Signup</a>
+								<ul>
+									<li><a href="./Register/studentRegister.php">As a Student</a></li>
+									<li><a href="./Register/recruiterRegister.php">As a recruiter</a></li>
+								</ul>
+							</li>
+							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Login</a>
+								<ul>
+									<li><a href="./Register/studentLogin.php">As a Student</a></li>
+									<li><a href="./Register/recruiterLogin.php">As a recruiter</a></li>
+								</ul>
+							</li>
+						<?php } ?>
 					</ul>
 				</nav><!-- #nav-menu-container -->
 			</div>
@@ -104,7 +118,7 @@ if (isset($_POST['submit'])) {
 					<h1 class="text-white">
 						Pricing Plan
 					</h1>
-					<p class="text-white link-nav"><a href="index.php">Home </a> <span class="lnr lnr-arrow-right"></span> <a href="price.html"> Pricing Plan</a></p>
+					<p class="text-white link-nav"><a href="index.php">Home </a> <span class="lnr lnr-arrow-right"></span> <a href="price.php"> Pricing Plan</a></p>
 				</div>
 			</div>
 		</div>
@@ -260,9 +274,9 @@ if (isset($_POST['submit'])) {
 						<h6>Short Links</h6>
 						<ul class="footer-nav">
 							<li><a href="index.php">Home</a></li>
-							<li><a href="about-us.html">About Us</a></li>
-							<li><a href="category.html">Category</a></li>
-							<li><a href="recruiters.html">Recruiters</a></li>
+							<li><a href="about-us.php">About Us</a></li>
+							<li><a href="category.php">Category</a></li>
+							<li><a href="recruiters.php">Recruiters</a></li>
 						</ul>
 					</div>
 				</div>
@@ -270,8 +284,8 @@ if (isset($_POST['submit'])) {
 					<div class="single-footer-widget newsletter">
 						<h6>Other Links</h6>
 						<ul class="footer-nav">
-							<li><a href="terms.html">Terms and Conditions</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="terms.php">Terms and Conditions</a></li>
+							<li><a href="contact.php">Contact</a></li>
 						</ul>
 						<br>
 						<h6>Newsletter</h6>

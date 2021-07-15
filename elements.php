@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
+<?php
+session_start();
+?>
 
 <head>
 	<!-- Mobile Specific Meta -->
@@ -16,7 +19,8 @@
 	<meta charset="UTF-8">
 	<!-- Site Title -->
 	<title>Job Listing</title>
-
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 	<!--
 			CSS
@@ -41,20 +45,42 @@
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
 						<li class="menu-active"><a href="index.php">Home</a></li>
-						<li><a href="about-us.html">About Us</a></li>
-						<li><a href="category.html">Category</a></li>
-						<li><a href="price.html">Price</a></li>
-						<li><a href="recruiters.html">Recruiters</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="about-us.php">About Us</a></li>
+						<li><a href="category.php">Category</a></li>
+						<li><a href="price.php">Price</a></li>
+						<li><a href="recruiters.php">Recruiters</a></li>
+						<li><a href="contact.php">Contact</a></li>
 						<li class="menu-has-children"><a href="">Pages</a>
 							<ul>
-								<li><a href="elements.html">elements</a></li>
-								<li><a href="search.html">search</a></li>
-								<li><a href="single.html">single</a></li>
+								<li><a href="elements.php">elements</a></li>
+								<li><a href="search.php">search</a></li>
+								<li><a href="single.php">single</a></li>
 							</ul>
 						</li>
-						<li><a class="ticker-btn" href="#">Signup</a></li>
-						<li><a class="ticker-btn" href="#">Login</a></li>
+						<?php
+						if (isset($_SESSION['id'])) { ?>
+							<li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+								<ul>
+									<li><a href="./profile/index.php">Profile</a></li>
+									<li><a href="./seeker_preferences.php">Edit</a></li>
+									<li><a href="./logout.php">Logout</a></li>
+								</ul>
+							</li>
+						<?php } else { ?>
+							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Signup</a>
+								<ul>
+									<li><a href="./Register/studentRegister.php">As a Student</a></li>
+									<li><a href="./Register/recruiterRegister.php">As a recruiter</a></li>
+								</ul>
+							</li>
+							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Login</a>
+								<ul>
+									<li><a href="./Register/studentLogin.php">As a Student</a></li>
+									<li><a href="./Register/recruiterLogin.php">As a recruiter</a></li>
+								</ul>
+							</li>
+						<?php } ?>
 					</ul>
 				</nav><!-- #nav-menu-container -->
 			</div>
@@ -70,8 +96,7 @@
 					<h1 class="text-white">
 						Elements
 					</h1>
-					<p class="text-white link-nav"><a href="index.php">Home </a> <span
-							class="lnr lnr-arrow-right"></span> <a href="elements.html"> Elements</a></p>
+					<p class="text-white link-nav"><a href="index.php">Home </a> <span class="lnr lnr-arrow-right"></span> <a href="elements.php"> Elements</a></p>
 				</div>
 			</div>
 		</div>
@@ -171,18 +196,12 @@
 				<a href="#" class="genric-btn danger circle arrow">Danger<span class="lnr lnr-arrow-right"></span></a>
 			</div>
 			<div class="button-group-area mt-10">
-				<a href="#" class="genric-btn default-border circle arrow">Default<span
-						class="lnr lnr-arrow-right"></span></a>
-				<a href="#" class="genric-btn primary-border circle arrow">Primary<span
-						class="lnr lnr-arrow-right"></span></a>
-				<a href="#" class="genric-btn success-border circle arrow">Success<span
-						class="lnr lnr-arrow-right"></span></a>
-				<a href="#" class="genric-btn info-border circle arrow">Info<span
-						class="lnr lnr-arrow-right"></span></a>
-				<a href="#" class="genric-btn warning-border circle arrow">Warning<span
-						class="lnr lnr-arrow-right"></span></a>
-				<a href="#" class="genric-btn danger-border circle arrow">Danger<span
-						class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn default-border circle arrow">Default<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn primary-border circle arrow">Primary<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn success-border circle arrow">Success<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn info-border circle arrow">Info<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn warning-border circle arrow">Warning<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn danger-border circle arrow">Danger<span class="lnr lnr-arrow-right"></span></a>
 			</div>
 			<div class="button-group-area mt-40">
 				<a href="#" class="genric-btn primary e-large">Extra Large</a>
@@ -309,8 +328,7 @@
 							<div class="visit">645032</div>
 							<div class="percentage">
 								<div class="progress">
-									<div class="progress-bar color-1" role="progressbar" style="width: 80%"
-										aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 						</div>
@@ -320,8 +338,7 @@
 							<div class="visit">645032</div>
 							<div class="percentage">
 								<div class="progress">
-									<div class="progress-bar color-2" role="progressbar" style="width: 30%"
-										aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar color-2" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 						</div>
@@ -331,8 +348,7 @@
 							<div class="visit">645032</div>
 							<div class="percentage">
 								<div class="progress">
-									<div class="progress-bar color-3" role="progressbar" style="width: 55%"
-										aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar color-3" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 						</div>
@@ -342,8 +358,7 @@
 							<div class="visit">645032</div>
 							<div class="percentage">
 								<div class="progress">
-									<div class="progress-bar color-4" role="progressbar" style="width: 60%"
-										aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar color-4" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 						</div>
@@ -353,8 +368,7 @@
 							<div class="visit">645032</div>
 							<div class="percentage">
 								<div class="progress">
-									<div class="progress-bar color-5" role="progressbar" style="width: 40%"
-										aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar color-5" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 						</div>
@@ -364,8 +378,7 @@
 							<div class="visit">645032</div>
 							<div class="percentage">
 								<div class="progress">
-									<div class="progress-bar color-6" role="progressbar" style="width: 70%"
-										aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar color-6" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 						</div>
@@ -375,8 +388,7 @@
 							<div class="visit">645032</div>
 							<div class="percentage">
 								<div class="progress">
-									<div class="progress-bar color-7" role="progressbar" style="width: 30%"
-										aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar color-7" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 						</div>
@@ -386,8 +398,7 @@
 							<div class="visit">645032</div>
 							<div class="percentage">
 								<div class="progress">
-									<div class="progress-bar color-8" role="progressbar" style="width: 60%"
-										aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar color-8" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 						</div>
@@ -502,29 +513,20 @@
 						<h3 class="mb-30">Form Element</h3>
 						<form action="#">
 							<div class="mt-10">
-								<input type="text" name="first_name" placeholder="First Name"
-									onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required
-									class="single-input">
+								<input type="text" name="first_name" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required class="single-input">
 							</div>
 							<div class="mt-10">
-								<input type="text" name="last_name" placeholder="Last Name"
-									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required
-									class="single-input">
+								<input type="text" name="last_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required class="single-input">
 							</div>
 							<div class="mt-10">
-								<input type="text" name="last_name" placeholder="Last Name"
-									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required
-									class="single-input">
+								<input type="text" name="last_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required class="single-input">
 							</div>
 							<div class="mt-10">
-								<input type="email" name="EMAIL" placeholder="Email address"
-									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required
-									class="single-input">
+								<input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required class="single-input">
 							</div>
 							<div class="input-group-icon mt-10">
 								<div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
-								<input type="text" name="address" placeholder="Address" onfocus="this.placeholder = ''"
-									onblur="this.placeholder = 'Address'" required class="single-input">
+								<input type="text" name="address" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required class="single-input">
 							</div>
 							<div class="input-group-icon mt-10">
 								<div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
@@ -552,8 +554,7 @@
 							</div>
 
 							<div class="mt-10">
-								<textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''"
-									onblur="this.placeholder = 'Message'" required></textarea>
+								<textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required></textarea>
 							</div>
 							<!-- For Gradient Border Use -->
 							<!-- <div class="mt-10">
@@ -563,19 +564,13 @@
 										</div>
 									</div> -->
 							<div class="mt-10">
-								<input type="text" name="first_name" placeholder="Primary color"
-									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Primary color'" required
-									class="single-input-primary">
+								<input type="text" name="first_name" placeholder="Primary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Primary color'" required class="single-input-primary">
 							</div>
 							<div class="mt-10">
-								<input type="text" name="first_name" placeholder="Accent color"
-									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Accent color'" required
-									class="single-input-accent">
+								<input type="text" name="first_name" placeholder="Accent color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Accent color'" required class="single-input-accent">
 							</div>
 							<div class="mt-10">
-								<input type="text" name="first_name" placeholder="Secondary color"
-									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Secondary color'"
-									required class="single-input-secondary">
+								<input type="text" name="first_name" placeholder="Secondary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Secondary color'" required class="single-input-secondary">
 							</div>
 						</form>
 					</div>
@@ -708,10 +703,10 @@
 						<h6>Short Links</h6>
 						<ul class="footer-nav">
 							<li><a href="index.php">Home</a></li>
-							<li><a href="about-us.html">About Us</a></li>
-							<li><a href="category.html">Category</a></li>
-							<li><a href="recruiters.html">Recruiters</a></li>
-							<li><a href="blog-home.html">Blog</a></li>
+							<li><a href="about-us.php">About Us</a></li>
+							<li><a href="category.php">Category</a></li>
+							<li><a href="recruiters.php">Recruiters</a></li>
+							<li><a href="blog-home.php">Blog</a></li>
 						</ul>
 					</div>
 				</div>
@@ -719,8 +714,8 @@
 					<div class="single-footer-widget newsletter">
 						<h6>Other Links</h6>
 						<ul class="footer-nav">
-							<li><a href="terms.html">Terms and Conditions</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="terms.php">Terms and Conditions</a></li>
+							<li><a href="contact.php">Contact</a></li>
 						</ul>
 						<br>
 
@@ -745,15 +740,15 @@
 				<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
 
 					Copyright &copy;
-					<script>document.write(new Date().getFullYear());
+					<script>
+						document.write(new Date().getFullYear());
 					</script> NoFullTime |All rights reserved
 				</p>
 				<div class="col-lg-4 col-sm-12 footer-social">
 					<a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fa fa-facebook"></i></a>
 					<a href="https://www.instagram.com/abc_infomedia/"><i class="fa fa-instagram"></i></a>
 					<a href="https://twitter.com/abc_infomedia/"><i class="fa fa-twitter"></i></a>
-					<a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i
-							class="fa fa-linkedin"></i></a>
+					<a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fa fa-linkedin"></i></a>
 					<a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fa fa-pinterest"></i></a>
 					<a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fa fa-youtube"></i></a>
 				</div>
@@ -763,12 +758,9 @@
 	<!-- End footer Area -->
 
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="js/vendor/bootstrap.min.js"></script>
-	<script type="text/javascript"
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
 	<script src="js/easing.min.js"></script>
 	<script src="js/hoverIntent.js"></script>
 	<script src="js/superfish.min.js"></script>
