@@ -17,7 +17,6 @@ if ($result->num_rows > 0) {
         $country = ucwords($row['country']);
         $pincode = $row['pin_code'];
         $preferences = $row['category'];
-        echo "<script>console.log('$preferences')</script>";
     }
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -178,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="col-12 mt-5 text-center">
                     <?php
-                    if (strpos($prefernces, 'parttime') !== false) {
+                    if (strpos($preferences, 'parttime') !== false) {
                     ?>
                         <button type="submit" name="personal" class="btn btn-outline-success ml-4 btn-lg mt-2">Save & Next</button>
                     <?php
