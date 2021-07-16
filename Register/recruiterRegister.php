@@ -66,7 +66,7 @@ session_start();
                             </ul>
                         </li>
                     </ul>
-                </nav><!-- #nav-menu-container -->
+                </nav>
             </div>
         </div>
     </header>

@@ -81,7 +81,7 @@ ob_start();
             Recover Your Account
           </h4>
           <h4 class="title text-center mt-4">
-            Please fill email correctly.
+            Please enter email correctly.
           </h4>
           <form autocomplete="off" class="form-box px-3" action="" onsubmit="return validation()"  method="POST">
             <?php if (isset($_GET['error'])) { ?>
