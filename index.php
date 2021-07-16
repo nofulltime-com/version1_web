@@ -443,13 +443,20 @@ include './connect.php';
 									$parttime_start = substr($row2['part_time_start'], 0, 5);
 									$parttime_end = substr($row2['part_time_end'], 0, 5);
 								}
+								$a_tag = '';
+								if (isset($_SESSION['recruiter_id'])) {
+									$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+								} else {
+									$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+								}
 								echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="./profile/index.php?id=' . $id . '">
-										<h4>' . $row['field'] . '</h4>
-									</a>
+								<div class="titles">' . $a_tag . '
 									<h6>' . $row['position'] . '</h6>
 								</div>
 							</div>
@@ -511,9 +518,7 @@ include './connect.php';
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
-									<a href="./profile/index.php?id=' . $id . '">
-										<h4>' . $row['course'] . '</h4>
-									</a>
+									' . $a_tag . '
 									<h6>' . $row['field'] . '</h6>
 								</div>
 							</div>
@@ -573,9 +578,7 @@ include './connect.php';
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
-									<a href="./profile/index.php?id=' . $id . '">
-										<h4>' . $row['field'] . '</h4>
-									</a>
+									' . $a_tag . '
 									<h6>' . $row['position'] . '</h6>
 								</div>
 							</div>

@@ -1,18 +1,16 @@
 <?php
 session_start();
-<<<<<<< HEAD
 // if (isset($_SESSION['logincust'])) {
 //   header('Location: ../recruiters.html');
 // } else {
 //   session_unset();
 // }
-=======
+
 if (isset($_SESSION['logincust'])) {
   header('Location: ../recruiters.php');
 } else {
   session_unset();
 }
->>>>>>> 22ca95aee2ade64c982404165060f0368e8c5543
 ?>
 
 <!DOCTYPE html>
@@ -138,14 +136,14 @@ if (isset($_SESSION['logincust'])) {
 
           <div>
             <p class="bg-success test-white px-4"><?php
-            
-            if(isset($_SESSION['msg1'])){
-              echo $_SESSION['msg1'];
-            }else{
-              echo $_SESSION['msg1'] = " ";
-            }
 
-            ?></p>
+                                                  if (isset($_SESSION['msg1'])) {
+                                                    echo $_SESSION['msg1'];
+                                                  } else {
+                                                    echo $_SESSION['msg1'] = " ";
+                                                  }
+
+                                                  ?></p>
           </div>
 
           <form autocomplete="off" class="form-box px-3" action="" method="POST">
@@ -168,10 +166,10 @@ if (isset($_SESSION['logincust'])) {
             </div>
 
             <div class="text-right">
-                  <a href="recruiter_recover_mail.php" class="forget-link">
-                    Forget Password?
-                  </a>
-              </div>
+              <a href="recruiter_recover_mail.php" class="forget-link">
+                Forget Password?
+              </a>
+            </div>
 
             <div class="text-center mb-3">
               or login with
