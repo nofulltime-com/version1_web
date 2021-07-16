@@ -87,7 +87,7 @@ ob_start();
             <?php } ?>
             <div class="form-input">
               <span><i class="fa fa-key"></i></span>
-              <input type="password" id= "password" name="password" placeholder="Password" value="<?php echo $password; ?>">
+              <input type="password" id= "password" name="password" placeholder="New Password" value="<?php echo $password; ?>">
               <input type="checkbox" onclick="myFunction()"> Show Password
               <span id="passerror" class="text-danger font-weight-bold"></span>
             </div>

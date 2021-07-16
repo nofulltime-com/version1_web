@@ -4,14 +4,8 @@ session_start();
 //   header('Location: ../recruiters.html');
 // } else {
 //   session_unset();
-// }
-
-if (isset($_SESSION['logincust'])) {
-  header('Location: ../recruiters.php');
-} else {
-  session_unset();
-}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -137,26 +131,28 @@ if (isset($_SESSION['logincust'])) {
           <div>
             <p class="bg-success test-white px-4"><?php
 
-                                                  if (isset($_SESSION['msg1'])) {
-                                                    echo $_SESSION['msg1'];
-                                                  } else {
-                                                    echo $_SESSION['msg1'] = " ";
-                                                  }
+                if (isset($_SESSION['msg1'])) {
+                  echo $_SESSION['msg1'];
+                } else {
+                  echo $_SESSION['msg1'] = " ";
+               }
 
-                                                  ?></p>
+            ?></p>
           </div>
 
-          <form autocomplete="off" class="form-box px-3" action="" method="POST">
+          <form autocomplete="off" class="form-box px-3" onsubmit="return validation()" action="" method="POST">
             <?php if (isset($_GET['error'])) { ?>
               <p class="error"><?php echo $_GET['error']; ?></p>
             <?php } ?>
             <div class="form-input">
               <span><i class="fa fa-envelope-o"></i></span>
-              <input type="email" name="email" placeholder="Email Address" tabindex="10" value="<?php echo $email; ?>" required>
+              <input type="email" name="email" id="email" placeholder="Email Address" tabindex="10" value="<?php echo $email; ?>">
+              <span id="emailerror" class="text-danger font-weight-bold"></span>
             </div>
             <div class="form-input">
               <span><i class="fa fa-key"></i></span>
-              <input type="password" name="password" placeholder="Password" value="<?php echo $password; ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
+              <input type="password" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>">
+              <span id="passerror" class="text-danger font-weight-bold"></span>
             </div>
 
             <div class="mb-3">
@@ -271,6 +267,31 @@ if (isset($_SESSION['logincust'])) {
       </div>
     </div>
   </div>
+
+  <script>
+        function validation() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var passcheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+            var emailcheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            
+            if (emailcheck.test(email)) {
+                document.getElementById('emailerror').innerHTML = " ";
+
+            } else {
+                document.getElementById('emailerror').innerHTML = "** Email is incorrect";
+                return false;
+            }
+            if (passcheck.test(password)) {
+                document.getElementById('passerror').innerHTML = " ";
+
+            } else {
+                document.getElementById('passerror').innerHTML = "** Password is incorrect. Please enter atleast one uppercase, one lowercase and minimum 6 characters";
+                return false;
+            }
+        }
+     </script>        
 
   <footer class="footer-area section-gap">
     <div class="container">
