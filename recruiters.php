@@ -120,8 +120,7 @@ session_start();
 						<a href="./price.php">
 							<h4><span class="lnr lnr-user"></span>Register</h4>
 							<p>
-								Register with us by filling a form by subscribing to our plans or sign in through your
-								employer login details .
+								Register with us by filling a form and subscribing to our plans for more denifits.
 							</p>
 						</a>
 					</div>
