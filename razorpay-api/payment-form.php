@@ -1,15 +1,30 @@
 <?php
-$aCGST = "9%";
-$bSGST = "9%";
-$total_Amount = " ";
-if (isset($_POST['calculate'])) {
-    $amount = $_POST['Amount'];
+session_start();
+$recruiter_id = $_SESSION['recruiter_id'];
+echo "<script>console.log('$recruiter_id')</script>";
 
-    $aCGST = $amount * 9 / 100;
-    $bSGST = $amount * 9 / 100;
-    $total_Amount = $amount + $aCGST + $bSGST;
+$plan = $_GET['type'];
+if ($plan == "month") {
+    $amount = 129;
+    $cgst = 6.45;
+    $sgst = 3.87;
+    $total = 139.32;
+} else if ($plan == "6months") {
+    $amount = 499;
+    $cgst = 24.95;
+    $sgst = 14.97;
+    $total = 538.92;
+} else {
+    $amount = 999;
+    $cgst = 49.95;
+    $sgst = 29.97;
+    $total = 1078.92;
 }
-
+$_SESSION['amount'] = $amount;
+$_SESSION['cgst'] = $cgst;
+$_SESSION['sgst'] = $sgst;
+$_SESSION['total'] = $total;
+// echo "<script>console.log('$total');</script>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,34 +117,38 @@ if (isset($_POST['calculate'])) {
                             <div id="internship-registration-container-left" style="display: flex">
                                 <div class="registration-content">
                                     <h2 class="registration-content-header">
-                                        Hire the best interns
+                                        Hire the best candidates
                                     </h2>
                                     <div class="features_container_1">
-                                        Register and post your internship for free now!
-                                    </div>
+                                        Subsscribe and Post your part-time jobs,courses available </div>
                                     <div class="features_container_2">
-                                        4 Lacs+ internships seekers from 10,000+ colleges across World
+                                        4 Lacs+ registered candidates from across World
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="registration-container-right">
                             <div id="form-container">
-                                <form autocomplete="off" role="form" id="registration-form" onsubmit="return validation()" action="./pay.php" method="POST" class="nofulltime-form">
+                                <form autocomplete="off" role="form" id="registration-form" action="./pay.php?id=<?php echo $recruiter_id ?>" method="POST" class="nofulltime-form">
                                     <?php if (isset($_GET['error'])) { ?>
                                         <p class="error"><?php echo $_GET['error']; ?></p>
                                     <?php } ?>
-                                    <div class="form-group">
-                                        <label class="control-label">Recruiter Id</label>
-                                        <input type="text" class="form-control" id="Recruiter_Id" name="Recruiter_Id" value="" placeholder="1982376450">
-                                    </div>
+
                                     <div class="form-group">
                                         <label class="control-label">Amount </label>
-                                        <input type="text" class="form-control" id="Amount" name="Amount" value="" placeholder="1982">
+                                        <input type="text" class="form-control" readonly id="Amount" name="Amount" value="<?php echo $amount ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">CGST </label>
+                                        <input type="text" class="form-control" readonly id="Amount" name="cgst" value="<?php echo $cgst ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">SGST </label>
+                                        <input type="text" class="form-control" readonly id="Amount" name="sgst" value="<?php echo $sgst ?>">
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">Total Amount </label>
-                                        <input type="text" class="form-control" id="Total_Amount" name="Total_Amount" value="<?php echo ($total_Amount); ?>" placeholder="19820">
+                                        <input type="text" class="form-control" readonly id="Total_Amount" name="Total_Amount" value="<?php echo $total; ?>">
                                     </div>
                                     <div class="restricted_keyword_error registration_form" style="display: none;"></div>
                                     <div id="job_registration_form_extras" style="margin-top: 16px">
@@ -138,34 +157,7 @@ if (isset($_POST['calculate'])) {
                                         </div>
                                     </div>
                                 </form>
-                                <form autocomplete="off" role="form" id="registration-form" onsubmit="return validation()" action="" method="POST" class="nofulltime-form">
-                                    <?php if (isset($_GET['error'])) { ?>
-                                        <p class="error"><?php echo $_GET['error']; ?></p>
-                                    <?php } ?>
-                                    <div class="form-group">
-                                        <label class="control-label">Amount </label>
-                                        <input type="text" class="form-control" id="Amount" name="Amount" value="" placeholder="1982">
-                                    </div>
-                                    <div id="job_registration_form_extras" style="margin-top: 16px">
-                                        <div id="job_employer_registration_button">
-                                            <button type="submit" name="calculate" class="btn btn-primary">Calculate</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">CGST</label>
-                                        <input type="text" class="form-control" id="CGST" name="CGST" value="<?php echo ($aCGST); ?>" placeholder="9%">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">SGST</label>
-                                        <input type="text" class="form-control" id="SGST" name="SGST" value="<?php echo ($bSGST); ?>" placeholder="9%">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Total Amount </label>
-                                        <input type="text" class="form-control" id="Total_Amount" name="Total_Amount" value="<?php echo ($total_Amount); ?>" placeholder="19820">
-                                    </div>
-                                    <div class="restricted_keyword_error registration_form" style="display: none;"></div>
 
-                                </form>
                             </div>
                         </div>
                     </div>

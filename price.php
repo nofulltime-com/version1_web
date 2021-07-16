@@ -1,5 +1,6 @@
 <html lang="en">
 
+
 <head>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -122,7 +123,7 @@
 								<span class="price">Rs.</span>
 								<h1> 129 </h1><span class="time">Per <br> Month</span>
 							</div>
-							<a href="./razorpay-api/payment-form.php" class="primary-btn header-btn">Get Started</a>
+							<a href="./razorpay-api/payment-form.php?type=month" class="primary-btn header-btn">Get Started</a>
 						</div>
 
 					</div>
@@ -142,7 +143,7 @@
 								<span class="price">Rs.</span>
 								<h1> 499 </h1><span class="time">Per <br> 6 Months</span>
 							</div>
-							<a href="./razorpay-api/payment-form.php" class="primary-btn header-btn">Get Started</a>
+							<a href="./razorpay-api/payment-form.php?type=6months" class="primary-btn header-btn">Get Started</a>
 						</div>
 					</div>
 				</div>
@@ -161,7 +162,7 @@
 								<span class="price">Rs.</span>
 								<h1> 999 </h1><span class="time">Every <br> Year</span>
 							</div>
-							<a href="./razorpay-api/payment-form.php" class="primary-btn header-btn">Get Started</a>
+							<a href="./razorpay-api/payment-form.php?type=1year" class="primary-btn header-btn">Get Started</a>
 						</div>
 					</div>
 				</div>

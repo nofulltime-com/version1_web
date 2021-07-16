@@ -13,5 +13,5 @@ ini_set('display_errors', 1);
 
 $host = "localhost";
 $username = "root";
-$password = "";
+$password = "3183";
 $dbname = "nofulltime";

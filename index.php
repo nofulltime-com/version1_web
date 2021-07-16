@@ -404,9 +404,7 @@ include './connect.php';
 				</div>
 
 			</div>
-			<div class="courses-tag"> <a href="#">Know more
-					<i class="fa fa-arrow-right" aria-hidden="true"></i> </a></div>
-		</div>
+
 	</section>
 	<!-- Start post Area -->
 	<section class="post-area section-gap">
