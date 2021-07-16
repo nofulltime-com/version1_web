@@ -1,16 +1,15 @@
 <?php
-    $aCGST = "9%";
-    $bSGST = "9%";
-    $total_Amount = " ";
-    if (isset($_POST['calculate'])) 
-    {
-        $amount = $_POST['Amount'];
+$aCGST = "9%";
+$bSGST = "9%";
+$total_Amount = " ";
+if (isset($_POST['calculate'])) {
+    $amount = $_POST['Amount'];
 
-        $aCGST = $amount * 9 / 100;
-        $bSGST = $amount * 9 / 100;
-        $total_Amount = $amount + $aCGST + $bSGST;
-    }
-    
+    $aCGST = $amount * 9 / 100;
+    $bSGST = $amount * 9 / 100;
+    $total_Amount = $amount + $aCGST + $bSGST;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -116,7 +115,7 @@
                         </div>
                         <div id="registration-container-right">
                             <div id="form-container">
-                                <form autocomplete="off" role="form" id="registration-form" onsubmit="return validation()" action="razorpay-api/pay.php" method="POST" class="nofulltime-form">
+                                <form autocomplete="off" role="form" id="registration-form" onsubmit="return validation()" action="./pay.php" method="POST" class="nofulltime-form">
                                     <?php if (isset($_GET['error'])) { ?>
                                         <p class="error"><?php echo $_GET['error']; ?></p>
                                     <?php } ?>
@@ -130,8 +129,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">Total Amount </label>
-                                        <input type="text" class="form-control" id="Total_Amount" name="Total_Amount" value="<?php echo 
-                                        ($total_Amount); ?>" placeholder="19820">
+                                        <input type="text" class="form-control" id="Total_Amount" name="Total_Amount" value="<?php echo ($total_Amount); ?>" placeholder="19820">
                                     </div>
                                     <div class="restricted_keyword_error registration_form" style="display: none;"></div>
                                     <div id="job_registration_form_extras" style="margin-top: 16px">
@@ -163,11 +161,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">Total Amount </label>
-                                        <input type="text" class="form-control" id="Total_Amount" name="Total_Amount" value="<?php echo 
-                                        ($total_Amount); ?>" placeholder="19820">
+                                        <input type="text" class="form-control" id="Total_Amount" name="Total_Amount" value="<?php echo ($total_Amount); ?>" placeholder="19820">
                                     </div>
                                     <div class="restricted_keyword_error registration_form" style="display: none;"></div>
-                                    
+
                                 </form>
                             </div>
                         </div>
@@ -180,79 +177,81 @@
 
 
     <footer class="footer-area section-gap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3  col-md-12">
-                            <div class="single-footer-widget">
-                                <h6>Short Links</h6>
-                                <ul class="footer-nav">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="category.html">Category</a></li>
-                                    <li><a href="recruiters.html">Recruiters</a></li>
-                                    <li><a href="blog-home.html">Blog</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6  col-md-12">
-                            <div class="single-footer-widget newsletter">
-                                <h6>Other Links</h6>
-                                <ul class="footer-nav">
-                                    <li><a href="terms.html">Terms and Conditions</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                                <br>
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-3  col-md-12">
-                            <div class="single-footer-widget mail-chimp">
-                                <h6>Get In Touch</h6>
-                                <a title="Address "><i class="fa fa-map-marker "></i> No.32, Vinayagar Kovil Street, Karungalpalayam,
-                                                Erode - 638003, Tamil Nadu, India</a>
-                                <br>
-                                        <a href="mailto:support@nofulltime.com " title="Email "><i class="fa fa-envelope "></i>
-                                                support@nofulltime.com</a>
-                                <br>
-                                        <a href="tel:+919790030919 " title="Contact "><i class="fa fa-phone "></i> +91-97900-30919</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row footer-bottom d-flex justify-content-between">
-                        <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
-
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());
-                            </script> NoFullTime |All rights reserved
-                        </p>
-                        <div class="col-lg-4 col-sm-12 footer-social">
-                            <a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fa fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/abc_infomedia/"><i class="fa fa-instagram"></i></a>
-                            <a href="https://twitter.com/abc_infomedia/"><i class="fa fa-twitter"></i></a>
-                            <a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fa fa-linkedin"></i></a>
-                            <a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fa fa-pinterest"></i></a>
-                            <a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fa fa-youtube"></i></a>
-                        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-12">
+                    <div class="single-footer-widget">
+                        <h6>Short Links</h6>
+                        <ul class="footer-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="category.html">Category</a></li>
+                            <li><a href="recruiters.html">Recruiters</a></li>
+                            <li><a href="blog-home.html">Blog</a></li>
+                        </ul>
                     </div>
                 </div>
-            </footer>
-            <!-- End footer Area -->        
+                <div class="col-lg-6  col-md-12">
+                    <div class="single-footer-widget newsletter">
+                        <h6>Other Links</h6>
+                        <ul class="footer-nav">
+                            <li><a href="terms.html">Terms and Conditions</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <br>
 
-            <script src="js/vendor/jquery-2.2.4.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-            <script src="js/vendor/bootstrap.min.js"></script>          
-            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-            <script src="js/easing.min.js"></script>            
-            <script src="js/hoverIntent.js"></script>
-            <script src="js/superfish.min.js"></script> 
-            <script src="js/jquery.ajaxchimp.min.js"></script>
-            <script src="js/jquery.magnific-popup.min.js"></script> 
-            <script src="js/owl.carousel.min.js"></script>          
-            <script src="js/jquery.sticky.js"></script>
-            <script src="js/jquery.nice-select.min.js"></script>            
-            <script src="js/parallax.min.js"></script>      
-            <script src="js/mail-script.js"></script>   
-            <script src="js/main.js"></script>  
-        </body>
-    </html>
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-12">
+                    <div class="single-footer-widget mail-chimp">
+                        <h6>Get In Touch</h6>
+                        <a title="Address "><i class="fa fa-map-marker "></i> No.32, Vinayagar Kovil Street, Karungalpalayam,
+                            Erode - 638003, Tamil Nadu, India</a>
+                        <br>
+                        <a href="mailto:support@nofulltime.com " title="Email "><i class="fa fa-envelope "></i>
+                            support@nofulltime.com</a>
+                        <br>
+                        <a href="tel:+919790030919 " title="Contact "><i class="fa fa-phone "></i> +91-97900-30919</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row footer-bottom d-flex justify-content-between">
+                <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> NoFullTime |All rights reserved
+                </p>
+                <div class="col-lg-4 col-sm-12 footer-social">
+                    <a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/abc_infomedia/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://twitter.com/abc_infomedia/"><i class="fa fa-twitter"></i></a>
+                    <a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fa fa-pinterest"></i></a>
+                    <a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fa fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer Area -->
+
+    <script src="js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="js/easing.min.js"></script>
+    <script src="js/hoverIntent.js"></script>
+    <script src="js/superfish.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
