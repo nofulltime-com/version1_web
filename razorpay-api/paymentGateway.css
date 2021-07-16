@@ -70,7 +70,7 @@ body {
 
 #internship_form #content-inner .max-width-container #registration-container #registration-container-left {
     background-repeat: no-repeat;
-    background-position: left bottom;
+    background-position: left center;
     background-size: 100%;
     background-image: url(desktop.png);
 }
