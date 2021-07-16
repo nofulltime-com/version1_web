@@ -34,6 +34,12 @@ session_start();
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
+<style>
+	a {
+		text-decoration: none;
+		color: black;
+	}
+</style>
 
 <body>
 
@@ -111,18 +117,20 @@ session_start();
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
 					<div class="single-service">
-						<h4><span class="lnr lnr-user"></span>Register</h4>
-						<p>
-							Register with us by filling a form by subscribing to our plans or sign in through your
-							employer login details .
-						</p>
+						<a href="./price.php">
+							<h4><span class="lnr lnr-user"></span>Register</h4>
+							<p>
+								Register with us by filling a form by subscribing to our plans or sign in through your
+								employer login details .
+							</p>
+						</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-service">
 						<a href="./joblister/index.php">
 							<h4><span class="lnr lnr-license"></span>Post your job </h4>
-							<p style=color:black;>
+							<p>
 								Post your jobs specially formulated the needs of recruitment across various industries
 								and
 								location.
