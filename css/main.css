@@ -2038,8 +2038,8 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   display: inline-block;
   color: #fff;
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 17px;
   text-transform: uppercase;
   outline: none;
 }
@@ -2905,6 +2905,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-color: #f9f9ff;
   margin: 0 45px 45px 45px;
   padding: 35px;
+  border-radius: 10px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -2930,7 +2931,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .single-price .price-bottom .primary-btn {
-  border-radius: 0;
+  border-radius: 5px;
   margin-top: 20px;
   background: #49e4fa;
   color: #fff;
@@ -3687,21 +3688,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-left: 10px;
 }
 
-.single-price .price-bottom .primary-btn {
-  border-radius: 0;
-  margin-top: 20px;
-  background: #49e4fa;
-  color: #fff;
-  text-transform: capitalize;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
 
-.single-price .price-bottom .primary-btn:hover {
-  border: 1px solid transparent;
-}
 
 @media (max-width: 1280px) {
   .single-price .price-bottom {
