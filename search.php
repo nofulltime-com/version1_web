@@ -1,5 +1,6 @@
 <?php
 session_start();
+include './connect.php'
 ?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
@@ -142,348 +143,468 @@ session_start();
 		<div class="container">
 			<div class="row justify-content-center d-flex">
 				<div class="col-lg-8 post-list">
-					<div class="single-post d-flex flex-row">
-						<div class="thumb">
-							<img src="img/post.png" alt="">
-							<ul class="tags">
-								<li>
-									<a href="#">Art</a>
-								</li>
-								<li>
-									<a href="#">Media</a>
-								</li>
-								<li>
-									<a href="#">Design</a>
-								</li>
-							</ul>
-						</div>
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.php">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-								<ul class="btns">
-									<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-									<li><a href="#">Apply</a></li>
-								</ul>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<h5>Job Nature: Full time</h5>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-						</div>
+					<div class="title text-center">
+						<h1 class="mb-10">Search Results</h1>
 					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="thumb">
-							<img src="img/post.png" alt="">
-							<ul class="tags">
-								<li>
-									<a href="#">Art</a>
-								</li>
-								<li>
-									<a href="#">Media</a>
-								</li>
-								<li>
-									<a href="#">Design</a>
-								</li>
-							</ul>
-						</div>
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.php">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-								<ul class="btns">
-									<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-									<li><a href="#">Apply</a></li>
-								</ul>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<h5>Job Nature: Full time</h5>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-						</div>
-					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="thumb">
-							<img src="img/post.png" alt="">
-							<ul class="tags">
-								<li>
-									<a href="#">Art</a>
-								</li>
-								<li>
-									<a href="#">Media</a>
-								</li>
-								<li>
-									<a href="#">Design</a>
-								</li>
-							</ul>
-						</div>
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.php">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-								<ul class="btns">
-									<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-									<li><a href="#">Apply</a></li>
-								</ul>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<h5>Job Nature: Full time</h5>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-						</div>
-					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="thumb">
-							<img src="img/post.png" alt="">
-							<ul class="tags">
-								<li>
-									<a href="#">Art</a>
-								</li>
-								<li>
-									<a href="#">Media</a>
-								</li>
-								<li>
-									<a href="#">Design</a>
-								</li>
-							</ul>
-						</div>
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.php">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-								<ul class="btns">
-									<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-									<li><a href="#">Apply</a></li>
-								</ul>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<h5>Job Nature: Full time</h5>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-						</div>
-					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="thumb">
-							<img src="img/post.png" alt="">
-							<ul class="tags">
-								<li>
-									<a href="#">Art</a>
-								</li>
-								<li>
-									<a href="#">Media</a>
-								</li>
-								<li>
-									<a href="#">Design</a>
-								</li>
-							</ul>
-						</div>
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.php">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-								<ul class="btns">
-									<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-									<li><a href="#">Apply</a></li>
-								</ul>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<h5>Job Nature: Full time</h5>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-						</div>
-					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="thumb">
-							<img src="img/post.png" alt="">
-							<ul class="tags">
-								<li>
-									<a href="#">Art</a>
-								</li>
-								<li>
-									<a href="#">Media</a>
-								</li>
-								<li>
-									<a href="#">Design</a>
-								</li>
-							</ul>
-						</div>
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.php">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-								<ul class="btns">
-									<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-									<li><a href="#">Apply</a></li>
-								</ul>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<h5>Job Nature: Full time</h5>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-						</div>
-					</div>
-					<div class="single-post d-flex flex-row">
-						<div class="thumb">
-							<img src="img/post.png" alt="">
-							<ul class="tags">
-								<li>
-									<a href="#">Art</a>
-								</li>
-								<li>
-									<a href="#">Media</a>
-								</li>
-								<li>
-									<a href="#">Design</a>
-								</li>
-							</ul>
-						</div>
-						<div class="details">
-							<div class="title d-flex flex-row justify-content-between">
-								<div class="titles">
-									<a href="single.php">
-										<h4>Creative Art Designer</h4>
-									</a>
-									<h6>Premium Labels Limited</h6>
-								</div>
-								<ul class="btns">
-									<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-									<li><a href="#">Apply</a></li>
-								</ul>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc
-								ididunt ut dolore magna aliqua.
-							</p>
-							<h5>Job Nature: Full time</h5>
-							<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-							<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-						</div>
-					</div>
-
-				</div>
-				<div class="col-lg-4 sidebar">
-
-					<div class="single-slidebar">
-						<h4>Jobs by Location</h4>
+					<?php if (isset($_GET['place'])) {
+						$place = $_GET['place']
+					?>
 						<ul class="cat-list">
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>New York</p><span>37</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Park Montana</p><span>57</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Atlanta</p><span>33</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Arizona</p><span>36</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Florida</p><span>47</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Rocky Beach</p><span>27</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Chicago</p><span>17</span>
-								</a></li>
+							<li class="tablinks" onclick="openCategory(event, 'parttime')"><a>part Time</a></li>
+							<li class="tablinks" onclick="openCategory(event, 'course')"><a>Courses</a></li>
+							<li class="tablinks" onclick="openCategory(event, 'ngo')"><a>NGO</a></li>
 						</ul>
-					</div>
+						<div class="tabContent" style="display:block" id='parttime'>
+							<?php
+							$details_query = "SELECT * FROM `seeker_details` WHERE town='$place'";
+							$details_res = $conn->query($details_query);
+							while ($row2 = $details_res->fetch_assoc()) {
+								$id = $row2['id'];
+								$town = $row2['town'];
+								$state = $row2['state'];
+								$country = $row2['country'];
+								$parttime_start = substr($row2['part_time_start'], 0, 5);
+								$parttime_end = substr($row2['part_time_end'], 0, 5);
+								$parttime = "SELECT * FROM `job_seeker_details` WHERE id='$id'";
+								$parttime_res = $conn->query($parttime);
+								if ($parttime_res->num_rows > 0) {
+									while ($row = $parttime_res->fetch_assoc()) {
+										$pow = "";
+										if ($row['place_of_work'] == "wfh") {
+											$pow = 'Work From Home';
+										} else {
+											$pow = "In Office";
+										}
+										$a_tag = '';
+										if (isset($_SESSION['recruiter_id'])) {
+											$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+										} else {
+											$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+										}
+										echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">' . $a_tag . '
+									<h6>' . $row['position'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<p>
+								Working Hours : ' . $parttime_start . '  -  ' . $parttime_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $state . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a href="#">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a href="#">Part Time</a>
+									</li>
+									<li>
+										<a href="#">' . $row['position'] . '</a>
+									</li>
+									<li>
+										<a href="#">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+									}
+								}
+							}
+							?>
+						</div>
 
 
-					<div class="single-slidebar">
-						<h4>Jobs by Category</h4>
-						<ul class="cat-list">
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Technology</p><span>37</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Media & News</p><span>57</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Goverment</p><span>33</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Medical</p><span>36</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Restaurants</p><span>47</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Developer</p><span>27</span>
-								</a></li>
-							<li><a class="justify-content-between d-flex" href="#">
-									<p>Accounting</p><span>17</span>
-								</a></li>
-						</ul>
-					</div>
 
+						<div class="tabContent" style="display:none" id='course'>
+							<?php
+							$course = "SELECT * FROM `course_details` ORDER BY  id DESC LIMIT 5";
+							$course_res = $conn->query($course);
+							if ($course_res->num_rows > 0) {
+								while ($row = $course_res->fetch_assoc()) {
+									$pow = "";
+									if ($row['mode_of_learning'] == "online") {
+										$pow = 'Online';
+									} else {
+										$pow = "At Coaching Center";
+									}
+									$id = $row['id'];
+									$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+									$details_res = $conn->query($details_query);
+									while ($row2 = $details_res->fetch_assoc()) {
+										$town = $row2['town'];
+										$state = $row2['state'];
+										$country = $row2['country'];
+										$course_start = substr($row2['course_time_start'], 0, 5);
+										$course_end = substr($row2['course_time_end'], 0, 5);
+									}
+									$a_tag = '';
+									if (isset($_SESSION['recruiter_id'])) {
+										$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+									} else {
+										$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+									}
+									echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">
+									' . $a_tag . '
+									<h6> Course - ' . $row['course'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<p>
+								Dedicated Hours : ' . $course_start . '  -  ' . $course_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $state . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a href="#">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a href="#">Course</a>
+									</li>
+									<li>
+										<a href="#">' . $row['course'] . '</a>
+									</li>
+									<li>
+										<a href="#">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+								}
+							}
+							?>
+						</div>
+
+
+						<div class="tabContent" style="display:none" id='ngo'>
+							<?php
+							$ngo = "SELECT * FROM `ngo_details` ORDER BY id DESC LIMIT 5";
+							$ngo_res = $conn->query($ngo);
+							if ($ngo_res->num_rows > 0) {
+								while ($row = $ngo_res->fetch_assoc()) {
+									$pow = "";
+									if ($row['place_of_work'] == "wfh") {
+										$pow = 'Work From Home';
+									} else {
+										$pow = "In Office";
+									}
+									$id = $row['id'];
+									$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+									$details_res = $conn->query($details_query);
+									while ($row2 = $details_res->fetch_assoc()) {
+										$town = $row2['town'];
+										$state = $row2['state'];
+										$country = $row2['country'];
+										$ngo_start = substr($row2['ngo_time_start'], 0, 5);
+										$ngo_end = substr($row2['ngo_time_end'], 0, 5);
+									}
+									$a_tag = '';
+									if (isset($_SESSION['recruiter_id'])) {
+										$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+									} else {
+										$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+									}
+									echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">
+									' . $a_tag . '
+									<h6>' . $row['position'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<p>
+								Working Hours : ' . $ngo_start . '  -  ' . $ngo_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $state . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a href="#">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a href="#">Volunteer</a>
+									</li>
+									<li>
+										<a href="#">' . $row['position'] . '</a>
+									</li>
+									<li>
+										<a href="#">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+								}
+							}
+							?>
+						</div>
 				</div>
+
+				<script>
+					function openCategory(evt, categoryName) {
+						// alert('clicked');
+						var i, tabcontent, tablinks;
+						tabcontent = document.getElementsByClassName("tabContent");
+						for (i = 0; i < tabcontent.length; i++) {
+							tabcontent[i].style.display = "none";
+						}
+						tablinks = document.getElementsByClassName("tablinks");
+						for (i = 0; i < tablinks.length; i++) {
+							tablinks[i].className = tablinks[i].className.replace(" active", "");
+						}
+						document.getElementById(categoryName).style.display = "block";
+						evt.currentTarget.className += " active";
+					}
+				</script>
+
+			<?php } ?>
+
+
+
+
+
+
+
+
+			<div>
+				<?php
+				$field = $_GET['field'];
+				$parttime = "SELECT * FROM `job_seeker_details` WHERE field='$field'";
+				$parttime_res = $conn->query($parttime);
+				if ($parttime_res->num_rows > 0) {
+					while ($row = $parttime_res->fetch_assoc()) {
+						$pow = "";
+						if ($row['place_of_work'] == "wfh") {
+							$pow = 'Work From Home';
+						} else {
+							$pow = "In Office";
+						}
+						$id = $row['id'];
+						$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+						$details_res = $conn->query($details_query);
+						while ($row2 = $details_res->fetch_assoc()) {
+							$town = $row2['town'];
+							$state = $row2['state'];
+							$country = $row2['country'];
+							$parttime_start = substr($row2['part_time_start'], 0, 5);
+							$parttime_end = substr($row2['part_time_end'], 0, 5);
+						}
+						$a_tag = '';
+						if (isset($_SESSION['recruiter_id'])) {
+							$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+						} else {
+							$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+						}
+						echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">' . $a_tag . '
+									<h6>' . $row['position'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<p>
+								Working Hours : ' . $parttime_start . '  -  ' . $parttime_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $state . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a href="#">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a href="#">Part Time</a>
+									</li>
+									<li>
+										<a href="#">' . $row['position'] . '</a>
+									</li>
+									<li>
+										<a href="#">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+					}
+				}
+				?>
+
 			</div>
+
+			<div>
+				<?php
+				$course_field = $_GET['course'];
+				$course = "SELECT * FROM `course_details` WHERE field='$course_field'";
+				$course_res = $conn->query($course);
+				if ($course_res->num_rows > 0) {
+					while ($row = $course_res->fetch_assoc()) {
+						$pow = "";
+						if ($row['mode_of_learning'] == "online") {
+							$pow = 'Online';
+						} else {
+							$pow = "At Coaching Center";
+						}
+						$id = $row['id'];
+						$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+						$details_res = $conn->query($details_query);
+						while ($row2 = $details_res->fetch_assoc()) {
+							$town = $row2['town'];
+							$state = $row2['state'];
+							$country = $row2['country'];
+							$course_start = substr($row2['course_time_start'], 0, 5);
+							$course_end = substr($row2['course_time_end'], 0, 5);
+						}
+						$a_tag = '';
+						if (isset($_SESSION['recruiter_id'])) {
+							$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+						} else {
+							$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+						}
+						echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">
+									' . $a_tag . '
+									<h6> Course - ' . $row['course'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<p>
+								Dedicated Hours : ' . $course_start . '  -  ' . $course_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $state . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a href="#">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a href="#">Course</a>
+									</li>
+									<li>
+										<a href="#">' . $row['course'] . '</a>
+									</li>
+									<li>
+										<a href="#">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+					}
+				}
+				?>
+			</div>
+
+
+			<div>
+				<?php
+				$ngo_field = $_GET['ngo'];
+				$ngo = "SELECT * FROM `ngo_details` WHERE field='$ngo_field'";
+				$ngo_res = $conn->query($ngo);
+
+				if ($ngo_res->num_rows > 0) {
+					while ($row = $ngo_res->fetch_assoc()) {
+						$pow = "";
+						if ($row['place_of_work'] == "wfh") {
+							$pow = 'Work From Home';
+						} else {
+							$pow = "In Office";
+						}
+						$id = $row['id'];
+						$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+						$details_res = $conn->query($details_query);
+						while ($row2 = $details_res->fetch_assoc()) {
+							$town = $row2['town'];
+							$state = $row2['state'];
+							$country = $row2['country'];
+							$ngo_start = substr($row2['ngo_time_start'], 0, 5);
+							$ngo_end = substr($row2['ngo_time_end'], 0, 5);
+						}
+						if (isset($_SESSION['recruiter_id'])) {
+							$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+						} else {
+							$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+						}
+						echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">
+									' . $a_tag . '
+									<h6>' . $row['position'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<p>
+								Working Hours : ' . $ngo_start . '  -  ' . $ngo_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $state . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a href="#">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a href="#">Volunteer</a>
+									</li>
+									<li>
+										<a href="#">' . $row['position'] . '</a>
+									</li>
+									<li>
+										<a href="#">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+					}
+				}
+				?>
+			</div>
+
+			</div>
+			<div class="col-lg-3 sidebar">
+				SPACE FOR ADDING FILTERS
+			</div>
+		</div>
 		</div>
 	</section>
 	<!-- End post Area -->
 
-	<!-- Start callto-action Area -->
-	<section class="callto-action-area section-gap">
-		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="menu-content col-lg-9">
-					<div class="title text-center">
-						<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
-						<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation.</p>
-						<a class="primary-btn" href="./Register/studentLogin.php">I am a Candidate</a>
-						<a class="primary-btn" href="./Register/recruiterLogin.php">I am a Recruiter</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End calto-action Area -->
+
 
 	<!-- start footer Area -->
 	<footer class="footer-area section-gap">
@@ -527,7 +648,7 @@ session_start();
 			</div>
 
 			<div class="row footer-bottom d-flex justify-content-between">
-				<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+				<p class="9 col-sm-12 footer-text m-0 text-white">
 
 					Copyright &copy;
 					<script>

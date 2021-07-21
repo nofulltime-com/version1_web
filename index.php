@@ -512,12 +512,22 @@ include './connect.php';
 									$course_start = substr($row2['course_time_start'], 0, 5);
 									$course_end = substr($row2['course_time_end'], 0, 5);
 								}
+								$a_tag = '';
+								if (isset($_SESSION['recruiter_id'])) {
+									$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+								} else {
+									$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+								}
 								echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
 									' . $a_tag . '
-									<h6>' . $row['field'] . '</h6>
+									<h6> Course - ' . $row['course'] . '</h6>
 								</div>
 							</div>
 							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
@@ -571,6 +581,16 @@ include './connect.php';
 									$country = $row2['country'];
 									$ngo_start = substr($row2['ngo_time_start'], 0, 5);
 									$ngo_end = substr($row2['ngo_time_end'], 0, 5);
+								}
+								$a_tag = '';
+								if (isset($_SESSION['recruiter_id'])) {
+									$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
+								} else {
+									$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4>' . $row['field'] . '</h4>
+									</a>';
 								}
 								echo '<div class="single-post d-flex flex-row">
 						<div class="details">
@@ -639,7 +659,7 @@ include './connect.php';
 							if ($res->num_rows > 0) {
 								while ($row = $res->fetch_assoc()) {
 									echo "
-									<li><a class='justify-content-between d-flex' href='category.php'>
+									<li><a class='justify-content-between d-flex' href='search.php'>
 									<p>" . $row['town'] . "</p><span>" . $row['COUNT(id)'] . "</span>
 								</a></li>";
 								}
@@ -659,8 +679,9 @@ include './connect.php';
 							$res = $conn->query($query);
 							if ($res->num_rows > 0) {
 								while ($row = $res->fetch_assoc()) {
+									$field = $row['field'];
 									echo "
-									<li><a class='justify-content-between d-flex' href='category.php'>
+									<li><a class='justify-content-between d-flex' href='search.php?field=$field'>
 									<p>" . $row['field'] . "</p><span>" . $row['COUNT(id)'] . "</span>
 								</a></li>";
 								}
@@ -680,8 +701,9 @@ include './connect.php';
 							$res = $conn->query($query);
 							if ($res->num_rows > 0) {
 								while ($row = $res->fetch_assoc()) {
+									$course = $row['field'];
 									echo "
-									<li><a class='justify-content-between d-flex' href='category.php'>
+									<li><a class='justify-content-between d-flex' href='search.php?course=$course'>
 									<p>" . $row['field'] . "</p><span>" . $row['COUNT(id)'] . "</span>
 								</a></li>";
 								}
@@ -701,8 +723,10 @@ include './connect.php';
 							$res = $conn->query($query);
 							if ($res->num_rows > 0) {
 								while ($row = $res->fetch_assoc()) {
+									$ngo_field = $row['field'];
+
 									echo "
-									<li><a class='justify-content-between d-flex' href='category.php'>
+									<li><a class='justify-content-between d-flex' href='search.php?ngo=$ngo_field'>
 									<p>" . $row['field'] . "</p><span>" . $row['COUNT(id)'] . "</span>
 								</a></li>";
 								}
