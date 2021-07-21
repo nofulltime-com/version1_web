@@ -444,18 +444,18 @@ include './connect.php';
 								$a_tag = '';
 								if (isset($_SESSION['recruiter_id'])) {
 									$a_tag = '<a href="./profile/index.php?id=' . $id . '">
-										<h4>' . $row['field'] . '</h4>
+										<h4> Field - ' . $row['field'] . '</h4>
 									</a>';
 								} else {
 									$a_tag = '<a href="./Register/recruiterLogin.php">
-										<h4>' . $row['field'] . '</h4>
+										<h4> Field - ' . $row['field'] . '</h4>
 									</a>';
 								}
 								echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">' . $a_tag . '
-									<h6>' . $row['position'] . '</h6>
+									<h6> Position - ' . $row['position'] . '</h6>
 								</div>
 							</div>
 							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
@@ -515,11 +515,11 @@ include './connect.php';
 								$a_tag = '';
 								if (isset($_SESSION['recruiter_id'])) {
 									$a_tag = '<a href="./profile/index.php?id=' . $id . '">
-										<h4>' . $row['field'] . '</h4>
+										<h4> Field - ' . $row['field'] . '</h4>
 									</a>';
 								} else {
 									$a_tag = '<a href="./Register/recruiterLogin.php">
-										<h4>' . $row['field'] . '</h4>
+										<h4> Field - ' . $row['field'] . '</h4>
 									</a>';
 								}
 								echo '<div class="single-post d-flex flex-row">
@@ -585,11 +585,11 @@ include './connect.php';
 								$a_tag = '';
 								if (isset($_SESSION['recruiter_id'])) {
 									$a_tag = '<a href="./profile/index.php?id=' . $id . '">
-										<h4>' . $row['field'] . '</h4>
+										<h4> Field - ' . $row['field'] . '</h4>
 									</a>';
 								} else {
 									$a_tag = '<a href="./Register/recruiterLogin.php">
-										<h4>' . $row['field'] . '</h4>
+										<h4> Field - ' . $row['field'] . '</h4>
 									</a>';
 								}
 								echo '<div class="single-post d-flex flex-row">
@@ -597,7 +597,7 @@ include './connect.php';
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
 									' . $a_tag . '
-									<h6>' . $row['position'] . '</h6>
+									<h6> Position - ' . $row['position'] . '</h6>
 								</div>
 							</div>
 							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
