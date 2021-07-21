@@ -658,8 +658,9 @@ include './connect.php';
 							$res = $conn->query($query);
 							if ($res->num_rows > 0) {
 								while ($row = $res->fetch_assoc()) {
+									$town = $row['town'];
 									echo "
-									<li><a class='justify-content-between d-flex' href='search.php'>
+									<li><a class='justify-content-between d-flex' href='search.php?place=$town'>
 									<p>" . $row['town'] . "</p><span>" . $row['COUNT(id)'] . "</span>
 								</a></li>";
 								}

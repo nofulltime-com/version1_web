@@ -142,7 +142,7 @@ include './connect.php'
 	<section class="post-area section-gap">
 		<div class="container">
 			<div class="row justify-content-center d-flex">
-				<div class="col-lg-8 post-list">
+				<div class="col-lg-9 post-list">
 					<div class="title text-center">
 						<h1 class="mb-10">Search Results</h1>
 					</div>
@@ -221,41 +221,39 @@ include './connect.php'
 							?>
 						</div>
 
-
-
 						<div class="tabContent" style="display:none" id='course'>
 							<?php
-							$course = "SELECT * FROM `course_details` ORDER BY  id DESC LIMIT 5";
-							$course_res = $conn->query($course);
-							if ($course_res->num_rows > 0) {
-								while ($row = $course_res->fetch_assoc()) {
-									$pow = "";
-									if ($row['mode_of_learning'] == "online") {
-										$pow = 'Online';
-									} else {
-										$pow = "At Coaching Center";
-									}
-									$id = $row['id'];
-									$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
-									$details_res = $conn->query($details_query);
-									while ($row2 = $details_res->fetch_assoc()) {
-										$town = $row2['town'];
-										$state = $row2['state'];
-										$country = $row2['country'];
-										$course_start = substr($row2['course_time_start'], 0, 5);
-										$course_end = substr($row2['course_time_end'], 0, 5);
-									}
-									$a_tag = '';
-									if (isset($_SESSION['recruiter_id'])) {
-										$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+							$details_query = "SELECT * FROM `seeker_details` WHERE town='$place'";
+							$details_res = $conn->query($details_query);
+							while ($row2 = $details_res->fetch_assoc()) {
+								$id = $row2['id'];
+								$town = $row2['town'];
+								$state = $row2['state'];
+								$country = $row2['country'];
+								$course_start = substr($row2['course_time_start'], 0, 5);
+								$course_end = substr($row2['course_time_end'], 0, 5);
+								$course = "SELECT * FROM `course_details` WHERE id='$id'";
+								$course_res = $conn->query($course);
+								if ($course_res->num_rows > 0) {
+									while ($row = $course_res->fetch_assoc()) {
+										$pow = "";
+										if ($row['mode_of_learning'] == "online") {
+											$pow = 'Online';
+										} else {
+											$pow = "At Coaching Center";
+										}
+
+										$a_tag = '';
+										if (isset($_SESSION['recruiter_id'])) {
+											$a_tag = '<a href="./profile/index.php?id=' . $id . '">
 										<h4>' . $row['field'] . '</h4>
 									</a>';
-									} else {
-										$a_tag = '<a href="./Register/recruiterLogin.php">
+										} else {
+											$a_tag = '<a href="./Register/recruiterLogin.php">
 										<h4>' . $row['field'] . '</h4>
 									</a>';
-									}
-									echo '<div class="single-post d-flex flex-row">
+										}
+										echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
@@ -286,45 +284,48 @@ include './connect.php'
 							</div>
 						</div>
 						</div>';
+									}
 								}
 							}
+
 							?>
 						</div>
 
 
 						<div class="tabContent" style="display:none" id='ngo'>
 							<?php
-							$ngo = "SELECT * FROM `ngo_details` ORDER BY id DESC LIMIT 5";
-							$ngo_res = $conn->query($ngo);
-							if ($ngo_res->num_rows > 0) {
-								while ($row = $ngo_res->fetch_assoc()) {
-									$pow = "";
-									if ($row['place_of_work'] == "wfh") {
-										$pow = 'Work From Home';
-									} else {
-										$pow = "In Office";
-									}
-									$id = $row['id'];
-									$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
-									$details_res = $conn->query($details_query);
-									while ($row2 = $details_res->fetch_assoc()) {
-										$town = $row2['town'];
-										$state = $row2['state'];
-										$country = $row2['country'];
-										$ngo_start = substr($row2['ngo_time_start'], 0, 5);
-										$ngo_end = substr($row2['ngo_time_end'], 0, 5);
-									}
-									$a_tag = '';
-									if (isset($_SESSION['recruiter_id'])) {
-										$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+							$details_query = "SELECT * FROM `seeker_details` WHERE town='$place'";
+							$details_res = $conn->query($details_query);
+							while ($row2 = $details_res->fetch_assoc()) {
+								$id = $row2['id'];
+								$town = $row2['town'];
+								$state = $row2['state'];
+								$country = $row2['country'];
+								$ngo_start = substr($row2['ngo_time_start'], 0, 5);
+								$ngo_end = substr($row2['ngo_time_end'], 0, 5);
+								$ngo = "SELECT * FROM `ngo_details` WHERE id='$id'";
+								$ngo_res = $conn->query($ngo);
+								if ($ngo_res->num_rows > 0) {
+									while ($row = $ngo_res->fetch_assoc()) {
+										$pow = "";
+										if ($row['place_of_work'] == "wfh") {
+											$pow = 'Work From Home';
+										} else {
+											$pow = "In Office";
+										}
+										$id = $row['id'];
+
+										$a_tag = '';
+										if (isset($_SESSION['recruiter_id'])) {
+											$a_tag = '<a href="./profile/index.php?id=' . $id . '">
 										<h4>' . $row['field'] . '</h4>
 									</a>';
-									} else {
-										$a_tag = '<a href="./Register/recruiterLogin.php">
+										} else {
+											$a_tag = '<a href="./Register/recruiterLogin.php">
 										<h4>' . $row['field'] . '</h4>
 									</a>';
-									}
-									echo '<div class="single-post d-flex flex-row">
+										}
+										echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
@@ -355,72 +356,68 @@ include './connect.php'
 							</div>
 						</div>
 						</div>';
+									}
 								}
 							}
+
 							?>
 						</div>
-				</div>
-
-				<script>
-					function openCategory(evt, categoryName) {
-						// alert('clicked');
-						var i, tabcontent, tablinks;
-						tabcontent = document.getElementsByClassName("tabContent");
-						for (i = 0; i < tabcontent.length; i++) {
-							tabcontent[i].style.display = "none";
-						}
-						tablinks = document.getElementsByClassName("tablinks");
-						for (i = 0; i < tablinks.length; i++) {
-							tablinks[i].className = tablinks[i].className.replace(" active", "");
-						}
-						document.getElementById(categoryName).style.display = "block";
-						evt.currentTarget.className += " active";
-					}
-				</script>
-
-			<?php } ?>
 
 
+						<script>
+							function openCategory(evt, categoryName) {
+								// alert('clicked');
+								var i, tabcontent, tablinks;
+								tabcontent = document.getElementsByClassName("tabContent");
+								for (i = 0; i < tabcontent.length; i++) {
+									tabcontent[i].style.display = "none";
+								}
+								tablinks = document.getElementsByClassName("tablinks");
+								for (i = 0; i < tablinks.length; i++) {
+									tablinks[i].className = tablinks[i].className.replace(" active", "");
+								}
+								document.getElementById(categoryName).style.display = "block";
+								evt.currentTarget.className += " active";
+							}
+						</script>
+
+					<?php } ?>
 
 
-
-
-
-
-			<div>
-				<?php
-				$field = $_GET['field'];
-				$parttime = "SELECT * FROM `job_seeker_details` WHERE field='$field'";
-				$parttime_res = $conn->query($parttime);
-				if ($parttime_res->num_rows > 0) {
-					while ($row = $parttime_res->fetch_assoc()) {
-						$pow = "";
-						if ($row['place_of_work'] == "wfh") {
-							$pow = 'Work From Home';
-						} else {
-							$pow = "In Office";
-						}
-						$id = $row['id'];
-						$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
-						$details_res = $conn->query($details_query);
-						while ($row2 = $details_res->fetch_assoc()) {
-							$town = $row2['town'];
-							$state = $row2['state'];
-							$country = $row2['country'];
-							$parttime_start = substr($row2['part_time_start'], 0, 5);
-							$parttime_end = substr($row2['part_time_end'], 0, 5);
-						}
-						$a_tag = '';
-						if (isset($_SESSION['recruiter_id'])) {
-							$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+					<div>
+						<?php
+						$field = $_GET['field'];
+						$parttime = "SELECT * FROM `job_seeker_details` WHERE field='$field'";
+						$parttime_res = $conn->query($parttime);
+						if ($parttime_res->num_rows > 0) {
+							while ($row = $parttime_res->fetch_assoc()) {
+								$pow = "";
+								if ($row['place_of_work'] == "wfh") {
+									$pow = 'Work From Home';
+								} else {
+									$pow = "In Office";
+								}
+								$id = $row['id'];
+								$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+								$details_res = $conn->query($details_query);
+								while ($row2 = $details_res->fetch_assoc()) {
+									$town = $row2['town'];
+									$state = $row2['state'];
+									$country = $row2['country'];
+									$parttime_start = substr($row2['part_time_start'], 0, 5);
+									$parttime_end = substr($row2['part_time_end'], 0, 5);
+								}
+								$a_tag = '';
+								if (isset($_SESSION['recruiter_id'])) {
+									$a_tag = '<a href="./profile/index.php?id=' . $id . '">
 										<h4>' . $row['field'] . '</h4>
 									</a>';
-						} else {
-							$a_tag = '<a href="./Register/recruiterLogin.php">
+								} else {
+									$a_tag = '<a href="./Register/recruiterLogin.php">
 										<h4>' . $row['field'] . '</h4>
 									</a>';
-						}
-						echo '<div class="single-post d-flex flex-row">
+								}
+								echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">' . $a_tag . '
@@ -450,46 +447,46 @@ include './connect.php'
 							</div>
 						</div>
 						</div>';
-					}
-				}
-				?>
-
-			</div>
-
-			<div>
-				<?php
-				$course_field = $_GET['course'];
-				$course = "SELECT * FROM `course_details` WHERE field='$course_field'";
-				$course_res = $conn->query($course);
-				if ($course_res->num_rows > 0) {
-					while ($row = $course_res->fetch_assoc()) {
-						$pow = "";
-						if ($row['mode_of_learning'] == "online") {
-							$pow = 'Online';
-						} else {
-							$pow = "At Coaching Center";
+							}
 						}
-						$id = $row['id'];
-						$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
-						$details_res = $conn->query($details_query);
-						while ($row2 = $details_res->fetch_assoc()) {
-							$town = $row2['town'];
-							$state = $row2['state'];
-							$country = $row2['country'];
-							$course_start = substr($row2['course_time_start'], 0, 5);
-							$course_end = substr($row2['course_time_end'], 0, 5);
-						}
-						$a_tag = '';
-						if (isset($_SESSION['recruiter_id'])) {
-							$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+						?>
+
+					</div>
+
+					<div>
+						<?php
+						$course_field = $_GET['course'];
+						$course = "SELECT * FROM `course_details` WHERE field='$course_field'";
+						$course_res = $conn->query($course);
+						if ($course_res->num_rows > 0) {
+							while ($row = $course_res->fetch_assoc()) {
+								$pow = "";
+								if ($row['mode_of_learning'] == "online") {
+									$pow = 'Online';
+								} else {
+									$pow = "At Coaching Center";
+								}
+								$id = $row['id'];
+								$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+								$details_res = $conn->query($details_query);
+								while ($row2 = $details_res->fetch_assoc()) {
+									$town = $row2['town'];
+									$state = $row2['state'];
+									$country = $row2['country'];
+									$course_start = substr($row2['course_time_start'], 0, 5);
+									$course_end = substr($row2['course_time_end'], 0, 5);
+								}
+								$a_tag = '';
+								if (isset($_SESSION['recruiter_id'])) {
+									$a_tag = '<a href="./profile/index.php?id=' . $id . '">
 										<h4>' . $row['field'] . '</h4>
 									</a>';
-						} else {
-							$a_tag = '<a href="./Register/recruiterLogin.php">
+								} else {
+									$a_tag = '<a href="./Register/recruiterLogin.php">
 										<h4>' . $row['field'] . '</h4>
 									</a>';
-						}
-						echo '<div class="single-post d-flex flex-row">
+								}
+								echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
@@ -520,46 +517,46 @@ include './connect.php'
 							</div>
 						</div>
 						</div>';
-					}
-				}
-				?>
-			</div>
-
-
-			<div>
-				<?php
-				$ngo_field = $_GET['ngo'];
-				$ngo = "SELECT * FROM `ngo_details` WHERE field='$ngo_field'";
-				$ngo_res = $conn->query($ngo);
-
-				if ($ngo_res->num_rows > 0) {
-					while ($row = $ngo_res->fetch_assoc()) {
-						$pow = "";
-						if ($row['place_of_work'] == "wfh") {
-							$pow = 'Work From Home';
-						} else {
-							$pow = "In Office";
+							}
 						}
-						$id = $row['id'];
-						$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
-						$details_res = $conn->query($details_query);
-						while ($row2 = $details_res->fetch_assoc()) {
-							$town = $row2['town'];
-							$state = $row2['state'];
-							$country = $row2['country'];
-							$ngo_start = substr($row2['ngo_time_start'], 0, 5);
-							$ngo_end = substr($row2['ngo_time_end'], 0, 5);
-						}
-						if (isset($_SESSION['recruiter_id'])) {
-							$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+						?>
+					</div>
+
+
+					<div>
+						<?php
+						$ngo_field = $_GET['ngo'];
+						$ngo = "SELECT * FROM `ngo_details` WHERE field='$ngo_field'";
+						$ngo_res = $conn->query($ngo);
+
+						if ($ngo_res->num_rows > 0) {
+							while ($row = $ngo_res->fetch_assoc()) {
+								$pow = "";
+								if ($row['place_of_work'] == "wfh") {
+									$pow = 'Work From Home';
+								} else {
+									$pow = "In Office";
+								}
+								$id = $row['id'];
+								$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+								$details_res = $conn->query($details_query);
+								while ($row2 = $details_res->fetch_assoc()) {
+									$town = $row2['town'];
+									$state = $row2['state'];
+									$country = $row2['country'];
+									$ngo_start = substr($row2['ngo_time_start'], 0, 5);
+									$ngo_end = substr($row2['ngo_time_end'], 0, 5);
+								}
+								if (isset($_SESSION['recruiter_id'])) {
+									$a_tag = '<a href="./profile/index.php?id=' . $id . '">
 										<h4>' . $row['field'] . '</h4>
 									</a>';
-						} else {
-							$a_tag = '<a href="./Register/recruiterLogin.php">
+								} else {
+									$a_tag = '<a href="./Register/recruiterLogin.php">
 										<h4>' . $row['field'] . '</h4>
 									</a>';
-						}
-						echo '<div class="single-post d-flex flex-row">
+								}
+								echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
 								<div class="titles">
@@ -590,16 +587,16 @@ include './connect.php'
 							</div>
 						</div>
 						</div>';
-					}
-				}
-				?>
-			</div>
+							}
+						}
+						?>
+					</div>
 
+				</div>
+				<div class="col-lg-3 sidebar">
+					SPACE FOR ADDING FILTERS
+				</div>
 			</div>
-			<div class="col-lg-3 sidebar">
-				SPACE FOR ADDING FILTERS
-			</div>
-		</div>
 		</div>
 	</section>
 	<!-- End post Area -->
