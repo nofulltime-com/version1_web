@@ -18,5 +18,3 @@ echo "<script>console.log('Connected to DB');</script>";
 //     die("Connection Error");
 
 // echo "<script>console.log('Connected to DB');</script>";
-
-// //job lister file
