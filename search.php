@@ -537,7 +537,6 @@ include './connect.php'
 								} else {
 									$pow = "In Office";
 								}
-
 								$id = $row['id'];
 								$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
 								$details_res = $conn->query($details_query);
