@@ -139,11 +139,13 @@ session_start();
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-service">
-						<h4><span class="lnr lnr-phone"></span>Hire the best talent</h4>
-						<p>
-							Reach out to millions of jobseekers and hire quickly with our fast and easy job posting
-							services.
-						</p>
+						<a href="./search.php">
+							<h4><span class="lnr lnr-phone"></span>Hire the best talent</h4>
+							<p>
+								Reach out to millions of jobseekers and hire quickly with our fast and easy job posting
+								services.
+							</p>
+						</a>
 					</div>
 				</div>
 			</div>

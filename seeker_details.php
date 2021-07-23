@@ -103,7 +103,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li class="menu-active"><a href="index.php">Home</a></li>
                         <li><a href="about-us.php">About Us</a></li>
                         <li><a href="category.php">Category</a></li>
-                        <li><a href="recruiters.php">recruiters</a></li>
                         <li><a href="blog-home.php">Blog</a></li>
                         <li><a href="contact.php">Contact</a></li>
 
@@ -203,7 +202,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <li><a href="index.php">Home</a></li>
                             <li><a href="about-us.php">About Us</a></li>
                             <li><a href="category.php">Category</a></li>
-                            <li><a href="recruiters.php">Recruiters</a></li>
+                            <li><a href="blog-home.php">Blog</a></li>
                         </ul>
                     </div>
                 </div>
