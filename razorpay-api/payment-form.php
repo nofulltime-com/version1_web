@@ -36,8 +36,10 @@ $_SESSION['total'] = $total;
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
 
     <link rel="stylesheet" href="paymentGateway.css">
 
@@ -78,18 +80,40 @@ $_SESSION['total'] = $total;
                         <li><a href="../about-us.php">About Us</a></li>
                         <li><a href="../category.php">Category</a></li>
                         <li><a href="../contact.php">Contact</a></li>
-                        <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Signup</a>
-                            <ul>
+                        <?php
+                        if (isset($_SESSION['id'])) { ?>
+                            <li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+                                <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+                                <ul>
+                                    <li><a href="../profile/index.php">Profile</a></li>
+                                    <li><a href="../seeker_preferences.php">Edit</a></li>
+                                    <li><a href="../logout.php">Logout</a></li>
+                                </ul>
+                            </li>
+                        <?php } elseif (isset($_SESSION['recruiter_id'])) { ?>
+                            <li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+                                <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+                                <ul>
+                                    <li><a href="../recruiters.php">Dashboard</a></li>
+                                    <li><a href="../price.php">Subscribe</a></li>
+                                    <li><a href="../search.php">Search</a></li>
+                                    <li><a href="../recruiter_logout.php">Logout</a></li>
+                                </ul>
+                            </li>
+                        <?php } else { ?>
+                            <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Signup</a>
+                                <ul>
 
-                                <li><a href="recruiterRegister.php">As a recruiter</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Login</a>
-                            <ul>
+                                    <li><a href="recruiterRegister.php">As a recruiter</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Login</a>
+                                <ul>
 
-                                <li><a href="recruiterLogin.php">As a recruiter</a></li>
-                            </ul>
-                        </li>
+                                    <li><a href="recruiterLogin.php">As a recruiter</a></li>
+                                </ul>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>
