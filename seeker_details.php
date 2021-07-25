@@ -174,6 +174,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="col-12 mt-5 text-center">
+                    <a href="./seeker_preferences.php" class='btn btn-lg btn-danger ml-4 mt-2'>Previous</a>
+
                     <?php
                     if (strpos($preferences, 'parttime') !== false) {
                     ?>
@@ -186,7 +188,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <?php
                     }
                     ?>
-                    <a href="./seeker_preferences.php" class='btn btn-lg btn-outline-danger ml-4 mt-2'>Previous</a>
                 </div>
             </form>
         </fieldset>

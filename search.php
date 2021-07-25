@@ -269,7 +269,7 @@ include './connect.php'
 									<h6> Course - ' . $row['course'] . '</h6>
 								</div>
 							</div>
-							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<h5>Prefered Place of Study      :    ' . $pow . '</h5>
 							<p>
 								Dedicated Hours : ' . $course_start . '  -  ' . $course_end . '
 							</p>
@@ -502,7 +502,7 @@ include './connect.php'
 									<h6> Course - ' . $row['course'] . '</h6>
 								</div>
 							</div>
-							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<h5>Prefered Place of Study      :    ' . $pow . '</h5>
 							<p>
 								Dedicated Hours : ' . $course_start . '  -  ' . $course_end . '
 							</p>
