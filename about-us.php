@@ -238,8 +238,8 @@ session_start();
 						<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
 						<p class="text-white">Register for Free. Take NoFullTime to apply to part time jobs,learn
 							courses and work for NGO's too.</p>
-						<a class="primary-btn" href="#">I am a Candidate</a>
-						<a class="primary-btn" href="#">We are an Employer</a>
+						<a class="primary-btn" href="./Register/studentLogin.php">I am a Candidate</a>
+						<a class="primary-btn" href="./Register/recruiterLogin.php">I am a Recruiter</a>
 					</div>
 				</div>
 			</div>
