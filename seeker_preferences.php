@@ -207,8 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <ul class="nav-menu">
                         <li class="menu-active"><a href="index.php">Home</a></li>
                         <li><a href="about-us.php">About Us</a></li>
-                        <li><a href="category.php">Category</a></li>
-                        <li><a href="blog-home.php">Blog</a></li>
+                        <li><a href="blog-home.php">Blogs</a></li>
                         <li><a href="contact.php">Contact</a></li>
 
                         <li class="menu-has-children"><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
@@ -298,8 +297,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <ul class="footer-nav">
                             <li><a href="index.php">Home</a></li>
                             <li><a href="about-us.php">About Us</a></li>
-                            <li><a href="category.php">Category</a></li>
-                            <li><a href="blog-home.php">Blog</a></li>
+                            <li><a href="blog-home.php">Blogs</a></li>
                         </ul>
                     </div>
                 </div>

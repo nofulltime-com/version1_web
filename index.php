@@ -54,8 +54,7 @@ include './connect.php';
 					<ul class="nav-menu">
 						<li class="menu-active"><a href="index.php">Home</a></li>
 						<li><a href="about-us.php">About Us</a></li>
-						<li><a href="category.php">Category</a></li>
-						<li><a href="recruiters.php">recruiters</a></li>
+						<li><a href="./blog-home.php">Blogs</a></li>
 						<li><a href="contact.php">Contact</a></li>
 						<?php
 						if (isset($_SESSION['id'])) { ?>
@@ -302,7 +301,7 @@ include './connect.php';
 			<div class="row">
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/o1.png" alt="">
 						</a>
 						<p>Accounting</p>
@@ -310,7 +309,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/o2.png" alt="">
 						</a>
 						<p>Development</p>
@@ -318,7 +317,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/o3.png" alt="">
 						</a>
 						<p>Technology</p>
@@ -326,7 +325,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/o4.png" alt="">
 						</a>
 						<p>Media & News</p>
@@ -334,7 +333,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/o5.png" alt="">
 						</a>
 						<p>Medical</p>
@@ -342,7 +341,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/o6.png" alt="">
 						</a>
 						<p>Goverment</p>
@@ -366,7 +365,7 @@ include './connect.php';
 			<div class="row">
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/home_course/website.png" alt="">
 						</a>
 						<p>Web Development</p>
@@ -374,7 +373,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/home_course/android.png" alt="">
 						</a>
 						<p>Android Development</p>
@@ -382,7 +381,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/home_course/creative.png" alt="">
 						</a>
 						<p>Creative Writing</p>
@@ -390,7 +389,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/home_course/video-editing.png" alt="">
 						</a>
 						<p>Video Editing</p>
@@ -398,7 +397,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/home_course/machine-learning.png" alt="">
 						</a>
 						<p>Machine Learning</p>
@@ -406,7 +405,7 @@ include './connect.php';
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-6">
 					<div class="single-fcat">
-						<a href="category.php">
+						<a href="./Register/studentLogin.php">
 							<img src="img/home_course/php.png" alt="">
 						</a>
 						<p>php</p>
@@ -495,7 +494,7 @@ include './connect.php';
 						}
 						?>
 
-						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.php">Load More part-time seekers</a>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="search.php">Load More part-time seekers</a>
 					</div>
 
 
@@ -566,7 +565,7 @@ include './connect.php';
 							}
 						}
 						?>
-						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.php">Load More course seekers</a>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="search.php">Load More course seekers</a>
 					</div>
 
 
@@ -636,7 +635,7 @@ include './connect.php';
 							}
 						}
 						?>
-						<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.php">Load More NGO volunteers</a>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="search.php">Load More NGO volunteers</a>
 					</div>
 				</div>
 
@@ -885,8 +884,7 @@ include './connect.php';
 						<ul class="footer-nav">
 							<li><a href="index.php">Home</a></li>
 							<li><a href="about-us.php">About Us</a></li>
-							<li><a href="category.php">Category</a></li>
-							<li><a href="recruiters.php">Recruiters</a></li>
+							<li><a href="./blog-home.php">Blogs</a></li>
 						</ul>
 					</div>
 				</div>

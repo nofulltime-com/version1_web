@@ -78,7 +78,7 @@ $_SESSION['total'] = $total;
                     <ul class="nav-menu">
                         <li class="menu-active"><a href="../index.php">Home</a></li>
                         <li><a href="../about-us.php">About Us</a></li>
-                        <li><a href="../category.php">Category</a></li>
+                        <li><a href="../blog-home.php">Blogs</a></li>
                         <li><a href="../contact.php">Contact</a></li>
                         <?php
                         if (isset($_SESSION['id'])) { ?>

@@ -58,7 +58,7 @@ session_start();
           <ul class="nav-menu">
             <li class="menu-active"><a href="../index.php">Home</a></li>
             <li><a href="../about-us.php">About Us</a></li>
-            <li><a href="../category.php">Category</a></li>
+            <li><a href="../blog-home.php">Blogs</a></li>
             <li><a href="../contact.php">Contact</a></li>
             <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Signup</a>
               <ul>
@@ -131,13 +131,13 @@ session_start();
           <div>
             <p class="bg-success test-white px-4"><?php
 
-                if (isset($_SESSION['msg1'])) {
-                  echo $_SESSION['msg1'];
-                } else {
-                  echo $_SESSION['msg1'] = " ";
-               }
+                                                  if (isset($_SESSION['msg1'])) {
+                                                    echo $_SESSION['msg1'];
+                                                  } else {
+                                                    echo $_SESSION['msg1'] = " ";
+                                                  }
 
-            ?></p>
+                                                  ?></p>
           </div>
 
           <form autocomplete="off" class="form-box px-3" onsubmit="return validation()" action="" method="POST">
@@ -269,29 +269,29 @@ session_start();
   </div>
 
   <script>
-        function validation() {
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
+    function validation() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
 
-            var passcheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-            var emailcheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-            
-            if (emailcheck.test(email)) {
-                document.getElementById('emailerror').innerHTML = " ";
+      var passcheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+      var emailcheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-            } else {
-                document.getElementById('emailerror').innerHTML = "** Email is incorrect";
-                return false;
-            }
-            if (passcheck.test(password)) {
-                document.getElementById('passerror').innerHTML = " ";
+      if (emailcheck.test(email)) {
+        document.getElementById('emailerror').innerHTML = " ";
 
-            } else {
-                document.getElementById('passerror').innerHTML = "** Password is incorrect. Please enter atleast one uppercase, one lowercase and minimum 6 characters";
-                return false;
-            }
-        }
-     </script>        
+      } else {
+        document.getElementById('emailerror').innerHTML = "** Email is incorrect";
+        return false;
+      }
+      if (passcheck.test(password)) {
+        document.getElementById('passerror').innerHTML = " ";
+
+      } else {
+        document.getElementById('passerror').innerHTML = "** Password is incorrect. Please enter atleast one uppercase, one lowercase and minimum 6 characters";
+        return false;
+      }
+    }
+  </script>
 
   <footer class="footer-area section-gap">
     <div class="container">
@@ -300,11 +300,11 @@ session_start();
           <div class="single-footer-widget">
             <h6>Short Links</h6>
             <ul class="footer-nav">
-              <li><a href="index.php">Home</a></li>
-              <li><a href="about-us.php">About Us</a></li>
-              <li><a href="category.php">Category</a></li>
-              <li><a href="recruiters.php">Recruiters</a></li>
-              <li><a href="blog-home.php">Blog</a></li>
+              <li><a href="../index.php">Home</a></li>
+              <li><a href="../about-us.php">About Us</a></li>
+              <li><a href="../blog-home.php">Blogs</a></li>
+              <li><a href="../recruiters.php">Recruiters</a></li>
+              <li><a href="../blog-home.php">Blog</a></li>
             </ul>
           </div>
         </div>

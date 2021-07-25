@@ -51,7 +51,7 @@ session_start();
                     <ul class="nav-menu">
                         <li class="menu-active"><a href="../index.php">Home</a></li>
                         <li><a href="../about-us.php">About Us</a></li>
-                        <li><a href="../category.php">Category</a></li>
+                        <li><a href="../blog-home.php">Blogs</a></li>
                         <li><a href="../contact.php">Contact</a></li>
                         <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Signup</a>
                             <ul>
@@ -272,11 +272,9 @@ session_start();
                     <div class="single-footer-widget">
                         <h6>Short Links</h6>
                         <ul class="footer-nav">
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="about-us.php">About Us</a></li>
-                            <li><a href="category.php">Category</a></li>
-                            <li><a href="recruiters.php">Recruiters</a></li>
-                            <li><a href="blog-home.php">Blog</a></li>
+                            <li><a href="../index.php">Home</a></li>
+                            <li><a href="../about-us.php">About Us</a></li>
+                            <li><a href="../blog-home.php">Blogs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -334,9 +332,12 @@ session_start();
                     </script> NoFullTime |All rights reserved
                 </p>
                 <div class="col-lg-4 col-sm-12 footer-social">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/abc_infomedia/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://twitter.com/abc_infomedia/"><i class="fa fa-twitter"></i></a>
+                    <a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fa fa-pinterest"></i></a>
+                    <a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fa fa-youtube"></i></a>
                 </div>
             </div>
         </div>
