@@ -97,9 +97,13 @@ session_start();
       $pass_decode = password_verify($password, $db_pass);
 
       if ($pass_decode) {
+        setcookie("email", $email, time() +
+                                    (3 * 24 * 60 * 60));
+        setcookie("password", $password, time() +
+                                    (3 * 24 * 60 * 60));
   ?>
         <script>
-          location.replace("../seeker_preferences.php");
+          location.replace("../check.php");
         </script>
   <?php
 
@@ -129,30 +133,30 @@ session_start();
           <div>
             <p class="bg-info text-white px-7"><?php
 
-                                                if (isset($_SESSION['msg'])) {
-                                                  echo $_SESSION['msg'];
-                                                } else {
-                                                  echo $_SESSION['msg'] = " ";
-                                                }
+            if (isset($_SESSION['msg'])) {
+              echo $_SESSION['msg'];
+            } else {
+              echo $_SESSION['msg'] = " ";
+            }
 
-                                                ?></p>
+            ?></p>
           </div>
 
           <form autocomplete="off" class="form-box px-3" onsubmit="return validation()" action="" method="POST">
             <?php if (isset($_GET['error'])) { ?>
               <p class="error"><?php echo $_GET['error']; ?></p>
             <?php } ?>
-            <div class="form-input">
+            <div class="form-input" >
               <span><i class="fa fa-envelope-o"></i></span>
               <input type="email" name="email" id="email" placeholder="Email Address" value="<?php echo $email; ?>" tabindex="10">
-              <span id="emailerror" class="text-danger font-weight-bold"></span>
+              
             </div>
+            <span id="emailerror" class="text-danger font-weight-bold" ></span>
             <div class="form-input">
               <span><i class="fa fa-key"></i></span>
               <input type="password" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>">
-              <span id="passerror" class="text-danger font-weight-bold"></span>
             </div>
-
+            <span id="passerror" class="text-danger font-weight-bold"></span>
             <div class="mb-3">
               <button type="submit" name="submit" class="btn btn-block text-uppercase">
                 Login
