@@ -193,7 +193,6 @@
 							<li><a href="about-us.html">About Us</a></li>
 							<li><a href="category.html">Category</a></li>
 							<li><a href="recruiters.html">Recruiters</a></li>
-							<li><a href="blog-home.html">Blog</a></li>
 						</ul>
 					</div>
 				</div>
