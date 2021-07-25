@@ -35,6 +35,15 @@ session_start();
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <style>
+	.buttons:hover {
+		background: #8c78f1;
+		cursor: default;
+	}
+
+	.buttons i {
+		color: #8c78f1;
+	}
+
 	a {
 		text-decoration: none;
 		color: black;
@@ -161,6 +170,58 @@ session_start();
 			</div>
 		</div>
 	</section>
+	<div class="container" style="padding-bottom:120px;">
+		<div class="row">
+			<div class="col-lg-6 download-left">
+				<img class="img-fluid" src="./img/recruiters1.png">
+			</div>
+			<div class="col-lg-6">
+				<h1 style="font-size:x-large;">Nofulltime posting services<br>
+					Get Qualitly Applies
+				</h1>
+				<p class="subs">
+					Reach out to millions of jobseekers and hire quickly with our fast and easy job posting services.
+				</p>
+				<div class="d-flex flex-row">
+					<div class="buttons" style="border:0px;">
+						<i class="fas fa-stopwatch"></i>
+						<div class="desc">
+							<p>
+								<span style="font-size: larger;">2 Minutes to post</span>
+							</p>
+						</div>
+					</div>
+					<div class="buttons" style="border:0px;">
+						<i class="fas fa-calendar-alt"></i>
+						<div class="desc">
+							<p>
+								<span style="font-size: larger;">30 days visibility</span>
+							</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="d-flex flex-row">
+					<div class="buttons" style="border:0px;">
+						<i class="fas fa-users"></i>
+						<div class="desc">
+							<p>
+								<span style="font-size: larger;">Smart Talent search</span>
+							</p>
+						</div>
+					</div>
+					<div class="buttons" style="border:0px;">
+						<i class="fas fa-user-check"></i>
+						<div class="desc">
+							<p>
+								<span style="font-size: larger;">Verified Candidates</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- End service Area -->
 
 	<!-- start footer Area -->
