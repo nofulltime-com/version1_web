@@ -6,19 +6,19 @@ echo "<script>console.log('$recruiter_id')</script>";
 $plan = $_GET['type'];
 if ($plan == "month") {
     $amount = 129;
-    $cgst = 6.45;
-    $sgst = 3.87;
-    $total = 139.32;
+    $cgst = 11.61;
+    $sgst = 11.61;
+    $total = 152.52;
 } else if ($plan == "6months") {
     $amount = 499;
-    $cgst = 24.95;
-    $sgst = 14.97;
-    $total = 538.92;
+    $cgst = 44.91;
+    $sgst = 44.91;
+    $total = 588.82;
 } else {
     $amount = 999;
-    $cgst = 49.95;
-    $sgst = 29.97;
-    $total = 1078.92;
+    $cgst = 89.91;
+    $sgst = 89.91;
+    $total = 1098.82;
 }
 $_SESSION['amount'] = $amount;
 $_SESSION['cgst'] = $cgst;
