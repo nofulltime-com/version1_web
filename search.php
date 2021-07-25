@@ -208,16 +208,16 @@ include './connect.php'
 							<div class="thumb">
 								<ul class="tags">
 									<li>
-										<a href="#">' . $row['field'] . '</a>
+										<a onclick="return false;">' . $row['field'] . '</a>
 									</li>
 									<li>
-										<a href="#">Part Time</a>
+										<a onclick="return false;">Part Time</a>
 									</li>
 									<li>
-										<a href="#">' . $row['position'] . '</a>
+										<a onclick="return false;">' . $row['position'] . '</a>
 									</li>
 									<li>
-										<a href="#">' . $pow . '</a>
+										<a onclick="return false;">' . $pow . '</a>
 									</li>
 								</ul>
 							</div>
@@ -277,16 +277,16 @@ include './connect.php'
 							<div class="thumb">
 								<ul class="tags">
 									<li>
-										<a href="#">' . $row['field'] . '</a>
+										<a onclick="return false;">' . $row['field'] . '</a>
 									</li>
 									<li>
-										<a href="#">Course</a>
+										<a onclick="return false;">Course</a>
 									</li>
 									<li>
-										<a href="#">' . $row['course'] . '</a>
+										<a onclick="return false;">' . $row['course'] . '</a>
 									</li>
 									<li>
-										<a href="#">' . $pow . '</a>
+										<a onclick="return false;">' . $pow . '</a>
 									</li>
 								</ul>
 							</div>
@@ -349,16 +349,16 @@ include './connect.php'
 							<div class="thumb">
 								<ul class="tags">
 									<li>
-										<a href="#">' . $row['field'] . '</a>
+										<a onclick="return false;">' . $row['field'] . '</a>
 									</li>
 									<li>
-										<a href="#">Volunteer</a>
+										<a onclick="return false;">Volunteer</a>
 									</li>
 									<li>
-										<a href="#">' . $row['position'] . '</a>
+										<a onclick="return false;">' . $row['position'] . '</a>
 									</li>
 									<li>
-										<a href="#">' . $pow . '</a>
+										<a onclick="return false;">' . $pow . '</a>
 									</li>
 								</ul>
 							</div>
@@ -440,16 +440,16 @@ include './connect.php'
 							<div class="thumb">
 								<ul class="tags">
 									<li>
-										<a href="#">' . $row['field'] . '</a>
+										<a onclick="return false;">' . $row['field'] . '</a>
 									</li>
 									<li>
-										<a href="#">Part Time</a>
+										<a onclick="return false;">Part Time</a>
 									</li>
 									<li>
-										<a href="#">' . $row['position'] . '</a>
+										<a onclick="return false;">' . $row['position'] . '</a>
 									</li>
 									<li>
-										<a href="#">' . $pow . '</a>
+										<a onclick="return false;">' . $pow . '</a>
 									</li>
 								</ul>
 							</div>
@@ -510,16 +510,16 @@ include './connect.php'
 							<div class="thumb">
 								<ul class="tags">
 									<li>
-										<a href="#">' . $row['field'] . '</a>
+										<a onclick="return false;">' . $row['field'] . '</a>
 									</li>
 									<li>
-										<a href="#">Course</a>
+										<a onclick="return false;">Course</a>
 									</li>
 									<li>
-										<a href="#">' . $row['course'] . '</a>
+										<a onclick="return false;">' . $row['course'] . '</a>
 									</li>
 									<li>
-										<a href="#">' . $pow . '</a>
+										<a onclick="return false;">' . $pow . '</a>
 									</li>
 								</ul>
 							</div>
@@ -580,16 +580,16 @@ include './connect.php'
 							<div class="thumb">
 								<ul class="tags">
 									<li>
-										<a href="#">' . $row['field'] . '</a>
+										<a onclick="return false;">' . $row['field'] . '</a>
 									</li>
 									<li>
-										<a href="#">Volunteer</a>
+										<a onclick="return false;">Volunteer</a>
 									</li>
 									<li>
-										<a href="#">' . $row['position'] . '</a>
+										<a onclick="return false;">' . $row['position'] . '</a>
 									</li>
 									<li>
-										<a href="#">' . $pow . '</a>
+										<a onclick="return false;">' . $pow . '</a>
 									</li>
 								</ul>
 							</div>

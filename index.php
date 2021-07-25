@@ -199,7 +199,7 @@ include './connect.php';
 							<img src="img/pages/abc.jpg" alt="">
 						</div>
 						<div class="details">
-							<a href="#">
+							<a onclick="return false;">
 								<h4>Web Developer</h4>
 							</a>
 							<h6>Erode, Tamil Nadu</h6>
@@ -213,7 +213,7 @@ include './connect.php';
 							<img src="img/pages/abc.jpg" alt="">
 						</div>
 						<div class="details">
-							<a href="#">
+							<a onclick="return false;">
 								<h4>Android Developer</h4>
 							</a>
 							<h6>Erode, Tamil Nadu</h6>
@@ -227,7 +227,7 @@ include './connect.php';
 							<img class="img-fluid" src="img/Uber_Eats.jpg" alt="">
 						</div>
 						<div class="details">
-							<a href="#">
+							<a onclick="return false;">
 								<h4>Food Delivery - Weekly Pay</h4>
 							</a>
 							<h6>Ludhiana</h6>
@@ -241,7 +241,7 @@ include './connect.php';
 							<img src="img/Uber_Eats.jpg" alt="">
 						</div>
 						<div class="details">
-							<a href="#">
+							<a onclick="return false;">
 								<h4>Food Delivery - Weekly Pay</h4>
 							</a>
 							<h6>Hyderabad</h6>
@@ -255,7 +255,7 @@ include './connect.php';
 							<img src="img/indeed.jpg" alt="">
 						</div>
 						<div class="details">
-							<a href="#">
+							<a onclick="return false;">
 								<h4>Strategic Partnerships Manager</h4>
 							</a>
 							<h6>Hyderabad</h6>
@@ -270,7 +270,7 @@ include './connect.php';
 							<img src="img/Peoples Forum.jpg" alt="">
 						</div>
 						<div class="details">
-							<a href="#">
+							<a onclick="return false;">
 								<h4>Field Representative (MFI)</h4>
 							</a>
 							<h6>Khurda, Orissa</h6>
@@ -475,16 +475,16 @@ include './connect.php';
 							<div class="thumb">
 								<ul class="tags">
 									<li>
-										<a href="#">' . $row['field'] . '</a>
+										<a onclick="return false;">' . $row['field'] . '</a>
 									</li>
 									<li>
-										<a href="#">Part Time</a>
+										<a onclick="return false;">Part Time</a>
 									</li>
 									<li>
-										<a href="#">' . $row['position'] . '</a>
+										<a onclick="return false;">' . $row['position'] . '</a>
 									</li>
 									<li>
-										<a href="#">' . $pow . '</a>
+										<a onclick="return false;">' . $pow . '</a>
 									</li>
 								</ul>
 							</div>
@@ -547,16 +547,16 @@ include './connect.php';
 							<div class="thumb">
 								<ul class="tags">
 									<li>
-										<a href="#">' . $row['field'] . '</a>
+										<a onclick="return false;">' . $row['field'] . '</a>
 									</li>
 									<li>
-										<a href="#">Course</a>
+										<a onclick="return false;">Course</a>
 									</li>
 									<li>
-										<a href="#">' . $row['course'] . '</a>
+										<a onclick="return false;">' . $row['course'] . '</a>
 									</li>
 									<li>
-										<a href="#">' . $pow . '</a>
+										<a onclick="return false;">' . $pow . '</a>
 									</li>
 								</ul>
 							</div>
@@ -617,16 +617,16 @@ include './connect.php';
 							<div class="thumb">
 								<ul class="tags">
 									<li>
-										<a href="#">' . $row['field'] . '</a>
+										<a onclick="return false;">' . $row['field'] . '</a>
 									</li>
 									<li>
-										<a href="#">Volunteer</a>
+										<a onclick="return false;">Volunteer</a>
 									</li>
 									<li>
-										<a href="#">' . $row['position'] . '</a>
+										<a onclick="return false;">' . $row['position'] . '</a>
 									</li>
 									<li>
-										<a href="#">' . $pow . '</a>
+										<a onclick="return false;">' . $pow . '</a>
 									</li>
 								</ul>
 							</div>
@@ -848,7 +848,7 @@ include './connect.php';
 						<div class="buttons">
 							<i class="fa fa-apple" aria-hidden="true"></i>
 							<div class="desc">
-								<a href="#">
+								<a onclick="return false;">
 									<p>
 										<span>Available</span> <br>
 										on App Store
@@ -859,7 +859,7 @@ include './connect.php';
 						<div class="buttons">
 							<i class="fa fa-android" aria-hidden="true"></i>
 							<div class="desc">
-								<a href="#">
+								<a onclick="return false;">
 									<p>
 										<span>Available</span> <br>
 										on Play Store
