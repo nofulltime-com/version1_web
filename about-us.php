@@ -156,7 +156,7 @@ session_start();
 				</div>
 				<div class="col-lg-3 no-padding feat-txt">
 					<h1>Who we are</h1>
-					<p>
+					<p style='color:white'>
 						NoFullTIme is India’s #1 part time work marketplace.
 						We’re the country’s largest platform for part time work, with 100 million registered job seekers
 						and job opportunities at 900,000 employer locations in different parts of India.
@@ -168,9 +168,9 @@ session_start();
 				</div>
 				<div class="col-lg-3 no-padding feat-txt">
 					<h1>What we do</h1>
-					<p>
-						We’re on a mission to match the job seekers with the right-fit positions so they can maximize
-						their potential and live more fulfilling lives.
+					<p style='color:white'>
+						We’re on a mission to match the job seekers,people who want to learn courses and work for NGO's with the right-fit positions so they can maximize
+						their potential and live more fulfilling lives and use their part-time to the best purpose.
 					</p>
 				</div>
 			</div>
