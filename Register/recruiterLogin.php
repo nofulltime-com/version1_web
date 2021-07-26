@@ -135,13 +135,13 @@ session_start();
           <div>
             <p class="bg-success test-white px-4"><?php
 
-                                                  if (isset($_SESSION['msg1'])) {
-                                                    echo $_SESSION['msg1'];
-                                                  } else {
-                                                    echo $_SESSION['msg1'] = " ";
-                                                  }
+            if (isset($_SESSION['msg1'])) {
+                echo $_SESSION['msg1'];
+            } else {
+                echo $_SESSION['msg1'] = " ";
+            }
 
-                                                  ?></p>
+            ?></p>
           </div>
 
           <form autocomplete="off" class="form-box px-3" onsubmit="return validation()" action="" method="POST">
