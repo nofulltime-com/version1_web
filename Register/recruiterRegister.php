@@ -107,7 +107,7 @@ session_start();
         } else {
             $insertquery = "insert into recruiter(username, email, phone, password,token) values ('$username','$email','$phone','$pass','$token')";
             $iquery = mysqli_query($con, $insertquery);
-            $_SESSION['msg1'] = "You have been Successfully registered";
+            $_SESSION['msg'] = "You have been Successfully registered";
 
     ?>
             <script>

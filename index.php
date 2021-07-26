@@ -36,6 +36,7 @@ include './connect.php';
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/element.css">
 </head>
 
 
@@ -109,7 +110,7 @@ include './connect.php';
 								<input type="text" class="form-control" name="search" placeholder="what are you looging for?">
 							</div>
 							<div class="col-lg-3 form-cols">
-								<div class="default-select" id="default-selects"">
+								<div class="default-select" id="default-selects">
 											<select>
 												<option value=" 1">Select area</option>
 									<option value="2">Chennai</option>
@@ -152,33 +153,33 @@ include './connect.php';
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
-					<div class="single-feature">
-						<h4>Searching</h4>
-						<p>
+					<div class="single-feature" style=height:150px;background-color:white;background-image:linear-gradient(white,#49e4fa);>
+						<h4 style=font-weight:600;font-size:20px;>Searching</h4>
+						<p style=font-size:15px;>
 							Search for your desired job.
 						</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
-					<div class="single-feature">
+					<div class="single-feature" style=height:150px;background-color:white;background-image:linear-gradient(white,#49e4fa);>
 						<h4>Applying</h4>
-						<p>
+						<p style=font-size:15px;>
 							Apply for that job.
 						</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
-					<div class="single-feature">
+					<div class="single-feature" style=height:150px;padding-left:10px;padding-right:10px;background-color:white;background-image:linear-gradient(white,#49e4fa);>
 						<h4>Security</h4>
-						<p>
+						<p style=font-size:15px;>
 							Do not worry. The jobs are highly secured.
 						</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
-					<div class="single-feature">
+					<div class="single-feature" style=height:150px;padding-top:25px;padding-left:5px;background-color:white;background-image:linear-gradient(white,#49e4fa);>
 						<h4>Notifications</h4>
-						<p> Subscribe to our newsletter to get more information about the upcoming job. </p>
+						<p style=font-size:15px;> Subscribe to our newsletter to get know more about the upcoming job. </p>
 					</div>
 				</div>
 			</div>
@@ -191,9 +192,9 @@ include './connect.php';
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="active-popular-post-carusel">
-					<div class="single-popular-post d-flex flex-row">
+					<div class="single-popular-post d-flex flex-row" style=border-radius:5%;>
 						<div class="thumb">
-							<img src="img/pages/abc.jpg" alt="">
+							<img src="img/pages/abc.jpg" alt="" style=height:200px;width:300px;>
 						</div>
 						<div class="details">
 							<a onclick="return false;">
@@ -207,7 +208,7 @@ include './connect.php';
 					</div>
 					<div class="single-popular-post d-flex flex-row">
 						<div class="thumb">
-							<img src="img/pages/abc.jpg" alt="">
+							<img src="img/pages/abc.jpg" alt="" style=height:200px;width:300px;>
 						</div>
 						<div class="details">
 							<a onclick="return false;">
@@ -221,7 +222,7 @@ include './connect.php';
 					</div>
 					<div class="single-popular-post d-flex flex-row">
 						<div class="thumb">
-							<img class="img-fluid" src="img/Uber_Eats.jpg" alt="">
+							<img class="img-fluid" src="img/Uber_Eats.jpg" alt="" style=height:200px;width:300px;>
 						</div>
 						<div class="details">
 							<a onclick="return false;">
@@ -235,7 +236,7 @@ include './connect.php';
 					</div>
 					<div class="single-popular-post d-flex flex-row">
 						<div class="thumb">
-							<img src="img/Uber_Eats.jpg" alt="">
+							<img src="img/Uber_Eats.jpg" alt="" style=height:200px;width:250px;>
 						</div>
 						<div class="details">
 							<a onclick="return false;">
@@ -247,9 +248,9 @@ include './connect.php';
 							</p>
 						</div>
 					</div>
-					<div class="single-popular-post d-flex flex-row">
+					<div class="single-popular-post d-flex flex-row" style=height:250px;>
 						<div class="thumb">
-							<img src="img/indeed.jpg" alt="">
+							<img src="img/indeed.jpg" alt="" style=height:200px;width:300px;>
 						</div>
 						<div class="details">
 							<a onclick="return false;">
@@ -262,9 +263,9 @@ include './connect.php';
 							</p>
 						</div>
 					</div>
-					<div class="single-popular-post d-flex flex-row">
+					<div class="single-popular-post d-flex flex-row" style=height:250px;>
 						<div class="thumb">
-							<img src="img/Peoples Forum.jpg" alt="">
+							<img src="img/Peoples Forum.jpg" alt="" style=height:200px;width:300px;>
 						</div>
 						<div class="details">
 							<a onclick="return false;">
