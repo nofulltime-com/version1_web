@@ -2457,7 +2457,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-.single-popular-post {
+/* .single-popular-post {
   background-color: #222;
   padding: 20px;
 }
@@ -2490,8 +2490,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .single-popular-post .btns {
   background-color: #49e4fa;
-  color: #fff;
-  font-size: 12px;
+  color: #fff; */
+  /* font-size: 12px;
   position: absolute;
   bottom: 22px;
   font-weight: 400;
@@ -2505,7 +2505,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .single-popular-post .btns:hover {
   background-color: #1e2235;
   color: #49e4fa;
-}
+} */
 
 .features-area {
   margin-top: -65px;
