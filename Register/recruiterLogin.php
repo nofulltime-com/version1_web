@@ -110,11 +110,11 @@ session_start();
   <?php
 
       } else {
-        header("Location: studentLogin.php?error=Incorrect password");
+        header("Location: recruiterLogin.php?error=Incorrect password");
         exit();
       }
     } else {
-      header("Location: studentLogin.php?error=Incorrect email");
+      header("Location: recruiterLogin.php?error=Incorrect email");
       exit();
     }
   }

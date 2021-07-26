@@ -76,8 +76,8 @@ session_start();
     $username = $email = $phone = $password = "";
     if (isset($_POST['submit'])) {
         $username = mysqli_real_escape_string($con, $_POST['username']);
-        $email = mysqli_real_escape_string($con, $_POST['email']);
-        $phone = mysqli_real_escape_string($con, $_POST['phone']);
+        $email =    mysqli_real_escape_string($con, $_POST['email']);
+        $phone =    mysqli_real_escape_string($con, $_POST['phone']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
 
         $pass = password_hash($password, PASSWORD_BCRYPT);
