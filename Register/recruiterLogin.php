@@ -133,7 +133,7 @@ session_start();
           </h4>
 
           <div>
-            <p class="bg-success test-white px-4"><?php
+            <p class="bg-success text-white px-4"><?php
 
             if (isset($_SESSION['msg1'])) {
                 echo $_SESSION['msg1'];
