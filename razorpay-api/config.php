@@ -12,6 +12,6 @@ ini_set('display_errors', 1);
 
 
 $host = "localhost";
-$username = "root";
-$password = "3183";
-$dbname = "nofulltime";
+$username = "nofulltime_nofulltime";
+$password = "Intens@1555!";
+$dbname = "nofulltime_nofulltime";
