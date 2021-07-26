@@ -118,7 +118,7 @@ session_start();
 			</div>
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
-					<div class="single-service">
+					<div class="single-service" style=height:203px;>
 						<h4><span class="lnr lnr-phone"></span>Great Support</h4>
 						<p>
 							We are there for you 24x7! Come with any query at anytime.
@@ -126,7 +126,7 @@ session_start();
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<div class="single-service">
+					<div class="single-service" style=height:203px;>
 						<h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
 						<p>
 							We are highly recommended by all because we do not make our job seekers disheartened.
@@ -134,7 +134,7 @@ session_start();
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<div class="single-service">
+					<div class="single-service" style=height:203px;>
 						<h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
 						<p>
 							We always get positive reviews. It is only possible due to our hard wark and good
@@ -151,10 +151,10 @@ session_start();
 	<section class="feature-area">
 		<div class="container-fluid">
 			<div class="row justify-content-center align-items-center">
-				<div class="col-lg-3 feat-img no-padding">
+				<div class="col-lg-3 feat-img ">
 					<img class="img-fluid" src="img/pages/f1.jpg" alt="">
 				</div>
-				<div class="col-lg-3 no-padding feat-txt">
+				<div class="col-lg-3 feat-txt">
 					<h1>Who we are</h1>
 					<p style='color:white'>
 						NoFullTIme is India’s #1 part time work marketplace.
@@ -163,10 +163,10 @@ session_start();
 						We take the work out of finding the right job or the perfect worker.
 					</p>
 				</div>
-				<div class="col-lg-3 feat-img no-padding">
+				<div class="col-lg-3 feat-img ">
 					<img class="img-fluid" src="img/pages/f2.jpg" alt="">
 				</div>
-				<div class="col-lg-3 no-padding feat-txt">
+				<div class="col-lg-3 feat-txt">
 					<h1>What we do</h1>
 					<p style='color:white'>
 						We’re on a mission to match the job seekers,people who want to learn courses and work for NGO's with the right-fit positions so they can maximize

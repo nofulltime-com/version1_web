@@ -192,7 +192,7 @@ include './connect.php';
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="active-popular-post-carusel">
-					<div class="single-popular-post d-flex flex-row" style=border-radius:5%;>
+					<div class="single-popular-post d-flex flex-row">
 						<div class="thumb">
 							<img src="img/pages/abc.jpg" alt="" style=height:200px;width:300px;>
 						</div>
@@ -222,7 +222,7 @@ include './connect.php';
 					</div>
 					<div class="single-popular-post d-flex flex-row">
 						<div class="thumb">
-							<img class="img-fluid" src="img/Uber_Eats.jpg" alt="" style=height:200px;width:300px;>
+							<img src="img/Uber_Eats.jpg" alt="" style=height:200px;width:300px;>
 						</div>
 						<div class="details">
 							<a onclick="return false;">
@@ -234,9 +234,9 @@ include './connect.php';
 							</p>
 						</div>
 					</div>
-					<div class="single-popular-post d-flex flex-row">
+					<div class="single-popular-post d-flex flex-row" style=height:260px;>
 						<div class="thumb">
-							<img src="img/Uber_Eats.jpg" alt="" style=height:200px;width:250px;>
+							<img src="img/Uber_Eats.jpg" alt="" style=height:200px;width:300px;>
 						</div>
 						<div class="details">
 							<a onclick="return false;">
@@ -248,7 +248,7 @@ include './connect.php';
 							</p>
 						</div>
 					</div>
-					<div class="single-popular-post d-flex flex-row" style=height:250px;>
+					<div class="single-popular-post d-flex flex-row" style=height:260px;>
 						<div class="thumb">
 							<img src="img/indeed.jpg" alt="" style=height:200px;width:300px;>
 						</div>
@@ -258,12 +258,11 @@ include './connect.php';
 							</a>
 							<h6>Hyderabad</h6>
 							<p>
-								Seeking an experienced social impact professional to build and implement a Strategic
-								Partnerships strategy for the Social Impact team in India.
+								An experienced social impact professional to build Strategic Partnerships strategy for team in India.
 							</p>
 						</div>
 					</div>
-					<div class="single-popular-post d-flex flex-row" style=height:250px;>
+					<div class="single-popular-post d-flex flex-row" style=height:260px;>
 						<div class="thumb">
 							<img src="img/Peoples Forum.jpg" alt="" style=height:200px;width:300px;>
 						</div>
@@ -273,8 +272,7 @@ include './connect.php';
 							</a>
 							<h6>Khurda, Orissa</h6>
 							<p>
-								Conduct village surveys, customer sourcing & training, maintaining center discipline, on
-								time collections and addressing customer queries.
+								Conduct village surveys, maintaining discipline, on time collections and addressing queries.
 							</p>
 						</div>
 					</div>
