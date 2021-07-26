@@ -1,8 +1,7 @@
 <?php
-
+session_start();
 require('config.php');
 
-session_start();
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
 
@@ -43,7 +42,8 @@ if ($success === true) {
     $CGST = $_SESSION['cgst'];
     $SGST = $_SESSION['sgst'];
     $Total_Amount = $_SESSION['total'];
-
+    $plan = $_SESSION['plan'];
+    $q = "UPDATE `recruiter_details` SET `subscription_mode` = '$plan' WHERE `recruiter_details`.`id` = $Recruiter_Id;";
     $sql = "INSERT INTO `payment_details` (id,payment_id, recruiter_id,date_of_payment, amount, cgst, sgst,total) VALUES (NULL,'$razorpay_payment_id', '$Recruiter_Id', '$Amount', '$CGST', '$SGST', '$Total_Amount')";
     //THE VALUE OF id IS SET TO NULL AS IT'S AUTO INCREMENT FIELD
     mysqli_query($conn, $sql);

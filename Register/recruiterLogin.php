@@ -1,7 +1,7 @@
 <?php
 session_start();
 // if (isset($_SESSION['logincust'])) {
-//   header('Location: ../recruiters.html');
+//   header('Location: ../recruiters.php');
 // } else {
 //   session_unset();
 ?>
@@ -52,7 +52,7 @@ session_start();
     <div class="container">
       <div class="row align-items-center justify-content-between d-flex">
         <div id="logo">
-          <a href="index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
+          <a style="color:white ;font-size: x-large;font-weight:bold" href="../index.php"><span><i class="fas fa-dove"></i></span> Nofulltime</a>
         </div>
         <nav id="nav-menu-container">
           <ul class="nav-menu">
@@ -100,9 +100,9 @@ session_start();
 
       if ($pass_decode) {
         setcookie("email", $email, time() +
-                                    (3 * 24 * 60 * 60));
+          (3 * 24 * 60 * 60));
         setcookie("password", $password, time() +
-                                    (3 * 24 * 60 * 60));
+          (3 * 24 * 60 * 60));
   ?>
         <script>
           location.replace("../recruiters.php");
@@ -135,13 +135,13 @@ session_start();
           <div>
             <p class="bg-success test-white px-4"><?php
 
-            if (isset($_SESSION['msg1'])) {
-              echo $_SESSION['msg1'];
-            } else {
-                echo $_SESSION['msg1'] = " ";
-            }
+                                                  if (isset($_SESSION['msg1'])) {
+                                                    echo $_SESSION['msg1'];
+                                                  } else {
+                                                    echo $_SESSION['msg1'] = " ";
+                                                  }
 
-          ?></p>
+                                                  ?></p>
           </div>
 
           <form autocomplete="off" class="form-box px-3" onsubmit="return validation()" action="" method="POST">
@@ -151,13 +151,13 @@ session_start();
             <div class="form-input">
               <span><i class="fa fa-envelope-o"></i></span>
               <input type="email" name="email" id="email" placeholder="Email Address" tabindex="10" value="<?php echo $email; ?>">
-              
+
             </div>
             <span id="emailerror" class="text-danger font-weight-bold"></span>
             <div class="form-input">
               <span><i class="fa fa-key"></i></span>
               <input type="password" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>">
-              
+
             </div>
             <span id="passerror" class="text-danger font-weight-bold"></span>
             <div class="mb-3">

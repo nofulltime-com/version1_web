@@ -38,9 +38,6 @@ include './connect.php';
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
-<style>
-
-</style>
 
 <body>
 
@@ -48,7 +45,7 @@ include './connect.php';
 		<div class="container">
 			<div class="row align-items-center justify-content-between d-flex">
 				<div id="logo">
-					<a href="index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
+					<a style="color:white ;font-size: x-large;" href="index.php"><span><i class="fas fa-dove"></i></span> Nofulltime</a>
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
@@ -424,7 +421,7 @@ include './connect.php';
 						<h1 class="mb-10">Registered candidates</h1>
 					</div>
 					<ul class="cat-list">
-						<li class="tablinks" onclick="openCategory(event, 'parttime')"><a>part Time</a></li>
+						<li class="tablinks clicked" onclick="openCategory(event, 'parttime')"><a>part Time</a></li>
 						<li class="tablinks" onclick="openCategory(event, 'course')"><a>Courses</a></li>
 						<li class="tablinks" onclick="openCategory(event, 'ngo')"><a>NGO</a></li>
 					</ul>
@@ -650,9 +647,12 @@ include './connect.php';
 						tablinks = document.getElementsByClassName("tablinks");
 						for (i = 0; i < tablinks.length; i++) {
 							tablinks[i].className = tablinks[i].className.replace(" active", "");
+							tablinks[i].className = tablinks[i].className.replace(" clicked", "");
+
 						}
 						document.getElementById(categoryName).style.display = "block";
 						evt.currentTarget.className += " active";
+						evt.currentTarget.className += " clicked";
 					}
 				</script>
 

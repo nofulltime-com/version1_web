@@ -2566,13 +2566,20 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: right;
   margin-bottom: 20px;
 }
+.clicked {
+		background-color: #95a7e0;
+		color: white;
+	}
 
+	.clicked a {
+		color: white;
+	}
 .post-list .cat-list li {
   text-align: center;
   margin-right: 10px;
   width: 100px;
   display: inline-block;
-  background-color: #fff;
+  
   border: 1px solid #eee;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
