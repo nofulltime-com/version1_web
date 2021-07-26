@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="zxx" class="no-js">
 <?php
 session_start();
 include './connect.php';
 ?>
+<!DOCTYPE html>
+<html>
 
 <head>
 	<!-- Mobile Specific Meta -->
@@ -111,12 +111,12 @@ include './connect.php';
 							</div>
 							<div class="col-lg-3 form-cols">
 								<div class="default-select" id="default-selects">
-											<select>
-												<option value=" 1">Select area</option>
-									<option value="2">Chennai</option>
-									<option value="3">Hyderabad</option>
-									<option value="4">Delhi</option>
-									<option value="5">Mumbai</option>
+									<select>
+										<option value=" 1">Select area</option>
+										<option value="2">Chennai</option>
+										<option value="3">Hyderabad</option>
+										<option value="4">Delhi</option>
+										<option value="5">Mumbai</option>
 									</select>
 								</div>
 							</div>
