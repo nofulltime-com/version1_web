@@ -45,7 +45,7 @@ include './connect.php';
 		<div class="container">
 			<div class="row align-items-center justify-content-between d-flex">
 				<div id="logo">
-					<a href="index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
+					<a style="color:white ;font-size: x-large;" href="index.php"><span><i class="fas fa-dove"></i></span> Nofulltime</a>
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
