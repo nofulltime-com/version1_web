@@ -135,10 +135,10 @@ session_start();
           <div>
             <p class="bg-success text-white px-4"><?php
 
-            if (isset($_SESSION['msg1'])) {
-                echo $_SESSION['msg1'];
+            if (isset($_SESSION['msg'])) {
+                echo $_SESSION['msg'];
             } else {
-                echo $_SESSION['msg1'] = " ";
+                echo $_SESSION['msg'] = " ";
             }
 
             ?></p>
