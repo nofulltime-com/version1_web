@@ -139,8 +139,8 @@ include './connect.php'
 			</div>
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
-					<div class="single-service">
-						<a href="./price.php">
+					<div class="single-service" style=height:203px;>
+						<a href="./recruiters_details/index.php">
 							<h4><span class="lnr lnr-user"></span>Register</h4>
 							<p>
 								Register with us by filling a form and subscribing to our plans for more denifits.

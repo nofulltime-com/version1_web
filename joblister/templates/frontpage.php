@@ -65,7 +65,7 @@ session_start();
                 </nav><!-- #nav-menu-container -->
             </div>
         </div>
-    </header><!-- #header --><br><br><br>
+    </header><!-- #header --><br><br><br><br>
     <div class="container">
         <div class="head clearfix">
             <div class="head">

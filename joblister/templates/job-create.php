@@ -7,7 +7,7 @@
         <?php include "../templates/inc/css/main2.css" ?><?php include "../templates/inc/css/narrow.css" ?><?php include "../templates/inc/css/main.css" ?><?php include "../templates/inc/css/bootstrap.css" ?><?php include "../templates/inc/css/linearicons.css" ?><?php include "../templates/inc/css/font-awesome.min.css" ?><?php include "../templates/inc/css/magnific-popup.css" ?><?php include "../templates/inc/css/nice-select.css" ?><?php include "../templates/inc/css//owl.carousel.css" ?><?php include "../templates/inc/css/animate.min.css" ?>
     </style>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
+</head>
 <body>
     <header id="header" id="home">
         <div class="container">

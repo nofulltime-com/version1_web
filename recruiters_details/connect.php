@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 	$stmt = $conn->prepare("INSERT into recruiter_details(id, name, organization, designation, location, industry, subscription_mode) values(?, ?, ?, ?, ?, ?, ?)");
 	$stmt->bind_param("issssss", $id, $name, $organization, $designation, $location, $industry, $subscription_mode);
 	$stmt->execute();
-	echo "Details Registered Successfully...!";
+	// echo "Details Registered Successfully...!";
 	$stmt->close();
 	$conn->close();
 }
