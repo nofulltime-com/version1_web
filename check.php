@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start(); 
 include './connect.php';
 $id = $_SESSION['id'];
 $query = "SELECT * FROM `seeker_details` WHERE id='$id'";

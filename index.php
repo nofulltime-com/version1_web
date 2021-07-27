@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="zxx" class="no-js">
 <?php
 session_start();
 include './connect.php';
 ?>
+<!DOCTYPE html>
+<html>
 
 <head>
 	<!-- Mobile Specific Meta -->
@@ -107,16 +107,16 @@ include './connect.php';
 					<form action="search.php" class="serach-form-area">
 						<div class="row justify-content-center form-wrap">
 							<div class="col-lg-4 form-cols">
-								<input type="text" class="form-control" name="search" placeholder="what are you looging for?">
+								<input type="text" class="form-control" name="search" placeholder="what are you looking for?">
 							</div>
 							<div class="col-lg-3 form-cols">
 								<div class="default-select" id="default-selects">
-											<select>
-												<option value=" 1">Select area</option>
-									<option value="2">Chennai</option>
-									<option value="3">Hyderabad</option>
-									<option value="4">Delhi</option>
-									<option value="5">Mumbai</option>
+									<select>
+										<option value=" 1">Select area</option>
+										<option value="2">Chennai</option>
+										<option value="3">Hyderabad</option>
+										<option value="4">Delhi</option>
+										<option value="5">Mumbai</option>
 									</select>
 								</div>
 							</div>
@@ -138,10 +138,8 @@ include './connect.php';
 							</div>
 						</div>
 					</form>
-					<p class="text-white" style="font-size:18px;font-weight: 500;"><span>Search by tags:</span>
-						Tecnology, Business,
-						Consulting, IT Company,
-						Design, Development, Delivery, NGO</p>
+					<p class="text-white" style="font-size:18px;font-weight: 500;"><span>Search by :</span>
+						Field,Course,Position,Location,Pin code</p>
 				</div>
 			</div>
 		</div>
@@ -154,17 +152,17 @@ include './connect.php';
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
 					<div class="single-feature" style=height:150px;background-color:white;background-image:linear-gradient(white,#49e4fa);>
-						<h4 style=font-weight:600;font-size:20px;>Searching</h4>
+						<h4 style=font-weight:600;font-size:20px;>Register</h4>
 						<p style=font-size:15px;>
-							Search for your desired job.
+							Register in your field of interest.php
 						</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="single-feature" style=height:150px;background-color:white;background-image:linear-gradient(white,#49e4fa);>
-						<h4>Applying</h4>
+						<h4>Connect</h4>
 						<p style=font-size:15px;>
-							Apply for that job.
+							Connect with part-time job providersa and course providers.
 						</p>
 					</div>
 				</div>
@@ -289,7 +287,7 @@ include './connect.php';
 			<div class="row d-flex justify-content-center">
 				<div class="menu-content pb-60 col-lg-10">
 					<div class="title text-center">
-						<h1 class="mb-10">Featured Job Categories</h1>
+						<h1 class="mb-10">Featured Part-time Job Categories</h1>
 						<p>Who are in extremely love with eco friendly system.</p>
 					</div>
 				</div>
