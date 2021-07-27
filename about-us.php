@@ -33,7 +33,6 @@ session_start();
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/element2.css">
 </head>
 
 <body>
@@ -249,50 +248,8 @@ session_start();
 	<!-- End calto-action Area -->
 
 	<!-- Start testimonial Area -->
-	<div class="demo">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div id="testimonial-slider" class="owl-carousel">
-						<div class="testimonial">
-							<span class="icon fa fa-quote-left"></span>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.
-							</p>
-							<div class="testimonial-content">
-								<div class="pic"><img src="images/img-1.jpg" alt=""></div>
-								<h3 class="title">williamson</h3>
-								<span class="post">Web Developer</span>
-							</div>
-						</div>
-						<div class="testimonial">
-							<span class="icon fa fa-quote-left"></span>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.
-							</p>
-							<div class="testimonial-content">
-								<div class="pic"><img src="images/img-2.jpg" alt=""></div>
-								<h3 class="title">Kristina</h3>
-								<span class="post">Web Designer</span>
-							</div>
-						</div>
-						<div class="testimonial">
-							<span class="icon fa fa-quote-left"></span>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.
-							</p>
-							<div class="testimonial-content">
-								<div class="pic"><img src="images/img-3.jpg" alt=""></div>
-								<h3 class="title">Steve Thomas</h3>
-								<span class="post">Web Developer</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- <section class="testimonial-area section-gap" id="review">
+					
+	<section class="testimonial-area section-gap" id="review">
 		<div class="container">
 			<div class="row d-flex justify-content-center">
 				<div class="menu-content pb-60 col-lg-8">
@@ -377,7 +334,7 @@ session_start();
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 	<!-- End testimonial Area -->
 
 

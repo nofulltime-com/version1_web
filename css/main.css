@@ -3019,7 +3019,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-/* .testimonial-area .owl-carousel .owl-item img {
+.testimonial-area .owl-carousel .owl-item img {
   width: auto !important;
 }
 
@@ -3032,9 +3032,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
-} */
+}
 
-/* .testimonial-area .owl-dot {
+.testimonial-area .owl-dot {
   height: 10px;
   width: 10px;
   display: inline-block;
@@ -3053,7 +3053,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   background: #49e4fa;
-} */
+}
 
 .single-review .title {
   margin: 20px 0;
