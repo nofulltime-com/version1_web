@@ -92,7 +92,8 @@ session_start();
       $email_pass = mysqli_fetch_assoc($query);
       $db_pass = $email_pass['password'];
 
-      $_SESSION['id'] = $email_pass['id'];
+      $stu_id = $email_pass['id'];
+      setcookie("id", $stu_id, time()+3600*24*30*12, "/","", 0);
 
       $pass_decode = password_verify($password, $db_pass);
 
