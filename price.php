@@ -1,5 +1,9 @@
+<?php
+session_start();
+include './connect.php'
+?>
 <html lang="en">
-<?php session_start(); ?>
+
 
 <head>
 	<!-- Mobile Specific Meta -->

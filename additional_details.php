@@ -1,7 +1,8 @@
 <?php
 session_start();
 include './connect.php';
-
+?>
+<?php
 $id = $_SESSION['id'];
 $q = "SELECT * FROM `job_seeker_details` WHERE id='$id'";
 $res = $conn->query($q);

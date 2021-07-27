@@ -1,7 +1,8 @@
 <?php
 session_start();
 include './connect.php';
-
+?>
+<?php
 $id = $_SESSION['id'];
 $q = "SELECT * FROM `seeker_details` WHERE id='$id'";
 $result = $conn->query($q);
@@ -39,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ./education_details.php");
     else
         header("Location: ./profile/index.php");
+    exit();
 }
 ?>
 

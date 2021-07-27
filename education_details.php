@@ -1,7 +1,8 @@
 <?php
 session_start();
 include './connect.php';
-
+?>
+<?php
 $id = $_SESSION['id'];
 $pg_flag = false;
 $grad_flag = false;

@@ -1,7 +1,9 @@
 <?php
 session_start();
 include './connect.php';
+?>
 
+<?php
 $id = $_SESSION['id'];
 
 $prefernces = '';
@@ -143,6 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     header("Location: ./seeker_details.php");
+    exit();
 }
 ?>
 

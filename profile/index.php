@@ -1,3 +1,7 @@
+<?php
+session_start();
+include '../connect.php';
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -53,8 +57,7 @@
 
 <body>
 	<?php
-	session_start();
-	include '../connect.php';
+
 	if (isset($_GET['id']))
 		$id = $_GET['id'];
 	else
