@@ -11,34 +11,34 @@
         <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
+                    <a href="../index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="/VERSION1_WEB/index.php">Home</a></li>
-                        <li><a href="/VERSION1_WEB/about-us.php">About Us</a></li>
-                        <li><a href="/VERSION1_WEB/category.php">Category</a></li>
-                        <li><a href="/VERSION1_WEB/recruiters.php">recruiters</a></li>
-                        <li><a href="/VERSION1_WEB/contact.php">Contact</a></li>
+                        <li class="menu-active"><a href="../index.php">Home</a></li>
+                        <li><a href="../about-us.php">About Us</a></li>
+                        <li><a href="../category.php">Category</a></li>
+                        <li><a href="../recruiters.php">recruiters</a></li>
+                        <li><a href="../blog-home.php">Contact</a></li>
 
                         <?php
                         if (isset($_SESSION['id'])) { ?>
                             <li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
                                 <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
                                 <ul>
-                                    <li><a href="../../profile/index.php">Profile</a></li>
-                                    <li><a href="../../seeker_preferences.php">Edit</a></li>
-                                    <li><a href="../../logout.php">Logout</a></li>
+                                    <li><a href="../profile/index.php">Profile</a></li>
+                                    <li><a href="../seeker_preferences.php">Edit</a></li>
+                                    <li><a href="../logout.php">Logout</a></li>
                                 </ul>
                             </li>
                         <?php } elseif (isset($_SESSION['recruiter_id'])) { ?>
                             <li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
                                 <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
                                 <ul>
-                                    <li><a href="../../recruiters.php">Dashboard</a></li>
-                                    <li><a href="../../price.php">Subscribe</a></li>
-                                    <li><a href="../../search.php">Search</a></li>
-                                    <li><a href="../../recruiter_logout.php">Logout</a></li>
+                                    <li><a href="../recruiters.php">Dashboard</a></li>
+                                    <li><a href="../price.php">Subscribe</a></li>
+                                    <li><a href="../search.php">Search</a></li>
+                                    <li><a href="../recruiter_logout.php">Logout</a></li>
                                 </ul>
                             </li>
                         <?php } else { ?>
@@ -99,11 +99,11 @@
                     <div class="single-footer-widget">
                         <h6>Short Links</h6>
                         <ul class="footer-nav">
-                            <li><a href="/VERSION1_WEB/index.php">Home</a></li>
-                            <li><a href="/VERSION1_WEB/about-us.php">About Us</a></li>
-                            <li><a href="/VERSION1_WEB/category.php">Category</a></li>
-                            <li><a href="/VERSION1_WEB/recruiters.php">Recruiters</a></li>
-                            <li><a href="/VERSION1_WEB/blog-home.php">Blog</a></li>
+                            <li><a href="../index.php">Home</a></li>
+                            <li><a href="../about-us.php">About Us</a></li>
+                            <li><a href="../category.php">Category</a></li>
+                            <li><a href="../recruiters.php">Recruiters</a></li>
+                            <li><a href="../blog-home.php">Blog</a></li>
                         </ul>
                     </div>
                 </div>
@@ -111,8 +111,8 @@
                     <div class="single-footer-widget newsletter">
                         <h6>Other Links</h6>
                         <ul class="footer-nav">
-                            <li><a href="/VERSION1_WEB/terms.php">Terms and Conditions</a></li>
-                            <li><a href="/VERSION1_WEB/contact.php">Contact</a></li>
+                            <li><a href="../terms.php">Terms and Conditions</a></li>
+                            <li><a href="../contact.php">Contact</a></li>
                         </ul>
                         <br>
 
