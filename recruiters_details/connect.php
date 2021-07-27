@@ -10,7 +10,7 @@ $subscription_mode = 'blank';
 $id = 1;
 
 // Database Connection
-$conn = new mysqli('localhost', 'nofulltime_nofulltime', 'Intens@1555!', 'nofulltime_nofulltime');
+$conn = new mysqli('localhost', 'root', '3183', 'nofulltime');
 
 if ($conn->connect_error) {
 	die("Connection Failed : " . $conn->connect_error);

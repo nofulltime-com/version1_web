@@ -67,7 +67,6 @@ include './connect.php'
 						<li class="menu-active"><a href="index.php">Home</a></li>
 						<li><a href="about-us.php">About Us</a></li>
 						<li><a href="./blog-home.php">Blogs</a></li>
-						<li><a href="recruiters.php">recruiters</a></li>
 						<li><a href="contact.php">Contact</a></li>
 
 						<?php
