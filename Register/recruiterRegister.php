@@ -75,24 +75,24 @@ session_start();
     include 'dbcon.php';
     $username = $email = $phone = $password = "";
     if (isset($_POST['submit'])) {
-        $username = mysqli_real_escape_string($con, $_POST['username']);
-        $email =    mysqli_real_escape_string($con, $_POST['email']);
-        $phone =    mysqli_real_escape_string($con, $_POST['phone']);
-        $password = mysqli_real_escape_string($con, $_POST['password']);
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
+        $email =    mysqli_real_escape_string($conn, $_POST['email']);
+        $phone =    mysqli_real_escape_string($conn, $_POST['phone']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
 
         $pass = password_hash($password, PASSWORD_BCRYPT);
         $token = bin2hex(random_bytes(15));
 
         $emailquery = "select * from recruiter where email='$email'";
-        $query = mysqli_query($con, $emailquery);
+        $query = mysqli_query($conn, $emailquery);
         $emailcount = mysqli_num_rows($query);
 
         $phonequery = "select * from recruiter where phone='$phone'";
-        $query1 = mysqli_query($con, $phonequery);
+        $query1 = mysqli_query($conn, $phonequery);
         $phonecount = mysqli_num_rows($query1);
 
         $userquery = "select * from recruiter where username='$username'";
-        $query2 = mysqli_query($con, $userquery);
+        $query2 = mysqli_query($conn, $userquery);
         $usercount = mysqli_num_rows($query2);
 
         if ($usercount > 0) {
@@ -106,8 +106,8 @@ session_start();
             exit();
         } else {
             $insertquery = "insert into recruiter(username, email, phone, password,token) values ('$username','$email','$phone','$pass','$token')";
-            $iquery = mysqli_query($con, $insertquery);
-            $_SESSION['msg'] = "You have been Successfully registered";
+            $iquery = mysqli_query($conn, $insertquery);
+            $_SESSION['msg1'] = "You have been Successfully registered";
 
     ?>
             <script>
@@ -272,9 +272,9 @@ session_start();
                     <div class="single-footer-widget">
                         <h6>Short Links</h6>
                         <ul class="footer-nav">
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="about-us.php">About Us</a></li>
-                            <li><a href="./blog-home.php">Blogs</a></li>
+                            <li><a href="../index.php">Home</a></li>
+                            <li><a href="../about-us.php">About Us</a></li>
+                            <li><a href="../blog-home.php">Blogs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -286,7 +286,26 @@ session_start();
                             <li><a href="contact.php">Contact</a></li>
                         </ul>
                         <br>
+                        <h6>Newsletter</h6>
+                        <p>You can trust us. we only send promo offers, not a single spam.</p>
+                        <div id="mc_embed_signup">
+                            <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
 
+                                <div class="form-group row" style="width: 100%">
+                                    <div class="col-lg-8 col-md-12">
+                                        <input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+                                        <div style="position: absolute; left: -5000px;">
+                                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-12">
+                                        <button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
+                                    </div>
+                                </div>
+                                <div class="info"></div>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3  col-md-12">
