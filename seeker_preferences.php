@@ -2,7 +2,6 @@
 session_start();
 include './connect.php';
 ?>
-
 <?php
 $id = $_SESSION['id'];
 
@@ -141,12 +140,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $query7 = "UPDATE `ngo_details` SET `field` = '$ngo_field',`position` = '$ngo_position',`place_of_work`='$ngo_work_place' WHERE `ngo_details`.`id` = $id;";
         $conn->query($query7);
     }
-
-
-
-    header("Location: ./seeker_details.php");
-    exit();
-}
+?>
+    <script>
+        location.replace("./seeker_details.php");
+    </script>
+<?php }
 ?>
 
 <html lang="en">
@@ -164,7 +162,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/linearicons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/magnific-popup.css">

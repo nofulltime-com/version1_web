@@ -36,11 +36,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    if (strpos($preferences, 'parttime') !== false)
-        header("Location: ./education_details.php");
-    else
-        header("Location: ./profile/index.php");
-    exit();
+    if (strpos($preferences, 'parttime') !== false) { ?>
+        <script>
+            location.replace("./education_details.php");
+        </script>
+    <?php } else {
+    ?>
+        <script>
+            location.replace("./profile/index.php");
+        </script>
+<?php }
 }
 ?>
 
@@ -57,7 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			============================================= -->
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/bootstrap.css">

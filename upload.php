@@ -16,4 +16,7 @@ $newname = "newname." . $ext;
 
 $target = './uploads/' . $newname;
 move_uploaded_file($_FILES['resume']['tmp_name'], $target);
-header("Location: ./profile/index.php");
+?>
+<script>
+    location.replace("./profile/index.php");
+</script>
