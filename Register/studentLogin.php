@@ -92,9 +92,7 @@ session_start();
       $email_pass = mysqli_fetch_assoc($query);
       $db_pass = $email_pass['password'];
 
-      $stu_id = $email_pass['id'];
-      setcookie("id", $stu_id, time()+3600*24*30*12, "/","", 0);
-
+      $_SESSION['id'] = $email_pass['id'];
       $pass_decode = password_verify($password, $db_pass);
 
       if ($pass_decode) {
@@ -306,63 +304,63 @@ session_start();
   </script>
 
   <footer class="footer-area section-gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3  col-md-12">
-					<div class="single-footer-widget">
-						<h6>Short Links</h6>
-						<ul class="footer-nav">
-							<li><a href="index.php">Home</a></li>
-							<li><a href="about-us.php">About Us</a></li>
-							<li><a href="./blog-home.php">Blogs</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-6  col-md-12">
-					<div class="single-footer-widget newsletter">
-						<h6>Other Links</h6>
-						<ul class="footer-nav">
-							<li><a href="terms.php">Terms and Conditions</a></li>
-							<li><a href="contact.php">Contact</a></li>
-						</ul>
-						<br>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3  col-md-12">
+          <div class="single-footer-widget">
+            <h6>Short Links</h6>
+            <ul class="footer-nav">
+              <li><a href="index.php">Home</a></li>
+              <li><a href="about-us.php">About Us</a></li>
+              <li><a href="./blog-home.php">Blogs</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6  col-md-12">
+          <div class="single-footer-widget newsletter">
+            <h6>Other Links</h6>
+            <ul class="footer-nav">
+              <li><a href="terms.php">Terms and Conditions</a></li>
+              <li><a href="contact.php">Contact</a></li>
+            </ul>
+            <br>
 
-					</div>
-				</div>
-				<div class="col-lg-3  col-md-12">
-					<div class="single-footer-widget mail-chimp">
-						<h6>Get In Touch</h6>
-						<a title="Address "><i class="fa fa-map-marker "></i> No.32, Vinayagar Kovil Street,
-							Karungalpalayam,
-							Erode - 638003, Tamil Nadu, India</a>
-						<br>
-						<a href="mailto:support@nofulltime.com " title="Email "><i class="fa fa-envelope "></i>
-							support@nofulltime.com</a>
-						<br>
-						<a href="tel:+919790030919 " title="Contact "><i class="fa fa-phone "></i> +91-97900-30919</a>
-					</div>
-				</div>
-			</div>
+          </div>
+        </div>
+        <div class="col-lg-3  col-md-12">
+          <div class="single-footer-widget mail-chimp">
+            <h6>Get In Touch</h6>
+            <a title="Address "><i class="fa fa-map-marker "></i> No.32, Vinayagar Kovil Street,
+              Karungalpalayam,
+              Erode - 638003, Tamil Nadu, India</a>
+            <br>
+            <a href="mailto:support@nofulltime.com " title="Email "><i class="fa fa-envelope "></i>
+              support@nofulltime.com</a>
+            <br>
+            <a href="tel:+919790030919 " title="Contact "><i class="fa fa-phone "></i> +91-97900-30919</a>
+          </div>
+        </div>
+      </div>
 
-			<div class="row footer-bottom d-flex justify-content-between">
-				<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+      <div class="row footer-bottom d-flex justify-content-between">
+        <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
 
-					Copyright &copy;
-					<script>
-						document.write(new Date().getFullYear());
-					</script> NoFullTime |All rights reserved
-				</p>
-				<div class="col-lg-4 col-sm-12 footer-social">
-					<a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fa fa-facebook"></i></a>
-					<a href="https://www.instagram.com/abc_infomedia/"><i class="fa fa-instagram"></i></a>
-					<a href="https://twitter.com/abc_infomedia/"><i class="fa fa-twitter"></i></a>
-					<a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fa fa-linkedin"></i></a>
-					<a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fa fa-pinterest"></i></a>
-					<a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fa fa-youtube"></i></a>
-				</div>
-			</div>
-		</div>
-	</footer>
+          Copyright &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script> NoFullTime |All rights reserved
+        </p>
+        <div class="col-lg-4 col-sm-12 footer-social">
+          <a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.instagram.com/abc_infomedia/"><i class="fa fa-instagram"></i></a>
+          <a href="https://twitter.com/abc_infomedia/"><i class="fa fa-twitter"></i></a>
+          <a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fa fa-linkedin"></i></a>
+          <a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fa fa-pinterest"></i></a>
+          <a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fa fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
 

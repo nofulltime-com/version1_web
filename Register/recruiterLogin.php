@@ -94,9 +94,7 @@ session_start();
       $email_pass = mysqli_fetch_assoc($query);
       $db_pass = $email_pass['password'];
 
-      $recruiter_id = $email_pass['id'];
-      setcookie("recruiter_id", $recruiter_id, time()+3600*24*30*12, "/","", 0);
-
+      $_SESSION['recruiter_id'] = $email_pass['id'];
       $pass_decode = password_verify($password, $db_pass);
 
       if ($pass_decode) {
