@@ -86,7 +86,7 @@ session_start();
     $password = $_POST['password'];
 
     $email_search = "select * from recruiter where email='$email'";
-    $query = mysqli_query($con, $email_search);
+    $query = mysqli_query($conn, $email_search);
 
     $email_count = mysqli_num_rows($query);
 
@@ -95,6 +95,7 @@ session_start();
       $db_pass = $email_pass['password'];
 
       $_SESSION['recruiter_id'] = $email_pass['id'];
+
       $pass_decode = password_verify($password, $db_pass);
 
       if ($pass_decode) {
@@ -134,13 +135,13 @@ session_start();
           <div>
             <p class="bg-success text-white px-4"><?php
 
-                                                  if (isset($_SESSION['msg'])) {
-                                                    echo $_SESSION['msg'];
-                                                  } else {
-                                                    echo $_SESSION['msg'] = " ";
-                                                  }
+            if (isset($_SESSION['msg1'])) {
+                echo $_SESSION['msg1'];
+            } else {
+                echo $_SESSION['msg1'] = " ";
+            }
 
-                                                  ?></p>
+            ?></p>
           </div>
 
           <form autocomplete="off" class="form-box px-3" onsubmit="return validation()" action="" method="POST">
@@ -304,9 +305,11 @@ session_start();
           <div class="single-footer-widget">
             <h6>Short Links</h6>
             <ul class="footer-nav">
-              <li><a href="index.php">Home</a></li>
-              <li><a href="about-us.php">About Us</a></li>
-              <li><a href="./blog-home.php">Blogs</a></li>
+              <li><a href="../index.php">Home</a></li>
+              <li><a href="../about-us.php">About Us</a></li>
+              <li><a href="../blog-home.php">Blogs</a></li>
+              <li><a href="../recruiters.php">Recruiters</a></li>
+              <li><a href="../blog-home.php">Blog</a></li>
             </ul>
           </div>
         </div>
@@ -318,7 +321,26 @@ session_start();
               <li><a href="contact.php">Contact</a></li>
             </ul>
             <br>
+            <h6>Newsletter</h6>
+            <p>You can trust us. we only send promo offers, not a single spam.</p>
+            <div id="mc_embed_signup">
+              <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
 
+                <div class="form-group row" style="width: 100%">
+                  <div class="col-lg-8 col-md-12">
+                    <input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+                    <div style="position: absolute; left: -5000px;">
+                      <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-12">
+                    <button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
+                  </div>
+                </div>
+                <div class="info"></div>
+              </form>
+            </div>
           </div>
         </div>
         <div class="col-lg-3  col-md-12">
@@ -345,12 +367,9 @@ session_start();
           </script> NoFullTime |All rights reserved
         </p>
         <div class="col-lg-4 col-sm-12 footer-social">
-          <a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fa fa-facebook"></i></a>
-          <a href="https://www.instagram.com/abc_infomedia/"><i class="fa fa-instagram"></i></a>
-          <a href="https://twitter.com/abc_infomedia/"><i class="fa fa-twitter"></i></a>
-          <a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fa fa-linkedin"></i></a>
-          <a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fa fa-pinterest"></i></a>
-          <a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fa fa-youtube"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
         </div>
       </div>
     </div>
