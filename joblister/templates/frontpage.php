@@ -18,11 +18,12 @@ session_start();
         <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="../index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
+                    <a style="color:white ;font-size: x-large;font-weight:bold" href="../index.php"><span><i class="fas fa-dove"></i></span> Nofulltime</a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="../index.php">Home</a></li>
+                        <li><a href="../index.php">Home</a></li>
+
                         <li><a href="../about-us.php">About Us</a></li>
                         <li><a href="../blog-home.php">Blogs</a></li>
                         <li><a href="../contact.php">Contact</a></li>
@@ -87,7 +88,7 @@ session_start();
                     <p style=font-size:15px;font-weight:400;><?php echo $job->description; ?></p>
                 </div>
                 <div class="col-md-2">
-                    <a class="btn btn-default" style=background-color:#49e4fa;color:black;border-color:#49e4fa;border-radius:20px;font-size:15px;padding:6px;width:40%; href="job.php?id=<?php echo $job->id; ?>">View</a>
+                    <a class="btn btn-default" style=background-color:#49e4fa;color:black;border-color:#49e4fa;border-radius:20px;font-size:15px;padding:6px;width:70%; href="job.php?id=<?php echo $job->id; ?>">View</a>
                 </div>
             </div>
         <?php endforeach; ?>
