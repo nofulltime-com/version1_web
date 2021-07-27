@@ -114,56 +114,29 @@ session_start();
                     <div class="single-post">
                         <img class="img-fluid" src="img/blog/p1.jpg" alt="">
                         <ul class="tags">
-                            <li><a href="#">Art</a></li>
+                            <li><a href="#">Career | </a></li>
+                            <li><a href="#">Jobs | </a></li>
                             <li><a href="#">Technology</a></li>
-                            <li><a href="#">Fashion</a></li>
                         </ul>
-                        <a href="#">
+                        <a onclick="return false;">
                             <h1>
-                                Cartridge Is Better Than Ever
-                                A Discount Toner
+                                The web is working for part-time businesses
                             </h1>
                         </a>
                         <div class="content-wrap">
                             <p>
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you should have to spend money on boot camp when you can get the MCSE study
-                                materials yourself at a fraction of the camp price. However, who has the willpower to
-                                actually sit through a self-imposed MCSE training. who has the willpower to actually sit
-                                through a self-imposed MCSE training.
+                                Part-time businesses play an important role in our lives and in our economy. From the gardening mom who sells her plants, to the hobbyist antiques dealer, to the weekend wedding photographer, people everywhere are earning extra money while doing what they love.
                             </p>
 
                             <p>
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you should have to spend money on boot camp when you can get the MCSE study
-                                materials yourself at a fraction of the camp price. However, who has the willpower to
-                                actually sit through a self-imposed MCSE training. who has the willpower to actually sit
-                                through a self-imposed MCSE training.
-                            </p>
+                                Research released yesterday by The Internet Association shows that the web is powering American part-time businesses. Nine out of 10 part-time business owners rely on the Internet to conduct their business, and the impact is significant. Internet enabled part-time businesses employ 6.6 million people and contribute $141 billion to the U.S. GDP.
 
-                            <blockquote class="generic-blockquote">
-                                “Recently, the US Federal government banned online casinos from operating in America by
-                                making it illegal to transfer money to them through any US bank or payment system. As a
-                                result of this law, most of the popular online casino networks such as Party Gaming and
-                                PlayTech left the United States. Overnight, online casino players found themselves being
-                                chased by the Federal government.banking”
-                            </blockquote>
-
-                            <p>
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you should have to spend money on boot camp when you can get the MCSE study
-                                materials yourself at a fraction of the camp price. However, who has the willpower to
-                                actually sit through a self-imposed MCSE training. who has the willpower to actually sit
-                                through a self-imposed MCSE training.
                             </p>
 
                             <p>
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you should have to spend money on boot camp when you can get the MCSE study
-                                materials yourself at a fraction of the camp price. However, who has the willpower to
-                                actually sit through a self-imposed MCSE training. who has the willpower to actually sit
-                                through a self-imposed MCSE training.
+                                We're proud to play our part to support these business owners as they grow their businesses online. Technology is at its best when it makes lives easier—and every day, our products help businesses find new customers and publishers earn money from their content while running more efficiently. With the power of the web, businesses can build better lives for their families and strengthen our economy while doing what they love.
                             </p>
+
 
 
                         </div>
@@ -201,32 +174,7 @@ session_start();
                 <div class="col-lg-4 sidebar">
 
 
-                    <div class="single-widget category-widget">
-                        <h4 class="title">Post Categories</h4>
-                        <ul>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Techlology</h6> <span>37</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Lifestyle</h6> <span>24</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Fashion</h6> <span>59</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Art</h6> <span>29</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Food</h6> <span>15</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Architecture</h6> <span>09</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Adventure</h6> <span>44</span>
-                                </a></li>
-                        </ul>
-                    </div>
+
 
                     <div class="single-widget recent-posts-widget">
                         <h4 class="title">Recent Posts</h4>
@@ -298,45 +246,17 @@ session_start();
                         </div>
                     </div>
 
-                    <div class="single-widget category-widget">
-                        <h4 class="title">Post Archive</h4>
-                        <ul>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Dec '17</h6> <span>37</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Nov '17</h6> <span>24</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Oct '17</h6> <span>59</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Sep '17</h6> <span>29</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Aug '17</h6> <span>15</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Jul '17</h6> <span>09</span>
-                                </a></li>
-                            <li><a href="#" class="justify-content-between align-items-center d-flex">
-                                    <h6>Jun '17</h6> <span>44</span>
-                                </a></li>
-                        </ul>
-                    </div>
+
 
                     <div class="single-widget tags-widget">
                         <h4 class="title">Tag Clouds</h4>
                         <ul>
                             <li><a href="#">Lifestyle</a></li>
-                            <li><a href="#">Art</a></li>
-                            <li><a href="#">Adventure</a></li>
-                            <li><a href="#">Food</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">Jobs</a></li>
+                            <li><a href="#">Parttime</a></li>
                             <li><a href="#">Techlology</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Architecture</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Technology</a></li>
+
                         </ul>
                     </div>
 

@@ -112,29 +112,28 @@
 				<div class="row">
 					<div class="col-lg-8 post-list blog-post-list">
 						<div class="single-post">
-							<img class="img-fluid" src="img/blog/p1.jpg" alt="">
+							<img class="img-fluid" src="./img/blog/p1.jpg" alt="">
 							<ul class="tags">
-								<li><a href="#">Art, </a></li>
+								<li><a href="#">Career, </a></li>
 								<li><a href="#">Technology, </a></li>
-								<li><a href="#">Fashion</a></li>
+								<li><a href="#">Jobs</a></li>
 							</ul>
 							<a href="blog-single.php">
 								<h1>
-									Cartridge Is Better Than Ever
-									A Discount Toner
+									The web is working for part-time businesses
 								</h1>
 							</a>
 							<p>
-								MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed MCSE training.
+								Part-time businesses play an important role in our lives and in our economy. From the gardening mom who sells her plants, to the hobbyist antiques dealer, to the weekend wedding photographer, people everywhere are earning extra money while doing what they love.......
 							</p>
 
 						</div>
 						<div class="single-post">
 							<img class="img-fluid" src="img/blog/p2.jpg" alt="">
 							<ul class="tags">
-								<li><a href="#">Art, </a></li>
+								<li><a href="#">Career, </a></li>
 								<li><a href="#">Technology, </a></li>
-								<li><a href="#">Fashion</a></li>
+								<li><a href="#">Jobs</a></li>
 							</ul>
 							<a href="blog-single.php">
 								<h1>
