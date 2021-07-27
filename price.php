@@ -191,7 +191,7 @@
 						<ul class="footer-nav">
 							<li><a href="index.php">Home</a></li>
 							<li><a href="about-us.php">About Us</a></li>
-							<li><a href="category.php">Category</a></li>
+							<li><a href="./blog-home.php">Blogs</a></li>
 							<li><a href="recruiters.php">Recruiters</a></li>
 						</ul>
 					</div>
