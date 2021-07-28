@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1 class="text-center display-4">Personal Details</h1>
     </div>
 
-    <div class="container form-container mt-2">
+    <div class="container form-container mt-2 mb-4">
         <fieldset style="border: 1px solid #2e2e2e;border-radius:8px;padding:5%">
             <form class="row g-3" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <div class="col-md-12">

@@ -12,10 +12,12 @@ $conn->query($query);
 
 $info = pathinfo($_FILES['resume']['name']);
 $ext = $info['extension'];
-$newname = "newname." . $ext;
+$newname = "resume-" . $id . "." . $ext;
 
-$target = './uploads/' . $newname;
+$target = 'uploads/' . $newname;
 move_uploaded_file($_FILES['resume']['tmp_name'], $target);
+$q2 = "UPDATE `job_seeker_details` SET `resume` = '$newname' WHERE `job_seeker_details`.`id` = $id;";
+$conn->query($q2);
 ?>
 <script>
     location.replace("./profile/index.php");

@@ -91,11 +91,11 @@ if ($res->num_rows > 0) {
     </header>
 
     <div class="container heading">
-        <h1 class="text-center display-4">Your just one step away!!</h1>
+        <h1 class="text-center display-4">Your are just one step away!!</h1>
         <h3 class='text-center'>Provide your resume and stand out from the crowd</h3>
     </div>
 
-    <div class="container form-container mt-2">
+    <div class="container form-container mt-2 mb-5">
         <fieldset style="border: 1px solid #2e2e2e;border-radius:8px;padding:5%">
             <form autocomplete="off" action="upload.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group ">
@@ -104,11 +104,11 @@ if ($res->num_rows > 0) {
                 </div>
                 <div class="form-group ">
                     <label for="resume">Upload your resume</label>
-                    <input type="file" name="resume" class='form-control' style='border:none' id="resume" accept="application/pdf">
+                    <input type="file" value="hello.pdf" name="resume" class='form-control' style='border:none' id="resume" accept="application/pdf">
                 </div>
                 <div class="col-12 mt-4 text-center">
-                    <input type="submit" value="Submit" class="btn btn-lg mt-2 btn-success " name="submit">
-                    <a href="./education_details.php" class='btn btn-lg btn-outline-danger ml-4 mt-2'>Previous</a>
+                    <a href="./education_details.php" class='btn btn-lg btn-danger mt-2'>Previous</a>
+                    <input type="submit" value="Submit" class="btn btn-lg mt-2 ml-4 btn-outline-success " name="submit">
                 </div>
             </form>
         </fieldset>

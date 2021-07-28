@@ -100,6 +100,7 @@ include '../connect.php';
 		$res2 = $conn->query($query2);
 		if ($res2->num_rows > 0) {
 			while ($row = $res2->fetch_assoc()) {
+				$resume = $row['resume'];
 				$summary = ucfirst($row['summary']);
 				$field = ucfirst(strtolower($row['field']));
 				$position = ucfirst(strtolower($row['position']));
@@ -227,7 +228,9 @@ include '../connect.php';
 								</ul>
 								<?php if (isset($_SESSION['recruiter_id'])) { ?>
 									<div class="col-md-8 mt-5 text-md-right header-buttons">
-										<a href="../uploads/resume/Bhanu Krishna Prasad-Resume.pdf" class="site-btn" download>Download Resume</a>
+										<?php if (strpos($category, 'parttime') !== false) { ?>
+											<a href="../uploads/<?php echo $resume ?>" class="site-btn" download>Download Resume</a>
+										<?php } ?>
 										<a href="#contact" class="site-btn">Contact Me</a>
 									</div>
 								<?php } ?>
