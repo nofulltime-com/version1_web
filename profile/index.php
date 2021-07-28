@@ -191,14 +191,27 @@ include '../connect.php';
 						<li><a href="../blog-home.php">Blogs</a></li>
 						<li><a href="../contact.php">Contact</a></li>
 
-						<li class="menu-has-children"><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
-							<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
-							<ul>
-								<li><a href="./index.php">Profile</a></li>
-								<li><a href="../seeker_preferences.php">Edit</a></li>
-								<li><a href="../logout.php">Logout</a></li>
-							</ul>
-						</li>
+						<?php
+						if (isset($_SESSION['id'])) { ?>
+							<li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+								<ul>
+									<li><a href="./index.php">Profile</a></li>
+									<li><a href="../seeker_preferences.php">Edit</a></li>
+									<li><a href="../logout.php">Logout</a></li>
+								</ul>
+							</li>
+						<?php } elseif (isset($_SESSION['recruiter_id'])) { ?>
+							<li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+								<ul>
+									<li><a href="../recruiters.php">Dashboard</a></li>
+									<li><a href="../price.php">Subscribe</a></li>
+									<li><a href="../search.php">Search</a></li>
+									<li><a href="../recruiter_logout.php">Logout</a></li>
+								</ul>
+							</li>
+						<?php } ?>
 
 					</ul>
 				</nav><!-- #nav-menu-container -->
