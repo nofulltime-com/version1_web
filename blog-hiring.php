@@ -111,7 +111,7 @@ session_start();
             <div class="row">
                 <div class="col-lg-8 post-list blog-post-list">
                     <div class="single-post">
-                        <img class="img-fluid" src="img/blog-course.jpg" alt="">
+                        <img class="img-fluid" src="img/blog-hiring.jpg" style="height:450px; width:630px;" alt="">
                         <ul class="tags">
                             <li><a href="#">Career | </a></li>
                             <li><a href="#">Courses | </a></li>
@@ -119,20 +119,28 @@ session_start();
                         </ul>
                         <a onclick="return false;">
                             <h1>
-                                The web is working for Latest Demanding courses
+                                The web is working on Improving hiring process
                             </h1>
                         </a>
                         <div class="content-wrap">
                             <p>
-                                Online learning has numerous advantages over traditional learning methods. Some of these include the possibility for students to make use of self-paced learning and to choose their own learning environments. Additionally, e-learning is both cost-effective and cost-efficient, as it removes the geographical obstacles often associated with traditional classrooms and education.
+                            One of the most significant ways a leader can impact their business is through the quality of their hiring, yet this is rarely listed as a critical leadership competency and often overlooked. In my experience, this is usually because the impact is not as immediately visible as for example when they make an investor presentation that goes badly or fails to convince the Board during a key presentation.
                             </p>
 
                             <p>
-                                Taking these benefits and many more into consideration, it becomes evident why the current trends in e-learning show remarkable growth for the industry. Worldwide e-learning revenue is expected to grow to $325 Billion by 2025, which is remarkable considering the fact that the number was three times smaller – $107 Billion, in 2015.
+                            <strong>Invest in training for all hiring managers-</strong> Consider making this training compulsory for anyone involved in hiring and go one step further by requiring a level of competence to be demonstrated before authorizing the manager to undertake hiring for the organization. This may sound tough, but would you allow an unqualified electrician to rewire your home? Yet we allow unqualified managers to engage in hiring activities that not only may result in poor hiring decisions, and related costs, but also damage your reputation in the hiring, and wider, market place
                             </p>
 
                             <p>
-                                With that being said, it must be noted that e-learning is not perfect. Conducting any of the various types of e-learning through the Internet means sacrifices in one way or another. Increased risk of cheating during assessments, social isolation, and lack of communicational skill development in online students are just some of the challenges of e-learning which need to be addressed. Read our separate post on the disadvantages of e-learning in order to get a better overview of the drawbacks associated with e-learning.
+                            <strong>Review your hiring process-</strong> Are all the elements properly templated so that you can perform consistently? How do you make hiring decisions? What information do you collect to inform these decisions? You should have quality job descriptions for all your roles which clearly describe the expected outcomes and performance. In addition, you should specify the skills, experience, and competencies required for superior performance. If these are not defined, you cannot hire to them, and your people cannot develop toward them. Consider expanding your selection process from a traditional face to face interview to include appropriate psychometrics, practical tests or experiences (coding, phone work, etc.) and behavioral or competency based interviewing techniques.
+                            </p>
+
+                            <p>
+                            <strong>Measure the effectiveness of your hiring-</strong> Measure the hiring process, including time to hire, cost of hire, quality of talent pool, time to become effective, etc. but also your hiring decisions, quality of candidates taken on in both the short and longer term. Make a habit of predicting the short and long term performance of your hires and then evaluating the accuracy of your predictions. Don’t limit yourself to external hires but include internal moves and promotions. Measure your retention and loss of talent.
+                            </p>
+
+                            <p>
+                            <strong>Review your talent attraction strategy and approach-</strong> How well does your website attract and communicate with potential hires? How well does your company communicate and live up to its employee value proposition to its existing employees? How well is this communicated and evidenced to potential hires? Evaluate your company both as an employer and a hirer – they are different. Put together an action plan for improvement.
                             </p>
 
 
@@ -146,20 +154,20 @@ session_start();
                                 <div class="row justify-content-between">
                                     <div class="col-sm-6 nav-left justify-content-start d-flex">
                                         <div class="thumb">
-                                            <img src="./img/blog/p1.jpg" alt="" class='img-fluid'>
+                                            <img src="./img/blog-course.jpg" alt="" class='img-fluid'>
                                         </div>
                                         <div class=" post-details">
                                             <p>Prev Post</p>
-                                            <h4 class="text-uppercase"><a href="./blog-single.php">The web is working for part-time businesses</a></h4>
+                                            <h4 class="text-uppercase"><a href="./blog-course.php">The web is working for Latest Demanding Courses</a></h4>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 nav-right justify-content-end d-flex">
                                         <div class="post-details">
                                             <p>Next Post</p>
-                                            <h4 class="text-uppercase"><a href="./blog-hiring.php">The web is working on Improving hiring process</a></h4>
+                                            <h4 class="text-uppercase"><a href="#">Look For Online Future</a></h4>
                                         </div>
                                         <div class="thumb">
-                                            <img src="img/blog-hiring.jpg" alt="" style=width:175px;height:110px;>
+                                            <img src="img/blog/blog-future.jpg" alt="" style=width:70px;height:70px;>
                                         </div>
                                     </div>
                                 </div>
@@ -212,7 +220,7 @@ session_start();
                                     <img class="img-fluid" src="img/blog-hiring.jpg" alt="" style=width:142px;height:80px;>
                                 </div>
                                 <div class="recent-details">
-                                    <a href="blog-hiring.php">
+                                    <a href="./blog-hiring.php">
                                         <h4>
                                             Improving hiring process
                                         </h4>

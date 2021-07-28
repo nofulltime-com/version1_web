@@ -148,20 +148,19 @@ include './connect.php';
 
 					</div>
 					<div class="single-post">
-						<img class="img-fluid" src="img/blog/p3.jpg" alt="">
+						<img class="img-fluid" src="./img/blog-hiring.jpg" style="height:450px; width:670px;" alt="">
 						<ul class="tags">
-							<li><a href="#">Art, </a></li>
+							<li><a href="#">Career, </a></li>
 							<li><a href="#">Technology, </a></li>
-							<li><a href="#">Fashion</a></li>
+							<li><a href="#">Jobs</a></li>
 						</ul>
-						<a href="blog-single.php">
+						<a href="blog-hiring.php">
 							<h1>
-								Cartridge Is Better Than Ever
-								A Discount Toner
+								The web is working on Improving hiring process
 							</h1>
 						</a>
 						<p>
-							MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed MCSE training.
+							One of the most significant ways a leader can impact their business is through the quality of their hiring, yet this is rarely listed as a critical leadership competency and often overlooked. In my experience, this is usually because the impact is not as immediately visible as for example when they make an investor presentation that goes badly or fails to convince the Board during a key presentation......
 						</p>
 
 					</div>
@@ -222,17 +221,16 @@ include './connect.php';
 							</div><br>
 							<div class="single-recent-post d-flex flex-row">
 								<div class="recent-thumb">
-									<img class="img-fluid" src="img/blog/r3.jpg" alt="" style=width:200px;height:80px;>
+									<img class="img-fluid" src="img/blog-hiring.jpg" alt="" style=width:200px;height:80px;>
 								</div>
 								<div class="recent-details">
-									<a href="blog-single.php">
+									<a href="blog-hiring.php">
 										<h4>
-											Home Audio Recording
-											For Everyone
+											Improving hiring process
 										</h4>
 									</a>
 									<p>
-										02 hours ago
+										01 hour ago
 									</p>
 								</div>
 							</div>
