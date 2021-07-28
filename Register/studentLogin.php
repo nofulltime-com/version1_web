@@ -105,15 +105,21 @@ session_start();
         <script>
           location.replace("../check.php");
         </script>
-  <?php
+      <?php
 
       } else {
-        header("Location: studentLogin.php?error=Incorrect password");
+      ?>
+        <script>
+          location.replace("studentLogin.php?error=Incorrect password");
+        </script>
+      <?php
         exit();
       }
-    } else {
-      header("Location: studentLogin.php?error=Incorrect email");
-      exit();
+    } else { ?>
+      <script>
+        location.replace("studentLogin.php?error=Incorrect email");
+      </script>
+  <?php exit();
     }
   }
   ?>

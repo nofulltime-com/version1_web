@@ -107,14 +107,22 @@ session_start();
         <script>
           location.replace("../recruiters.php");
         </script>
-  <?php
+      <?php
 
       } else {
-        header("Location: recruiterLogin.php?error=Incorrect password");
+      ?>
+        <script>
+          location.replace("recruiterLogin.php?error=Incorrect password");
+        </script>
+      <?php
         exit();
       }
     } else {
-      header("Location: recruiterLogin.php?error=Incorrect email");
+      ?>
+      <script>
+        location.replace("recruiterLogin.php?error=Incorrect email");
+      </script>
+  <?php
       exit();
     }
   }
