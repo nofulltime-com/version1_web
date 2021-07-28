@@ -193,16 +193,17 @@ include './connect.php';
 						<div class="blog-list ">
 							<div class="single-recent-post d-flex flex-row">
 								<div class="recent-thumb">
-									<img class="img-fluid" src="img/blog/r1.jpg" alt="">
+									<img class="img-fluid" src="img/blog/p1.jpg" alt="">
 								</div>
 								<div class="recent-details">
 									<a href="blog-single.php">
 										<h4>
-											Home Audio Recording
-											For Everyone
+											The web is working for part-time businesses
 										</h4>
 									</a>
-
+									<p>
+										02 days ago
+									</p>
 								</div>
 							</div>
 							<div class="single-recent-post d-flex flex-row">
@@ -216,7 +217,9 @@ include './connect.php';
 											For Everyone
 										</h4>
 									</a>
-
+									<p>
+										02 hours ago
+									</p>
 								</div>
 							</div>
 							<div class="single-recent-post d-flex flex-row">
@@ -230,7 +233,9 @@ include './connect.php';
 											For Everyone
 										</h4>
 									</a>
-
+									<p>
+										02 hours ago
+									</p>
 								</div>
 							</div>
 							<div class="single-recent-post d-flex flex-row">
@@ -244,7 +249,9 @@ include './connect.php';
 											For Everyone
 										</h4>
 									</a>
-
+									<p>
+										02 hours ago
+									</p>
 								</div>
 							</div>
 						</div>
@@ -283,7 +290,7 @@ include './connect.php';
 						<ul class="footer-nav">
 							<li><a href="index.php">Home</a></li>
 							<li><a href="about-us.php">About Us</a></li>
-							<li><a href="blog-home.php">Blogs</a></li>
+							<li><a href="./blog-home.php">Blogs</a></li>
 						</ul>
 					</div>
 				</div>
@@ -292,30 +299,10 @@ include './connect.php';
 						<h6>Other Links</h6>
 						<ul class="footer-nav">
 							<li><a href="terms.php">Terms and Conditions</a></li>
-							<li><a href="faq.php">FAQ</a></li>
 							<li><a href="contact.php">Contact</a></li>
 						</ul>
 						<br>
-						<h6>Newsletter</h6>
-						<p>You can trust us. we only send promo offers, not a single spam.</p>
-						<div id="mc_embed_signup">
-							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
 
-								<div class="form-group row" style="width: 100%">
-									<div class="col-lg-8 col-md-12">
-										<input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-										<div style="position: absolute; left: -5000px;">
-											<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-										</div>
-									</div>
-
-									<div class="col-lg-4 col-md-12">
-										<button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
-									</div>
-								</div>
-								<div class="info"></div>
-							</form>
-						</div>
 					</div>
 				</div>
 				<div class="col-lg-3  col-md-12">
@@ -325,8 +312,8 @@ include './connect.php';
 							Karungalpalayam,
 							Erode - 638003, Tamil Nadu, India</a>
 						<br>
-						<a href="mailto:support@nofulltime.co " title="Email "><i class="fa fa-envelope "></i>
-							support@nofulltime.co</a>
+						<a href="mailto:support@nofulltime.com " title="Email "><i class="fa fa-envelope "></i>
+							support@nofulltime.com</a>
 						<br>
 						<a href="tel:+919790030919 " title="Contact "><i class="fa fa-phone "></i> +91-97900-30919</a>
 					</div>
@@ -342,9 +329,12 @@ include './connect.php';
 					</script> NoFullTime |All rights reserved
 				</p>
 				<div class="col-lg-4 col-sm-12 footer-social">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-instagram"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.instagram.com/abc_infomedia/"><i class="fa fa-instagram"></i></a>
+					<a href="https://twitter.com/abc_infomedia/"><i class="fa fa-twitter"></i></a>
+					<a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fa fa-linkedin"></i></a>
+					<a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fa fa-pinterest"></i></a>
+					<a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fa fa-youtube"></i></a>
 				</div>
 			</div>
 		</div>
