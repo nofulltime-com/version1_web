@@ -224,7 +224,7 @@ include '../connect.php';
 			<div class="row">
 				<div class="col-xl-10 offset-xl-1">
 					<div class="row">
-						<div class="col-lg-6">
+						<div class="col-lg-9">
 							<div class="hero-text">
 								<h2><?php echo $name ?></h2>
 								<p><?php echo "$summary"; ?></p>
@@ -250,7 +250,7 @@ include '../connect.php';
 								<?php } ?>
 							</div>
 						</div>
-						<div class="col-lg-6 text-center">
+						<div class="col-lg-3 text-center">
 							<figure class="hero-image">
 								<?php if ($profile) { ?>
 									<img src="../uploads/<?php echo $profile ?>" class="img-fluid" alt="5">
