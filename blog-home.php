@@ -131,20 +131,19 @@ include './connect.php';
 
 					</div>
 					<div class="single-post">
-						<img class="img-fluid" src="img/blog/p2.jpg" alt="">
+						<img class="img-fluid" src="./img/blog-course.jpg" alt="">
 						<ul class="tags">
 							<li><a href="#">Career, </a></li>
 							<li><a href="#">Technology, </a></li>
 							<li><a href="#">Jobs</a></li>
 						</ul>
-						<a href="blog-single.php">
+						<a href="blog-course.php">
 							<h1>
-								Cartridge Is Better Than Ever
-								A Discount Toner
+								The web is working for Latest Demanding courses
 							</h1>
 						</a>
 						<p>
-							MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed MCSE training.
+							Online learning has numerous advantages over traditional learning methods. Some of these include the possibility for students to make use of self-paced learning and to choose their own learning environments. Additionally, e-learning is both cost-effective and cost-efficient, as it removes the geographical obstacles often associated with traditional classrooms and education.
 						</p>
 
 					</div>

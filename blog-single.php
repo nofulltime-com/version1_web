@@ -158,11 +158,11 @@ session_start();
                                     </div>
                                     <div class="col-sm-6 nav-right justify-content-end d-flex">
                                         <div class="post-details">
-                                            <p>Prev Post</p>
-                                            <h4 class="text-uppercase"><a href="#">A Discount Toner</a></h4>
+                                            <p>Next Post</p>
+                                            <h4 class="text-uppercase"><a href="./blog-course.php">The web is working for Latest Demanding courses</a></h4>
                                         </div>
                                         <div class="thumb">
-                                            <img src="img/blog/next.jpg" alt="">
+                                            <img src="img/blog-course.jpg" class="img-fluid" alt="">
                                         </div>
                                     </div>
                                 </div>
