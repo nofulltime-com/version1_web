@@ -114,8 +114,8 @@ session_start();
                         <img class="img-fluid" src="img/blog-hiring.jpg" style="height:450px; width:630px;" alt="">
                         <ul class="tags">
                             <li><a href="#">Career | </a></li>
-                            <li><a href="#">Courses | </a></li>
-                            <li><a href="#">Learning</a></li>
+                            <li><a href="#">Jobs | </a></li>
+                            <li><a href="#">Hiring</a></li>
                         </ul>
                         <a onclick="return false;">
                             <h1>
