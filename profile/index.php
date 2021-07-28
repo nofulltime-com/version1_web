@@ -76,6 +76,7 @@ include '../connect.php';
 	$res1 = $conn->query($query1);
 	if ($res1->num_rows > 0) {
 		while ($row = $res1->fetch_assoc()) {
+			$profile = $row['profile_picture'];
 			$name = ucfirst($row['fullname']);
 			$age =  $row['age'];
 			$gender = ucfirst($row['gender']);
@@ -238,19 +239,46 @@ include '../connect.php';
 						</div>
 						<div class="col-lg-6 text-center">
 							<figure class="hero-image">
-								<?php
-								if ($gender == 'Male') {
-								?>
-									<img src="img/hero-m.png" alt="5">
-								<?php
-								} else {
-								?>
-									<img src="img/hero-f.jpg" alt="5">
-								<?php } ?>
+								<?php if ($profile) { ?>
+									<img src="../uploads/<?php echo $profile ?>" class="img-fluid" alt="5">
+
+									<?php } else {
+									if ($gender == 'Male') {
+									?>
+										<img src="img/hero-m.png" alt="5">
+									<?php
+									} else {
+									?>
+										<img src="img/hero-f.jpg" alt="5">
+								<?php }
+								} ?>
 							</figure>
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Upload your Profile Picture</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<form action="../upload_profile.php" method="post" enctype="multipart/form-data">
+											<div class="modal-body">
+												<div class="form-group ">
+													<input type="file" name="profile" class='form-control' style='border:none' id="profile" accept="image/*" />
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="submit" class="btn btn-primary">Upload</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
 							<?php if (!isset($_SESSION['recruiter_id'])) { ?>
-								<button class='btn btn-dark mt-2'>Upload/Edit</button>
-							<?php } ?>
+								<button type="button" class="btn btn-dark mt-2" data-toggle="modal" data-target="#exampleModal">
+									Upload/Edit
+								</button> <?php } ?>
 						</div>
 					</div>
 				</div>
