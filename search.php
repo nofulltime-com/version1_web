@@ -655,7 +655,7 @@ include './connect.php'
 			</div>
 
 			<div class="row footer-bottom d-flex justify-content-between">
-				<p class="9 col-sm-12 footer-text m-0 text-white">
+				<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
 
 					Copyright &copy;
 					<script>
