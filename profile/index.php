@@ -227,7 +227,9 @@ include '../connect.php';
 						<div class="col-lg-9">
 							<div class="hero-text">
 								<h2><?php echo $name ?></h2>
-								<p><?php echo "$summary"; ?></p>
+								<?php if (strpos($category, 'parttime') !== false) { ?>
+									<p><?php echo "$summary"; ?></p>
+								<?php } ?>
 							</div>
 							<div class="hero-info">
 								<h2>General Info</h2>
