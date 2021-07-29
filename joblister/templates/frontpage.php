@@ -5,16 +5,49 @@ session_start();
 <html>
 
 <head>
-    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="recruiterRegister.css">
+
+    <link rel="stylesheet" href="../css/linearicons.css">
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <link rel="stylesheet" href="../css/nice-select.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="./seeker_details.css">
+    <title>NoFullTime | Posts</title>
+    <link rel="stylesheet" href="font-awesome.min.css">
     <style>
         <?php include "../templates/inc/css/main2.css" ?><?php include "../templates/inc/css/narrow.css" ?><?php include "../templates/inc/css/main.css" ?><?php include "../templates/inc/css/bootstrap.css" ?><?php include "../templates/inc/css/linearicons.css" ?><?php include "../templates/inc/css/font-awesome.min.css" ?><?php include "../templates/inc/css/magnific-popup.css" ?><?php include "../templates/inc/css/nice-select.css" ?><?php include "../templates/inc/css//owl.carousel.css" ?><?php include "../templates/inc/css/animate.min.css" ?>
     </style>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
+<style>
+    .special {
+        display: none
+    }
+
+    @media only screen and (max-width:738px) {
+        .special {
+            display: block;
+        }
+    }
+</style>
+
 <body>
-    <header id="header" id="home">
+    <header id="header" id="home" style='background-color:black'>
         <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
@@ -22,8 +55,7 @@ session_start();
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li><a href="../index.php">Home</a></li>
-
+                        <li class="menu-active"><a href="../index.php">Home</a></li>
                         <li><a href="../about-us.php">About Us</a></li>
                         <li><a href="../blog-home.php">Blogs</a></li>
                         <li><a href="../contact.php">Contact</a></li>
@@ -33,14 +65,14 @@ session_start();
                             <li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
                                 <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
                                 <ul>
-                                    <li><a href="../profile/index.php">Profile</a></li>
+                                    <li><a href="./index.php">Profile</a></li>
                                     <li><a href="../seeker_preferences.php">Edit</a></li>
                                     <li><a href="../logout.php">Logout</a></li>
                                 </ul>
                             </li>
                         <?php } elseif (isset($_SESSION['recruiter_id'])) { ?>
                             <li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
-                                <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+                                <i class='fas fa-user-circle mobile special' style='font-size:36px;color:white;'></i>
                                 <ul>
                                     <li><a href="../recruiters.php">Dashboard</a></li>
                                     <li><a href="../price.php">Subscribe</a></li>
@@ -48,31 +80,19 @@ session_start();
                                     <li><a href="../recruiter_logout.php">Logout</a></li>
                                 </ul>
                             </li>
-                        <?php } else { ?>
-                            <li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Signup</a>
-                                <ul>
-                                    <li><a href="./Register/studentRegister.php">As a Student</a></li>
-                                    <li><a href="./Register/recruiterRegister.php">As a recruiter</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Login</a>
-                                <ul>
-                                    <li><a href="./Register/studentLogin.php">As a Student</a></li>
-                                    <li><a href="./Register/recruiterLogin.php">As a recruiter</a></li>
-                                </ul>
-                            </li>
                         <?php } ?>
+
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>
         </div>
-    </header><!-- #header --><br><br><br><br>
+    </header><!-- #header --><br><br><br>
     <div class="container">
         <div class="head clearfix">
             <div class="head">
                 <ul class="head head-pills pull-right">
-                    <li role="presentation" style=background-color:#49e4fa;border-radius:20px;><a href="index.php">Home</a></li>
-                    <li role="presentation" style=background-color:#49e4fa;border-radius:20px;><a href="create.php">Create Listing</a></li>
+                    <li role="presentation" style=background-color:#8c78f1;border-radius:20px;><a href="index.php">Home</a></li>
+                    <li role="presentation" style=background-color:#8c78f1;border-radius:20px;><a href="create.php">Create Listing</a></li>
                 </ul>
             </div>
             <h3 class="text-muted" style=font-size:35px;><?php echo SITE_TITLE; ?></h3>
@@ -88,7 +108,7 @@ session_start();
                     <p style=font-size:15px;font-weight:400;><?php echo $job->description; ?></p>
                 </div>
                 <div class="col-md-2">
-                    <a class="btn btn-default" style=background-color:#49e4fa;color:black;border-color:#49e4fa;border-radius:20px;font-size:15px;padding:6px;width:70%; href="job.php?id=<?php echo $job->id; ?>">View</a>
+                    <a class="btn btn-default" style=background-color:#8c78f1;color:white;border-color:#8c78f1;border-radius:20px;font-size:15px;padding:6px;width:70%; href="job.php?id=<?php echo $job->id; ?>">View</a>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -154,6 +174,7 @@ session_start();
         </div>
     </footer>
     <!-- End footer Area -->
+
 </body>
 
 </html>

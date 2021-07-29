@@ -110,8 +110,21 @@ include './connect.php';
 					<form action="search.php" class="serach-form-area">
 						<div class="row justify-content-center form-wrap">
 							<div class="col-lg-4 form-cols">
-								<input type="text" class="form-control" name="search" placeholder="what are you looking for?">
+								<input type="text" class="form-control" name="search" placeholder="Search by field,course or pin-code">
 							</div>
+
+							<div class="col-lg-3 form-cols">
+								<div class="default-select" id="default-selects2">
+									<select>
+										<option value="1">All Categories</option>
+										<option value="2">Part Time job seekers</option>
+										<option value="3">Course seekers</option>
+										<option value="4">NGO </option>
+
+									</select>
+								</div>
+							</div>
+
 							<div class="col-lg-3 form-cols">
 								<div class="default-select" id="default-selects">
 									<select>
@@ -123,19 +136,8 @@ include './connect.php';
 									</select>
 								</div>
 							</div>
-							<div class="col-lg-3 form-cols">
-								<div class="default-select" id="default-selects2">
-									<select>
-										<option value="1">All Category</option>
-										<option value="2">Part Time job seekers</option>
-										<option value="3">Course seekers</option>
-										<option value="4">NGO </option>
-
-									</select>
-								</div>
-							</div>
 							<div class="col-lg-2 form-cols">
-								<button type="button" class="btn btn-info">
+								<button type="submit" class="btn btn-info">
 									<span class="lnr lnr-magnifier"></span> Search
 								</button>
 							</div>
