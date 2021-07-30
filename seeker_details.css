@@ -7,6 +7,18 @@
         margin-top: 10%;
     }
 
+    fieldset
+    {
+        border: 1px solid #C0C0C0;
+        border-radius:8px;
+        padding:4%;
+    }
+
+    fieldset:hover
+    {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transition:all 0.6s;
+    }
     .form-control
     {
         font-size: 1.2rem;

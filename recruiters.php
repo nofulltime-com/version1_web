@@ -1,6 +1,12 @@
 <?php
 session_start();
-include './connect.php'
+include './connect.php';
+$id = $_SESSION['recruiter_id'];
+$q = "SELECT * FROM `recruiter_details` where id='$id'";
+
+$res = $conn->query($q);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -139,12 +145,16 @@ include './connect.php'
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
 					<div class="single-service" style=height:203px;>
-						<a href="./recruiters_details/index.php">
-							<h4><span class="lnr lnr-user"></span>Register</h4>
-							<p>
-								Register with us by filling a form and subscribing to our plans for more denifits.
-							</p>
-						</a>
+						<?php if ($res->num_rows > 0) { ?>
+							<a href="./price.php">
+							<?php } else { ?>
+								<a href="./recruiters_details/index.php">
+								<?php } ?>
+								<h4><span class="lnr lnr-user"></span>Register</h4>
+								<p>
+									Register with us by filling a form and subscribing to our plans for more denifits.
+								</p>
+								</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">

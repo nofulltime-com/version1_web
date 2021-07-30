@@ -408,7 +408,7 @@ include '../connect.php';
 											<textarea placeholder="Message" name="message"></textarea>
 										</div>
 									</div>
-									<div class="text-md-right">
+									<div class="text-md-right" style="cursor: pointer">
 										<button class="site-btn" name='mail' type='submit'>Send message</button>
 									</div>
 								</form>

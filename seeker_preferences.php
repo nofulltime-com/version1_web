@@ -234,7 +234,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <div class="container form-container mt-2 mb-5">
-        <fieldset style="border: 1px solid #C0C0C0;border-radius:8px;padding:4%">
+        <fieldset>
             <form class="row g-3" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <div class="col-md-12 options">
                     <label for="name" class="form-label">What are you looking for?</label>

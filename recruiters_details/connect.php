@@ -10,7 +10,7 @@ $subscription_mode = 'blank';
 $id = 1;
 
 // Database Connection
-$conn = new mysqli('localhost', 'root', '3183', 'nofulltime');
+$conn = new mysqli('localhost', 'nofulltime_nofulltime', 'Intens@1555!', 'nofulltime_nofulltime');
 
 if ($conn->connect_error) {
 	die("Connection Failed : " . $conn->connect_error);
@@ -18,6 +18,11 @@ if ($conn->connect_error) {
 	$stmt = $conn->prepare("INSERT into recruiter_details(id, name, organization, designation, location, industry, subscription_mode) values(?, ?, ?, ?, ?, ?, ?)");
 	$stmt->bind_param("issssss", $id, $name, $organization, $designation, $location, $industry, $subscription_mode);
 	$stmt->execute();
+?>
+	<script>
+		location.replace("../price.php");
+	</script>
+<?php
 	// echo "Details Registered Successfully...!";
 	$stmt->close();
 	$conn->close();
