@@ -139,7 +139,7 @@ include './connect.php';
 						</ul>
 						<a href="blog-course.php">
 							<h1>
-								The web is working for Latest Demanding courses
+								The web is hosting for Latest Demanding courses
 							</h1>
 						</a>
 						<p>

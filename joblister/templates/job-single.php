@@ -111,12 +111,14 @@
         <br><br>
         <a href="index.php" style=background-color:#8c78f1;color:white;border-radius:18px;font-size:17px;font-weight:400;padding:10px;text-decoration:none;>Go Back</a>
         <br><br>
-        <div class="well">
-            <form style="display:inline;" method="post" action="job.php">
-                <input type="hiddden" name="del_id" value="<?php echo $job->id; ?>">
-                <input style=border-radius:18px;font-size:17px;font-weight:400;padding:8px; type="submit" class="btn btn-danger" value="Delete">
-            </form>
-        </div>
+        <?php if ($job->recruiter_id == $_SESSION['recruiter_id']) { ?>
+            <div class="well">
+                <form style="display:inline;" method="post" action="job.php">
+                    <input type="hiddden" readonly name="del_id" value="<?php echo $job->id; ?>">
+                    <input style=border-radius:18px;font-size:17px;font-weight:400;padding:8px; type="submit" class="btn btn-danger" value="Delete">
+                </form>
+            </div>
+        <?php } ?>
     </div> <!-- /container -->
     <!-- start footer Area -->
     <footer class="footer-area section-gap">

@@ -124,23 +124,23 @@ session_start();
                         </a>
                         <div class="content-wrap">
                             <p>
-                            One of the most significant ways a leader can impact their business is through the quality of their hiring, yet this is rarely listed as a critical leadership competency and often overlooked. In my experience, this is usually because the impact is not as immediately visible as for example when they make an investor presentation that goes badly or fails to convince the Board during a key presentation.
+                                One of the most significant ways a leader can impact their business is through the quality of their hiring, yet this is rarely listed as a critical leadership competency and often overlooked. In my experience, this is usually because the impact is not as immediately visible as for example when they make an investor presentation that goes badly or fails to convince the Board during a key presentation.
                             </p>
 
                             <p>
-                            <strong>Invest in training for all hiring managers-</strong> Consider making this training compulsory for anyone involved in hiring and go one step further by requiring a level of competence to be demonstrated before authorizing the manager to undertake hiring for the organization. This may sound tough, but would you allow an unqualified electrician to rewire your home? Yet we allow unqualified managers to engage in hiring activities that not only may result in poor hiring decisions, and related costs, but also damage your reputation in the hiring, and wider, market place
+                                <strong>Invest in training for all hiring managers-</strong> Consider making this training compulsory for anyone involved in hiring and go one step further by requiring a level of competence to be demonstrated before authorizing the manager to undertake hiring for the organization. This may sound tough, but would you allow an unqualified electrician to rewire your home? Yet we allow unqualified managers to engage in hiring activities that not only may result in poor hiring decisions, and related costs, but also damage your reputation in the hiring, and wider, market place
                             </p>
 
                             <p>
-                            <strong>Review your hiring process-</strong> Are all the elements properly templated so that you can perform consistently? How do you make hiring decisions? What information do you collect to inform these decisions? You should have quality job descriptions for all your roles which clearly describe the expected outcomes and performance. In addition, you should specify the skills, experience, and competencies required for superior performance. If these are not defined, you cannot hire to them, and your people cannot develop toward them. Consider expanding your selection process from a traditional face to face interview to include appropriate psychometrics, practical tests or experiences (coding, phone work, etc.) and behavioral or competency based interviewing techniques.
+                                <strong>Review your hiring process-</strong> Are all the elements properly templated so that you can perform consistently? How do you make hiring decisions? What information do you collect to inform these decisions? You should have quality job descriptions for all your roles which clearly describe the expected outcomes and performance. In addition, you should specify the skills, experience, and competencies required for superior performance. If these are not defined, you cannot hire to them, and your people cannot develop toward them. Consider expanding your selection process from a traditional face to face interview to include appropriate psychometrics, practical tests or experiences (coding, phone work, etc.) and behavioral or competency based interviewing techniques.
                             </p>
 
                             <p>
-                            <strong>Measure the effectiveness of your hiring-</strong> Measure the hiring process, including time to hire, cost of hire, quality of talent pool, time to become effective, etc. but also your hiring decisions, quality of candidates taken on in both the short and longer term. Make a habit of predicting the short and long term performance of your hires and then evaluating the accuracy of your predictions. Don’t limit yourself to external hires but include internal moves and promotions. Measure your retention and loss of talent.
+                                <strong>Measure the effectiveness of your hiring-</strong> Measure the hiring process, including time to hire, cost of hire, quality of talent pool, time to become effective, etc. but also your hiring decisions, quality of candidates taken on in both the short and longer term. Make a habit of predicting the short and long term performance of your hires and then evaluating the accuracy of your predictions. Don’t limit yourself to external hires but include internal moves and promotions. Measure your retention and loss of talent.
                             </p>
 
                             <p>
-                            <strong>Review your talent attraction strategy and approach-</strong> How well does your website attract and communicate with potential hires? How well does your company communicate and live up to its employee value proposition to its existing employees? How well is this communicated and evidenced to potential hires? Evaluate your company both as an employer and a hirer – they are different. Put together an action plan for improvement.
+                                <strong>Review your talent attraction strategy and approach-</strong> How well does your website attract and communicate with potential hires? How well does your company communicate and live up to its employee value proposition to its existing employees? How well is this communicated and evidenced to potential hires? Evaluate your company both as an employer and a hirer – they are different. Put together an action plan for improvement.
                             </p>
 
 
@@ -158,7 +158,7 @@ session_start();
                                         </div>
                                         <div class=" post-details">
                                             <p>Prev Post</p>
-                                            <h4 class="text-uppercase"><a href="./blog-course.php">The web is working for Latest Demanding Courses</a></h4>
+                                            <h4 class="text-uppercase"><a href="./blog-course.php">The web is hosting for Latest Demanding courses</a></h4>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 nav-right justify-content-end d-flex">

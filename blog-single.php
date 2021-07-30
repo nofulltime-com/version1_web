@@ -159,7 +159,7 @@ session_start();
                                     <div class="col-sm-6 nav-right justify-content-end d-flex">
                                         <div class="post-details">
                                             <p>Next Post</p>
-                                            <h4 class="text-uppercase"><a href="./blog-course.php">The web is working for Latest Demanding courses</a></h4>
+                                            <h4 class="text-uppercase"><a href="./blog-course.php">The web is hosting for Latest Demanding courses</a></h4>
                                         </div>
                                         <div class="thumb">
                                             <img src="img/blog-course.jpg" class="img-fluid" alt="">

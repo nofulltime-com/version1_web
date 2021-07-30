@@ -119,7 +119,7 @@ session_start();
                         </ul>
                         <a onclick="return false;">
                             <h1>
-                                The web is working for Latest Demanding courses
+                                The web is hosting for Latest Demanding courses
                             </h1>
                         </a>
                         <div class="content-wrap">

@@ -750,57 +750,42 @@ include './connect.php';
 					</div>
 
 					<div class="single-slidebar">
-						<h4>Carrer Advice Blog</h4>
+						<h4>Career Advice Blog</h4>
 						<div class="blog-list">
 							<div class="single-blog " style="background:#000 url(img/blog1.jpg);">
-								<a href="single.php">
-									<h4>Home Audio Recording <br>
-										For Everyone</h4>
+								<a href="./blog-single.php">
+									<h4>The web is working for <br>
+										part-time businesses</h4>
 								</a>
 								<div class="meta justify-content-between d-flex">
 									<p>
 										02 Hours ago
 									</p>
-									<p>
-										<span class="lnr lnr-heart"></span>
-										06
-										<span class="lnr lnr-bubble"></span>
-										02
-									</p>
+
 								</div>
 							</div>
 							<div class="single-blog " style="background:#000 url(img/blog2.jpg);">
-								<a href="single.php">
-									<h4>Home Audio Recording <br>
-										For Everyone</h4>
+								<a href="./blog-course.php">
+									<h4>The web is hosting for <br>
+										Latest Demanding courses</h4>
 								</a>
 								<div class="meta justify-content-between d-flex">
 									<p>
 										02 Hours ago
 									</p>
-									<p>
-										<span class="lnr lnr-heart"></span>
-										06
-										<span class="lnr lnr-bubble"></span>
-										02
-									</p>
+
 								</div>
 							</div>
 							<div class="single-blog " style="background:#000 url(img/blog1.jpg);">
-								<a href="single.php">
-									<h4>Home Audio Recording <br>
-										For Everyone</h4>
+								<a href="./blog-hiring.php">
+									<h4>The web is working on <br>
+										Improving hiring process</h4>
 								</a>
 								<div class="meta justify-content-between d-flex">
 									<p>
 										02 Hours ago
 									</p>
-									<p>
-										<span class="lnr lnr-heart"></span>
-										06
-										<span class="lnr lnr-bubble"></span>
-										02
-									</p>
+
 								</div>
 							</div>
 						</div>

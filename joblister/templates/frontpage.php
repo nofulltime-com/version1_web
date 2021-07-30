@@ -105,6 +105,13 @@ session_start();
             <div class="row marketing">
                 <div class="col-md-10">
                     <h4 style=font-size:20px;font-weight:800;><?php echo $job->job_title; ?></h4>
+                    <?php if ($job->category_id == 100) { ?>
+                        <h3 style=font-size:18px;font-weight:600;>Part-Time Job</h3>
+                    <?php } elseif ($job->category_id == 102) { ?>
+                        <h3 style=font-size:18px;font-weight:600;>Course</h3>
+                    <?php } elseif ($job->category_id == 103) { ?>
+                        <h3 style=font-size:18px;font-weight:600;>NGO Organisation</h3>
+                    <?php } ?>
                     <p style=font-size:15px;font-weight:400;><?php echo $job->description; ?></p>
                 </div>
                 <div class="col-md-2">
@@ -174,7 +181,21 @@ session_start();
         </div>
     </footer>
     <!-- End footer Area -->
-
+    <script src="jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="../js/easing.min.js"></script>
+    <script src="../js/hoverIntent.js"></script>
+    <script src="../js/superfish.min.js"></script>
+    <script src="../js/jquery.ajaxchimp.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/parallax.min.js"></script>
+    <script src="../js/mail-script.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

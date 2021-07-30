@@ -29,6 +29,17 @@
 </head>
 
 <style>
+    .submit {
+        background-color: #8c78f1;
+        color: white;
+        border-radius: 20px;
+        font-size: 15px;
+        padding: 8px;
+        width: 18%;
+        margin: auto;
+        display: block;
+    }
+
     .special {
         display: none
     }
@@ -132,7 +143,7 @@
                 <label style=font-size:17px;font-weight:800;>Contact Email</label>
                 <input style=font-size:15px;font-weight:400; type="text" class="form-control" name="contact_email">
             </div>
-            <input type="submit" style=background-color:#8c78f1;color:white;border-radius:20px;font-size:15px;padding:8px;width:12%; class="btn btn-default" value="Submit" name="submit">
+            <input type="submit" class="btn btn-default mt-3 submit" value="Submit" name="submit">
         </form><br>
     </div> <!-- /container -->
     <!-- start footer Area -->

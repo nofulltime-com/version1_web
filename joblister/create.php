@@ -1,4 +1,7 @@
-<?php include_once 'config/init.php'; ?>
+<?php
+session_start();
+include_once 'config/init.php';
+?>
 
 <?php
 $job = new Job;
@@ -6,6 +9,7 @@ if (isset($_POST['submit'])) {
 	//Create Data Array
 
 	$data = array();
+	$data['recruiter_id'] = $_SESSION['recruiter_id'];
 	$data['job_title'] = $_POST['job_title'];
 	$data['company'] = $_POST['company'];
 	$data['category_id'] = $_POST['category'];
