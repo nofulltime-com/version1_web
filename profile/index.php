@@ -172,6 +172,10 @@ include '../connect.php';
 		</script>
 	<?php
 	}
+	
+	$sql10 = "SELECT * FROM users WHERE id='$id'";
+   		 $query10 = mysqli_query($conn, $sql10);
+		   $row10 = mysqli_fetch_assoc($query10);
 
 	?>
 	<!-- Page Preloder -->
@@ -248,6 +252,11 @@ include '../connect.php';
 											<a href="../uploads/<?php echo $resume ?>" class="site-btn" download>Download Resume</a>
 										<?php } ?>
 										<a href="#contact" class="site-btn">Contact Me</a>
+										<?php
+										
+										echo '<a href="../recuiter-chatbox/chat.php?id='.$id.'" class="site-btn">Message</a>
+										'; 
+										?>
 									</div>
 								<?php } ?>
 							</div>
