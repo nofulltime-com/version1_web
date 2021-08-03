@@ -172,10 +172,10 @@ include '../connect.php';
 		</script>
 	<?php
 	}
-	
+
 	$sql10 = "SELECT * FROM users WHERE id='$id'";
-   		 $query10 = mysqli_query($conn, $sql10);
-		   $row10 = mysqli_fetch_assoc($query10);
+	$query10 = mysqli_query($conn, $sql10);
+	$row10 = mysqli_fetch_assoc($query10);
 
 	?>
 	<!-- Page Preloder -->
@@ -197,6 +197,8 @@ include '../connect.php';
 
 						<?php
 						if (isset($_SESSION['id'])) { ?>
+							<li class="message-box"><a href="../chatbox/users.php" style="font-size:20px;"><i class="fas fa-comment-alt"></i></a></li>
+
 							<li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
 								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
 								<ul>
@@ -206,6 +208,8 @@ include '../connect.php';
 								</ul>
 							</li>
 						<?php } elseif (isset($_SESSION['recruiter_id'])) { ?>
+							<li class="message-box"><a href="../recuiter-chatbox/users.php" style="font-size:20px;"><i class="fas fa-comment-alt"></i></a></li>
+
 							<li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
 								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
 								<ul>
@@ -253,9 +257,9 @@ include '../connect.php';
 										<?php } ?>
 										<a href="#contact" class="site-btn">Contact Me</a>
 										<?php
-										
-										echo '<a href="../recuiter-chatbox/chat.php?id='.$id.'" class="site-btn">Message</a>
-										'; 
+
+										echo '<a href="../recuiter-chatbox/chat.php?id=' . $id . '" class="site-btn">Message</a>
+										';
 										?>
 									</div>
 								<?php } ?>

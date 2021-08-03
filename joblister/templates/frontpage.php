@@ -62,6 +62,8 @@ session_start();
 
                         <?php
                         if (isset($_SESSION['id'])) { ?>
+                            <li class="message-box"><a href="../chatbox/users.php" style="font-size:20px;"><i class="fas fa-comment-alt"></i></a></li>
+
                             <li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
                                 <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
                                 <ul>
@@ -71,6 +73,8 @@ session_start();
                                 </ul>
                             </li>
                         <?php } elseif (isset($_SESSION['recruiter_id'])) { ?>
+                            <li class="message-box"><a href="../recuiter-chatbox/users.php" style="font-size:20px;"><i class="fas fa-comment-alt"></i></a></li>
+
                             <li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
                                 <i class='fas fa-user-circle mobile special' style='font-size:36px;color:white;'></i>
                                 <ul>

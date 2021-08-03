@@ -76,6 +76,8 @@ if ($res->num_rows > 0) {
                         <li><a href="about-us.php">About Us</a></li>
                         <li><a href="./blog-home.php">Blogs</a></li>
                         <li><a href="contact.php">Contact</a></li>
+                        <li class="message-box"><a href="chatbox/users.php" style="font-size:20px;"><i class="fas fa-comment-alt"></i></a></li>
+
                         <li class="menu-has-children"><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
                             <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
                             <ul>
