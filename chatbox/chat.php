@@ -1,10 +1,8 @@
-<?php 
-  session_start();
- include 'connect.php';
- if(!isset($_SESSION['id']))
-	{
-		
-	}
+<?php
+session_start();
+include 'connect.php';
+if (!isset($_SESSION['id'])) {
+}
 ?>
 <html lang="en">
 
@@ -19,16 +17,16 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/linearicons.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="css/nice-select.css">
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="stylesheet" href="css/main.css">
- <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 
 <style>
@@ -39,37 +37,41 @@
     .menu-has-children {
         background-color: black;
     }
-	.clear{
-		clear:both;
-	}
+
+    .clear {
+        clear: both;
+    }
 
     .mobile {
         display: none;
     }
-	.message-icon{
-			display:none;
-	}
-	
+
+    .message-icon {
+        display: none;
+    }
+
 
     @media only screen and (max-width:738px) {
         #mobile-nav ul .menu-has-children i {
             color: black;
         }
-		
+
         .mobile {
             display: block;
         }
-		.message-box{
-			display: none;
-		}
-		.message-icon{
-			display:unset;
-			position: absolute;
-    color: black;
-    font-size: 20px;
-    top: 37%;
-    left: 81%;
-		}
+
+        .message-box {
+            display: none;
+        }
+
+        .message-icon {
+            display: unset;
+            position: absolute;
+            color: black;
+            font-size: 20px;
+            top: 37%;
+            left: 81%;
+        }
     }
 </style>
 
@@ -79,18 +81,16 @@
         <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="../index.html" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
+                    <a href="../index.php" style="font-size:25px;color:white;font-weight: bold;">NO FULL TIME</a>
                 </div>
-				<nav id="nav-menu-container">
-				
+                <nav id="nav-menu-container">
+
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="../index.html">Home</a></li>
-                        <li><a href="../about-us.html">About Us</a></li>
-                        <li><a href="../category.html">Category</a></li>
-                        <li><a href="../recruiters.html">recruiters</a></li>
-                        <li><a href="../blog-home.html">Blog</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
-						
+                        <li class="menu-active"><a href="../index.php">Home</a></li>
+                        <li><a href="../about-us.php">About Us</a></li>
+                        <li><a href="../blog-home.php">Blog</a></li>
+                        <li><a href="../contact.php">Contact</a></li>
+
                         <li class="menu-has-children"><a href="#"><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
                             <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
                             <ul>
@@ -102,65 +102,64 @@
 
                     </ul>
                 </nav><!-- #nav-menu-container -->
-				
+
             </div>
         </div>
     </header>
-	<div class="clear"></div>
-	
-	
+    <div class="clear"></div>
 
-<div class="chat">
-<div class="container">
-  <div class="wrapper">
-    <section class="chat-area">
-      <header>
-        <?php 
-          $user_id = mysqli_real_escape_string($conn, $_GET['id']);
-          $sql = mysqli_query($conn, "SELECT * FROM recruiter WHERE id = '$user_id'");
-          if(mysqli_num_rows($sql) > 0){
-            $row = mysqli_fetch_assoc($sql);
-          }
-		  $sql3 = "SELECT * FROM seeker_details where id = $user_id";
-   		 $query3 = mysqli_query($conn, $sql3);
-		   $row3 = mysqli_fetch_assoc($query3);
-		   $img = $row3['profile_picture'];
-        ?>
-        <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-       	<img src='php/img/professional-icon.jpg' >
-							
-        <div class="details">
-          <span><?php echo $row['username'];?></span>
-          <p>Active</p>
+
+
+    <div class="chat">
+        <div class="container">
+            <div class="wrapper">
+                <section class="chat-area">
+                    <header>
+                        <?php
+                        $user_id = mysqli_real_escape_string($conn, $_GET['id']);
+                        $sql = mysqli_query($conn, "SELECT * FROM recruiter WHERE id = '$user_id'");
+                        if (mysqli_num_rows($sql) > 0) {
+                            $row = mysqli_fetch_assoc($sql);
+                        }
+                        $sql3 = "SELECT * FROM seeker_details where id = $user_id";
+                        $query3 = mysqli_query($conn, $sql3);
+                        $row3 = mysqli_fetch_assoc($query3);
+                        $img = $row3['profile_picture'];
+                        ?>
+                        <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
+                        <img src='php/img/professional-icon.jpg'>
+
+                        <div class="details">
+                            <span><?php echo $row['username']; ?></span>
+                            <p>Active</p>
+                        </div>
+                    </header>
+                    <div class="chat-box">
+
+                    </div>
+                    <form action="#" class="typing-area">
+                        <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+                        <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
+                        <button style="font-size:15px;">Send</button>
+                    </form>
+                </section>
+            </div>
         </div>
-      </header>
-      <div class="chat-box">
-
-      </div>
-      <form action="#" class="typing-area">
-        <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
-        <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
-        <button style="font-size:15px;">Send</button>
-      </form>
-    </section>
-  </div>
-</div>
-</div>
+    </div>
 
 
 
-<!-- start footer Area -->
-		<footer class="footer-area section-gap mt-5">
+    <!-- start footer Area -->
+    <footer class="footer-area section-gap mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3  col-md-12">
                     <div class="single-footer-widget">
                         <h6>Short Links</h6>
                         <ul class="footer-nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="category.html">Category</a></li>
-                            <li><a href="recruiters.html">Recruiters</a></li>
+                            <li><a href="../index.php">Home</a></li>
+                            <li><a href="../about-us.php">About Us</a></li>
+                            <li><a href="../blog-home.php">Blogs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -168,8 +167,8 @@
                     <div class="single-footer-widget newsletter">
                         <h6>Other Links</h6>
                         <ul class="footer-nav">
-                            <li><a href="terms.html">Terms and Conditions</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="../terms.php">Terms and Conditions</a></li>
+                            <li><a href="../contact.php">Contact</a></li>
                         </ul>
                         <br>
                         <h6>Newsletter</h6>
@@ -218,90 +217,87 @@
                     </script> NoFullTime |All rights reserved
                 </p>
                 <div class="col-lg-4 col-sm-12 footer-social">
-							<a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fab fa-facebook-f"></i></i></a>
-							<a href="https://www.instagram.com/abc_infomedia/"><i class="fab fa-instagram"></i></a>
-							<a href="https://twitter.com/abc_infomedia/"><i class="fab fa-twitter"></i></a>
-							<a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fab fa-linkedin"></i></a>
-							<a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fab fa-pinterest"></i></a>
-							<a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fab fa-facebook-f"></i></i></a>
+                    <a href="https://www.instagram.com/abc_infomedia/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/abc_infomedia/"><i class="fab fa-twitter"></i></a>
+                    <a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
     </footer>
-	<!-- End footer Area -->
+    <!-- End footer Area -->
 
 
-  <script>
-  
-  const form = document.querySelector(".typing-area"),
-incoming_id = form.querySelector(".incoming_id").value,
-inputField = form.querySelector(".input-field"),
-sendBtn = form.querySelector("button"),
-chatBox = document.querySelector(".chat-box");
+    <script>
+        const form = document.querySelector(".typing-area"),
+            incoming_id = form.querySelector(".incoming_id").value,
+            inputField = form.querySelector(".input-field"),
+            sendBtn = form.querySelector("button"),
+            chatBox = document.querySelector(".chat-box");
 
-form.onsubmit = (e)=>{
-    e.preventDefault();
-}
+        form.onsubmit = (e) => {
+            e.preventDefault();
+        }
 
-inputField.focus();
-inputField.onkeyup = ()=>{
-    if(inputField.value != ""){
-        sendBtn.classList.add("active");
-    }else{
-        sendBtn.classList.remove("active");
-    }
-}
+        inputField.focus();
+        inputField.onkeyup = () => {
+            if (inputField.value != "") {
+                sendBtn.classList.add("active");
+            } else {
+                sendBtn.classList.remove("active");
+            }
+        }
 
-sendBtn.onclick = ()=>{
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/insert-chat.php", true);
-    xhr.onload = ()=>{
-      if(xhr.readyState === XMLHttpRequest.DONE){
-          if(xhr.status === 200){
-              inputField.value = "";
-              scrollToBottom();
-          }
-      }
-    }
-    let formData = new FormData(form);
-    xhr.send(formData);
-}
-chatBox.onmouseenter = ()=>{
-    chatBox.classList.add("active");
-}
+        sendBtn.onclick = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/insert-chat.php", true);
+            xhr.onload = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        inputField.value = "";
+                        scrollToBottom();
+                    }
+                }
+            }
+            let formData = new FormData(form);
+            xhr.send(formData);
+        }
+        chatBox.onmouseenter = () => {
+            chatBox.classList.add("active");
+        }
 
-chatBox.onmouseleave = ()=>{
-    chatBox.classList.remove("active");
-}
+        chatBox.onmouseleave = () => {
+            chatBox.classList.remove("active");
+        }
 
-setInterval(() =>{
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/get-chat.php", true);
-    xhr.onload = ()=>{
-      if(xhr.readyState === XMLHttpRequest.DONE){
-          if(xhr.status === 200){
-            let data = xhr.response;
-            chatBox.innerHTML = data;
-            if(!chatBox.classList.contains("active")){
-                scrollToBottom();
-              }
-          }
-      }
-    }
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send("incoming_id="+incoming_id);
-}, 500);
+        setInterval(() => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/get-chat.php", true);
+            xhr.onload = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        let data = xhr.response;
+                        chatBox.innerHTML = data;
+                        if (!chatBox.classList.contains("active")) {
+                            scrollToBottom();
+                        }
+                    }
+                }
+            }
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send("incoming_id=" + incoming_id);
+        }, 500);
 
-function scrollToBottom(){
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }
-  
-  
-  </script>
-  
-  
-  
-     <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        function scrollToBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+
+
+
+    <script src="js/vendor/jquery-2.2.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
@@ -316,7 +312,8 @@ function scrollToBottom(){
     <script src="js/parallax.min.js"></script>
     <script src="js/mail-script.js"></script>
     <script src="js/main.js"></script>
-  
+
 
 </body>
+
 </html>
