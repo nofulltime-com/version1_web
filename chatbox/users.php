@@ -1,6 +1,6 @@
-<?php 
-  session_start();
- include 'connect.php';
+<?php
+session_start();
+include 'connect.php';
 
 ?>
 
@@ -26,115 +26,115 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
- <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 
 <style>
-.mobile {
-		display: none;
-	}
-	@media only screen and (max-width:938px) {
-	
-		.mobile {
-			display: block;
-		}
-		
-		
-	}
-	</style>
+    .mobile {
+        display: none;
+    }
+
+    @media only screen and (max-width:938px) {
+
+        .mobile {
+            display: block;
+        }
+
+
+    }
+</style>
 
 <body>
 
-   
-
-	<header id="header" id="home" style="background-color:black;">
-		<div class="container">
-			<div class="row align-items-center justify-content-between d-flex">
-				<div id="logo">
-					<a style="color:white ;font-size: x-large;" href="../index.php"><span><i class="fas fa-dove"></i></span> Nofulltime</a>
-				</div>
-				<nav id="nav-menu-container">
-					<ul class="nav-menu">
-						<li class="menu-active"><a href="../index.php">Home</a></li>
-						<li><a href="../about-us.php">About Us</a></li>
-						<li><a href="../blog-home.php">Blogs</a></li>
-						<li><a href="../contact.php">Contact</a></li>
-						<?php
-						if (isset($_SESSION['id'])) { ?>
-							
-							<li class="menu-has-children" style='background-color:transparent;'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
-								
-									<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
-								<ul>
-									<li><a href="../profile/index.php">Profile</a></li>
-									<li><a href="../seeker_preferences.php">Edit</a></li>
-									<li><a href="../logout.php">Logout</a></li>
-								</ul>
-							</li>
-						<?php } elseif (isset($_SESSION['recruiter_id'])) { ?>
-							
-							<li class="menu-has-children" style='background-color:transparent;'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
-								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
-								<ul>
-									<li><a href="../recruiters.php">Dashboard</a></li>
-									<li><a href="../price.php">Subscribe</a></li>
-									<li><a href="../search.php">Search</a></li>
-									<li><a href="../recruiter_logout.php">Logout</a></li>
-								</ul>
-							</li>
-						<?php } else { ?>
-							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Signup</a>
-								<ul>
-									<li><a href="./Register/studentRegister.php">As a Student</a></li>
-									<li><a href="./Register/recruiterRegister.php">As a recruiter</a></li>
-								</ul>
-							</li>
-							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Login</a>
-								<ul>
-									<li><a href="./Register/studentLogin.php">As a Student</a></li>
-									<li><a href="./Register/recruiterLogin.php">As a recruiter</a></li>
-								</ul>
-							</li>
-						<?php } ?>
-					</ul>
-				</nav><!-- #nav-menu-container -->
 
 
-			</div>
-		</div>
-	</header><!-- #header -->
-	
-	
-	
-	<div class="chat">
-	<div class="my-chat">
-	<h3 style="text-align:center;">My Chat</h3>
-	</div>
-	
+    <header id="header" id="home" style="background-color:black;">
+        <div class="container">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a style="color:white ;font-size: x-large;" href="../index.php"><span><i class="fas fa-dove"></i></span> Nofulltime</a>
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li class="menu-active"><a href="../index.php">Home</a></li>
+                        <li><a href="../about-us.php">About Us</a></li>
+                        <li><a href="../blog-home.php">Blogs</a></li>
+                        <li><a href="../contact.php">Contact</a></li>
+                        <?php
+                        if (isset($_SESSION['id'])) { ?>
 
-  <div class="wrapperrs">
-    <section class="users">
-     
-     <div class="users-list">
-  <?php include "php/users.php"; ?>
-      </div>
-    </section>
-  </div>
-  </div>
-  
-<!-- start footer Area -->
-	<footer class="footer-area section-gap mt-5">
+                            <li class="menu-has-children" style='background-color:transparent;'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+
+                                <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+                                <ul>
+                                    <li><a href="../profile/index.php">Profile</a></li>
+                                    <li><a href="../seeker_preferences.php">Edit</a></li>
+                                    <li><a href="../logout.php">Logout</a></li>
+                                </ul>
+                            </li>
+                        <?php } elseif (isset($_SESSION['recruiter_id'])) { ?>
+
+                            <li class="menu-has-children" style='background-color:transparent;'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
+                                <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+                                <ul>
+                                    <li><a href="../recruiters.php">Dashboard</a></li>
+                                    <li><a href="../price.php">Subscribe</a></li>
+                                    <li><a href="../search.php">Search</a></li>
+                                    <li><a href="../recruiter_logout.php">Logout</a></li>
+                                </ul>
+                            </li>
+                        <?php } else { ?>
+                            <li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Signup</a>
+                                <ul>
+                                    <li><a href="./Register/studentRegister.php">As a Student</a></li>
+                                    <li><a href="./Register/recruiterRegister.php">As a recruiter</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Login</a>
+                                <ul>
+                                    <li><a href="./Register/studentLogin.php">As a Student</a></li>
+                                    <li><a href="./Register/recruiterLogin.php">As a recruiter</a></li>
+                                </ul>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </nav><!-- #nav-menu-container -->
+
+
+            </div>
+        </div>
+    </header><!-- #header -->
+
+
+
+    <div class="chat">
+        <div class="my-chat">
+            <h3 style="text-align:center;">My Chat</h3>
+        </div>
+
+
+        <div class="wrapperrs">
+            <section class="users">
+
+                <div class="users-list">
+                    <?php include "php/users.php"; ?>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- start footer Area -->
+    <footer class="footer-area section-gap mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3  col-md-12">
                     <div class="single-footer-widget">
                         <h6>Short Links</h6>
                         <ul class="footer-nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="category.html">Category</a></li>
-                            <li><a href="recruiters.html">Recruiters</a></li>
+                            <li><a href="../index.php">Home</a></li>
+                            <li><a href="../about-us.php">About Us</a></li>
+                            <li><a href="../blog-home.php">Blogs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -142,8 +142,8 @@
                     <div class="single-footer-widget newsletter">
                         <h6>Other Links</h6>
                         <ul class="footer-nav">
-                            <li><a href="terms.html">Terms and Conditions</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="../terms.php">Terms and Conditions</a></li>
+                            <li><a href="../contact.php">Contact</a></li>
                         </ul>
                         <br>
                         <h6>Newsletter</h6>
@@ -192,23 +192,23 @@
                     </script> NoFullTime |All rights reserved
                 </p>
                 <div class="col-lg-4 col-sm-12 footer-social">
-							<a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fab fa-facebook"></i></a>
-							<a href="https://www.instagram.com/abc_infomedia/"><i class="fab fa-instagram"></i></a>
-							<a href="https://twitter.com/abc_infomedia/"><i class="fab fa-twitter"></i></a>
-							<a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fab fa-linkedin"></i></a>
-							<a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fab fa-pinterest"></i></a>
-							<a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/abcinfomediapvtltd/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/abc_infomedia/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/abc_infomedia/"><i class="fab fa-twitter"></i></a>
+                    <a href="https://in.linkedin.com/company/abc-infomedia-private-limited"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://in.pinterest.com/abcinfomediapvtltd/"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.youtube.com/channel/UCa5hWmytEVKaeyqI_jpgAlw"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
     </footer>
-	<!-- End footer Area -->
-  
-  
-  
- 
+    <!-- End footer Area -->
 
-   <script src="js/vendor/jquery-2.2.4.min.js"></script>
+
+
+
+
+    <script src="js/vendor/jquery-2.2.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
@@ -223,8 +223,9 @@
     <script src="js/parallax.min.js"></script>
     <script src="js/mail-script.js"></script>
     <script src="js/main.js"></script>
-  
-  
-  
+
+
+
 </body>
+
 </html>
