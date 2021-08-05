@@ -1,0 +1,27 @@
+#search-bar{
+    position: relative;
+   
+}
+.inner-filter{
+    display: flex;
+    flex-direction: column;
+    width:90%;
+
+}
+.inner-filter input{
+    width:90%;
+}
+#search-data ul{
+    background-color: white !important;
+    margin-left: 40px;
+    margin-right: 40px;
+    
+}
+.query-tab li{
+    list-style: none;
+    text-transform: uppercase;
+    background-color: white;
+    height: 40px !important;
+    line-height: 30px !important;
+}
+
