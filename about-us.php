@@ -231,25 +231,25 @@ session_start();
 	</section>
 	<!-- End team Area -->
 
-
-	<!-- Start callto-action Area -->
-	<section class="callto-action-area section-gap">
-		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="menu-content col-lg-9">
-					<div class="title text-center">
-						<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
-						<p class="text-white">Register for Free. Take NoFullTime to apply to part time jobs,learn
-							courses and work for NGO's too.</p>
-						<a class="primary-btn" href="./Register/studentLogin.php">I am a Candidate</a>
-						<a class="primary-btn" href="./Register/recruiterLogin.php">I am a Recruiter</a>
+	<?php if (!(isset($_SESSION['id']) || isset($_SESSION['recruiter_id']))) { ?>
+		<!-- Start callto-action Area -->
+		<section class="callto-action-area section-gap">
+			<div class="container">
+				<div class="row d-flex justify-content-center">
+					<div class="menu-content col-lg-9">
+						<div class="title text-center">
+							<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
+							<p class="text-white">Register for Free. Take NoFullTime to apply to part time jobs,learn
+								courses and work for NGO's too.</p>
+							<a class="primary-btn" href="./Register/studentLogin.php">I am a Candidate</a>
+							<a class="primary-btn" href="./Register/recruiterLogin.php">I am a Recruiter</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- End calto-action Area -->
-
+		</section>
+		<!-- End calto-action Area -->
+	<?php } ?>
 	<!-- Start testimonial Area -->
 
 	<section class="testimonial-area section-gap" id="review">

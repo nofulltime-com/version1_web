@@ -60,7 +60,7 @@ include './connect.php';
 						<li><a href="contact.php">Contact</a></li>
 						<?php
 						if (isset($_SESSION['id'])) { ?>
-							<li class="message-box"><a href="chatbox/users.php"  style="font-size:20px;"><i class="fas fa-comment-alt"></i></a></li>
+							<li class="message-box"><a href="chatbox/users.php" style="font-size:20px;"><i class="fas fa-comment-alt"></i></a></li>
 							<li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
 								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
 								<ul>
@@ -70,7 +70,7 @@ include './connect.php';
 								</ul>
 							</li>
 						<?php } elseif (isset($_SESSION['recruiter_id'])) { ?>
-						<li class="message-box"><a href="recuiter-chatbox/users.php"  style="font-size:20px;"><i class="fas fa-comment-alt"></i></a></li>
+							<li class="message-box"><a href="recuiter-chatbox/users.php" style="font-size:20px;"><i class="fas fa-comment-alt"></i></a></li>
 							<li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
 								<i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
 								<ul>
@@ -129,12 +129,12 @@ include './connect.php';
 							</div>
 
 							<div id="search-bar" class="col-lg-3 form-cols">
-							<div id="inner-filter">
-							<input list="search-data" class="default-select" type="text" id="search1" autocomplete="off" >
-								<div id="search-data">
-						       </div>
+								<div id="inner-filter">
+									<input list="search-data" class="default-select" type="text" id="search1" autocomplete="off">
+									<div id="search-data">
+									</div>
 								</div>
-								
+
 							</div>
 							<div class="col-lg-2 form-cols">
 								<button type="submit" class="btn btn-info">
@@ -798,24 +798,25 @@ include './connect.php';
 	<!-- End post Area -->
 
 
-	<!-- Start callto-action Area -->
-	<section class="callto-action-area section-gap" id="join">
-		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="menu-content col-lg-9">
-					<div class="title text-center">
-						<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
-						<p class="text-white">Register for Free. Take NoFullTime to apply to part time jobs,learn
-							courses and work for NGO's too.</p>
-						<a class="primary-btn" href="./Register/studentLogin.php">I am a Candidate</a>
-						<a class="primary-btn" href="./Register/recruiterLogin.php">I am a Recruiter</a>
+	<?php if (!(isset($_SESSION['id']) || isset($_SESSION['recruiter_id']))) { ?>
+		<!-- Start callto-action Area -->
+		<section class="callto-action-area section-gap" id="join">
+			<div class="container">
+				<div class="row d-flex justify-content-center">
+					<div class="menu-content col-lg-9">
+						<div class="title text-center">
+							<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
+							<p class="text-white">Register for Free. Take NoFullTime to apply to part time jobs,learn
+								courses and work for NGO's too.</p>
+							<a class="primary-btn" href="./Register/studentLogin.php">I am a Candidate</a>
+							<a class="primary-btn" href="./Register/recruiterLogin.php">I am a Recruiter</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- End calto-action Area -->
-
+		</section>
+		<!-- End calto-action Area -->
+	<?php } ?>
 	<!-- Start download Area -->
 	<section class="download-area section-gap" id="app">
 		<div class="container">
@@ -937,32 +938,32 @@ include './connect.php';
 	<script src="js/parallax.min.js"></script>
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
-			<script type="text/javascript">
-    $("#search1").on("keyup",function () {
-        var search_term=$(this).val();
-		if(search_term!=''){
-        $.ajax({
-            url:"live-search.php",
-            type:"POST",
-            data: {search:search_term },
-            success: function(data){
-				$("#search-data").fadeIn();	
-              $("#search-data").html(data);
-            }
-        });
-    }
-	else{
-		$("#search-data").fadeOut();	
-              $("#search-data").html("");
+	<script type="text/javascript">
+		$("#search1").on("keyup", function() {
+			var search_term = $(this).val();
+			if (search_term != '') {
+				$.ajax({
+					url: "live-search.php",
+					type: "POST",
+					data: {
+						search: search_term
+					},
+					success: function(data) {
+						$("#search-data").fadeIn();
+						$("#search-data").html(data);
+					}
+				});
+			} else {
+				$("#search-data").fadeOut();
+				$("#search-data").html("");
 
-	}
-	});
-	$("#document").on("click",'li' ,function (){
-		$("#search1").val($(this.text()));
-		$("#search-data").fadeOut();
-	});
-	
-</script>
+			}
+		});
+		$("#document").on("click", 'li', function() {
+			$("#search1").val($(this.text()));
+			$("#search-data").fadeOut();
+		});
+	</script>
 </body>
 
 </html>
