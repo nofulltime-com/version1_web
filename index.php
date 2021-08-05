@@ -39,6 +39,7 @@ include './connect.php';
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/filter_style.css">
 	<link rel="stylesheet" href="css/element.css">
 </head>
 
@@ -127,16 +128,13 @@ include './connect.php';
 								</div>
 							</div>
 
-							<div class="col-lg-3 form-cols">
-								<div class="default-select" id="default-selects">
-									<select>
-										<option value=" 1">Select area</option>
-										<option value="2">Chennai</option>
-										<option value="3">Hyderabad</option>
-										<option value="4">Delhi</option>
-										<option value="5">Mumbai</option>
-									</select>
+							<div id="search-bar" class="col-lg-3 form-cols">
+							<div id="inner-filter">
+							<input list="search-data" class="default-select" type="text" id="search1" autocomplete="off" >
+								<div id="search-data">
+						       </div>
 								</div>
+								
 							</div>
 							<div class="col-lg-2 form-cols">
 								<button type="submit" class="btn btn-info">
@@ -939,6 +937,32 @@ include './connect.php';
 	<script src="js/parallax.min.js"></script>
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
+			<script type="text/javascript">
+    $("#search1").on("keyup",function () {
+        var search_term=$(this).val();
+		if(search_term!=''){
+        $.ajax({
+            url:"live-search.php",
+            type:"POST",
+            data: {search:search_term },
+            success: function(data){
+				$("#search-data").fadeIn();	
+              $("#search-data").html(data);
+            }
+        });
+    }
+	else{
+		$("#search-data").fadeOut();	
+              $("#search-data").html("");
+
+	}
+	});
+	$("#document").on("click",'li' ,function (){
+		$("#search1").val($(this.text()));
+		$("#search-data").fadeOut();
+	});
+	
+</script>
 </body>
 
 </html>
