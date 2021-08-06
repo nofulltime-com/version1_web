@@ -248,7 +248,9 @@ include '../connect.php';
 									<li><span>Address</span><?php echo $address ?></li>
 									<li><span>PIN code</span><?php echo $pin_code ?></li>
 									<li><span>E-mail</span><?php echo $email ?></li>
-									<li><span>Phone </span><?php echo $phno ?></li>
+									<?php if ($phno) { ?>
+										<li><span>Phone </span><?php echo $phno; ?></li>
+									<?php } ?>
 								</ul>
 								<?php if (isset($_SESSION['recruiter_id'])) { ?>
 									<div class="col-md-8 mt-5 text-md-right header-buttons">
