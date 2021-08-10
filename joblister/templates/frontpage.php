@@ -69,6 +69,7 @@ session_start();
                                 <ul>
                                     <li><a href="./index.php">Profile</a></li>
                                     <li><a href="../seeker_preferences.php">Edit</a></li>
+                                    <li><a href="../../jobseekers/index.php">Latest Posts</a></li>
                                     <li><a href="../logout.php">Logout</a></li>
                                 </ul>
                             </li>
