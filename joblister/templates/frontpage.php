@@ -24,11 +24,11 @@ session_start();
     <link rel="stylesheet" href="../css/animate.min.css">
     <link rel="stylesheet" href="../css/owl.carousel.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="./seeker_details.css">
+    <link rel="stylesheet" href="/seeker_details.css">
     <title>NoFullTime | Posts</title>
     <link rel="stylesheet" href="font-awesome.min.css">
     <style>
-        <?php include "../templates/inc/css/main2.css" ?><?php include "../templates/inc/css/narrow.css" ?><?php include "../templates/inc/css/main.css" ?><?php include "../templates/inc/css/bootstrap.css" ?><?php include "../templates/inc/css/linearicons.css" ?><?php include "../templates/inc/css/font-awesome.min.css" ?><?php include "../templates/inc/css/magnific-popup.css" ?><?php include "../templates/inc/css/nice-select.css" ?><?php include "../templates/inc/css//owl.carousel.css" ?><?php include "../templates/inc/css/animate.min.css" ?>
+         <?php include "../templates/inc/css/main2.css" ?><?php include "../templates/inc/css/narrow.css" ?><?php include "../templates/inc/css/main.css" ?><?php include "../templates/inc/css/bootstrap.css" ?><?php include "../templates/inc/css/linearicons.css" ?><?php include "../templates/inc/css/font-awesome.min.css" ?><?php include "../templates/inc/css/magnific-popup.css" ?><?php include "../templates/inc/css/nice-select.css" ?><?php include "../templates/inc/css//owl.carousel.css" ?><?php include "../templates/inc/css/animate.min.css" ?>
     </style>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
