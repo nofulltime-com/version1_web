@@ -960,10 +960,10 @@ include './connect.php';
 
 			}
 		});
-		$("#document").on("click", 'li', function() {
-			$("#search1").val($(this.text()));
-			$("#search-data").fadeOut();
-		});
+		$(document).on('click','li',function(){
+		$("#search1").val($(this).text());
+		$("#search-data").fadeOut();
+	});
 	</script>
 </body>
 
