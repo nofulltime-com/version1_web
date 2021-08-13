@@ -369,11 +369,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="row mt-2">
                         <div class="col-md-6 mt-4">
                             <label for="field" class="form-label">Field:</label>
-                            <input type="text" class="form-control mt-2" id="field" value='<?php echo "$field"; ?>' name="field" placeholder="e.g Software Development" required>
+                            <input type="text" class="form-control mt-2" id="field" onkeyup="fieldup()" value='<?php echo "$field"; ?>' name="field" placeholder="e.g Software Development" required>
+                            <ul class="list-group" id="myList1">
+                                <li class="list-group-item" style="display:none" onclick="selected('Software Engineering')">Software Engineering</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Web Development')">Web Development</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('App Development')">App Development</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Accounting')">Accounting</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Bussiness')">Bussiness</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Management')">Management</li>
+                            </ul>  
+                            
                         </div>
                         <div class="col-md-6 mt-4">
                             <label for=" position" class="form-label">Position:</label>
-                            <input type="text" class="form-control mt-2" id="position" value='<?php echo "$position"; ?>' name="position" placeholder="e.g Full Stack Developer" required>
+                            <input type="text" class="form-control mt-2" onkeyup="positionup()" id="position" value='<?php echo "$position"; ?>' name="position" placeholder="e.g Full Stack Developer" required>
+                            <ul class="list-group" id="myList2">
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Software Engineering')">Software Engineering</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Web Development')">Web Development</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('App Development')">App Development</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Accounting')">Accounting</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Bussiness')">Bussiness</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Management')">Management</li>
+                            </ul>  
                         </div>
                     </div>
                     <div class="row mt-5 p-3">
@@ -405,11 +422,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="row mt-2">
                         <div class="col-md-6 mt-4">
                             <label for="course_field" class="form-label">Field:</label>
-                            <input type="text" class="form-control mt-2" id="course_field" name="course_field" value='<?php echo "$course_field"; ?>' placeholder="e.g Web Development" required>
-                        </div>
+                            <input type="text" class="form-control mt-2" onkeyup="coursefieldup()" id="course_field" name="course_field" value='<?php echo "$course_field"; ?>' placeholder="e.g Web Development" required>
+                            <ul class="list-group" id="myList3">
+                                <li class="list-group-item" style="display:none" onclick="courseselected('Software Engineering')">Software Engineering</li>
+                                <li class="list-group-item" style="display:none" onclick="courseselected('Accounting')">Accounting</li>
+                                <li class="list-group-item" style="display:none" onclick="courseselected('Bussiness')">Bussiness</li>
+                                <li class="list-group-item" style="display:none" onclick="courseselected('Management')">Management</li>
+                                <li class="list-group-item" style="display:none" onclick="courseselected('Web Development')">Web Development</li>
+                                <li class="list-group-item" style="display:none" onclick="courseselected('App Development')">App Development</li>
+                            </ul> 
+                            </div>
                         <div class="col-md-6 mt-4">
-                            <label for="course" class="form-label">Course Name:</label>
-                            <input type="text" class="form-control mt-2" id="course" name="course_name" value='<?php echo "$course_name"; ?>' placeholder="e.g REACT JS" required>
+                            <label for="course_name" class="form-label">Course Name:</label>
+                            <input type="text" class="form-control mt-2" onkeyup="coursenameup()" id="course_name" name="course_name" value='<?php echo "$course_name"; ?>' placeholder="e.g REACT JS" required>
+                            <ul class="list-group" id="myList4">
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Software Engineering')">Software Engineering</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Accounting')">Accounting</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Bussiness')">Bussiness</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Management')">Management</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Web Development')">Web Development</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('App Development')">App Development</li>
+                            </ul> 
                         </div>
                     </div>
 
@@ -447,11 +480,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <label for="ngo_field" class="form-label mt-5">Under which ngo sector you want to work for?</label>
             <div class="col-12 mt-2">
-                <input type="text" class="form-control mt-2" id="ngo_field" value='<?php echo "$ngo_field"; ?>' name="ngo_field" placeholder="e.g Women's Development & Empowerment" required>
-                    </div>
+                <input type="text" class="form-control mt-2" onkeyup="ngofieldup()" id="ngo_field" value='<?php echo "$ngo_field"; ?>' name="ngo_field" placeholder="e.g Women's Development & Empowerment" required>
+                 <ul class="list-group" id="myList5">
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Women's Development & Empowerment')">Women's Development & Empowerment</li>
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Agriculture')">Agriculture</li>
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Civic Issues')">Civic Issues</li>
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Management')">Management</li>
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Differently Abled')">Differently Abled</li>
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Childeren Welfare')">Childeren Welfare</li>
+            </ul>     
+                </div>
                 <label for="ngo_position" class="form-label mt-4">Position of Work</label>
                 <div class="col-12 mt-2">
-                    <input type="text" class="form-control mt-2" id="ngo_position" value='<?php echo "$ngo_position"; ?>' name="ngo_position" placeholder="e.g Data Entry operator" required>
+                    <input type="text" class="form-control mt-2" onkeyup="ngopositionup()" id="ngo_position" value='<?php echo "$ngo_position"; ?>' name="ngo_position" placeholder="e.g Data Entry operator" required>
+                    <ul class="list-group" id="myList6">
+                        <li class="list-group-item" style="display:none" onclick="posselected('Women's Development & Empowerment')">Women's Development & Empowerment</li>
+                        <li class="list-group-item" style="display:none" onclick="posselected('Agriculture')">Agriculture</li>
+                        <li class="list-group-item" style="display:none" onclick="posselected('Civic Issues')">Civic Issues</li>
+                        <li class="list-group-item" style="display:none" onclick="posselected('Management')">Management</li>
+                        <li class="list-group-item" style="display:none" onclick="posselected('Differently Abled')">Differently Abled</li>
+                        <li class="list-group-item" style="display:none" onclick="posselected('Childeren Welfare')">Childeren Welfare</li>
+                    </ul> 
                     </div>
 
 
@@ -483,24 +532,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="row mt-2">
                         <div class="col-md-6 mt-4">
                             <label for="field" class="form-label">Field:</label>
-                            <input type="text" class="form-control mt-2" id="field" name="field" placeholder="e.g Software Development" required>
+                            <input type="text" class="form-control mt-2" id="field" name="field" onkeyup="fieldup()" placeholder="e.g Software Development" required>
+                            <ul class="list-group" id="myList1">
+                                <li class="list-group-item" style="display:none" onclick="selected('Software Engineering')">Software Engineering</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Accounting')">Accounting</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Bussiness')">Bussiness</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Management')">Management</li>
+                            </ul>  
                         </div>
-                        <div class="col-md-6 mt-4">
-                            <label for=" position" class="form-label">Position:</label>
-                            <input type="text" class="form-control mt-2" id="position" name="position" placeholder="e.g Full Stack Developer" required>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <label for="part_time_start">Enter the time interval when you will be available for part-time:</label>
-                        <div class="col-md-6">
-                            <small for="part_time_start">Start Time:</small>
-                            <input type="time" class="form-control" id="part_time_start" name="part_time_start" required>
-                        </div>
-                        <div class="col-md-6">
-                            <small for="part_time_end">End Time:</small>
-                            <input type="time" class="form-control" id="part_time_end" name="part_time_end" required>
-                        </div>
-                    </div>` : "";
+    <div class="col-md-6 mt-4">
+        <label for=" position" class="form-label">Position:</label>
+        <input type="text" class="form-control mt-2" id="position" onkeyup="positionup()" name="position" placeholder="e.g Full Stack Developer" required>
+        <ul class="list-group" id="myList2">
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Software Engineering')">Software Engineering</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Web Development')">Web Development</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('App Development')">App Development</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Accounting')">Accounting</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Bussiness')">Bussiness</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Management')">Management</li>
+                            </ul>  
+    </div>
+    </div>
+    <div class="row mt-5">
+        <label for="part_time_start">Enter the time interval when you will be available for part-time:</label>
+        <div class="col-md-6">
+            <small for="part_time_start">Start Time:</small>
+            <input type="time" class="form-control" id="part_time_start" name="part_time_start" required>
+        </div>
+        <div class="col-md-6">
+            <small for="part_time_end">End Time:</small>
+            <input type="time" class="form-control" id="part_time_end" name="part_time_end" required>
+        </div>
+    </div>` : "";
             document.getElementById('partime-details').style.display = v1.checked ? "block" : "none";
 
 
@@ -508,40 +571,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         function course() {
             document.getElementById('course-details').innerHTML = v2.checked ? `<label for="name" class="form-label">Where do you want to learn the course?</label>
-                    <div class="col-md-6 mt-3">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="learning_place" id="online" value="online" required>
-                            <label class="form-check-label" for="online">Online</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="learning_place" id="coaching_center" value="coaching_center">
-                            <label class="form-check-label" for="coaching_center">At Coaching center</label>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-6 mt-4">
-                            <label for="course_field" class="form-label">Field:</label>
-                            <input type="text" class="form-control mt-2" id="course_field" name="course_field" placeholder="e.g Web Development" required>
-                        </div>
-                        <div class="col-md-6 mt-4">
-                            <label for="course" class="form-label">Course Name:</label>
-                            <input type="text" class="form-control mt-2" id="course" name="course_name" placeholder="e.g REACT JS" required>
-                        </div>
-                    </div>
+    <div class="col-md-6 mt-3">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="learning_place" id="online" value="online" required>
+            <label class="form-check-label" for="online">Online</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="learning_place" id="coaching_center" value="coaching_center">
+            <label class="form-check-label" for="coaching_center">At Coaching center</label>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-6 mt-4">
+            <label for="course_field" class="form-label">Field:</label>
+            <input type="text" class="form-control mt-2" onkeyup="coursefieldup()" id="course_field" name="course_field" placeholder="e.g Web Development" required>
+            <ul class="list-group" id="myList3">
+                <li class="list-group-item" style="display:none" onclick="courseselected('Software Engineering')">Software Engineering</li>
+                <li class="list-group-item" style="display:none" onclick="courseselected('Accounting')">Accounting</li>
+                <li class="list-group-item" style="display:none" onclick="courseselected('Bussiness')">Bussiness</li>
+                <li class="list-group-item" style="display:none" onclick="courseselected('Management')">Management</li>
+                <li class="list-group-item" style="display:none" onclick="courseselected('Web Development')">Web Development</li>
+                <li class="list-group-item" style="display:none" onclick="courseselected('App Development')">App Development</li>
+            </ul> 
+        </div>
+        <div class="col-md-6 mt-4">
+            <label for="course_name" class="form-label">Course Name:</label>
+            <input type="text" class="form-control mt-2" id="course_name" onkeyup="coursenameup()" name="course_name" placeholder="e.g REACT JS" required>
+            <ul class="list-group" id="myList4">
+                <li class="list-group-item" style="display:none" onclick="nameselected('Software Engineering')">Software Engineering</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Accounting')">Accounting</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Bussiness')">Bussiness</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Management')">Management</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Web Development')">Web Development</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('App Development')">App Development</li>
+            </ul> 
+        </div>
+    </div>
 
 
-                    <div class="row mt-5">
-                        <label for="course_time_start">Enter the time interval you want to use for the course:</label>
-                        <div class="col-md-6">
-                            <small for="course_time_start">Start Time:</small>
-                            <input type="time" class="form-control" id="course_time_start" name="course_time_start" required>
-                        </div>
-                        <div class="col-md-6">
-                            <small for="course_time_end">End Time:</small>
-                            <input type="time" class="form-control" id="course_time_end" name="course_time_end" required>
-                        </div>
-                    </div>
-` : "";
+    <div class="row mt-5">
+        <label for="course_time_start">Enter the time interval you want to use for the course:</label>
+        <div class="col-md-6">
+            <small for="course_time_start">Start Time:</small>
+            <input type="time" class="form-control" id="course_time_start" name="course_time_start" required>
+        </div>
+        <div class="col-md-6">
+            <small for="course_time_end">End Time:</small>
+            <input type="time" class="form-control" id="course_time_end" name="course_time_end" required>
+        </div>
+    </div>
+    ` : "";
             document.getElementById('course-details').style.display = v2.checked ? "block" : "none";
         }
 
@@ -549,43 +628,220 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             document.getElementById('ngo-details').style.display = v3.checked ? "block" : "none";
 
             document.getElementById('ngo-details').innerHTML = v3.checked ? `<label for="name" class="form-label">Your prefered place of operation?</label>
-                            <div class="col-md-6 mt-3">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="ngo_place" id="ngo_wfh" value="wfh" required>
-                                        <label class="form-check-label" for="ngo_wfh">Work From Home</label>
-                        </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="ngo_place" id="ngo_in_o" value="in_office">
-                                            <label class="form-check-label" for="ngo_in_o">In-Office</label>
-                        </div>
-                                    </div>
-                                    <label for="ngo_field" class="form-label mt-5">Under which ngo sector you want to work for?</label>
-                                    <div class="col-12 mt-2">
-                                        <input type="text" class="form-control mt-2" id="ngo_field"  name="ngo_field" placeholder="e.g Women's Development & Empowerment" required>
-                    </div>
+    <div class="col-md-6 mt-3">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="ngo_place" id="ngo_wfh" value="wfh" required>
+            <label class="form-check-label" for="ngo_wfh">Work From Home</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="ngo_place" id="ngo_in_o" value="in_office">
+            <label class="form-check-label" for="ngo_in_o">In-Office</label>
+        </div>
+    </div>
+    <label for="ngo_field" class="form-label mt-5">Under which ngo sector you want to work for?</label>
+    <div class="col-12 mt-2">
+        <input type="text" class="form-control mt-2" id="ngo_field" onkeyup="ngofieldup()" name="ngo_field" placeholder="e.g Women's Development & Empowerment" required>
+        <ul class="list-group" id="myList5">
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Women's Development & Empowerment')">Women's Development & Empowerment</li>
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Agriculture')">Agriculture</li>
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Civic Issues')">Civic Issues</li>
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Management')">Management</li>
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Differently Abled')">Differently Abled</li>
+                <li class="list-group-item" style="display:none" onclick="ngoselected('Childeren Welfare')">Childeren Welfare</li>
+            </ul> 
+    </div>
 
-                                        <label for="ngo_position" class="form-label mt-4">Position of Work</label>
-                                        <div class="col-12 mt-2">
-                                            <input type="text" class="form-control mt-2" id="ngo_position" name="ngo_position" placeholder="e.g Data Entry operator" required>
-                    </div>
+    <label for="ngo_position" class="form-label mt-4">Position of Work</label>
+    <div class="col-12 mt-2">
+        <input type="text" class="form-control mt-2" id="ngo_position" onkeyup="ngopositionup()" name="ngo_position" placeholder="e.g Data Entry operator" required>
+        <ul class="list-group" id="myList6">
+                <li class="list-group-item" style="display:none" onclick="posselected('Women's Development & Empowerment')">Women's Development & Empowerment</li>
+                <li class="list-group-item" style="display:none" onclick="posselected('Agriculture')">Agriculture</li>
+                <li class="list-group-item" style="display:none" onclick="posselected('Civic Issues')">Civic Issues</li>
+                <li class="list-group-item" style="display:none" onclick="posselected('Management')">Management</li>
+                <li class="list-group-item" style="display:none" onclick="posselected('Differently Abled')">Differently Abled</li>
+                <li class="list-group-item" style="display:none" onclick="posselected('Childeren Welfare')">Childeren Welfare</li>
+            </ul> 
+    </div>
 
 
-                                            <div class="row mt-5">
-                                                <label for="ngo_time_start">Enter the time interval you can constribute for the NGO:</label>
-                                                <div class="col-md-6">
-                                                    <small for="part_time_start">Start Time:</small>
-                                                    <input type="time" class="form-control" id="ngo_time_start" name="ngo_time_start" required>
-                        </div>
-                                                    <div class="col-md-6">
-                                                        <small for="ngo_time_end">End Time:</small>
-                                                        <input type="time" class="form-control" id="ngo_time_end" name="ngo_time_end" required>
-                        </div>
-                                                    </div>` : "";
+    <div class="row mt-5">
+        <label for="ngo_time_start">Enter the time interval you can constribute for the NGO:</label>
+        <div class="col-md-6">
+            <small for="part_time_start">Start Time:</small>
+            <input type="time" class="form-control" id="ngo_time_start" name="ngo_time_start" required>
+        </div>
+        <div class="col-md-6">
+            <small for="ngo_time_end">End Time:</small>
+            <input type="time" class="form-control" id="ngo_time_end" name="ngo_time_end" required>
+        </div>
+    </div>` : "";
 
 
         }
     </script>
 
+    <script>
+        function fieldup() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("field");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myList1");
+
+            a = div.getElementsByClassName("list-group-item");
+
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+        function positionup() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("position");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myList2");
+
+            a = div.getElementsByClassName("list-group-item");
+            if (filter === "") {
+                for (i = 0; i < a.length; i++) {
+                    a[i].style.display = "none";
+                }
+            }
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+        function coursefieldup() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("course_field");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myList3");
+
+            a = div.getElementsByClassName("list-group-item");
+            if (filter === "") {
+                for (i = 0; i < a.length; i++) {
+                    a[i].style.display = "none";
+                }
+            }
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+        function coursenameup() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("course_name");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myList4");
+
+            a = div.getElementsByClassName("list-group-item");
+            if (filter === "") {
+                for (i = 0; i < a.length; i++) {
+                    a[i].style.display = "none";
+                }
+            }
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+        function ngofieldup() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("ngo_field");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myList5");
+
+            a = div.getElementsByClassName("list-group-item");
+            if (filter === "") {
+                for (i = 0; i < a.length; i++) {
+                    a[i].style.display = "none";
+                }
+            }
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+        function ngopositionup() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("ngo_position");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myList6");
+
+            a = div.getElementsByClassName("list-group-item");
+            if (filter === "") {
+                for (i = 0; i < a.length; i++) {
+                    a[i].style.display = "none";
+                }
+            }
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+        function selected(field) {
+            var input = document.getElementById("field");
+            input.value = field;
+        }
+
+
+
+        function selectedpos(field) {
+            var input = document.getElementById("position");
+            input.value = field;
+        }
+
+        function posselected(field) {
+            var input = document.getElementById("ngo_position");
+            input.value = field;
+        }
+
+        function courseselected(field) {
+            var input = document.getElementById("course_field");
+            input.value = field;
+        }
+
+        function nameselected(field) {
+            var input = document.getElementById("course_name");
+            input.value = field;
+        }
+
+        function ngoselected(field) {
+            var input = document.getElementById("ngo_field");
+            input.value = field;
+        }
+    </script>
     <script src="js/vendor/jquery-2.2.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="js/vendor/bootstrap.min.js"></script>

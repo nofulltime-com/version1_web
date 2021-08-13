@@ -161,7 +161,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <option value="">---Martial Status---</option>
                         <option value="single" <?php if ($status == 'single') echo 'selected="selected"';; ?>>Single</option>
                         <option value="married" <?php if ($status == 'married') echo 'selected="selected"';; ?>>Married</option>
-                        <option value="single_woman" <?php if ($status == 'single_woman') echo 'selected="selected"';; ?>>Single Woman</option>
+                        <option value="divorsed" <?php if ($status == 'divorsed') echo 'selected="selected"';; ?>>Divorsed</option>
                     </select>
                 </div>
                 <div class="col-md-4 mt-4">
