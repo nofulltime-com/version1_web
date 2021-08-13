@@ -17,6 +17,12 @@
     margin-right: 40px;
     
 }
+.filter_head h3{
+    text-align: center;
+}
+.firstFilter , .position_filter, .gender_filter , .working_hours{
+    margin:15px;
+}
 .query-tab li{
     list-style: none;
     text-transform: uppercase;
@@ -24,4 +30,24 @@
     height: 40px !important;
     line-height: 30px !important;
 }
-
+#position-data ul{
+    background-color: white !important;
+    margin-left: 40px;
+    margin-right: 40px;
+    
+}
+.filter-box{
+    display: block;
+}
+.gender_filter{
+display: flex;
+flex-direction: column;
+}
+#position-data{
+    display: block;
+    align-items: center;
+}
+#position-data li{
+    align-items: center;
+    align-content: center;
+}
