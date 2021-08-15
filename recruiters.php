@@ -198,8 +198,8 @@ $res = $conn->query($q);
 				<p class="subs">
 					Reach out to millions of jobseekers and hire quickly with our fast and easy job posting services.
 				</p>
-				<div class="d-flex flex-row">
-					<div class="buttons" style="border:0px;">
+				<div class="row">
+					<div class="buttons col-md-6" style="border:0px;">
 						<i class="fas fa-stopwatch"></i>
 						<div class="desc">
 							<p>
@@ -207,7 +207,7 @@ $res = $conn->query($q);
 							</p>
 						</div>
 					</div>
-					<div class="buttons" style="border:0px;">
+					<div class="buttons col-md-5" style="border:0px;">
 						<i class="fas fa-calendar-alt"></i>
 						<div class="desc">
 							<p>
@@ -217,8 +217,8 @@ $res = $conn->query($q);
 					</div>
 
 				</div>
-				<div class="d-flex flex-row">
-					<div class="buttons" style="border:0px;">
+				<div class="row">
+					<div class="buttons col-md-6" style="border:0px;">
 						<i class="fas fa-users"></i>
 						<div class="desc">
 							<p>
@@ -226,7 +226,7 @@ $res = $conn->query($q);
 							</p>
 						</div>
 					</div>
-					<div class="buttons" style="border:0px;">
+					<div class="buttons col-md-5" style="border:0px;">
 						<i class="fas fa-user-check"></i>
 						<div class="desc">
 							<p>
