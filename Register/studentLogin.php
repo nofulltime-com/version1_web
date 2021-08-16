@@ -60,13 +60,13 @@ session_start();
             <li><a href="../contact.php">Contact</a></li>
             <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Signup</a>
               <ul>
-                <li><a href="studentRegister.php">As a Student</a></li>
+                <li><a href="studentRegister.php">As a Part-timer</a></li>
 
               </ul>
             </li>
             <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Login</a>
               <ul>
-                <li><a href="studentLogin.php">As a Student</a></li>
+                <li><a href="studentLogin.php">As a Part-timer</a></li>
 
               </ul>
             </li>
@@ -132,7 +132,7 @@ session_start();
 
         <div class="card-body">
           <h4 class="title text-center mt-4">
-            Welcome Back Student!
+            Welcome Back Part-timer!
           </h4>
           <h4 class="title text-center mt-4">
             Login into account

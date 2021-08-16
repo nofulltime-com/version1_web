@@ -78,13 +78,13 @@ include './connect.php';
 						<?php } else { ?>
 							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Signup</a>
 								<ul>
-									<li><a href="./Register/studentRegister.php">As a Student</a></li>
+									<li><a href="./Register/studentRegister.php">As a Part-timer</a></li>
 									<li><a href="./Register/recruiterRegister.php">As a recruiter</a></li>
 								</ul>
 							</li>
 							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Login</a>
 								<ul>
-									<li><a href="./Register/studentLogin.php">As a Student</a></li>
+									<li><a href="./Register/studentLogin.php">As a Part-timer</a></li>
 									<li><a href="./Register/recruiterLogin.php">As a recruiter</a></li>
 								</ul>
 							</li>

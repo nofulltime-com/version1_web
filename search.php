@@ -79,13 +79,13 @@ include './connect.php'
 						<?php } else { ?>
 							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Signup</a>
 								<ul>
-									<li><a href="./Register/studentRegister.php">As a Student</a></li>
+									<li><a href="./Register/studentRegister.php">As a Part-timer</a></li>
 									<li><a href="./Register/recruiterRegister.php">As a recruiter</a></li>
 								</ul>
 							</li>
 							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Login</a>
 								<ul>
-									<li><a href="./Register/studentLogin.php">As a Student</a></li>
+									<li><a href="./Register/studentLogin.php">As a Part-timer</a></li>
 									<li><a href="./Register/recruiterLogin.php">As a recruiter</a></li>
 								</ul>
 							</li>
@@ -608,62 +608,62 @@ include './connect.php'
 
 				</div>
 				<div class="col-lg-3 sidebar">
-				<div class="filter_head">
-					<h3>Apply Filters</h3>
-				</div>
+					<div class="filter_head">
+						<h3>Apply Filters</h3>
+					</div>
 					<div class="filter-box">
 						<div class="firstFilter">
-						<div class="location1">
-							<h5>Select Location</h5>
-					</div>
-					<input list="search-data" class="default-select" type="text" id="search1" placeholder="Enter location" autocomplete="off" >
-								<div id="search-data">
-						       </div>
-					</div>
-				
-						<div class="position_filter">
-						<div class="position1">
-							<h5>Select Position</h5>
-					</div>
-							<div id="inner-filter">
-							<input  type="text" list="position-data" class="default-select" placeholder="Enter position" id="position1" autocomplete="off" >
-								<div id="position-data">
-						       </div>
+							<div class="location1">
+								<h5>Select Location</h5>
+							</div>
+							<input list="search-data" class="default-select" type="text" id="search1" placeholder="Enter location" autocomplete="off">
+							<div id="search-data">
+							</div>
+						</div>
 
+						<div class="position_filter">
+							<div class="position1">
+								<h5>Select Position</h5>
+							</div>
+							<div id="inner-filter">
+								<input type="text" list="position-data" class="default-select" placeholder="Enter position" id="position1" autocomplete="off">
+								<div id="position-data">
 								</div>
-								
-							
+
+							</div>
+
+
 						</div>
 						<div class="gender_filter">
 							<div class="gender1">
-							<h5>Select Gender</h5>
-					</div>
-					<div class="gender2">
-						
-							<input type="radio" id="male" name="gender" value="male">
-							<label for="male">MALE</label><br>	
-							<input type="radio" id="female" name="gender" value="female">
-							<label for="female">FEMALE</label><br>
-							<input type="radio" id="other" name="gender" value="other">
-							<label for="other">OTHER</label>
-					</div>
+								<h5>Select Gender</h5>
+							</div>
+							<div class="gender2">
+
+								<input type="radio" id="male" name="gender" value="male">
+								<label for="male">MALE</label><br>
+								<input type="radio" id="female" name="gender" value="female">
+								<label for="female">FEMALE</label><br>
+								<input type="radio" id="other" name="gender" value="other">
+								<label for="other">OTHER</label>
+							</div>
 						</div>
 						<div class="working_hours">
 							<div class="working1">
-							<h5>Select Working Hours</h5>
-					</div>
-					<div class="working2">
-							<input type="radio" id="morning" name="working" value="morning">
-							<label for="morning">MORNING</label><br>	
-							<input type="radio" id="evening" name="working" value="evening">
-							<label for="evening">EVENING</label><br>
-							<input type="radio" id="night" name="working" value="night">
-							<label for="night">NIGHT</label>
-					</div>
+								<h5>Select Working Hours</h5>
+							</div>
+							<div class="working2">
+								<input type="radio" id="morning" name="working" value="morning">
+								<label for="morning">MORNING</label><br>
+								<input type="radio" id="evening" name="working" value="evening">
+								<label for="evening">EVENING</label><br>
+								<input type="radio" id="night" name="working" value="night">
+								<label for="night">NIGHT</label>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 	</section>
 	<!-- End post Area -->
 
@@ -745,57 +745,58 @@ include './connect.php'
 	<script src="js/parallax.min.js"></script>
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
-					<script type="text/javascript">
-    $("#position1").on("keyup",function () {
-        var search_term=$(this).val();
-		if(search_term!=''){
-        $.ajax({
-            url:"search_filters.php",
-            type:"POST",
-            data: {search:search_term },
-            success: function(data){
-				$("#position-data").fadeIn();	
-                $("#position-data").html(data);
-            }
-        });
-    }
-	else{
-		$("#position-data").fadeOut();	
-              $("#position-data").html("");
+	<script type="text/javascript">
+		$("#position1").on("keyup", function() {
+			var search_term = $(this).val();
+			if (search_term != '') {
+				$.ajax({
+					url: "search_filters.php",
+					type: "POST",
+					data: {
+						search: search_term
+					},
+					success: function(data) {
+						$("#position-data").fadeIn();
+						$("#position-data").html(data);
+					}
+				});
+			} else {
+				$("#position-data").fadeOut();
+				$("#position-data").html("");
 
-	}
-	});
-	$(".position_filter").on('click','li',function(){
-	
-		$("#position1").val($(this).text());
-		$("#position-data").fadeOut();
-	});
-	
-</script>
-<script type="text/javascript">
-	$("#search1").on("keyup",function () {
-        var search_term=$(this).val();
-		if(search_term!=''){
-        $.ajax({
-            url:"live-search.php",
-            type:"POST",
-            data: {search:search_term },
-            success: function(data){
-				$("#search-data").fadeIn();	
-              $("#search-data").html(data);
-            }
-        });
-    }
-	else{
-		$("#search-data").fadeOut();	
-              $("#search-data").html("");
+			}
+		});
+		$(".position_filter").on('click', 'li', function() {
 
-	}
-	});
-	$(".firstFilter").on('click','li',function(){
-		$("#search1").val($(this).text());
-		$("#search-data").fadeOut();
-	});
+			$("#position1").val($(this).text());
+			$("#position-data").fadeOut();
+		});
+	</script>
+	<script type="text/javascript">
+		$("#search1").on("keyup", function() {
+			var search_term = $(this).val();
+			if (search_term != '') {
+				$.ajax({
+					url: "live-search.php",
+					type: "POST",
+					data: {
+						search: search_term
+					},
+					success: function(data) {
+						$("#search-data").fadeIn();
+						$("#search-data").html(data);
+					}
+				});
+			} else {
+				$("#search-data").fadeOut();
+				$("#search-data").html("");
+
+			}
+		});
+		$(".firstFilter").on('click', 'li', function() {
+			$("#search1").val($(this).text());
+			$("#search-data").fadeOut();
+		});
 	</script>
 </body>
 

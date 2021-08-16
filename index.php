@@ -84,13 +84,13 @@ include './connect.php';
 						<?php } else { ?>
 							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Signup</a>
 								<ul>
-									<li><a href="./Register/studentRegister.php">As a Student</a></li>
+									<li><a href="./Register/studentRegister.php">As a Part-timer</a></li>
 									<li><a href="./Register/recruiterRegister.php">As a recruiter</a></li>
 								</ul>
 							</li>
 							<li class="menu-has-children" style="background-color:white"><a href="" style='color:#7b63f1'>Login</a>
 								<ul>
-									<li><a href="./Register/studentLogin.php">As a Student</a></li>
+									<li><a href="./Register/studentLogin.php">As a Part-timer</a></li>
 									<li><a href="./Register/recruiterLogin.php">As a recruiter</a></li>
 								</ul>
 							</li>
@@ -809,7 +809,7 @@ include './connect.php';
 							<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
 							<p class="text-white">Register for Free. Take NoFullTime to apply to part time jobs,learn
 								courses and work for NGO's too.</p>
-							<a class="primary-btn" href="./Register/studentLogin.php">I am a Candidate</a>
+							<a class="primary-btn" href="./Register/studentLogin.php">I am a Part-timer</Part-timer></a>
 							<a class="primary-btn" href="./Register/recruiterLogin.php">I am a Recruiter</a>
 						</div>
 					</div>
@@ -960,10 +960,10 @@ include './connect.php';
 
 			}
 		});
-		$(document).on('click','li',function(){
-		$("#search1").val($(this).text());
-		$("#search-data").fadeOut();
-	});
+		$(document).on('click', 'li', function() {
+			$("#search1").val($(this).text());
+			$("#search-data").fadeOut();
+		});
 	</script>
 </body>
 
