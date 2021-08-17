@@ -660,28 +660,6 @@ include './connect.php';
 				</script>
 
 				<div class="col-lg-4 sidebar">
-					<div class="single-slidebar">
-						<h4>Candidates by Location</h4>
-
-						<ul class="cat-list">
-							<?php
-							$frequencies = array();
-							$query = "SELECT town, COUNT(id) FROM seeker_details GROUP BY town ORDER BY COUNT(id) DESC";
-							$res = $conn->query($query);
-							if ($res->num_rows > 0) {
-								while ($row = $res->fetch_assoc()) {
-									$town = $row['town'];
-									echo "
-									<li><a class='justify-content-between d-flex' href='search.php?place=$town'>
-									<p>" . $row['town'] . "</p><span>" . $row['COUNT(id)'] . "</span>
-								</a></li>";
-								}
-							}
-
-							?>
-						</ul>
-					</div>
-
 
 					<div class="single-slidebar">
 						<h4>Part-time jobs seekers</h4>
@@ -749,7 +727,27 @@ include './connect.php';
 
 						</ul>
 					</div>
+					<div class="single-slidebar">
+						<h4>Candidates by Location</h4>
 
+						<ul class="cat-list">
+							<?php
+							$frequencies = array();
+							$query = "SELECT town, COUNT(id) FROM seeker_details GROUP BY town ORDER BY COUNT(id) DESC";
+							$res = $conn->query($query);
+							if ($res->num_rows > 0) {
+								while ($row = $res->fetch_assoc()) {
+									$town = $row['town'];
+									echo "
+									<li><a class='justify-content-between d-flex' href='search.php?place=$town'>
+									<p>" . $row['town'] . "</p><span>" . $row['COUNT(id)'] . "</span>
+								</a></li>";
+								}
+							}
+
+							?>
+						</ul>
+					</div>
 					<div class="single-slidebar">
 						<h4>Career Advice Blog</h4>
 						<div class="blog-list">

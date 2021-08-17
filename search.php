@@ -841,14 +841,18 @@ if (isset($_POST['submit'])) {
 						</div>
 						<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 							<div class="filter-box">
-								<div class="firstFilter">
-									<div class="location1 justify-content-between ">
-										<h5>Select City</h5>
+								<?php
+								if (!isset($_GET['place'])) {
+								?>
+									<div class="firstFilter mt-4">
+										<div class="location1 justify-content-between ">
+											<h5>Select City</h5>
+										</div>
+										<input list="search-data" name="location" class="default-select" type="text" id="search1" placeholder="Enter location" autocomplete="off">
+										<div id="search-data">
+										</div>
 									</div>
-									<input list="search-data" name="location" class="default-select" type="text" id="search1" placeholder="Enter location" autocomplete="off">
-									<div id="search-data">
-									</div>
-								</div>
+								<?php } ?>
 
 								<!-- <div class="position_filter">
 									<div class="position1 justify-content-between ">
@@ -863,7 +867,7 @@ if (isset($_POST['submit'])) {
 
 
 								</div> -->
-								<div class="gender_filter justify-content-between mt-3">
+								<div class="container mt-4">
 									<div class="gender1">
 										<h5>Select Gender</h5>
 									</div>
@@ -876,18 +880,18 @@ if (isset($_POST['submit'])) {
 										<label for="other">OTHER</label>
 									</div>
 								</div>
-								<div class="working_hours">
+								<div class="working_hours mt-4">
 									<div class="working1">
 										<h5>Select Working Hours</h5>
 									</div>
 									<div class="working2">
 
 										<input type="radio" id="morning" name="working" value="morning">
-										<label for="morning">MORNING</label><br>
+										<label for="morning">MORNING (00:00 - 15:00)</label><br>
 										<input type="radio" id="evening" name="working" value="evening">
-										<label for="evening">EVENING</label><br>
+										<label for="evening">EVENING (15:00 - 19:00)</label><br>
 										<input type="radio" id="night" name="working" value="night">
-										<label for="night">NIGHT</label>
+										<label for="night">NIGHT (19:00 - 24:00)</label>
 
 									</div>
 									<div class="hours mt-4">
@@ -902,9 +906,9 @@ if (isset($_POST['submit'])) {
 									<script>
 										document.getElementById("url").value = window.location.href;
 									</script>
-									<div class="col-lg-2 form-cols" id="submit-btn">
-										<button type="submit" class="btn btn-info" name="submit">
-											<span class="lnr lnr-magnifier"></span> Search
+									<div class="col-lg-12 form-cols" id="submit-btn">
+										<button type="submit" class="btn btn-info apply-btn" name="submit">
+											<span class="lnr lnr-magnifier"></span> APPLY
 										</button>
 									</div>
 						</form>

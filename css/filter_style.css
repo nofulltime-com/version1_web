@@ -27,7 +27,7 @@
     text-align: center;
 }
 .firstFilter , .position_filter, .gender_filter , .working_hours{
-    margin:15px;
+    margin:10px;
 }
 .query-tab li{
     list-style: none;
@@ -67,4 +67,11 @@ align-items: center;
 #position-data li{
     align-items: center;
     align-content: center;
+}
+
+.apply-btn
+{
+    width: 100%;
+    background-color:#8da5f3;
+    color: white;
 }
