@@ -252,11 +252,21 @@ session_start();
                 }
                 if ($gClient->getAccessToken()) {
                   $gpUserProfile = $google_oauthV2->userinfo->get();
-                  $_SESSION['oauth_uid'] = $gpUserProfile['id'];
-                  $_SESSION['first_name'] = $gpUserProfile['given_name'];
-                  $_SESSION['last_name'] = $gpUserProfile['family_name'];
-                  $_SESSION['email'] = $gpUserProfile['email'];
-                  $_SESSION['logincust'] = 'yes';
+                  $google_id = $gpUserProfile['id'];
+                  $username = $gpUserProfile['given_name'];
+                  $email = $gpUserProfile['email'];
+                  $sql = "SELECT * FROM users WHERE g_id='".$gpUserProfile['id']."'";
+	                $result = $conn->query($sql);
+	                if ($result->num_rows == 1) {
+	                $conn->query("update recruiter set username='".$username."', email='".$email."',  url='".$url."' where g_id='".$google_id."' ");
+	                } else {
+		              $conn->query("INSERT INTO recruiter ( username, email, g_id) VALUES ( '".$username."', '".$email."', '".$google_id."')"); 
+        
+                  $retrieve_value = mysqli_fetch_assoc($result);
+
+                  $_SESSION['id'] = $retrieve_value['id']; 
+	                }
+                  
                 } else {
                   $authUrl = $gClient->createAuthUrl();
                   $output = '<a href="' . filter_var($authUrl, FILTER_SANITIZE_URL) . '" class="btn btn-block btn-social btn-google">Google</a>';

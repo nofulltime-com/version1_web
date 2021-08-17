@@ -106,15 +106,30 @@ session_start();
             header("Location: recruiterRegister.php?error=phone number already exists. Enter different phone number");
             exit();
         } else {
-            $insertquery = "insert into recruiter(username, email, phone, password,token) values ('$username','$email','$phone','$pass','$token')";
-            $iquery = mysqli_query($conn, $insertquery);
-            $_SESSION['msg1'] = "You have been Successfully registered";
-
-    ?>
-            <script>
-                location.replace("recruiterLogin.php");
-            </script>
-    <?php
+            $code = rand(999999, 111111);
+            $status = "notverified";
+            $insert_data = "INSERT INTO recruiter (username, email,phone, password, code, status)
+                        values('$username', '$email','$phone', '$pass', '$code', '$status')";
+        $data_check = mysqli_query($conn, $insert_data);
+        if($data_check){
+            $subject = "Email Verification Code";
+            $message = "Your verification code is $code";
+            $sender = "From:kevanmehta2511@gmail.com";
+            if(mail($email, $subject, $message, $sender)){
+                $info = "We've sent a verification code to your email - $email";
+                $_SESSION['info'] = $info;
+                $_SESSION['email'] = $email;
+                $_SESSION['password'] = $password;
+                header('location: recruiter-verify.php');
+                exit();
+            }
+            else{
+                header("Location: recruiterRegister.php?error=failed while sending code.");
+            }
+            }
+            else{
+                header("Location: recruiterRegister.php?error=failed while inserting into database.");
+            }
         }
     }
     ?>
