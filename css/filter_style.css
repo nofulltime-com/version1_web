@@ -2,6 +2,12 @@
     position: relative;
    
 }
+.fiter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .inner-filter{
     display: flex;
     flex-direction: column;
@@ -37,11 +43,22 @@
     
 }
 .filter-box{
-    display: block;
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.hours{
+    padding: 10px !important;
+  
 }
 .gender_filter{
 display: flex;
 flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 #position-data{
     display: block;
