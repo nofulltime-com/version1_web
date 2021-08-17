@@ -39,8 +39,31 @@ include './connect.php'
 	<link rel="stylesheet" href="css/filter_style.css">
 </head>
 
-<body>
+<?php
 
+// $_SESSION = $_SERVER['HTTP_HOST'];
+if (isset($_POST['submit'])) {
+	$url = $_POST['url'];
+	$loc_fil = $_POST['location'];
+	$pos_fil = $_POST['position'];
+	$gen_fil = $_POST['gender'];
+	$work_fil = $_POST['working'];
+	$hours_fil = $_POST['hours'];
+	if ($loc_fil != null)
+		$url = $url . "&loc=" . $loc_fil;
+	if ($pos_fil != null)
+		$url = $url . "&pos=" . $pos_fil;
+	if ($gen_fil != null)
+		$url = $url . "&gen=" . $gen_fil;
+	if ($work_fil != null)
+		$url = $url . "&work=" . $work_fil;
+	if ($hours_fil != null)
+		$url = $url . "&hours=" . $hours_fil;
+	echo "<script>location.replace('$url')</script>";
+}
+?>
+
+<body>
 	<header id="header" id="home">
 		<div class="container">
 			<div class="row align-items-center justify-content-between d-flex">
@@ -154,7 +177,7 @@ include './connect.php'
 	<section class="post-area section-gap">
 		<div class="container">
 			<div class="row justify-content-center d-flex">
-				<div class="col-lg-9 post-list">
+				<div class="col-lg-8 post-list">
 					<div class="title text-center">
 						<h1 class="mb-10">Search Results</h1>
 					</div>
@@ -168,6 +191,7 @@ include './connect.php'
 						</ul>
 						<div class="tabContent" style="display:block" id='parttime'>
 							<?php
+
 							$details_query = "SELECT * FROM `seeker_details` WHERE town='$place'";
 							$details_res = $conn->query($details_query);
 							while ($row2 = $details_res->fetch_assoc()) {
@@ -177,6 +201,38 @@ include './connect.php'
 								$country = $row2['country'];
 								$parttime_start = substr($row2['part_time_start'], 0, 5);
 								$parttime_end = substr($row2['part_time_end'], 0, 5);
+								if (isset($_GET['loc'])) {
+									$loc = $_GET['loc'];
+									// echo "<script>console.log('$town')</script>";
+									if (strtolower($loc) != strtolower($town)) {
+										continue;
+									}
+								}
+								if (isset($_GET['gen'])) {
+									$gen = $_GET['gen'];
+									if ($gen2 != $gen)
+										continue;
+								}
+								if (isset($_GET['work'])) {
+									$work = $_GET['work'];
+									if ($work == "morning") {
+
+										if ((strtotime($parttime_start) < strtotime('00:00:00')) or (strtotime($parttime_start) > strtotime('15:00:00')))
+											continue;
+									}
+									if ($work == "evening")
+										if ((strtotime($parttime_start) < strtotime('15:00:00')) or (strtotime($parttime_start) >= strtotime('19:00:00')))
+											continue;
+									if ($work == "night")
+										if ((strtotime($parttime_start) < strtotime('19:00:00')) or (strtotime($parttime_start) > strtotime('24:00:00')))
+											continue;
+								}
+								if (isset($_GET['hours'])) {
+									$diff = (strtotime($parttime_end) - strtotime($parttime_start)) / 3600;
+									// echo "<script>console.log('$diff')</script>";
+									if ($diff < $_GET['hours'])
+										continue;
+								}
 								$parttime = "SELECT * FROM `job_seeker_details` WHERE id='$id'";
 								$parttime_res = $conn->query($parttime);
 								if ($parttime_res->num_rows > 0) {
@@ -244,6 +300,38 @@ include './connect.php'
 								$country = $row2['country'];
 								$course_start = substr($row2['course_time_start'], 0, 5);
 								$course_end = substr($row2['course_time_end'], 0, 5);
+								if (isset($_GET['loc'])) {
+									$loc = $_GET['loc'];
+									// echo "<script>console.log('$town')</script>";
+									if (strtolower($loc) != strtolower($town)) {
+										continue;
+									}
+								}
+								if (isset($_GET['gen'])) {
+									$gen = $_GET['gen'];
+									if ($gen2 != $gen)
+										continue;
+								}
+								if (isset($_GET['work'])) {
+									$work = $_GET['work'];
+									if ($work == "morning") {
+
+										if ((strtotime($course_start) < strtotime('00:00:00')) or (strtotime($course_start) > strtotime('15:00:00')))
+											continue;
+									}
+									if ($work == "evening")
+										if ((strtotime($course_start) < strtotime('15:00:00')) or (strtotime($course_start) >= strtotime('19:00:00')))
+											continue;
+									if ($work == "night")
+										if ((strtotime($course_start) < strtotime('19:00:00')) or (strtotime($course_start) > strtotime('24:00:00')))
+											continue;
+								}
+								if (isset($_GET['hours'])) {
+									$diff = (strtotime($course_end) - strtotime($course_start)) / 3600;
+									// echo "<script>console.log('$diff')</script>";
+									if ($diff < $_GET['hours'])
+										continue;
+								}
 								$course = "SELECT * FROM `course_details` WHERE id='$id'";
 								$course_res = $conn->query($course);
 								if ($course_res->num_rows > 0) {
@@ -315,6 +403,38 @@ include './connect.php'
 								$country = $row2['country'];
 								$ngo_start = substr($row2['ngo_time_start'], 0, 5);
 								$ngo_end = substr($row2['ngo_time_end'], 0, 5);
+								if (isset($_GET['loc'])) {
+									$loc = $_GET['loc'];
+									// echo "<script>console.log('$town')</script>";
+									if (strtolower($loc) != strtolower($town)) {
+										continue;
+									}
+								}
+								if (isset($_GET['gen'])) {
+									$gen = $_GET['gen'];
+									if ($gen2 != $gen)
+										continue;
+								}
+								if (isset($_GET['work'])) {
+									$work = $_GET['work'];
+									if ($work == "morning") {
+
+										if ((strtotime($ngo_start) < strtotime('00:00:00')) or (strtotime($ngo_start) > strtotime('15:00:00')))
+											continue;
+									}
+									if ($work == "evening")
+										if ((strtotime($ngo_start) < strtotime('15:00:00')) or (strtotime($ngo_start) >= strtotime('19:00:00')))
+											continue;
+									if ($work == "night")
+										if ((strtotime($ngo_start) < strtotime('19:00:00')) or (strtotime($ngo_start) > strtotime('24:00:00')))
+											continue;
+								}
+								if (isset($_GET['hours'])) {
+									$diff = (strtotime($ngo_end) - strtotime($ngo_start)) / 3600;
+									// echo "<script>console.log('$diff')</script>";
+									if ($diff < $_GET['hours'])
+										continue;
+								}
 								$ngo = "SELECT * FROM `ngo_details` WHERE id='$id'";
 								$ngo_res = $conn->query($ngo);
 								if ($ngo_res->num_rows > 0) {
@@ -404,6 +524,7 @@ include './connect.php'
 						$parttime = "SELECT * FROM `job_seeker_details` WHERE field='$field'";
 						$parttime_res = $conn->query($parttime);
 						if ($parttime_res->num_rows > 0) {
+
 							while ($row = $parttime_res->fetch_assoc()) {
 								$pow = "";
 								if ($row['place_of_work'] == "wfh") {
@@ -412,6 +533,8 @@ include './connect.php'
 									$pow = "In Office";
 								}
 								$id = $row['id'];
+
+
 								$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
 								$details_res = $conn->query($details_query);
 								while ($row2 = $details_res->fetch_assoc()) {
@@ -420,6 +543,39 @@ include './connect.php'
 									$country = $row2['country'];
 									$parttime_start = substr($row2['part_time_start'], 0, 5);
 									$parttime_end = substr($row2['part_time_end'], 0, 5);
+									$gen2 = $row2['gender'];
+								}
+								if (isset($_GET['loc'])) {
+									$loc = $_GET['loc'];
+									// echo "<script>console.log('$town')</script>";
+									if (strtolower($loc) != strtolower($town)) {
+										continue;
+									}
+								}
+								if (isset($_GET['gen'])) {
+									$gen = $_GET['gen'];
+									if ($gen2 != $gen)
+										continue;
+								}
+								if (isset($_GET['work'])) {
+									$work = $_GET['work'];
+									if ($work == "morning") {
+
+										if ((strtotime($parttime_start) < strtotime('00:00:00')) or (strtotime($parttime_start) > strtotime('15:00:00')))
+											continue;
+									}
+									if ($work == "evening")
+										if ((strtotime($parttime_start) < strtotime('15:00:00')) or (strtotime($parttime_start) >= strtotime('19:00:00')))
+											continue;
+									if ($work == "night")
+										if ((strtotime($parttime_start) < strtotime('19:00:00')) or (strtotime($parttime_start) > strtotime('24:00:00')))
+											continue;
+								}
+								if (isset($_GET['hours'])) {
+									$diff = (strtotime($parttime_end) - strtotime($parttime_start)) / 3600;
+									echo "<script>console.log('$diff')</script>";
+									if ($diff < $_GET['hours'])
+										continue;
 								}
 								$a_tag = '';
 								if (isset($_SESSION['recruiter_id'])) {
@@ -431,6 +587,7 @@ include './connect.php'
 										<h4> Field - ' . $row['field'] . '</h4>
 									</a>';
 								}
+
 								echo '<div class="single-post d-flex flex-row">
 						<div class="details">
 							<div class="title d-flex flex-row justify-content-between">
@@ -466,7 +623,11 @@ include './connect.php'
 						?>
 
 					</div>
-
+					<div class="container mt-5" id="no-result" style="display:none">
+						<div class="no-result text-center bold mt-5">
+							<h1 class="mt-5">No Records Found!!</h1>
+						</div>
+					</div>
 					<div>
 						<?php
 						$course_field = $_GET['course'];
@@ -489,6 +650,39 @@ include './connect.php'
 									$country = $row2['country'];
 									$course_start = substr($row2['course_time_start'], 0, 5);
 									$course_end = substr($row2['course_time_end'], 0, 5);
+									$gen2 = $row2['gender'];
+								}
+								if (isset($_GET['loc'])) {
+									$loc = $_GET['loc'];
+									// echo "<script>console.log('$town')</script>";
+									if (strtolower($loc) != strtolower($town)) {
+										continue;
+									}
+								}
+								if (isset($_GET['gen'])) {
+									$gen = $_GET['gen'];
+									if ($gen2 != $gen)
+										continue;
+								}
+								if (isset($_GET['work'])) {
+									$work = $_GET['work'];
+									if ($work == "morning") {
+
+										if ((strtotime($course_start) < strtotime('00:00:00')) or (strtotime($course_start) > strtotime('15:00:00')))
+											continue;
+									}
+									if ($work == "evening")
+										if ((strtotime($course_start) < strtotime('15:00:00')) or (strtotime($course_start) >= strtotime('19:00:00')))
+											continue;
+									if ($work == "night")
+										if ((strtotime($course_start) < strtotime('19:00:00')) or (strtotime($course_start) > strtotime('24:00:00')))
+											continue;
+								}
+								if (isset($_GET['hours'])) {
+									$diff = (strtotime($course_end) - strtotime($course_start)) / 3600;
+									// echo "<script>console.log('$diff')</script>";
+									if ($diff < $_GET['hours'])
+										continue;
 								}
 								$a_tag = '';
 								if (isset($_SESSION['recruiter_id'])) {
@@ -561,6 +755,38 @@ include './connect.php'
 									$ngo_start = substr($row2['ngo_time_start'], 0, 5);
 									$ngo_end = substr($row2['ngo_time_end'], 0, 5);
 								}
+								if (isset($_GET['loc'])) {
+									$loc = $_GET['loc'];
+									// echo "<script>console.log('$town')</script>";
+									if (strtolower($loc) != strtolower($town)) {
+										continue;
+									}
+								}
+								if (isset($_GET['gen'])) {
+									$gen = $_GET['gen'];
+									if ($gen2 != $gen)
+										continue;
+								}
+								if (isset($_GET['work'])) {
+									$work = $_GET['work'];
+									if ($work == "morning") {
+
+										if ((strtotime($ngo_start) < strtotime('00:00:00')) or (strtotime($ngo_start) > strtotime('15:00:00')))
+											continue;
+									}
+									if ($work == "evening")
+										if ((strtotime($ngo_start) < strtotime('15:00:00')) or (strtotime($ngo_start) >= strtotime('19:00:00')))
+											continue;
+									if ($work == "night")
+										if ((strtotime($ngo_start) < strtotime('19:00:00')) or (strtotime($ngo_start) > strtotime('24:00:00')))
+											continue;
+								}
+								if (isset($_GET['hours'])) {
+									$diff = (strtotime($ngo_end) - strtotime($ngo_start)) / 3600;
+									// echo "<script>console.log('$diff')</script>";
+									if ($diff < $_GET['hours'])
+										continue;
+								}
 								if (isset($_SESSION['recruiter_id'])) {
 									$a_tag = '<a href="./profile/index.php?id=' . $id . '">
 										<h4> Field - ' . $row['field'] . '</h4>
@@ -607,77 +833,86 @@ include './connect.php'
 					</div>
 
 				</div>
+				<div class="col-lg-1"></div>
 				<div class="col-lg-3 sidebar fiter">
 					<div class="single-slidebar">
 						<div class="filter_head justify-content-between">
 							<h3>Apply Filters</h3>
 						</div>
-						<div class="filter-box">
-							<div class="firstFilter">
-								<div class="location1 justify-content-between ">
-									<h5>Select Location</h5>
+						<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+							<div class="filter-box">
+								<div class="firstFilter">
+									<div class="location1 justify-content-between ">
+										<h5>Select City</h5>
+									</div>
+									<input list="search-data" name="location" class="default-select" type="text" id="search1" placeholder="Enter location" autocomplete="off">
+									<div id="search-data">
+									</div>
 								</div>
-								<input list="search-data" class="default-select" type="text" id="search1" placeholder="Enter location" autocomplete="off">
-								<div id="search-data">
-								</div>
-							</div>
 
-							<div class="position_filter">
-								<div class="position1 justify-content-between ">
-									<h5>Select Position</h5>
-								</div>
-								<div id="inner-filter justify-content-between ">
-									<input type="text" list="position-data" class="default-select" placeholder="Enter position" id="position1" autocomplete="off">
-									<div id="position-data">
+								<!-- <div class="position_filter">
+									<div class="position1 justify-content-between ">
+										<h5>Select Position or Course</h5>
+									</div>
+									<div id="inner-filter justify-content-between ">
+										<input name="position" type="text" list="position-data" class="default-select" placeholder="Enter position" id="position1" autocomplete="off">
+										<div id="position-data">
+										</div>
+
 									</div>
 
-								</div>
 
+								</div> -->
+								<div class="gender_filter justify-content-between mt-3">
+									<div class="gender1">
+										<h5>Select Gender</h5>
+									</div>
+									<div class="gender2">
+										<input type="radio" id="male" name="gender" class="gender_radio" value="male">
+										<label for="male">MALE</label><br>
+										<input type="radio" id="female" name="gender" class="gender_radio" value="female">
+										<label for="female">FEMALE</label><br>
+										<input type="radio" id="other" name="gender" class="gender_radio" value="other">
+										<label for="other">OTHER</label>
+									</div>
+								</div>
+								<div class="working_hours">
+									<div class="working1">
+										<h5>Select Working Hours</h5>
+									</div>
+									<div class="working2">
 
-							</div>
-							<div class="gender_filter justify-content-between ">
-								<div class="gender1">
-									<h5>Select Gender</h5>
-								</div>
-								<div class="gender2">
+										<input type="radio" id="morning" name="working" value="morning">
+										<label for="morning">MORNING</label><br>
+										<input type="radio" id="evening" name="working" value="evening">
+										<label for="evening">EVENING</label><br>
+										<input type="radio" id="night" name="working" value="night">
+										<label for="night">NIGHT</label>
 
-									<input type="radio" id="male" name="gender" class="gender_radio" value="male">
-									<label for="male">MALE</label><br>
-									<input type="radio" id="female" name="gender" class="gender_radio" value="female">
-									<label for="female">FEMALE</label><br>
-									<input type="radio" id="other" name="gender" class="gender_radio" value="other">
-									<label for="other">OTHER</label>
-								</div>
-							</div>
-							<div class="working_hours">
-								<div class="working1">
-									<h5>Select Working Hours</h5>
-								</div>
-								<div class="working2">
-
-									<input type="radio" id="morning" name="working" value="morning">
-									<label for="morning">MORNING</label><br>
-									<input type="radio" id="evening" name="working" value="evening">
-									<label for="evening">EVENING</label><br>
-									<input type="radio" id="night" name="working" value="night">
-									<label for="night">NIGHT</label>
-
-								</div>
-								<div class="hours">
-									<input type="number" class="default-select" placeholder="Enter no. of working hours" autocomplete="off">
-									<br>
-									<br>
-								</div>
-								<div class="col-lg-2 form-cols" id="submit-btn">
-									<button type="button" class="btn btn-info">
-										<span class="lnr lnr-magnifier"></span> Search
-									</button>
-								</div>
-							</div>
-						</div>
+									</div>
+									<div class="hours mt-4">
+										<div class="working1">
+											<h5>Number of hours</h5>
+										</div>
+										<input type="number" name="hours" class="default-select" placeholder="Enter no. of working hours" autocomplete="off">
+										<br>
+										<br>
+									</div>
+									<input type="hidden" name="url" id="url">
+									<script>
+										document.getElementById("url").value = window.location.href;
+									</script>
+									<div class="col-lg-2 form-cols" id="submit-btn">
+										<button type="submit" class="btn btn-info" name="submit">
+											<span class="lnr lnr-magnifier"></span> Search
+										</button>
+									</div>
+						</form>
 					</div>
 				</div>
 			</div>
+		</div>
+		</div>
 	</section>
 	<!-- End post Area -->
 
@@ -787,6 +1022,13 @@ include './connect.php'
 		});
 	</script>
 	<script type="text/javascript">
+		if ($(".single-post")[0]) {
+			// Do something if class exists
+		} else {
+			// Do something if class does not exist
+			document.getElementById("no-result").style.display = "block";
+		}
+
 		$("#search1").on("keyup", function() {
 			var search_term = $(this).val();
 			if (search_term != '') {
