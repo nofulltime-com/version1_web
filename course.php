@@ -253,7 +253,7 @@
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="images/author-image1.jpg" class="img-responsive" alt="">
+                                   <img src="img/author-image1.jpg" class="img-responsive" alt="">
                               </div>
                               <div class="team-info">
                                    <h3>Mr X</h3>
@@ -270,7 +270,7 @@
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="images/author-image1.jpg" class="img-responsive" alt="">
+                                   <img src="img/author-image1.jpg" class="img-responsive" alt="">
                               </div>
                               <div class="team-info">
                                    <h3>Mr Y</h3>
@@ -286,7 +286,7 @@
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="images/author-image1.jpg" class="img-responsive" alt="">
+                                   <img src="img/author-image1.jpg" class="img-responsive" alt="">
                               </div>
                               <div class="team-info">
                                    <h3>Mr Z</h3>
@@ -303,7 +303,7 @@
                     <div class="col-md-3 col-sm-6">
                          <div class="team-thumb">
                               <div class="team-image">
-                                   <img src="images/author-image1.jpg" class="img-responsive" alt="">
+                                   <img src="img/author-image1.jpg" class="img-responsive" alt="">
                               </div>
                               <div class="team-info">
                                    <h3>Mr A</h3>
@@ -338,7 +338,7 @@
                                         <div class="courses-thumb">
                                              <div class="courses-top">
                                                   <div class="courses-image">
-                                                       <img src="images/learn.jpg" class="img-responsive" alt="">
+                                                       <img src="img/learn.jpg" class="img-responsive" alt="">
                                                   </div>
                                                   <div class="courses-date">
                                                        <span><i class="fa fa-calendar"></i> 12 / 7 / 2018</span>
@@ -353,7 +353,7 @@
 
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="images/learn.jpg" class="img-responsive" alt="">
+                                                       <img src="img/learn.jpg" class="img-responsive" alt="">
                                                        <span>Mark Wilson</span>
                                                   </div>
                                                   <div class="courses-price">
@@ -369,7 +369,7 @@
                                         <div class="courses-thumb">
                                              <div class="courses-top">
                                                   <div class="courses-image">
-                                                       <img src="images/learn.jpg" class="img-responsive" alt="">
+                                                       <img src="img/learn.jpg" class="img-responsive" alt="">
                                                   </div>
                                                   <div class="courses-date">
                                                        <span><i class="fa fa-calendar"></i> 20 / 7 / 2018</span>
@@ -384,7 +384,7 @@
 
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="images/learn.jpg" class="img-responsive" alt="">
+                                                       <img src="img/learn.jpg" class="img-responsive" alt="">
                                                        <span>Jessica</span>
                                                   </div>
                                                   <div class="courses-price">
@@ -400,7 +400,7 @@
                                         <div class="courses-thumb">
                                              <div class="courses-top">
                                                   <div class="courses-image">
-                                                       <img src="images/learn.jpg" class="img-responsive" alt="">
+                                                       <img src="img/learn.jpg" class="img-responsive" alt="">
                                                   </div>
                                                   <div class="courses-date">
                                                        <span><i class="fa fa-calendar"></i> 15 / 8 / 2018</span>
@@ -415,7 +415,7 @@
 
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="images/learn.jpg" class="img-responsive" alt="">
+                                                       <img src="img/learn.jpg" class="img-responsive" alt="">
                                                        <span>Catherine</span>
                                                   </div>
                                                   <div class="courses-price free">
@@ -431,7 +431,7 @@
                                         <div class="courses-thumb">
                                              <div class="courses-top">
                                                   <div class="courses-image">
-                                                       <img src="images/learn.jpg" class="img-responsive" alt="">
+                                                       <img src="img/learn.jpg" class="img-responsive" alt="">
                                                   </div>
                                                   <div class="courses-date">
                                                        <span><i class="fa fa-calendar"></i> 10 / 8 / 2018</span>
@@ -446,7 +446,7 @@
 
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="images/learn.jpg" class="img-responsive" alt="">
+                                                       <img src="img/learn.jpg" class="img-responsive" alt="">
                                                        <span>Mark Wilson</span>
                                                   </div>
                                                   <div class="courses-price">
@@ -462,7 +462,7 @@
                                         <div class="courses-thumb">
                                              <div class="courses-top">
                                                   <div class="courses-image">
-                                                       <img src="images/learn.jpg" class="img-responsive" alt="">
+                                                       <img src="img/learn.jpg" class="img-responsive" alt="">
                                                   </div>
                                                   <div class="courses-date">
                                                        <span><i class="fa fa-calendar"></i> 5 / 10 / 2018</span>
@@ -477,7 +477,7 @@
 
                                              <div class="courses-info">
                                                   <div class="courses-author">
-                                                       <img src="images/learn.jpg" class="img-responsive" alt="">
+                                                       <img src="img/learn.jpg" class="img-responsive" alt="">
                                                        <span>Jessica</span>
                                                   </div>
                                                   <div class="courses-price free">
@@ -509,7 +509,7 @@
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="images/learn.jpg" class="img-responsive" alt="">
+                                             <img src="img/learn.jpg" class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
                                              <h4>Jackson</h4>
@@ -529,7 +529,7 @@
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="images/learn.jpg" class="img-responsive" alt="">
+                                             <img src="img/learn.jpg" class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
                                              <h4>Camila</h4>
@@ -547,7 +547,7 @@
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="images/learn.jpg" class="img-responsive" alt="">
+                                             <img src="img/learn.jpg" class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
                                              <h4>Barbie</h4>
@@ -566,7 +566,7 @@
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="images/learn.jpg" class="img-responsive" alt="">
+                                             <img src="img/learn.jpg" class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
                                              <h4>Andrio</h4>
@@ -617,7 +617,7 @@
 
                     <div class="col-md-6 col-sm-12">
                          <div class="contact-image">
-                              <img src="images/courses-image1.jpg" class="img-responsive" alt="Image">
+                              <img src="img/courses-image1.jpg" class="img-responsive" alt="Image">
                          </div>
                     </div>
 
