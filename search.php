@@ -210,7 +210,6 @@ if (isset($_POST['submit1'])) {
 								<?php
 								if (isset($_GET['pincode'])) {
 									$pincode = $_GET['pincode'];
-
 									$details_query = "SELECT * FROM `seeker_details` WHERE pin_code='$pincode' ";
 								} else {
 									$details_query = "SELECT * FROM `seeker_details`";
