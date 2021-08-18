@@ -42,7 +42,26 @@ include './connect.php';
 	<link rel="stylesheet" href="css/filter_style.css">
 	<link rel="stylesheet" href="css/element.css">
 </head>
-
+<?php
+if (isset($_POST['submit'])) {
+	$url = "search.php?";
+	echo "<script>console.log('Hello')</script>";
+	if (isset($_POST['category'])) {
+		$category = $_POST['category'];
+		$url = $url . "category=$category";
+	}
+	if (isset($_POST['search']) and $_POST['search'] != "") {
+		$search = $_POST['search'];
+		$url = $url . "&search=$search";
+	}
+	if (isset($_POST['pincode']) and $_POST['pincode'] != "") {
+		$pincode = $_POST['pincode'];
+		$url = $url . "&pincode=$pincode";
+	}
+	echo "<script>console.log('$url')</script>";
+	echo "<script>location.replace('$url')</script>";
+}
+?>
 
 <body>
 
@@ -111,41 +130,35 @@ include './connect.php';
 					<h1 class="text-white">
 						<span>1500+</span> Candidates registered last week
 					</h1>
-					<form action="search.php" class="serach-form-area">
+					<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="serach-form-area">
 						<div class="row justify-content-center form-wrap">
 							<div class="col-lg-4 form-cols">
-								<input type="text" class="form-control" name="search" placeholder="Search by field,course or pin-code">
+								<input type="text" class="form-control" name="search" placeholder="E.g Web Developement">
 							</div>
 
 							<div class="col-lg-3 form-cols">
 								<div class="default-select" id="default-selects2">
-									<select>
-										<option value="1">All Categories</option>
-										<option value="2">Part Time job seekers</option>
-										<option value="3">Course seekers</option>
-										<option value="4">NGO </option>
-
+									<select name="category">
+										<option value="all">All Categories</option>
+										<option value="parttime">Part Time job seekers</option>
+										<option value="course">Course seekers</option>
+										<option value="ngo">Volunteers</option>
 									</select>
 								</div>
 							</div>
 
-							<div id="search-bar" class="col-lg-3 form-cols">
-								<div id="inner-filter">
-									<input list="search-data" class="default-select" type="text" id="search1" autocomplete="off">
-									<div id="search-data">
-									</div>
-								</div>
-
+							<div class="col-lg-3 form-cols">
+								<input type="text" class="form-control" name="pincode" placeholder="Enter PinCode E.g : 522034">
 							</div>
 							<div class="col-lg-2 form-cols">
-								<button type="submit" class="btn btn-info">
+								<button type="submit" name="submit" class="btn btn-info">
 									<span class="lnr lnr-magnifier"></span> Search
 								</button>
 							</div>
 						</div>
 					</form>
 					<p class="text-white" style="font-size:18px;font-weight: 500;"><span>Search by :</span>
-						Field,Course,Position,Location,Pin code</p>
+						Field,Course,Position and Pin code</p>
 				</div>
 			</div>
 		</div>
@@ -413,7 +426,7 @@ include './connect.php';
 				</div>
 
 			</div>
-		<div class="courses-tag"> <a href="course.php">Know more
+			<div class="courses-tag"> <a href="course.php">Know more
 					<i class="fa fa-arrow-right" aria-hidden="true"></i> </a></div>
 		</div>
 	</section>
