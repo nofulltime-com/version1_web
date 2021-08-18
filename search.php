@@ -45,7 +45,7 @@ include './connect.php'
 if (isset($_POST['submit'])) {
 	$url = $_POST['url'];
 	$loc_fil = $_POST['location'];
-	$pos_fil = $_POST['position'];
+	$pos_fil = $_POST['pos'];
 	$gen_fil = $_POST['gender'];
 	$work_fil = $_POST['working'];
 	$hours_fil = $_POST['hours'];
@@ -239,8 +239,16 @@ if (isset($_POST['submit'])) {
 									while ($row = $parttime_res->fetch_assoc()) {
 										$pow = "";
 										if ($row['place_of_work'] == "wfh") {
+											if (isset($_GET['pos'])) {
+												if (!$_GET['pos'] == "online")
+													continue;
+											}
 											$pow = 'Work From Home';
 										} else {
+											if (isset($_GET['pos'])) {
+												if (!$_GET['pos'] == "offline")
+													continue;
+											}
 											$pow = "In Office";
 										}
 										$a_tag = '';
@@ -338,8 +346,16 @@ if (isset($_POST['submit'])) {
 									while ($row = $course_res->fetch_assoc()) {
 										$pow = "";
 										if ($row['mode_of_learning'] == "online") {
+											if (isset($_GET['pos'])) {
+												if ($_GET['pos'] != "online")
+													continue;
+											}
 											$pow = 'Online';
 										} else {
+											if (isset($_GET['pos'])) {
+												if ($_GET['pos'] != "offline")
+													continue;
+											}
 											$pow = "At Coaching Center";
 										}
 
@@ -441,9 +457,21 @@ if (isset($_POST['submit'])) {
 									while ($row = $ngo_res->fetch_assoc()) {
 										$pow = "";
 										if ($row['place_of_work'] == "wfh") {
+											if (isset($_GET['pos'])) {
+												if ($_GET['pos'] != "online")
+													continue;
+											}
 											$pow = 'Work From Home';
 										} else {
+											if (isset($_GET['pos'])) {
+												if ($_GET['pos'] != "offline")
+													continue;
+											}
 											$pow = "In Office";
+										}
+										if (isset($_GET['pos'])) {
+											if (!$_GET['pos'] == "online")
+												continue;
 										}
 										$id = $row['id'];
 
@@ -528,8 +556,20 @@ if (isset($_POST['submit'])) {
 							while ($row = $parttime_res->fetch_assoc()) {
 								$pow = "";
 								if ($row['place_of_work'] == "wfh") {
+									if (isset($_GET['pos'])) {
+
+										if ($_GET['pos'] != "online") {
+											continue;
+										}
+									}
 									$pow = 'Work From Home';
 								} else {
+									if (isset($_GET['pos'])) {
+										if ($_GET['pos'] != "offline") {
+											// echo "<script>console.log('Hey')</script>";
+											continue;
+										}
+									}
 									$pow = "In Office";
 								}
 								$id = $row['id'];
@@ -547,7 +587,7 @@ if (isset($_POST['submit'])) {
 								}
 								if (isset($_GET['loc'])) {
 									$loc = $_GET['loc'];
-									// echo "<script>console.log('$town')</script>";
+
 									if (strtolower($loc) != strtolower($town)) {
 										continue;
 									}
@@ -573,7 +613,7 @@ if (isset($_POST['submit'])) {
 								}
 								if (isset($_GET['hours'])) {
 									$diff = (strtotime($parttime_end) - strtotime($parttime_start)) / 3600;
-									echo "<script>console.log('$diff')</script>";
+
 									if ($diff < $_GET['hours'])
 										continue;
 								}
@@ -637,8 +677,16 @@ if (isset($_POST['submit'])) {
 							while ($row = $course_res->fetch_assoc()) {
 								$pow = "";
 								if ($row['mode_of_learning'] == "online") {
+									if (isset($_GET['pos'])) {
+										if ($_GET['pos'] != "online")
+											continue;
+									}
 									$pow = 'Online';
 								} else {
+									if (isset($_GET['pos'])) {
+										if ($_GET['pos'] != "offline")
+											continue;
+									}
 									$pow = "At Coaching Center";
 								}
 								$id = $row['id'];
@@ -741,8 +789,16 @@ if (isset($_POST['submit'])) {
 							while ($row = $ngo_res->fetch_assoc()) {
 								$pow = "";
 								if ($row['place_of_work'] == "wfh") {
+									if (isset($_GET['pos'])) {
+										if ($_GET['pos'] != "online")
+											continue;
+									}
 									$pow = 'Work From Home';
 								} else {
+									if (isset($_GET['pos'])) {
+										if ($_GET['pos'] != "offline")
+											continue;
+									}
 									$pow = "In Office";
 								}
 								$id = $row['id'];
@@ -854,19 +910,19 @@ if (isset($_POST['submit'])) {
 									</div>
 								<?php } ?>
 
-								<!-- <div class="position_filter">
+								<div class="position_filter container mt-4">
 									<div class="position1 justify-content-between ">
-										<h5>Select Position or Course</h5>
+										<h5>Select Work Place</h5>
 									</div>
 									<div id="inner-filter justify-content-between ">
-										<input name="position" type="text" list="position-data" class="default-select" placeholder="Enter position" id="position1" autocomplete="off">
-										<div id="position-data">
-										</div>
-
+										<input type="radio" id="online" name="pos" class="gender_radio" value="online">
+										<label for="online">ON-LINE (Work From Home)</label><br>
+										<input type="radio" id="offline" name="pos" class="gender_radio" value="offline">
+										<label for="offline">OFF-LINE</label><br>
 									</div>
 
 
-								</div> -->
+								</div>
 								<div class="container mt-4">
 									<div class="gender1">
 										<h5>Select Gender</h5>
@@ -882,7 +938,7 @@ if (isset($_POST['submit'])) {
 								</div>
 								<div class="working_hours mt-4">
 									<div class="working1">
-										<h5>Select Working Hours</h5>
+										<h5>Select Part-time Hours</h5>
 									</div>
 									<div class="working2">
 
