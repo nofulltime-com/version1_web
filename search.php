@@ -62,6 +62,26 @@ if (isset($_POST['submit'])) {
 	echo "<script>location.replace('$url')</script>";
 }
 ?>
+<?php
+if (isset($_POST['submit1'])) {
+	$url = "search.php?";
+	echo "<script>console.log('Hello')</script>";
+	if (isset($_POST['category'])) {
+		$category = $_POST['category'];
+		$url = $url . "category=$category";
+	}
+	if (isset($_POST['search']) and $_POST['search'] != "") {
+		$search = $_POST['search'];
+		$url = $url . "&search=$search";
+	}
+	if (isset($_POST['pincode']) and $_POST['pincode'] != "") {
+		$pincode = $_POST['pincode'];
+		$url = $url . "&pincode=$pincode";
+	}
+	echo "<script>console.log('$url')</script>";
+	echo "<script>location.replace('$url')</script>";
+}
+?>
 
 <body>
 	<header id="header" id="home">
@@ -133,40 +153,36 @@ if (isset($_POST['submit'])) {
 						<a href="index.php">Home </a> <span class="lnr lnr-arrow-right"></span> <a href="search.php">
 							Search Page</a>
 					</p>
-					<form action="#" class="serach-form-area">
+					<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="serach-form-area">
 						<div class="row justify-content-center form-wrap">
 							<div class="col-lg-4 form-cols">
-								<input type="text" class="form-control" name="search" placeholder="what are you looging for?">
+
+								<input type="text" class="form-control" name="search" placeholder="E.g Web Developement">
 							</div>
-							<div class="col-lg-3 form-cols">
-								<div class="default-select" id="default-selects"">
-											<select>
-												<option value=" 1">Select area</option>
-									<option value="2">Dhaka</option>
-									<option value="3">Rajshahi</option>
-									<option value="4">Barishal</option>
-									<option value="5">Noakhali</option>
-									</select>
-								</div>
-							</div>
+
 							<div class="col-lg-3 form-cols">
 								<div class="default-select" id="default-selects2">
-									<select>
-										<option value="1">All Category</option>
-										<option value="2">Medical</option>
-										<option value="3">Technology</option>
-										<option value="4">Goverment</option>
-										<option value="5">Development</option>
+									<select name="category">
+										<option value="all">All Categories</option>
+										<option value="parttime">Part Time job seekers</option>
+										<option value="course">Course seekers</option>
+										<option value="ngo">Volunteers</option>
 									</select>
 								</div>
 							</div>
+
+							<div class="col-lg-3 form-cols">
+								<input type="text" class="form-control" name="pincode" placeholder="Enter PinCode E.g : 522034">
+							</div>
 							<div class="col-lg-2 form-cols">
-								<button type="button" class="btn btn-info">
+								<button type="submit" name="submit1" class="btn btn-info">
 									<span class="lnr lnr-magnifier"></span> Search
 								</button>
 							</div>
 						</div>
 					</form>
+					<p class="text-white" style="font-size:18px;font-weight: 500;"><span>Search by :</span>
+						Field,Course,Position and Pin code</p>
 				</div>
 			</div>
 		</div>
@@ -594,12 +610,397 @@ if (isset($_POST['submit'])) {
 
 						<?php
 						} else if ($category == "parttime") {
+							if (isset($_GET['search'])) {
+								$temp = explode(" ", $_GET['search']);
+								$search = $temp[0];
+
+								$parttime = "SELECT * FROM `job_seeker_details` WHERE field LIKE '%{$search}%'";
+								$parttime_res = $conn->query($parttime);
+								if (!($parttime_res->num_rows > 0)) {
+									$parttime = "SELECT * FROM `job_seeker_details` WHERE position LIKE '%{$search}%'";
+								}
+							} else {
+								$parttime = "SELECT * FROM `job_seeker_details`";
+							}
+							$parttime_res = $conn->query($parttime);
+							if ($parttime_res->num_rows > 0) {
+								while ($row = $parttime_res->fetch_assoc()) {
+									$pow = "";
+									if ($row['place_of_work'] == "wfh") {
+										if (isset($_GET['pos'])) {
+											if ($_GET['pos'] != "online") {
+												continue;
+											}
+										}
+										$pow = 'Work From Home';
+									} else {
+										if (isset($_GET['pos'])) {
+											if ($_GET['pos'] != "offline") {
+												continue;
+											}
+										}
+										$pow = "In Office";
+									}
+									$id = $row['id'];
+									if (isset($_GET['pincode'])) {
+										$pincode = $_GET['pincode'];
+										$details_query = "SELECT * FROM `seeker_details` WHERE pin_code='$pincode' AND id='$id'";
+									} else {
+										$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+									}
+									$details_res = $conn->query($details_query);
+									if ($details_res->num_rows > 0) {
+										while ($row2 = $details_res->fetch_assoc()) {
+											$town = $row2['town'];
+											$state = $row2['state'];
+											$country = $row2['country'];
+											$parttime_start = substr($row2['part_time_start'], 0, 5);
+											$parttime_end = substr($row2['part_time_end'], 0, 5);
+											$gen2 = $row2['gender'];
+										}
+										if (isset($_GET['loc'])) {
+											$loc = $_GET['loc'];
+
+											if (strtolower($loc) != strtolower($town)) {
+												continue;
+											}
+										}
+										if (isset($_GET['gen'])) {
+											$gen = $_GET['gen'];
+											if ($gen2 != $gen)
+												continue;
+										}
+										if (isset($_GET['work'])) {
+											$work = $_GET['work'];
+											if ($work == "morning") {
+
+												if ((strtotime($parttime_start) < strtotime('00:00:00')) or (strtotime($parttime_start) > strtotime('15:00:00')))
+													continue;
+											}
+											if ($work == "evening")
+												if ((strtotime($parttime_start) < strtotime('15:00:00')) or (strtotime($parttime_start) >= strtotime('19:00:00')))
+													continue;
+											if ($work == "night")
+												if ((strtotime($parttime_start) < strtotime('19:00:00')) or (strtotime($parttime_start) > strtotime('24:00:00')))
+													continue;
+										}
+										if (isset($_GET['hours'])) {
+											$diff = (strtotime($parttime_end) - strtotime($parttime_start)) / 3600;
+
+											if ($diff < $_GET['hours'])
+												continue;
+										}
+										$a_tag = '';
+										if (isset($_SESSION['recruiter_id'])) {
+											$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4> Field - ' . $row['field'] . '</h4>
+									</a>';
+										} else {
+											$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4> Field - ' . $row['field'] . '</h4>
+									</a>';
+										}
+
+										echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">' . $a_tag . '
+									<h6> Position - ' . $row['position'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<p>
+								Working Hours : ' . $parttime_start . '  -  ' . $parttime_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $country . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a onclick="return false;">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a onclick="return false;">Part Time</a>
+									</li>
+									<li>
+										<a onclick="return false;">' . $row['position'] . '</a>
+									</li>
+									<li>
+										<a onclick="return false;">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+									}
+								}
+							}
+						?>
+
+						<?php } else if ($category == "course") {
+							if (isset($_GET['search'])) {
+								$temp = explode(" ", $_GET['search']);
+								$search = $temp[0];
+
+								$course = "SELECT * FROM `course_details` WHERE field LIKE '%{$search}%' ";
+								$course_res = $conn->query($course);
+								if (!($course_res->num_rows > 0)) {
+									$course = "SELECT * FROM `course_details` WHERE course LIKE '%{$search}%'";
+								}
+							} else {
+								$course = "SELECT * FROM `course_details`";
+							}
+
+							$course_res = $conn->query($course);
+							if ($course_res->num_rows > 0) {
+								while ($row = $course_res->fetch_assoc()) {
+									$pow = "";
+									if ($row['mode_of_learning'] == "online") {
+										if (isset($_GET['pos'])) {
+											if ($_GET['pos'] != "online")
+												continue;
+										}
+										$pow = 'Online';
+									} else {
+										if (isset($_GET['pos'])) {
+											if ($_GET['pos'] != "offline")
+												continue;
+										}
+										$pow = "At Coaching Center";
+									}
+									$id = $row['id'];
+									if (isset($_GET['pincode'])) {
+										$pincode = $_GET['pincode'];
+										$details_query = "SELECT * FROM `seeker_details` WHERE pin_code='$pincode' AND id='$id'";
+									} else {
+										$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+									}
+									$details_res = $conn->query($details_query);
+									if ($details_res->num_rows > 0) {
+										$details_res = $conn->query($details_query);
+										while ($row2 = $details_res->fetch_assoc()) {
+											$town = $row2['town'];
+											$state = $row2['state'];
+											$country = $row2['country'];
+											$course_start = substr($row2['course_time_start'], 0, 5);
+											$course_end = substr($row2['course_time_end'], 0, 5);
+											$gen2 = $row2['gender'];
+										}
+										if (isset($_GET['loc'])) {
+											$loc = $_GET['loc'];
+
+											if (strtolower($loc) != strtolower($town)) {
+												continue;
+											}
+										}
+										if (isset($_GET['gen'])) {
+											$gen = $_GET['gen'];
+											if ($gen2 != $gen)
+												continue;
+										}
+										if (isset($_GET['work'])) {
+											$work = $_GET['work'];
+											if ($work == "morning") {
+
+												if ((strtotime($course_start) < strtotime('00:00:00')) or (strtotime($course_start) > strtotime('15:00:00')))
+													continue;
+											}
+											if ($work == "evening")
+												if ((strtotime($course_start) < strtotime('15:00:00')) or (strtotime($course_start) >= strtotime('19:00:00')))
+													continue;
+											if ($work == "night")
+												if ((strtotime($course_start) < strtotime('19:00:00')) or (strtotime($course_start) > strtotime('24:00:00')))
+													continue;
+										}
+										if (isset($_GET['hours'])) {
+											$diff = (strtotime($course_end) - strtotime($course_start)) / 3600;
+
+											if ($diff < $_GET['hours'])
+												continue;
+										}
+										$a_tag = '';
+										if (isset($_SESSION['recruiter_id'])) {
+											$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4> Field - ' . $row['field'] . '</h4>
+									</a>';
+										} else {
+											$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4> Field - ' . $row['field'] . '</h4>
+									</a>';
+										}
+										echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">
+									' . $a_tag . '
+									<h6> Course - ' . $row['course'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Study      :    ' . $pow . '</h5>
+							<p>
+								Dedicated Hours : ' . $course_start . '  -  ' . $course_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $country . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a onclick="return false;">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a onclick="return false;">Course</a>
+									</li>
+									<li>
+										<a onclick="return false;">' . $row['course'] . '</a>
+									</li>
+									<li>
+										<a onclick="return false;">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+									}
+								}
+							}
+						?>
+
+
+						<?php } else if ($category == "ngo") {
+							if (isset($_GET['search'])) {
+								$temp = explode(" ", $_GET['search']);
+								$search = $temp[0];
+								$ngo = "SELECT * FROM `ngo_details` WHERE field LIKE '%{$search}%' ";
+								$ngo_res = $conn->query($ngo);
+								if (!($ngo_res->num_rows > 0)) {
+									$ngo = "SELECT * FROM `ngo_details` WHERE position LIKE '%{$search}%'";
+								}
+							} else {
+								$ngo = "SELECT * FROM `ngo_details`";
+							}
+
+							$ngo_res = $conn->query($ngo);
+
+							if ($ngo_res->num_rows > 0) {
+								while ($row = $ngo_res->fetch_assoc()) {
+									$pow = "";
+									if ($row['place_of_work'] == "wfh") {
+										if (isset($_GET['pos'])) {
+											if ($_GET['pos'] != "online")
+												continue;
+										}
+										$pow = 'Work From Home';
+									} else {
+										if (isset($_GET['pos'])) {
+											if ($_GET['pos'] != "offline")
+												continue;
+										}
+										$pow = "In Office";
+									}
+									$id = $row['id'];
+									if (isset($_GET['pincode'])) {
+										$pincode = $_GET['pincode'];
+
+										$details_query = "SELECT * FROM `seeker_details` WHERE pin_code='$pincode' AND id='$id'";
+									} else {
+
+										$details_query = "SELECT * FROM `seeker_details` WHERE id='$id'";
+									}
+
+									$details_res = $conn->query($details_query);
+									if ($details_res->num_rows > 0) {
+										while ($row2 = $details_res->fetch_assoc()) {
+											$town = $row2['town'];
+											$state = $row2['state'];
+											$country = $row2['country'];
+											$ngo_start = substr($row2['ngo_time_start'], 0, 5);
+											$ngo_end = substr($row2['ngo_time_end'], 0, 5);
+
+											// echo "<script>console.log('$temp3')</script>";
+										}
+										if (isset($_GET['loc'])) {
+											$loc = $_GET['loc'];
+											// echo "<script>console.log('$town')</script>";
+											if (strtolower($loc) != strtolower($town)) {
+												continue;
+											}
+										}
+										if (isset($_GET['gen'])) {
+											$gen = $_GET['gen'];
+											if ($gen2 != $gen)
+												continue;
+										}
+										if (isset($_GET['work'])) {
+											$work = $_GET['work'];
+											if ($work == "morning") {
+
+												if ((strtotime($ngo_start) < strtotime('00:00:00')) or (strtotime($ngo_start) > strtotime('15:00:00')))
+													continue;
+											}
+											if ($work == "evening")
+												if ((strtotime($ngo_start) < strtotime('15:00:00')) or (strtotime($ngo_start) >= strtotime('19:00:00')))
+													continue;
+											if ($work == "night")
+												if ((strtotime($ngo_start) < strtotime('19:00:00')) or (strtotime($ngo_start) > strtotime('24:00:00')))
+													continue;
+										}
+										if (isset($_GET['hours'])) {
+											$diff = (strtotime($ngo_end) - strtotime($ngo_start)) / 3600;
+											// echo "<script>console.log('$diff')</script>";
+											if ($diff < $_GET['hours'])
+												continue;
+										}
+										if (isset($_SESSION['recruiter_id'])) {
+											$a_tag = '<a href="./profile/index.php?id=' . $id . '">
+										<h4> Field - ' . $row['field'] . '</h4>
+									</a>';
+										} else {
+											$a_tag = '<a href="./Register/recruiterLogin.php">
+										<h4> Field - ' . $row['field'] . '</h4>
+									</a>';
+										}
+										echo '<div class="single-post d-flex flex-row">
+						<div class="details">
+							<div class="title d-flex flex-row justify-content-between">
+								<div class="titles">
+									' . $a_tag . '
+									<h6> Position - ' . $row['position'] . '</h6>
+								</div>
+							</div>
+							<h5>Prefered Place of Work      :    ' . $pow . '</h5>
+							<p>
+								Working Hours : ' . $ngo_start . '  -  ' . $ngo_end . '
+							</p>
+							<p class="address"><span class="lnr lnr-map"></span>  ' . $town . ' , ' . $state . ' , ' . $country . '</p>
+							<div class="thumb">
+								<ul class="tags">
+									<li>
+										<a onclick="return false;">' . $row['field'] . '</a>
+									</li>
+									<li>
+										<a onclick="return false;">Volunteer</a>
+									</li>
+									<li>
+										<a onclick="return false;">' . $row['position'] . '</a>
+									</li>
+									<li>
+										<a onclick="return false;">' . $pow . '</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>';
+									}
+								}
+							}
 						?>
 
 
 
 					<?php }
 					} ?>
+
+
+
+
 					<?php if (isset($_GET['place'])) {
 						$place = $_GET['place']
 					?>
