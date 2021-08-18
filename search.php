@@ -1722,9 +1722,8 @@ if (isset($_POST['submit1'])) {
 										<div class="location1 justify-content-between ">
 											<h5>Select City</h5>
 										</div>
-										<input list="search-data" name="location" class="default-select" type="text" id="search1" placeholder="Enter location" autocomplete="off">
-										<div id="search-data">
-										</div>
+										<input name="location" class="default-select" type="text" id="search1" placeholder="Enter location" autocomplete="off">
+
 									</div>
 								<?php } ?>
 
