@@ -1,10 +1,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <?php
 
-$username = "root";
+$username = "nofulltime_nofulltime";
 $servername = "localhost";
-$password = "3183";
-$conn = new mysqli($servername, $username, $password, "nofulltime");
+$password = "Intens@1555!";
+$conn = new mysqli($servername, $username, $password, "nofulltime_nofulltime");
 if ($conn->connect_error)
     die("Connection Error");
 
