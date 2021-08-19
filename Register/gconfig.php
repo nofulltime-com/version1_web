@@ -5,7 +5,7 @@
 	// Edit Following 3 Lines
 	$clientId = '145101863270-vn8ljjuag88re4c8hddhkstosurn7tk4.apps.googleusercontent.com'; //Application client ID
 	$clientSecret = '0HcXqRaj0632DF5yYBDmS5WB'; //Application client secret
-	$redirectURL = 'http://localhost/version1_web/recruiters.html'; //Application Callback URL
+	$redirectURL = 'http://localhost/version1_web/recruiters.php'; //Application Callback URL
 	
 	$gClient = new Google_Client();
 	$gClient->setApplicationName('NoFullTime');
