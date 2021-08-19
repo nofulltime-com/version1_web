@@ -159,7 +159,7 @@
                          <div class="feature-thumb">
                               <span>01</span>
                               <h3>Trending Courses</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>
+                              <p> We provide you the best and the trending courses of the industry .</p>
                          </div>
                     </div>
 
@@ -167,7 +167,7 @@
                          <div class="feature-thumb">
                               <span>02</span>
                               <h3>Learn at your own pace.</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>
+                              <p> You can learn any course any time at any pace.</p>
                          </div>
                     </div>
 
@@ -175,7 +175,7 @@
                          <div class="feature-thumb">
                               <span>03</span>
                               <h3>Best Teachers</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna..</p>
+                              <p> We provide you the best courses and the teachers who are expert in their fields.</p>
                          </div>
                     </div>
 
@@ -197,29 +197,29 @@
                                    <span><i class="fa fa-users"></i></span>
                                    <figcaption>
                                         <h3>Learn</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ipsa voluptatibus.</p>
-                                   </figcaption>
-                              </figure>
-
-                              <figure>
-                                   <span><i class="fa fa-certificate"></i></span>
-                                   <figcaption>
-                                        <h3>Apply</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ipsa voluptatibus.</p>
+                                        <p> Learn the course of your own choice.</p>
                                    </figcaption>
                               </figure>
 
                               <figure>
                                    <span><i class="fa fa-bar-chart-o"></i></span>
                                    <figcaption>
+                                        <h3>Apply</h3>
+                                        <p>After learning apply your knowledge for some practical implementations.</p>
+                                   </figcaption>
+                              </figure>
+
+                              <figure>
+                                   <span><i class="fa fa-certificate"></i></span>
+                                   <figcaption>
                                         <h3>Get Certified</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ipsa voluptatibus.</p>
+                                        <p>Get certified for your learnings and show the world your skills. </p>
                                    </figcaption>
                               </figure>
                          </div>
                     </div>
 
-                    <div class="col-md-offset-1 col-md-4 col-sm-12">
+                  <!--  <div class="col-md-offset-1 col-md-4 col-sm-12">
                          <div class="entry-form">
                               <form action="#" method="post">
                                    <h2>Signup today</h2>
@@ -233,6 +233,7 @@
                               </form>
                          </div>
                     </div>
+-->
 
                </div>
           </div>
@@ -348,7 +349,7 @@
 
                                              <div class="courses-detail">
                                                   <h3><a href="#">Social Media Management</a></h3>
-                                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                  <p>Learn Social Media Management with our teachers.</p>
                                              </div>
 
                                              <div class="courses-info">
@@ -379,7 +380,7 @@
 
                                              <div class="courses-detail">
                                                   <h3><a href="#">Graphic & Web Design</a></h3>
-                                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                  <p>Learn graphic and Web Design and excell the skill.</p>
                                              </div>
 
                                              <div class="courses-info">
@@ -410,7 +411,7 @@
 
                                              <div class="courses-detail">
                                                   <h3><a href="#">Marketing Communication</a></h3>
-                                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                  <p>Learn Marketing Communication with us.</p>
                                              </div>
 
                                              <div class="courses-info">
@@ -440,8 +441,8 @@
                                              </div>
 
                                              <div class="courses-detail">
-                                                  <h3><a href="#">Summer Kids</a></h3>
-                                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                  <h3><a href="#">Android Development</a></h3>
+                                                  <p></p>
                                              </div>
 
                                              <div class="courses-info">
@@ -472,7 +473,7 @@
 
                                              <div class="courses-detail">
                                                   <h3><a href="#">Business &amp; Management</a></h3>
-                                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                  <p> Learn Business and Management</p>
                                              </div>
 
                                              <div class="courses-info">
@@ -515,7 +516,7 @@
                                              <h4>Jackson</h4>
                                              <span>Shopify Developer</span>
                                         </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae repellat cupiditate quod accusamus odio autem.</p>
+                                        <p>I am grateful for being a student of such a brilliant course and teacher.</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -535,7 +536,7 @@
                                              <h4>Camila</h4>
                                              <span>Marketing Manager</span>
                                         </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae repellat cupiditate quod accusamus odio autem.</p>
+                                        <p>This course changed my career and helped me achieving success.</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -553,7 +554,7 @@
                                              <h4>Barbie</h4>
                                              <span>Art Director</span>
                                         </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae repellat cupiditate quod accusamus odio autem.</p>
+                                        <p>It was such an amazing course.</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -572,7 +573,7 @@
                                              <h4>Andrio</h4>
                                              <span>Web Developer</span>
                                         </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae repellat cupiditate quod accusamus odio autem.</p>
+                                        <p>Developing websites was not easier for me before taking this course.</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -617,7 +618,7 @@
 
                     <div class="col-md-6 col-sm-12">
                          <div class="contact-image">
-                              <img src="img/courses-image1.jpg" class="img-responsive" alt="Image">
+                              <img src="img/learn.jpg" class="img-responsive" alt="Image">
                          </div>
                     </div>
 
