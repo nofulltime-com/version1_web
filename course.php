@@ -184,7 +184,7 @@ include './connect.php';
                               <p> We provide you the best courses and the teachers who are expert in their fields.</p>
                          </div>
                     </div>
-
+		
                </div>
           </div>
      </section>
@@ -225,21 +225,27 @@ include './connect.php';
                          </div>
                     </div>
 
-                    <!--  <div class="col-md-offset-1 col-md-4 col-sm-12">
+                     <div class="col-md-offset-1 col-md-4 col-sm-12">
                          <div class="entry-form">
-                              <form action="#" method="post">
-                                   <h2>Signup today</h2>
-                                   <input type="text" name="full name" class="form-control" placeholder="Full name" required="">
+                         <form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
+							<div class="row">
+								<div class="col-lg-12 form-group">
+									<input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
 
-                                   <input type="email" name="email" class="form-control" placeholder="Your email address" required="">
+									<input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
 
-                                   <input type="password" name="password" class="form-control" placeholder="Your password" required="">
+									<input name="subject" placeholder="Enter your subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control" required="" type="text">
 
-                                   <button class="submit-btn form-control" id="form-submit">Get started</button>
-                              </form>
+									<textarea class="common-textarea mt-10 form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+									<button class="primary-btn mt-20 text-white" style="  background-image: -moz-linear-gradient(0deg, #29ca8e 0%, #29ca8e 100%);  background-image: -webkit-linear-gradient(0deg, #29ca8e 0%, #29ca8e 100%);  background-image: -ms-linear-gradient(0deg, #29ca8e 0%, #29ca8ef 100%);">Send
+										Message</button>
+									<div class="mt-20 alert-msg" style="text-align: left;"></div>
+								</div>
+							</div>
+						</form>
                          </div>
                     </div>
--->
+
 
                </div>
           </div>
@@ -632,38 +638,7 @@ include './connect.php';
           </div>
      </section>
           -->
-          <section class="contact-page-area section-gap">
-		<div class="contact-main" style="background-color: #9b8bec; padding: 20px;">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="section-heading text-center mt-4 mb-4">
-							<h1 style='color:white'>Send us a <em>message</em></h1>
-							<span style="color:white">If you have any problem send message.</span>
-						</div>
-					</div>
-					<div class="col-lg-12">
-						<form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
-							<div class="row">
-								<div class="col-lg-12 form-group">
-									<input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
-
-									<input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
-
-									<input name="subject" placeholder="Enter your subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control" required="" type="text">
-
-									<textarea class="common-textarea mt-10 form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-									<button class="primary-btn mt-20 text-white" style="float: right;">Send
-										Message</button>
-									<div class="mt-20 alert-msg" style="text-align: left;"></div>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>     
+   
 
 
      <?php if (!(isset($_SESSION['id']) || isset($_SESSION['recruiter_id']))) { ?>
