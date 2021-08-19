@@ -110,8 +110,8 @@ if ($res->num_rows > 0) {
                     <input type="file" name="resume" class='form-control' style='border:none' id="resume" accept="application/pdf">
                 </div>
                 <div class="col-12 mt-4 text-center">
-                    <a href="./education_details.php" class='btn btn-lg btn-danger mt-2'>Previous</a>
-                    <input type="submit" value="Submit" class="btn btn-lg mt-2 ml-4 btn-outline-success " name="submit">
+                    <a href="./education_details.php" class='btn btn-lg btn-outline-danger mt-2'>Previous</a>
+                    <input type="submit" value="Submit" class="btn btn-lg mt-2 ml-4 btn-success " name="submit">
                 </div>
             </form>
         </fieldset>

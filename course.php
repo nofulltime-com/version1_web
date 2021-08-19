@@ -41,20 +41,19 @@ include './connect.php';
      <link rel="stylesheet" href="css/templatemo-style.css">
 
 </head>
+<style>
+     button {
+          color: white;
+     }
+
+     button:hover {
+          color: white;
+     }
+</style>
 
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
-     <!--   
-     <section class="preloader">
-          <div class="spinner">
 
-               <span class="spinner-rotate"></span>
-               
-          </div>
-     </section> -->
-
-
-     <!-- MENU -->
      <header id="header" id="home" style="background-color: black;">
           <div class="container">
                <div class="row align-items-center justify-content-between d-flex" style="display:flex; flex-direction:row;">
@@ -111,7 +110,7 @@ include './connect.php';
 
 
      <!-- HOME -->
-     <section id="home">
+     <section id="home" style="margin-top:-20px">
 
           <div class="row">
 
@@ -184,7 +183,7 @@ include './connect.php';
                               <p> We provide you the best courses and the teachers who are expert in their fields.</p>
                          </div>
                     </div>
-		
+
                </div>
           </div>
      </section>
@@ -225,24 +224,23 @@ include './connect.php';
                          </div>
                     </div>
 
-                     <div class="col-md-offset-1 col-md-4 col-sm-12">
+                    <div class="col-md-offset-1 col-md-4 col-sm-12">
                          <div class="entry-form">
-                         <form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
-							<div class="row">
-								<div class="col-lg-12 form-group">
-									<input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+                              <form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
+                                   <div class="row">
+                                        <div class="col-lg-12 form-group">
+                                             <input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
 
-									<input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+                                             <input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
 
-									<input name="subject" placeholder="Enter your subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control" required="" type="text">
+                                             <input name="subject" placeholder="Enter your subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control" required="" type="text">
 
-									<textarea class="common-textarea mt-10 form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-									<button class="primary-btn mt-20 text-white" style="  background-image: -moz-linear-gradient(0deg, #29ca8e 0%, #29ca8e 100%);  background-image: -webkit-linear-gradient(0deg, #29ca8e 0%, #29ca8e 100%);  background-image: -ms-linear-gradient(0deg, #29ca8e 0%, #29ca8ef 100%);">Send
-										Message</button>
-									<div class="mt-20 alert-msg" style="text-align: left;"></div>
-								</div>
-							</div>
-						</form>
+                                             <textarea class="common-textarea mt-10 form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+                                             <button class="primary-btn mt-20 text-white" style="background-image: -moz-linear-gradient(0deg, #29ca8e 0%, #29ca8e 100%);  background-image: -webkit-linear-gradient(0deg, #29ca8e 0%, #29ca8e 100%); ">Send Message</button>
+                                             <div class="mt-20 alert-msg" style="text-align: left;"></div>
+                                        </div>
+                                   </div>
+                              </form>
                          </div>
                     </div>
 
@@ -252,87 +250,7 @@ include './connect.php';
      </section>
 
 
-     <!-- TEAM -->
-     <!-- <section id="team">
-          <div class="container">
-               <div class="row">
 
-                    <div class="col-md-12 col-sm-12">
-                         <div class="section-title">
-                              <h2>Teachers <small>Meet Professional Trainers</small></h2>
-                         </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                         <div class="team-thumb">
-                              <div class="team-image">
-                                   <img src="img/author-image1.jpg" class="img-responsive" alt="">
-                              </div>
-                              <div class="team-info">
-                                   <h3>Mr X</h3>
-                                   <span>Web Development</span>
-                              </div>
-                              <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                                   <li><a href="#" class="fa fa-twitter"></a></li>
-                                   <li><a href="#" class="fa fa-instagram"></a></li>
-                              </ul>
-                         </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                         <div class="team-thumb">
-                              <div class="team-image">
-                                   <img src="img/author-image1.jpg" class="img-responsive" alt="">
-                              </div>
-                              <div class="team-info">
-                                   <h3>Mr Y</h3>
-                                   <span>Web Development</span>
-                              </div>
-                              <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-google"></a></li>
-                                   <li><a href="#" class="fa fa-instagram"></a></li>
-                              </ul>
-                         </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                         <div class="team-thumb">
-                              <div class="team-image">
-                                   <img src="img/author-image1.jpg" class="img-responsive" alt="">
-                              </div>
-                              <div class="team-info">
-                                   <h3>Mr Z</h3>
-                                   <span>Web Development</span>
-                              </div>
-                              <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-twitter"></a></li>
-                                   <li><a href="#" class="fa fa-envelope-o"></a></li>
-                                   <li><a href="#" class="fa fa-linkedin"></a></li>
-                              </ul>
-                         </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                         <div class="team-thumb">
-                              <div class="team-image">
-                                   <img src="img/author-image1.jpg" class="img-responsive" alt="">
-                              </div>
-                              <div class="team-info">
-                                   <h3>Mr A</h3>
-                                   <span>Web Development</span>
-                              </div>
-                              <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-twitter"></a></li>
-                                   <li><a href="#" class="fa fa-google"></a></li>
-                                   <li><a href="#" class="fa fa-behance"></a></li>
-                              </ul>
-                         </div>
-                    </div>
-
-               </div>
-          </div>
-     </section> -->
 
 
      <!-- Courses -->
@@ -602,43 +520,7 @@ include './connect.php';
      </section>
 
 
-     <!-- CONTACT 
-     <section id="contact">
-          <div class="container">
-               <div class="row">
 
-                    <div class="col-md-6 col-sm-12">
-                         <form id="contact-form" role="form" action="" method="post">
-                              <div class="section-title">
-                                   <h2>Contact us <small>Let us talk!</small></h2>
-                              </div>
-
-                              <div class="col-md-12 col-sm-12">
-                                   <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
-
-                                   <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
-
-                                   <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
-                              </div>
-
-                              <div class="col-md-4 col-sm-12">
-                                   <input type="submit" class="form-control" name="send message" value="Send Message">
-                              </div>
-
-                         </form>
-                    </div>
-
-                    <div class="col-md-6 col-sm-12">
-                         <div class="contact-image">
-                              <img src="img/learn.jpg" class="img-responsive" alt="Image">
-                         </div>
-                    </div>
-
-               </div>
-          </div>
-     </section>
-          -->
-   
 
 
      <?php if (!(isset($_SESSION['id']) || isset($_SESSION['recruiter_id']))) { ?>

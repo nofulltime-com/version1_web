@@ -73,10 +73,6 @@
     transition: 0.5s;
   }
 
-  a:hover, a:active, a:focus {
-    color: #29ca8e;
-    outline: none;
-  }
 
   ::-webkit-scrollbar{
     width: 8px;
@@ -146,10 +142,7 @@
     margin-bottom: 10px;
   }
 
-  .entry-form .submit-btn:hover {
-    background: #3f51b5;
-    color: #ffffff;
-  }
+ 
 
   section {
     position: relative;
@@ -302,10 +295,6 @@
     background-color: transparent;
   }
 
-  .custom-navbar .nav li a:hover {
-    background-color: #29ca8e;
-    color: #ffffff;
-  }
 
   .custom-navbar .nav li.active > a {
     background-color: #29ca8e;
@@ -805,11 +794,6 @@
     margin-top: 20px;
     outline: none;
     width: 50%;
-  }
-
-  .newsletter-form input[type="submit"]:hover {
-    background: #29ca8e;
-    border-color: transparent;
   }
 
   .newsletter-form .form-group span {
