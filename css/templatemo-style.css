@@ -4,7 +4,7 @@
 
   body {
     background: #ffffff;
-    font-family: 'Nunito', sans-serif;
+   
     overflow-x: hidden;
     padding-top: 70px;
   }
@@ -15,7 +15,7 @@
   -----------------------------------------*/
 
   h1,h2,h3,h4,h5,h6 {
-    font-family: 'Muli', sans-serif;
+  
     font-weight: bold;
     line-height: inherit;
   }
