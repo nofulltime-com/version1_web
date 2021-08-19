@@ -218,7 +218,7 @@ if (isset($_POST['submit1'])) {
 
 								while ($row2 = $details_res->fetch_assoc()) {
 									$id = $row2['id'];
-
+									$gen2 = $row2['gender'];
 									$town = $row2['town'];
 									$state = $row2['state'];
 									$country = $row2['country'];
@@ -341,6 +341,7 @@ if (isset($_POST['submit1'])) {
 								while ($row2 = $details_res->fetch_assoc()) {
 									$id = $row2['id'];
 									$town = $row2['town'];
+									$gen2 = $row2['gender'];
 									$state = $row2['state'];
 									$country = $row2['country'];
 									$course_start = substr($row2['course_time_start'], 0, 5);
@@ -468,6 +469,7 @@ if (isset($_POST['submit1'])) {
 									$town = $row2['town'];
 									$state = $row2['state'];
 									$country = $row2['country'];
+									$gen2 = $row2['gender'];
 									$ngo_start = substr($row2['ngo_time_start'], 0, 5);
 									$ngo_end = substr($row2['ngo_time_end'], 0, 5);
 									if (isset($_GET['loc'])) {
@@ -910,6 +912,7 @@ if (isset($_POST['submit1'])) {
 											$town = $row2['town'];
 											$state = $row2['state'];
 											$country = $row2['country'];
+											$gen2 = $row2['gender'];
 											$ngo_start = substr($row2['ngo_time_start'], 0, 5);
 											$ngo_end = substr($row2['ngo_time_end'], 0, 5);
 
@@ -1018,6 +1021,7 @@ if (isset($_POST['submit1'])) {
 								$town = $row2['town'];
 								$state = $row2['state'];
 								$country = $row2['country'];
+								$gen2 = $row2['gender'];
 								$parttime_start = substr($row2['part_time_start'], 0, 5);
 								$parttime_end = substr($row2['part_time_end'], 0, 5);
 								if (isset($_GET['loc'])) {
@@ -1124,6 +1128,7 @@ if (isset($_POST['submit1'])) {
 								$town = $row2['town'];
 								$state = $row2['state'];
 								$country = $row2['country'];
+								$gen2 = $row2['gender'];
 								$course_start = substr($row2['course_time_start'], 0, 5);
 								$course_end = substr($row2['course_time_end'], 0, 5);
 								if (isset($_GET['loc'])) {
@@ -1749,8 +1754,7 @@ if (isset($_POST['submit1'])) {
 										<label for="male">MALE</label><br>
 										<input type="radio" id="female" name="gender" class="gender_radio" value="female">
 										<label for="female">FEMALE</label><br>
-										<input type="radio" id="other" name="gender" class="gender_radio" value="other">
-										<label for="other">OTHER</label>
+
 									</div>
 								</div>
 								<div class="working_hours mt-4">

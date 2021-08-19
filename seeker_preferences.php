@@ -253,7 +253,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="form-check preferences mt-4">
                             <input class="form-check-input" type="checkbox" name="preference[]" id="ngo" value="ngo" <?php if (strpos($prefernces, "ngo") !== false) echo 'checked';
                                                                                                                         ?>>
-                            <label class="form-check-label" for="ngo">Work for a NGO</label>
+                            <label class="form-check-label" for="ngo">Work as a Volunteer</label>
                         </div>
                     </div>
                 </div>
@@ -379,6 +379,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <li class="list-group-item" style="display:none" onclick="selected('Accounting')">Accounting</li>
                                 <li class="list-group-item" style="display:none" onclick="selected('Bussiness')">Bussiness</li>
                                 <li class="list-group-item" style="display:none" onclick="selected('Management')">Management</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Machine Learning')">Machine Learning</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Artificial Intillegence')">Artificial Intillegence</li>
+
                             </ul>  
                             
                         </div>
@@ -391,7 +394,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <li class="list-group-item" style="display:none" onclick="selectedpos('App Development')">App Development</li>
                                 <li class="list-group-item" style="display:none" onclick="selectedpos('Accounting')">Accounting</li>
                                 <li class="list-group-item" style="display:none" onclick="selectedpos('Bussiness')">Bussiness</li>
-                                <li class="list-group-item" style="display:none" onclick="selectedpos('Management')">Management</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Full Stack Developer')">Full Stack Developer</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Front end Developer')">Front end Developer</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Back End Developer')">Back End Developer</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Waiter')">Waiter</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Data Analyst')">Data Analyst</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Data Scientist')">Data Scientist</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Machine Learning')">Machine Learning</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Artificial Intillegence')">Artificail Intillegence</li>
+
+
                             </ul>  
                         </div>
                     </div>
@@ -444,6 +456,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <li class="list-group-item" style="display:none" onclick="nameselected('Management')">Management</li>
                                 <li class="list-group-item" style="display:none" onclick="nameselected('Web Development')">Web Development</li>
                                 <li class="list-group-item" style="display:none" onclick="nameselected('App Development')">App Development</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Front End')">Front End</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Full Stack')">Full Stack</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Flutter')">Flutter</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Kotlin')">Kotlin</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Python')">Python</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('C & C++')">C & C++</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Java')">Java</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Auto CAD')">Auto CAD</li>
+                                <li class="list-group-item" style="display:none" onclick="nameselected('Data Structures and Algorithms')">Data Structures and Algorithms</li>
                             </ul> 
                         </div>
                     </div>
@@ -537,22 +558,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="text" class="form-control mt-2" id="field" name="field" onkeyup="fieldup()" placeholder="e.g Software Development" required>
                             <ul class="list-group" id="myList1">
                                 <li class="list-group-item" style="display:none" onclick="selected('Software Engineering')">Software Engineering</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Web Development')">Web Development</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('App Development')">App Development</li>
                                 <li class="list-group-item" style="display:none" onclick="selected('Accounting')">Accounting</li>
                                 <li class="list-group-item" style="display:none" onclick="selected('Bussiness')">Bussiness</li>
                                 <li class="list-group-item" style="display:none" onclick="selected('Management')">Management</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Machine Learning')">Machine Learning</li>
+                                <li class="list-group-item" style="display:none" onclick="selected('Artificial Intillegence')">Artificial Intillegence</li>
+
                             </ul>  
+                            
                         </div>
-    <div class="col-md-6 mt-4">
-        <label for=" position" class="form-label">Position:</label>
-        <input type="text" class="form-control mt-2" id="position" onkeyup="positionup()" name="position" placeholder="e.g Full Stack Developer" required>
-        <ul class="list-group" id="myList2">
+                        <div class="col-md-6 mt-4">
+                            <label for=" position" class="form-label">Position:</label>
+                            <input type="text" class="form-control mt-2" onkeyup="positionup()" id="position" value='<?php echo "$position"; ?>' name="position" placeholder="e.g Full Stack Developer" required>
+                            <ul class="list-group" id="myList2">
                                 <li class="list-group-item" style="display:none" onclick="selectedpos('Software Engineering')">Software Engineering</li>
                                 <li class="list-group-item" style="display:none" onclick="selectedpos('Web Development')">Web Development</li>
                                 <li class="list-group-item" style="display:none" onclick="selectedpos('App Development')">App Development</li>
                                 <li class="list-group-item" style="display:none" onclick="selectedpos('Accounting')">Accounting</li>
                                 <li class="list-group-item" style="display:none" onclick="selectedpos('Bussiness')">Bussiness</li>
-                                <li class="list-group-item" style="display:none" onclick="selectedpos('Management')">Management</li>
-                            </ul>  
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Full Stack Developer')">Full Stack Developer</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Front end Developer')">Front end Developer</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Back End Developer')">Back End Developer</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Waiter')">Waiter</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Data Analyst')">Data Analyst</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Data Scientist')">Data Scientist</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Machine Learning')">Machine Learning</li>
+                                <li class="list-group-item" style="display:none" onclick="selectedpos('Artificial Intillegence')">Artificail Intillegence</li>
+                            </ul>   
     </div>
     </div>
     <div class="row mt-5">
@@ -599,13 +633,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="col-md-6 mt-4">
             <label for="course_name" class="form-label">Course Name:</label>
             <input type="text" class="form-control mt-2" id="course_name" onkeyup="coursenameup()" name="course_name" placeholder="e.g REACT JS" required>
-            <ul class="list-group" id="myList4">
+             <ul class="list-group" id="myList4">
                 <li class="list-group-item" style="display:none" onclick="nameselected('Software Engineering')">Software Engineering</li>
                 <li class="list-group-item" style="display:none" onclick="nameselected('Accounting')">Accounting</li>
                 <li class="list-group-item" style="display:none" onclick="nameselected('Bussiness')">Bussiness</li>
                 <li class="list-group-item" style="display:none" onclick="nameselected('Management')">Management</li>
                 <li class="list-group-item" style="display:none" onclick="nameselected('Web Development')">Web Development</li>
                 <li class="list-group-item" style="display:none" onclick="nameselected('App Development')">App Development</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Front End')">Front End</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Full Stack')">Full Stack</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Flutter')">Flutter</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Kotlin')">Kotlin</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Python')">Python</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('C & C++')">C & C++</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Java')">Java</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Auto CAD')">Auto CAD</li>
+                <li class="list-group-item" style="display:none" onclick="nameselected('Data Structures and Algorithms')">Data Structures and Algorithms</li>
             </ul> 
         </div>
     </div>

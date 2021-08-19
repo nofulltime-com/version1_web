@@ -509,7 +509,7 @@ if (isset($_POST['submit'])) {
 						}
 						?>
 
-						<a class="text-uppercase loadmore-btn mx-auto d-block" href="search.php">Load More part-time seekers</a>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="search.php?category=parttime">Load More part-time seekers</a>
 					</div>
 
 
@@ -580,7 +580,7 @@ if (isset($_POST['submit'])) {
 							}
 						}
 						?>
-						<a class="text-uppercase loadmore-btn mx-auto d-block" href="search.php">Load More course seekers</a>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="search.php?category=course">Load More course seekers</a>
 					</div>
 
 
@@ -650,7 +650,8 @@ if (isset($_POST['submit'])) {
 							}
 						}
 						?>
-						<a class="text-uppercase loadmore-btn mx-auto d-block" href="search.php">Load More NGO volunteers</a>
+						<a class="text-uppercase loadmore-btn mx-auto d-block" href="search.php?category=ngo
+						">Load More NGO volunteers</a>
 					</div>
 				</div>
 
