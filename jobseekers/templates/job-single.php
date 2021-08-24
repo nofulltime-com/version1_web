@@ -62,7 +62,7 @@
                             <li class="message-box"><a href="../chatbox/users.php" style="font-size:20px;"><i class="fas fa-comment-alt"></i></a></li>
 
                             <li class="menu-has-children" style='background-color:none'><a href=""><i class='fas fa-user-circle' style='font-size:36px;color:white'></i></a>
-                                <i class='fas fa-user-circle mobile' style='font-size:36px;color:white'></i>
+                                <i class='fas fa-user-circle special mobile' style='font-size:36px;color:white'></i>
                                 <ul>
                                     <li><a href="./index.php">Profile</a></li>
                                     <li><a href="../seeker_preferences.php">Edit</a></li>

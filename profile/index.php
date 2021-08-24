@@ -389,7 +389,7 @@ include '../connect.php';
 										<li>
 										<?php
 
-										echo "<h2>Work for a NGO</h2>";
+										echo "<h2>Work for as Volunteer</h2>";
 										echo "<h3>Sector -" . $ngo_field . "</h3>";
 										echo "<h4>Position -" . $ngo_position . "</h4>";
 										echo "<p>Place Of Work -" . $ngo_place_of_work . "</p>";

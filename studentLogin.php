@@ -1,12 +1,11 @@
 <?php
 session_start();
 // if (isset($_SESSION['logincust'])) {
-//   header('Location: ../recruiters.php');
+//   header('Location: ../seeker_preferences.php');
 // } else {
 //   session_unset();
+// }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,16 +13,14 @@ session_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 
-  <link rel="stylesheet" href="recruiterLogin.css">
+  <link rel="stylesheet" href="studentLogin.css">
 
   <link rel="stylesheet" href="../css/linearicons.css">
   <link rel="stylesheet" href="../css/magnific-popup.css">
@@ -32,13 +29,14 @@ session_start();
   <link rel="stylesheet" href="../css/owl.carousel.css">
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="./seeker_details.css">
-  <link rel="stylesheet" href="../css/main.css">
+
   <link rel="stylesheet" href="font-awesome.min.css">
 
-  <title>Recruiter Login </title>
+  <title>Student Login </title>
 </head>
 
 <body>
+
   <div id="overlay">
     <div class="loader"></div>
   </div>
@@ -48,7 +46,6 @@ session_start();
       $("#overlay").delay(400).fadeOut("slow");
     });
   </script>
-
   <header id="header" id="home" style="background-color: black;">
     <div class="container">
       <div class="row align-items-center justify-content-between d-flex">
@@ -63,13 +60,14 @@ session_start();
             <li><a href="../contact.php">Contact</a></li>
             <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Signup</a>
               <ul>
-                <li><a href="recruiterRegister.php">As a recruiter</a></li>
+                <li><a href="studentRegister.php">As a Part-timer</a></li>
+
               </ul>
             </li>
             <li class="menu-has-children" style='background-color:white'><a href="" style='color:#7b63f1'>Login</a>
               <ul>
+                <li><a href="studentLogin.php">As a Part-timer</a></li>
 
-                <li><a href="recruiterLogin.php">As a recruiter</a></li>
               </ul>
             </li>
           </ul>
@@ -79,14 +77,14 @@ session_start();
   </header>
 
   <?php
-
   $email = $password = "";
+
   include 'dbcon.php';
   if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $email_search = "select * from recruiter where email='$email'";
+    $email_search = "select * from users where email='$email'";
     $query = mysqli_query($conn, $email_search);
 
     $email_count = mysqli_num_rows($query);
@@ -95,7 +93,7 @@ session_start();
       $email_pass = mysqli_fetch_assoc($query);
       $db_pass = $email_pass['password'];
 
-      $_SESSION['recruiter_id'] = $email_pass['id'];
+      $_SESSION['id'] = $email_pass['id'];
 
       $pass_decode = password_verify($password, $db_pass);
 
@@ -106,28 +104,27 @@ session_start();
           (3 * 24 * 60 * 60));
   ?>
         <script>
-          location.replace("../recruiters.php");
+          location.replace("../check.php");
         </script>
       <?php
 
       } else {
       ?>
         <script>
-          location.replace("recruiterLogin.php?error=Incorrect password");
+          location.replace("studentLogin.php?error=Incorrect password");
         </script>
       <?php
         exit();
       }
-    } else {
-      ?>
+    } else { ?>
       <script>
-        location.replace("recruiterLogin.php?error=Incorrect email");
+        location.replace("studentLogin.php?error=Incorrect email");
       </script>
-  <?php
-      exit();
+  <?php exit();
     }
   }
   ?>
+
   <div class="container" style="padding-top:120px; padding-bottom:70px;">
     <div class="row px-3">
       <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
@@ -135,22 +132,21 @@ session_start();
 
         <div class="card-body">
           <h4 class="title text-center mt-4">
-            Welcome Back Recruiter!
+            Welcome Back Part-timer!
           </h4>
           <h4 class="title text-center mt-4">
             Login into account
           </h4>
-
           <div>
-            <p class="bg-success text-white px-4"><?php
+            <p class="bg-info text-white px-7"><?php
 
-                                                  if (isset($_SESSION['msg1'])) {
-                                                    echo $_SESSION['msg1'];
-                                                  } else {
-                                                    echo $_SESSION['msg1'] = " ";
-                                                  }
+                                                if (isset($_SESSION['msg'])) {
+                                                  echo $_SESSION['msg'];
+                                                } else {
+                                                  echo $_SESSION['msg'] = " ";
+                                                }
 
-                                                  ?></p>
+                                                ?></p>
           </div>
 
           <form autocomplete="off" class="form-box px-3" onsubmit="return validation()" action="" method="POST">
@@ -159,14 +155,13 @@ session_start();
             <?php } ?>
             <div class="form-input">
               <span><i class="fa fa-envelope-o"></i></span>
-              <input type="email" name="email" id="email" placeholder="Email Address" tabindex="10" value="<?php echo $email; ?>">
+              <input type="email" name="email" id="email" placeholder="Email Address" value="<?php echo $email; ?>" tabindex="10">
 
             </div>
             <span id="emailerror" class="text-danger font-weight-bold"></span>
             <div class="form-input">
               <span><i class="fa fa-key"></i></span>
               <input type="password" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>">
-
             </div>
             <span id="passerror" class="text-danger font-weight-bold"></span>
             <div class="mb-3">
@@ -176,7 +171,7 @@ session_start();
             </div>
 
             <div class="text-right">
-              <a href="recruiter_recover_mail.php" class="forget-link">
+              <a href="student_recover_mail.php" class="forget-link">
                 Forget Password?
               </a>
             </div>
@@ -187,8 +182,13 @@ session_start();
 
             <div class="row mb-3">
               <div class="col-6">
+
                 <?php
-                include('fconfig2.php');
+
+
+                //index.php
+
+                include('fconfig.php');
 
                 $facebook_output = '';
 
@@ -229,19 +229,23 @@ session_start();
                   // Get login url
                   $facebook_permissions = ['email']; // Optional permissions
 
-                  $facebook_login_url = $facebook_helper->getLoginUrl('http://localhost/version1_web/Register/recruiterLogin.php', $facebook_permissions);
+                  $facebook_login_url = $facebook_helper->getLoginUrl('http://localhost/version1_web/Register/studentLogin.php', $facebook_permissions);
 
                   // Render Facebook login button
                   $facebook_login_url = '<a href="' . $facebook_login_url . '" class="btn btn-block btn-social btn-facebook">Facebook</a>';
                   echo $facebook_login_url;
                 }
+
+
+
                 ?>
+
               </div>
 
-              <div class=" col-6">
 
+              <div class="col-6">
                 <?php
-                include_once 'gconfig.php';
+                include_once 'gconfig2.php';
                 if (isset($_GET['code'])) {
                   $gClient->authenticate($_GET['code']);
                   $_SESSION['token'] = $gClient->getAccessToken();
@@ -255,24 +259,24 @@ session_start();
                   $google_id = $gpUserProfile['id'];
                   $username = $gpUserProfile['given_name'];
                   $email = $gpUserProfile['email'];
-                  $sql = "SELECT * FROM recruiter WHERE g_id='".$gpUserProfile['id']."'";
+                  $sql = "SELECT * FROM users WHERE g_id='".$gpUserProfile['id']."'";
 	                $result = $conn->query($sql);
 	                if ($result->num_rows == 1) {
-	                $conn->query("update recruiter set username='".$username."', email='".$email."',  url='".$url."' where g_id='".$google_id."' ");
+	                $conn->query("update users set username='".$username."', email='".$email."' where g_id='".$google_id."' ");
 	                } else {
-		              $conn->query("INSERT INTO recruiter ( username, email, g_id) VALUES ( '".$username."', '".$email."', '".$google_id."')"); 
+		              $conn->query("INSERT INTO users ( username, email, g_id) VALUES ( '".$username."', '".$email."', '".$google_id."')"); 
         
                   $retrieve_value = mysqli_fetch_assoc($result);
 
-                  $_SESSION['recruiter_id'] = $retrieve_value['id']; 
+                  $_SESSION['id'] = $retrieve_value['id']; 
 	                }
-                  $q="SELECT * FROM recruiter WHERE g_id='$google_id'";
+	                $q="SELECT * FROM users WHERE g_id='$google_id'";
 	                $res=$conn->query($q);
 	                if($res->num_rows>0)
 	                {
 	                    while($row=$res->fetch_assoc())
 	                    {
-	                        $_SESSION['recruiter_id']=$row['id'];
+	                        $_SESSION['id']=$row['id'];
 	                    }
 	                }
                   
@@ -291,7 +295,7 @@ session_start();
 
             <div class="text-center mb-2">
               Don't have an account?
-              <a href="recruiterRegister.php" class="register-link">
+              <a href="studentRegister.php" class="register-link">
                 Register here
               </a>
             </div>
@@ -384,6 +388,8 @@ session_start();
       </div>
     </div>
   </footer>
+
+
 
   <script src="jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

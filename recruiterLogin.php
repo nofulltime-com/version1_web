@@ -258,21 +258,23 @@ session_start();
                   $sql = "SELECT * FROM recruiter WHERE g_id='".$gpUserProfile['id']."'";
 	                $result = $conn->query($sql);
 	                if ($result->num_rows == 1) {
-	                $conn->query("update recruiter set username='".$username."', email='".$email."',  url='".$url."' where g_id='".$google_id."' ");
+	                    
+	                $conn->query("update recruiter set username='".$username."', email='".$email."' where g_id='".$google_id."' ");
 	                } else {
+	                    echo "<script>alert('Hey')</script>";
 		              $conn->query("INSERT INTO recruiter ( username, email, g_id) VALUES ( '".$username."', '".$email."', '".$google_id."')"); 
         
-                  $retrieve_value = mysqli_fetch_assoc($result);
+                //   $retrieve_value = mysqli_fetch_assoc($result);
 
-                  $_SESSION['recruiter_id'] = $retrieve_value['id']; 
+                //   $_SESSION['recruiter_id'] = $retrieve_value['id']; 
 	                }
-                  $q="SELECT * FROM recruiter WHERE g_id='$google_id'";
-	                $res=$conn->query($q);
-	                if($res->num_rows>0)
+                    $q1="SELECT * FROM recruiter WHERE g_id='".$google_id."'";
+	                $res1=$conn->query($q1);
+	                if($res1->num_rows>0)
 	                {
-	                    while($row=$res->fetch_assoc())
+	                    while($row1=$res1->fetch_assoc())
 	                    {
-	                        $_SESSION['recruiter_id']=$row['id'];
+	                        $_SESSION['recruiter_id']=$row1['id'];
 	                    }
 	                }
                   
