@@ -164,15 +164,7 @@ session_start();
                                             <h4 class="text-uppercase"><a href="./blog-course.php">The web is hosting for Latest Demanding courses</a></h4>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 nav-right justify-content-end d-flex">
-                                        <div class="post-details">
-                                            <p>Next Post</p>
-                                            <h4 class="text-uppercase"><a href="#">Look For Online Future</a></h4>
-                                        </div>
-                                        <div class="thumb">
-                                            <img src="img/blog/blog-future.jpg" alt="" style=width:70px;height:70px;>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </section>
@@ -233,22 +225,7 @@ session_start();
                                     </p>
                                 </div>
                             </div>
-                            <div class="single-recent-post d-flex flex-row">
-                                <div class="recent-thumb">
-                                    <img class="img-fluid" src="img/blog/r4.jpg" alt="" style=width:200px;height:80px;>
-                                </div>
-                                <div class="recent-details">
-                                    <a href="blog-single.php">
-                                        <h4>
-                                            Home Audio Recording
-                                            For Everyone
-                                        </h4>
-                                    </a>
-                                    <p>
-                                        02 hours ago
-                                    </p>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
 

@@ -213,38 +213,7 @@ session_start();
                                     </p>
                                 </div>
                             </div><br>
-                            <div class="single-recent-post d-flex flex-row">
-                                <div class="recent-thumb">
-                                    <img class="img-fluid" src="img/blog/r3.jpg" alt="" style=width:200px;height:80px;>
-                                </div>
-                                <div class="recent-details">
-                                    <a href="blog-single.php">
-                                        <h4>
-                                            Home Audio Recording
-                                            For Everyone
-                                        </h4>
-                                    </a>
-                                    <p>
-                                        02 hours ago
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="single-recent-post d-flex flex-row">
-                                <div class="recent-thumb">
-                                    <img class="img-fluid" src="img/blog/r4.jpg" alt="" style=width:200px;height:80px;>
-                                </div>
-                                <div class="recent-details">
-                                    <a href="blog-single.php">
-                                        <h4>
-                                            Home Audio Recording
-                                            For Everyone
-                                        </h4>
-                                    </a>
-                                    <p>
-                                        02 hours ago
-                                    </p>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
 

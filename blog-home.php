@@ -19,7 +19,7 @@ include './connect.php';
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>Job Listing</title>
+	<title>Blogs</title>
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 	<!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -167,24 +167,7 @@ include './connect.php';
 						</p>
 
 					</div>
-					<div class="single-post">
-						<img class="img-fluid" src="img/blog/p4.jpg" alt="">
-						<ul class="tags">
-							<li><a href="#">Art, </a></li>
-							<li><a href="#">Technology, </a></li>
-							<li><a href="#">Fashion</a></li>
-						</ul>
-						<a href="blog-single.php">
-							<h1>
-								Cartridge Is Better Than Ever
-								A Discount Toner
-							</h1>
-						</a>
-						<p>
-							MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed MCSE training.
-						</p>
-
-					</div>
+					
 				</div>
 				<div class="col-lg-4 sidebar">
 
@@ -237,22 +220,7 @@ include './connect.php';
 									</p>
 								</div>
 							</div>
-							<div class="single-recent-post d-flex flex-row">
-								<div class="recent-thumb">
-									<img class="img-fluid" src="img/blog/r4.jpg" alt="" style=width:200px;height:80px;>
-								</div>
-								<div class="recent-details">
-									<a href="blog-single.php">
-										<h4>
-											Home Audio Recording
-											For Everyone
-										</h4>
-									</a>
-									<p>
-										02 hours ago
-									</p>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 
