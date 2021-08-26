@@ -190,49 +190,42 @@ session_start();
                 <?php
                 include('fconfig2.php');
 
-                $facebook_output = '';
+                include('frecruiter-callback.php');
 
-                $facebook_helper = $facebook->getRedirectLoginHelper();
-
-                if (isset($_GET['code'])) {
-                  if (isset($_SESSION['access_token'])) {
-                    $access_token = $_SESSION['access_token'];
+                if(isset($accessToken)) {
+                  if(isset($_SESSION['facebook_access_token'])){
+                    $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
                   } else {
-                    $access_token = $facebook_helper->getAccessToken();
-
-                    $_SESSION['access_token'] = $access_token;
-
-                    $facebook->setDefaultAccessToken($_SESSION['access_token']);
+                    
+                    $_SESSION['facebook_access_token'] = (string) $accessToken;
+                    
+                    
+                    $oAuth2Client = $fb->getOAuth2Client();
+                    
+                    if(!$accessToken->isLongLived()) {
+                        $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
+                        $_SESSION['facebook_access_token'] = (string) $accessToken;
+                      
+                    }			
                   }
-
-                  $_SESSION['user_id'] = '';
-                  $_SESSION['user_name'] = '';
-                  $_SESSION['user_email_address'] = '';
-                  $_SESSION['user_image'] = '';
-
-                  $graph_response = $facebook->get("/me?fields=name,email", $access_token);
-
-                  $facebook_user_info = $graph_response->getGraphUser();
-
-                  if (!empty($facebook_user_info['id'])) {
-                    $_SESSION['user_image'] = 'http://graph.facebook.com/' . $facebook_user_info['id'] . '/picture';
+                  
+                  if(isset($_GET['code'])){
+                    header('Location: ./');
                   }
-
-                  if (!empty($facebook_user_info['name'])) {
-                    $_SESSION['user_name'] = $facebook_user_info['name'];
-                  }
-
-                  if (!empty($facebook_user_info['email'])) {
-                    $_SESSION['user_email_address'] = $facebook_user_info['email'];
-                  }
+                  
+                    $profileRequest = $fb->get('/me?fields=name,email');
+                    $fbUserData = $profileRequest->getGraphNode()->asArray();
+                    
+                    //Ceate an instance of the OauthUser class
+                    $oauth_user_obj = new OauthUser();
+                    $userData = $oauth_user_obj->verifyUser($fbUserData);
+                  
+                  
+                
+                  
                 } else {
-                  // Get login url
-                  $facebook_permissions = ['email']; // Optional permissions
-
-                  $facebook_login_url = $facebook_helper->getLoginUrl('http://localhost/version1_web/Register/recruiterLogin.php', $facebook_permissions);
-
-                  // Render Facebook login button
-                  $facebook_login_url = '<a href="' . $facebook_login_url . '" class="btn btn-block btn-social btn-facebook">Facebook</a>';
+                  $loginUrl = $helper->getLoginUrl($redirectUrl);
+                  $facebook_login_url = '<a href="'.htmlspecialchars($loginUrl).'" class="btn btn-block btn-social btn-facebook">Facebook</a>';
                   echo $facebook_login_url;
                 }
                 ?>
